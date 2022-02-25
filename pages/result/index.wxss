@@ -1,0 +1,46 @@
+.container{
+    background-color: white;
+}
+.title{
+  margin-top: 40rpx;
+  padding: 40rpx 41rpx 0 46rpx;
+  margin: 0 auto;
+  font-size: 35rpx;
+  
+  color: blue;
+  height: 100rpx;
+  
+}
+.examScore{
+  float: left;
+}
+.examTime{
+  float: right;
+  margin-right: 30rpx;
+}
+.itemOperate{
+    box-sizing: border-box;
+  padding: 30rpx 61rpx 0 46rpx;
+  margin-top: 20rpx;
+  height: 90rpx;
+}
+
+.itemText{
+    font-size: 32rpx;
+    color: #070707;
+    line-height: 36rpx;
+    overflow: hidden;
+
+}
+
+.itemLabel{
+    float: right;
+}
+
+.itemImage{
+    width: 23rpx;
+  height: 26rpx;
+  margin-left: 24rpx;
+  position: relative;
+  top: 4rpx;
+}

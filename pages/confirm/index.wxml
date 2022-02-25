@@ -1,0 +1,9 @@
+<view class="_div data-v-057df0c5 container">
+    <view class="_ul data-v-057df0c5">
+      <view class="_li data-v-057df0c5"> 考试题库：<label class="_span data-v-057df0c5">{{selectCategory}}</label></view>
+      <view class="_li data-v-057df0c5"> 考题数量：<label class="_span data-v-057df0c5"><label class="_span data-v-057df0c5 newColor">100</label>题</label></view>
+      <view class="_li data-v-057df0c5"> 考试时间：<label class="_span data-v-057df0c5"><label class="_span data-v-057df0c5 newColor">30</label>分钟</label></view>
+      <view class="_li data-v-057df0c5"> 合格标准：<label class="_span data-v-057df0c5">满分<label class="_span data-v-057df0c5 newColor">100</label>分，<label class="_span data-v-057df0c5 newColor">60</label>分及格</label></view>
+    </view>
+    <view bindtap="startExam" class="_div data-v-057df0c5 footer"  > 开始模拟考试</view>
+  </view>

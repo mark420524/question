@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "使用帮助",
+    "usingComponents": {
+        "van-collapse": "../../components/vant/collapse/index",
+        "van-collapse-item": "../../components/vant/collapse-item/index" 
+         
+    }
+  }
+  

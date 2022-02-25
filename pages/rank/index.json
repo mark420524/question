@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"答题排行",
+    "usingComponents": {
+        "van-image": "../../components/vant/image/index"
+    }
+}

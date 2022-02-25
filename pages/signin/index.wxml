@@ -1,0 +1,30 @@
+<view class="container">
+
+<view class="signTitle">
+  <image class="signImage" src="/static/images/icons8-ok-32.png"></image>
+   您已累计签到<label class="redColor">{{totalSign}}</label>天 ,
+   连续签到<label class="redColor">{{contiueSign}}</label>天 
+</view>
+
+<view class="main"  >
+  <calendar
+    id="calendar"
+    config="{{calendarConfig}}"
+   
+  ></calendar>
+</view>
+</view>
+
+<view class="signOperate">
+  <view class="signTips">
+   签到可以获得积分噢，积分可以用于导出题库 
+  </view>
+  <view wx:if="{{showSubmit}}" bindtap="userSignin" class="signAlready signSubmit">
+   立即签到 
+  </view>
+  <view wx:else  class="signAlready"  >今天已签到，获得积分<label class="redColor">+{{addPoints}}</label></view>
+</view>
+
+
+
+

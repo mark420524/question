@@ -1,0 +1,130 @@
+
+<van-notify   id="custom-selector" />
+<view  class="_view data-v-7542c5d7 container">
+  <view class="content" bindtouchstart='touchStart' bindtouchend="touchEnd">
+      <view class="_view data-v-7542c5d7 title">
+        <view class="_view data-v-7542c5d7 right">
+          <image src="/static/images/right.png" alt class="_img data-v-7542c5d7"></image>{{number.right}}
+        </view>
+        <view class="_view data-v-7542c5d7 error">
+          <image src="/static/images/error.png" alt class="_img data-v-7542c5d7"></image>{{number.error}}
+        </view>
+        <view class="_view data-v-7542c5d7 count">
+          <image src="/static/images/count.png" alt class="_img data-v-7542c5d7"></image>{{number.count+'/'+questionCount}}
+        </view>
+        <view wx:if="{{showTime}}" class="_p data-v-7542c5d7 time">计时：{{time}}</view>
+      </view>
+      <view class="_h6 data-v-7542c5d7 question">
+        {{nowIndex+1}}.{{question[nowIndex].question}}
+      </view>
+      <view class="_view data-v-7542c5d7 answer">
+        <block wx:key="index" key="{{index}}" wx:for="{{question[nowIndex].selectList}}" wx:for-index="index" wx:for-item="item">
+          <view class="_view data-v-7542c5d7 item {{activeClass[index]}}" bindtap="chooseAnswer" data-right="{{item.right}}" data-multiply="{{question[nowIndex].multiply}}" data-index="{{index}}" data-id="{{question[nowIndex].id}}" >
+            <view class="_view data-v-7542c5d7 check">
+              <view class="_view data-v-7542c5d7"></view>
+            </view>
+            <view class="_view data-v-7542c5d7 option">{{item.title}}</view>
+            <view class="_view data-v-7542c5d7 rightIcon {{(item.right && (showAnswer || alreadyChooseAnswer) ? 'rightShow' : '')}}">
+              <image src="/static/images/icons8-ok-50.png" class="_img data-v-7542c5d7"></image>
+            </view>
+            <view class="_view data-v-7542c5d7 wrongIcon {{(!item.right && optionSelect[index] && alreadyChooseAnswer ? 'wrongShow' : '')}}">
+              <image src="/static/images/icons8-multiply-50.png" class="_img data-v-7542c5d7"></image>
+            </view>
+          </view>
+        </block>
+        <view class="_view data-v-7542c5d7 analy" hidden="{{!(isShow_analy)}}" style="visibility:hidden">
+          {{question[nowIndex].analysis}}
+        </view>
+        <view bindtap="multiplySubmit" data-id="{{question[nowIndex].id}}"  class="_view data-v-7542c5d7 multiplySubmit" hidden="{{!(question[nowIndex].multiply)}}" > 提交 </view>
+        <view style="height:180rpx;" class="_view data-v-7542c5d7"></view>
+      </view>
+  </view>
+  <view>
+  <view bindtap="modifyQuestion" class="modifyQuestion">
+    <van-image  
+          width="2rem"
+          height="2rem" src="/static/images/icons8-edit-file-80.png" />
+   </view>
+    <view class="_view data-v-7542c5d7 footer" style=" {{isShow_analy ? 'box-shadow:0px 0px 10px rgba(0,0,0,0.2);' : ''}}">
+      
+      <view class="_view data-v-7542c5d7 analy" hidden="{{!(isShow_analy)}}">
+        {{question[nowIndex].analysis}}
+      </view>
+      <switch bindtap="showAnaly" checked="{{isShow_analy}}"  class="_switch data-v-7542c5d7" />
+      <view class="_ul data-v-7542c5d7">
+        <view bindtap="preQuestion"   class="_li data-v-7542c5d7">上一题</view>
+        <view wx:if="{{!startExam}}" class="_li data-v-7542c5d7"><button open-type="share" class="_button data-v-7542c5d7">求助</button></view>
+        <view wx:else  class="emptyView"></view>
+        <view bindtap="favoriteQuestion" data-type="{{favorite?0:1}}"  class="_li data-v-7542c5d7">
+          <image class="_img data-v-7542c5d7 hidden {{favorite ? 'showInline' : ''}}" src="/static/images/isStar.png" alt></image>
+          <image class="_img data-v-7542c5d7 hidden {{favorite ? '' : 'showInline'}}" src="/static/images/icons8-star-black.png" alt></image>
+        </view>
+        <view wx:if="{{!startExam}}" bindtap="showQuestionBank"   class="_li data-v-7542c5d7">题库</view>
+        <view wx:else bindtap="startExamSubmit" class="_li data-v-7542c5d7">交卷</view>
+        <view bindtap="nextQuestion"   class="_li data-v-7542c5d7">下一题</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <view class="mark" wx-if="{{showTips}}"  bindtap="closeTips" >
+            <view class="markText">
+                <image class="markImage" src="/static/images/icons8-swipe-64.png"></image>
+                <view class="markTips">左右滑动可轻松切换上下题噢</view>
+                
+                <button class="markButton" bindtap="closeTips" >我知道了</button>
+            </view>
+  </view>
+
+
+  <view class="mark"  wx-if="{{ examSubmit }}"  >
+      <view class="examTips">
+          
+          <view class="markTips">当前考试得分：<label class="greenColor">{{ examScore }}</label>分</view>
+          <view class="examResult">{{ examResult }}</view>
+          <view class="examCircle">
+          <van-circle value="{{ examAnsweredCount }}" color="red" layer-color="#fdc8c3" size="150" stroke-width="10" text="剩余未做" 
+          labelCount="{{ waitAnswer }}"
+          />
+          </view>
+          <button class="examButton" bindtap="continueExam" >继续做题</button>
+          <button bindtap="examSubmit" class="examButton examSubmitButton"  >现在交卷</button>
+      </view>
+  </view>
+
+
+
+  <van-dialog
+  use-slot
+  title="题目纠错"
+  show="{{ showModify }}"
+  show-cancel-button
+    
+  bind:close="modifyClose"
+  bind:confirm="confirmModify"
+>
+<van-cell-group>
+   
+
+  
+ 
+    <van-field
+    id="modifyReason"
+     
+    label="错误原因："
+    type="textarea"
+    clearable
+    value="{{ modifyReason }}"
+    auto-focus
+    show-word-limit
+    maxlength="50"
+    placeholder="请输入错误原因"
+    autosize
+    required
+    size="large"
+    border="{{ true }}"
+   
+  />
+</van-cell-group>
+ 
+</van-dialog>

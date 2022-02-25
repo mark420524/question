@@ -1,0 +1,19 @@
+/**app.wxss**/
+page {
+  background-color: #f0f2f7;
+}
+.main{
+  background-color: white;
+}
+.clear  {
+  clear: both;
+}
+.redColor{
+  color: red;
+}
+.greenColor{
+  color: green;
+}
+.orangeColor{
+  color: orange;
+}

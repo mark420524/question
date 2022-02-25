@@ -1,0 +1,8 @@
+  <view class="_div data-v-6fad280d container">
+    <view class="_ul data-v-6fad280d">
+      <view class="_li data-v-6fad280d"> 收藏题库：<label class="_span data-v-6fad280d">{{selectCategory}}</label></view>
+      <view class="_li data-v-6fad280d"> 收藏数量：<label class="_span data-v-6fad280d"><label class="_span data-v-6fad280d newColor"> {{ favoriteCount  }}</label> 题</label></view>
+    </view>
+    <view class="_div data-v-6fad280d showTips" wx:if="{{!favoriteCount}}"> 您收藏的题目会自动记录到这里 </view>
+    <view bindtap="goQuestion" class="_div data-v-6fad280d footer"  > {{showVal}}</view>
+  </view>

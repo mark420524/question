@@ -1,0 +1,58 @@
+.title{
+    background-color: white;
+    padding: 20rpx 40rpx;
+    white-space: nowrap;
+    font-size: 32rpx;
+    text-align: center;
+}
+.intergral{
+    color: #ff0505;
+}
+.addIntegral{
+    color: red;
+}
+.itemParent{
+    background-color: white;
+    padding-left : 20rpx;
+    padding-top: 40rpx;
+    margin-left:0 auto;
+    width: 100%;
+    height: 110rpx;
+    margin-top: 20rpx;
+}
+.item {
+    margin-left: 20rpx;
+    float: left;
+    height: 100%;
+}
+.intergralIndex{
+    margin-top: 20rpx;
+}
+
+.remark{
+    margin-left: 30rpx;
+    font-size: 34rpx;
+    font-weight: bolder;
+    max-width: 40%;
+   
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.intergralTime{
+    margin-top: 10rpx;
+    font-size: 26rpx;
+    font-weight: lighter;
+    color: #444;
+}
+.score{
+    font-size: 32rpx;
+    font-size: 26rpx;
+    
+    float: right;
+    margin-right: 40rpx;
+}
+.totalIntegral{
+    font-size: 26rpx;
+    font-weight: lighter;
+}

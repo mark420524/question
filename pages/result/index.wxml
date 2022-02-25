@@ -1,0 +1,33 @@
+<view class="container">
+    <view class="title">
+      <view class="examScore">
+        <van-image  
+          width="1rem"
+          height="1rem" src="/static/images/icons8-submit-resume-48.png" />
+     考试得分：{{ examScore }}
+    </view>
+    <view    class="examTime">   
+       <van-image round
+          width="1rem"
+          height="1rem" src="/static/images/icons8-time-machine-50.png" />
+          答题耗时：{{ examTime }} </view> 
+    </view>
+    <view class="clear"></view>
+    <van-divider/>
+     <view bindtap="showExamRank"  class="itemOperate"  >
+      <view class="itemText"> 答题排行 <label class="itemLabel">
+          <image src="/static/images/right_double.png" alt class="itemImage"></image>
+        </label>
+      </view>
+    </view>
+    <van-divider/>
+
+    <view bindtap="examAgain"  class="itemOperate"  >
+      <view class="itemText"> 再次考试 <label class="itemLabel">
+          <image src="/static/images/right_double.png" alt class="itemImage"></image>
+        </label>
+      </view>
+    </view>
+    <van-divider/>
+    
+</view>

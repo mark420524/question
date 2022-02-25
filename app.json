@@ -1,0 +1,48 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/result/index",
+    "pages/rank/index",
+    "pages/integral/index",
+    "pages/signin/index",
+    "pages/question/index",
+    "pages/wrong/index",
+    "pages/about/index",
+    "pages/my/index",
+    "pages/favorite/index",
+    "pages/confirm/index",
+    "pages/bank/index",
+    "custom-tab-bar/index",
+    "pages/share/index",
+    "pages/help/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "早晚答",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#608cf3",
+    "borderStyle": "black",
+    
+    "list": [{
+      "text": "首页",
+      "pagePath": "pages/index/index" 
+       
+    },
+    {
+      "text":"我的",
+      "pagePath":"pages/my/index" 
+       
+    }],
+
+    
+    "position": "bottom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

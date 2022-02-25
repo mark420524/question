@@ -1,0 +1,11 @@
+<!--
+<view class="adContainer">
+  <ad unit-id="xxxx"></ad>
+</view>
+-->
+<view class="main">
+<view class="tips">本小程序是个人开发维护的开源小程序，欢迎大家使用。使用过程中有各种问题、或者题目有任何问题均可以联系我们。
+ QQ群号:{{qqGroup}}</view>
+</view>
+
+<view class="main copyText" bindtap="copyGroupInfo">点我复制QQ群号</view>

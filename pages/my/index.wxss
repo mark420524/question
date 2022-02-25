@@ -1,0 +1,96 @@
+.header {
+    background: white;
+    padding-bottom: 20rpx;
+  }
+  .header ._h1 {
+    text-align: center;
+    font-size: 36rpx;
+    color: #020202;
+  }
+  .header .my {
+    overflow: hidden;
+    width: 90%;
+    margin-left: 5%;
+  }
+  .header .my .left {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    margin-top: 16rpx;
+  }
+  .header .my .left ._img {
+    width: 140rpx;
+    height: 140rpx;
+    margin-bottom: 46rpx;
+    border-radius: 100%;
+  }
+  .header .my .left ._p {
+    font-size: 32rpx;
+    color: #e93746;
+    font-weight: bold;
+  }
+  .header .my .left ._span {
+    font-size: 28rpx;
+    color: #898989;
+  }
+  .header .my .right {
+    margin-top: 60rpx;
+    display: inline-block;
+    float: right;
+    text-align: center;
+  }
+  .header .my .right ._h4,
+  .header .my .right .toLogin {
+    font-size: 42rpx;
+    color: #898989;
+    margin-bottom: 66rpx;
+    margin-right: 66rpx;
+  }
+  .header .my .right .toLogin {
+    height: 52rpx;
+    border-radius: 26rpx;
+    text-align: center;
+    line-height: 52rpx;
+    background: #e94a69;
+    color: #fefefe;
+    font-size: 22rpx;
+  }
+  .header .my .right ._p {
+    font-size: 32rpx;
+    color: #e93746;
+    font-weight: bold;
+  }
+  .header .my .right ._span {
+    font-size: 28rpx;
+    color: #898989;
+  }
+  .list {
+    background: white;
+    margin-top: 20rpx;
+  }
+  .list ._ul {
+    margin-left: 56rpx;
+  }
+  .list ._ul ._li {
+    border-bottom: 1rpx #f0eff5 solid;
+  }
+  .list ._ul ._li ._img {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 25rpx;
+    position: relative;
+    top: 10rpx;
+  }
+  .list ._ul ._li ._span {
+    font-size: 32rpx;
+    color: #686868;
+    line-height: 100rpx;
+  }
+  .list ._ul ._li .right {
+    float: right;
+    margin-right: 58rpx;
+    width: 18rpx;
+    height: 32rpx;
+    margin-top: 20rpx;
+  }

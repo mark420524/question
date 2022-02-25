@@ -1,0 +1,24 @@
+.adContainer {
+    width: 100%;
+}
+
+.main{
+    margin-top: 20rpx;
+    background-color: white;
+    padding:  20rpx 30rpx 40rpx 50rpx;
+}
+.tips{
+    font-size: 34rpx;
+    
+    font-weight: lighter;
+}
+.copyText{
+    margin: 0 auto;
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: white;
+    background-color: #06a206;
+    width: 80%;
+    border-radius: 0.2rem;
+}

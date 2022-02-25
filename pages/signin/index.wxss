@@ -1,0 +1,64 @@
+.container{
+    background-color: white;
+}
+
+.signTitle{
+    width: 100%;
+    padding-top: 30rpx;
+    margin-left: 10%;
+    font-size: 32rpx;
+    color: rgb(131, 131, 243);
+}
+.signImage{
+    
+    width: 36rpx;
+    height: 36rpx;
+   
+}
+
+
+.main{
+    width: 100%;
+    
+    overflow:hidden;
+    margin: 0 auto 40rpx;
+    
+    margin-top: 40rpx;
+}
+
+.signOperate{
+    font-size: 28rpx;
+    padding-top: 20rpx;
+    color: #0c0cd8;
+    
+    background-color: white;
+    margin-bottom: 20rpx;
+    height: 180rpx;
+
+}
+
+.signTips{
+    
+    margin-left:  30rpx;
+}
+.signSubmit{
+    
+    border-radius: 2rem; 
+    border: 4rpx solid green;
+    color: white;
+    background-color: #43d268;
+   
+}
+.signAlready{
+    width: 90%;
+    height: 45rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    font-size: 40rpx;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 10rpx;
+    padding-bottom: 20rpx;
+    
+}
+ 

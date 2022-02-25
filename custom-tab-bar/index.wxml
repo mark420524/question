@@ -1,0 +1,5 @@
+<!-- miniprogram/pages/custom-tab-bar/index.wxml -->
+<van-tabbar active="{{ active }}" z-index="99999"	 bind:change="onChange">
+  <van-tabbar-item wx:for="{{list}}" wx:key="index" data-path="{{item.pagePath}}" data-index="{{index}}"  icon="{{item.iconPath}}">{{item.text}}</van-tabbar-item>
+ 
+</van-tabbar>

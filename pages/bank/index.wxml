@@ -1,0 +1,5 @@
+<view class="_div data-v-248cb7ad bank">
+    <view bindtap="chooseIndex"  class="_ul data-v-248cb7ad">
+      <view data-index="{{index+1}}" wx:key="index" key="{{index}}" wx:for="{{question_bank}}" wx:for-index="index" wx:for-item="item" class="_li data-v-248cb7ad" style=" {{['background:'] +  (item.right != null ? (item.right ? '#00ad39' : '#f1000b') : '')}}">{{index+1}}</view>
+    </view>
+  </view>

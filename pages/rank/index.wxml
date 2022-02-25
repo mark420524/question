@@ -1,0 +1,23 @@
+<view class="">
+    <view class="title">当前选择的题库为：<view class="categoryName">{{selectCategory}}</view></view>
+    
+    <view class="itemParent" wx:for="{{ rankList }}" wx:key="index" >
+        <view class="item rankIndex {{index<=2?'topThreeParent':''}}"  >
+            <image wx:if="{{index==0}}"   class="topThree" src="/static/images/icons8-1st-place-medal-96.png"/>
+            <image wx:if="{{index==1}}"   class="topThree" src="/static/images/icons8-2nd-place-medal-96.png"/>
+            <image wx:if="{{index==2}}"   class="topThree" src="/static/images/icons8-3rd-place-medal-96.png"/>
+        <view class="{{index<=2?'topThreeIndex':'otherIndex'}}">{{ index+1 }}</view></view>
+        <van-image class="item" width="3rem" height="3rem" radius="100" src="{{item.avatarUrl}}"/>
+        <view class="item nickName">
+            {{  item.nickName }} 
+            <view class="scoreTime">  {{  item.createTime }}    </view>
+        </view>
+       
+        <view class="item score">获得<label class="redColor">{{  item.score }} </label>分</view>
+        <view class="clear"></view>
+    
+
+    </view>
+
+     
+</view>

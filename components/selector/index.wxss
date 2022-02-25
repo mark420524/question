@@ -1,0 +1,92 @@
+/* model.wxss */
+.infoText{
+    margin-top: 20rpx;
+    text-align: center;
+    width: 100%;
+    justify-content: center; 
+}
+
+.centerText{
+  margin-top: 100rpx;
+  width: 100%;
+  text-align: center;
+}
+
+/* --------------分割线------------- */
+
+picker-view{
+  background-color: white;
+  padding: 0;
+  width: 100%; 
+  height: 380rpx;
+  bottom: 0;
+  position: fixed;
+}
+
+picker-view-column view{
+  vertical-align:middle; 
+  font-size: 28rpx;
+  line-height: 28rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation-element-wrapper {
+  display: flex;  
+  position: fixed;
+  left: 0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.animation-element {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 470rpx;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.animation-button {
+  margin-top: 20rpx;
+  top:20rpx;
+  width: 400rpx;
+  height: 100rpx; 
+  line-height: 100rpx; 
+  align-items:center;
+}
+
+
+.animation-element text{
+ 
+  display: inline-flex;  
+  position: fixed;
+  margin-top: 20rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-bt{
+  left: 30rpx;
+  color: #e9aa14;
+}
+.right-bt {
+  right: 30rpx;
+  color: #508aff;
+}
+
+.line{
+  display: block;
+  position: fixed;
+  height: 1rpx;
+  width: 100%;
+  margin-top: 89rpx; 
+  background-color: #eeeeee;
+}

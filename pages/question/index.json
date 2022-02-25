@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText":"题目",
+    "usingComponents": {
+        "van-circle": "../../components/vant/circle/index",
+        "van-image": "../../components/vant/image/index",
+        "van-dialog": "../../components/vant/dialog/index",
+        "van-field":"../../components/vant/field/index",
+        "van-notify":"../../components/vant/notify/index"
+        
+    }
+}

@@ -1,0 +1,44 @@
+<view class="_div data-v-6923d3fa newIndex">
+    <view class="_div data-v-6923d3fa whitebg title">
+      <view class="_h1 data-v-6923d3fa">当前选择的题库为：<view class="_h2 data-v-6923d3fa">{{selectCategory}}</view>
+      <view class="questionCount">
+        题目数量：<label class="countLable">{{questionCount}} </label>
+        
+      </view>
+      </view>
+    </view>
+    <view class="_div data-v-6923d3fa whitebg top">
+      <view bindtap="wrongCollect" class="_div data-v-6923d3fa common wrongCollect"  >
+        <image src="/static/images/icons8-scorecard-50.png" class="_img data-v-6923d3fa"></image>错题
+      </view>
+      <view bindtap="startAnswer" class="_div data-v-6923d3fa fixPosition common exam"  >
+        <image src="/static/images/icons8-filled-circle-100.png" class="_img data-v-6923d3fa"></image> 
+        <label class="_span data-v-6923d3fa"> 开始答题</label>
+        
+      </view>
+      <view bindtap="favoriteShow" class="_div data-v-6923d3fa common favorite"  >
+        <image src="/static/images/icons8-favorite-64.png" class="_img data-v-6923d3fa"></image> 收藏
+      </view>
+    </view>
+    <view class="_div data-v-6923d3fa clear"></view>
+    <view class="_div data-v-6923d3fa whitebg top">
+      <view bindtap="showExamRank" class="_div data-v-6923d3fa common wrongCollect">
+        <image src="/static/images/icons8-rank-64.png" class="_img data-v-6923d3fa"></image> 排名
+      </view>
+      <view bindtap="startExam" class="_div data-v-6923d3fa fixPosition common exam"  >
+        <image src="/static/images/icons8-filled-circle-blue.png" class="_img data-v-6923d3fa"></image> <label class="_span data-v-6923d3fa">模拟考试</label>
+      </view>
+      <view bindtap="signin" class="_div data-v-6923d3fa common favorite">
+        <image src="/static/images/icons8-signin-100.png" class="_img data-v-6923d3fa"></image> 签到
+      </view>
+    </view>
+    <view bindtap="chooseCategory" class="_div data-v-6923d3fa whitebg choose"  >
+      <view class="_h2 data-v-6923d3fa">{{changeCategory}}<label class="_span data-v-6923d3fa">
+          <image src="/static/images/right_double.png" alt class="_img data-v-6923d3fa"></image>
+        </label>
+      </view>
+    </view>
+  </view>
+
+  <import src="../../components/selector/index.wxml"/>
+  <template is="areaData" data="{{...item}}"/>

@@ -1,0 +1,73 @@
+.title{
+    background-color: white;
+    padding: 20rpx 40rpx;
+    white-space: nowrap;
+    font-size: 32rpx;
+}
+.categoryName{
+    font-size: 34rpx;
+  color: #1d42c7;
+  width: 100%;
+  text-overflow: ellipsis;
+  line-height: 70rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.itemParent{
+    background-color: white;
+    padding-left : 20rpx;
+    padding-top: 40rpx;
+    margin-left:0 auto;
+    width: 100%;
+    border-radius: 10rpx;
+    height: 150rpx;
+    margin-top: 20rpx;
+}
+.item {
+    margin-left: 20rpx;
+    float: left;
+    height: 100%;
+}
+.topThree{
+    width: 70rpx;
+    height: 70rpx;
+}
+.otherIndex{
+    width: 70rpx;
+    margin: 0 auto;
+    text-align: center;
+}
+.topThreeParent{
+    position: relative;
+}
+.topThreeIndex{
+    display:none;
+}
+.rankIndex{
+    margin-top: 30rpx;
+    
+}
+.nickName{
+    
+    margin-left: 30rpx;
+    font-size: 34rpx;
+    font-weight: bolder;
+    max-width: 40%;
+    margin-top: 10rpx;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.scoreTime{
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    font-weight: lighter;
+    color: #444;
+}
+.score{
+    font-size: 32rpx;
+    margin-top: 30rpx;
+    float: right;
+    margin-right: 40rpx;
+}

@@ -1,0 +1,38 @@
+<view class="_div data-v-b814dec6">
+    <view class="_div data-v-b814dec6 header">
+      <view class="_div data-v-b814dec6 my">
+        <view class="_div data-v-b814dec6 left">
+          <image src="{{userInfo.avatarUrl||'/static/images/default.jpg'}}" alt class="_img data-v-b814dec6"></image>
+        </view>
+        <view class="_div data-v-b814dec6 right">
+          <view wx:if="{{userInfo.nickName}}" class="_h4 data-v-b814dec6">{{userInfo.nickName}}</view><button wx:else class="_button data-v-b814dec6 toLogin"  bindtap="toLogin"  >登录/注册</button>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-b814dec6 list">
+      <view class="_ul data-v-b814dec6">
+        <view bindtap="goIntegral"    class="_li data-v-b814dec6">
+          <image src="/static/images/icons8-shopping-basket-star-48.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">我的积分</label>
+          <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
+        </view>
+
+        <view bindtap="openCoupon"    class="_li data-v-b814dec6">
+          <image src="/static/images/intivi.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">早晚领券</label>
+          <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
+        </view>
+        
+        <view bindtap="clearCache"   class="_li data-v-b814dec6">
+          <image src="/static/images/clean.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">清除缓存</label>
+          <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
+        </view>
+        <view bindtap="help"   class="_li data-v-b814dec6">
+          <image src="/static/images/help.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">使用帮助</label>
+          <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
+        </view>
+        <view bindtap="aboutMe"   class="_li data-v-b814dec6">
+          <image src="/static/images/icons8-more-info-64.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">关于我们</label>
+          <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
+        </view>
+      </view>
+    </view>
+  </view>

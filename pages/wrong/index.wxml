@@ -1,0 +1,11 @@
+<view class="_div data-v-3a55b41c container">
+    <view class="_ul data-v-3a55b41c">
+      <view class="_li data-v-3a55b41c"> 错题题库：<label class="_span data-v-3a55b41c">{{selectCategory}}</label></view>
+      <view class="_li data-v-3a55b41c"> 错题数量：<label class="_span data-v-3a55b41c"><label class="_span data-v-3a55b41c newColor"> {{ wrongCount  }}</label> 题</label></view>
+    </view>
+    <view class="_div data-v-3a55b41c showTips" wx:if="{{!wrongCount}}"> 您答错的题目会自动记录到这里 </view>
+    <view class="_div data-v-3a55b41c showTips" wx:if="{{wrongCount}}">答对自动移除错题集:
+      <switch bindchange="changeSwitch" color="#26E07F" checked   class="_switch data-v-3a55b41c" />
+    </view>
+    <view bindtap="goQuestion" class="_div data-v-3a55b41c footer"  > {{ showVal}}</view>
+  </view>

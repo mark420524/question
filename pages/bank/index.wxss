@@ -1,0 +1,25 @@
+
+.bank.data-v-248cb7ad {
+    min-height: 100vh;
+    background: #000b41;
+    overflow: hidden;
+  }
+  .bank ._ul.data-v-248cb7ad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25rpx;
+    margin-bottom: 25rpx;
+  }
+  .bank ._ul ._li.data-v-248cb7ad {
+    width: 76rpx;
+    height: 76rpx;
+    font-size: 36rpx;
+    display: inline-block;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 76rpx;
+    margin: 17rpx;
+    color: white;
+    background: #1c2760;
+  }

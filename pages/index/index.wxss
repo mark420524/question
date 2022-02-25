@@ -1,0 +1,113 @@
+
+.newIndex.data-v-6923d3fa {
+  background-color: #f0f2f7;
+}
+.newIndex .whitebg.data-v-6923d3fa {
+  background-color: white;
+}
+.newIndex .clear.data-v-6923d3fa {
+  clear: both;
+}
+.newIndex .title.data-v-6923d3fa {
+  padding: 20rpx 40rpx;
+  white-space: nowrap;
+  font-size: 32rpx;
+}
+.newIndex .title ._h2.data-v-6923d3fa {
+  font-size: 34rpx;
+  
+  color: #1d42c7;
+  width: 100%;
+  text-overflow: ellipsis;
+  line-height: 70rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.questionCount {
+  font-size: 30rpx;
+  
+  color: #1d42c7;
+  width: 100%;
+  
+}
+.countLable{
+  color: red;
+}
+.newIndex .top.data-v-6923d3fa {
+  width: 100%;
+  height: 300rpx;
+  padding: 20rpx 40rpx;
+}
+.newIndex .top .common.data-v-6923d3fa {
+  text-align: center;
+  margin-left: 5%;
+  float: left;
+  width: 25%;
+  font-size: 30rpx;
+}
+.newIndex .top .fixPosition.data-v-6923d3fa {
+  position: relative;
+}
+.newIndex .top .wrongCollect.data-v-6923d3fa {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 10%;
+}
+.newIndex .top .wrongCollect ._img.data-v-6923d3fa {
+  width: 90rpx;
+  height: 90rpx;
+}
+.newIndex .top .favorite.data-v-6923d3fa {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.newIndex .top .favorite ._img.data-v-6923d3fa {
+  width: 90rpx;
+  height: 90rpx;
+}
+.newIndex .top .exam.data-v-6923d3fa {
+  margin-left: 10%;
+  width: 250rpx;
+  height: 250rpx;
+}
+.newIndex .top .exam ._img.data-v-6923d3fa {
+  width: 100%;
+  height: 100%;
+}
+.newIndex .top .exam ._span.data-v-6923d3fa {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  color: white;
+}
+
+.newIndex .choose.data-v-6923d3fa {
+  box-sizing: border-box;
+  padding: 30rpx 61rpx 0 46rpx;
+  margin-top: 20rpx;
+  height: 90rpx;
+}
+.newIndex .choose ._h2.data-v-6923d3fa {
+  font-size: 32rpx;
+  color: #070707;
+  line-height: 36rpx;
+  overflow: hidden;
+}
+.newIndex .choose ._h2 ._span.data-v-6923d3fa {
+  font-size: 28rpx;
+  color: #1d42c7;
+  float: right;
+  font-weight: lighter;
+}
+.newIndex .choose ._h2 ._span ._img.data-v-6923d3fa {
+  width: 23rpx;
+  height: 26rpx;
+  margin-left: 24rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+@import '../../components/selector/index.wxss'

@@ -1,0 +1,36 @@
+
+.container.data-v-6fad280d {
+    text-align: left;
+    margin-top: 200rpx;
+  }
+  .container ._li.data-v-6fad280d {
+    margin-left: 100rpx;
+    margin-top: 40rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+  }
+  .container ._li ._span.data-v-6fad280d {
+    font-size: 32rpx;
+    font-weight: lighter;
+    font-style: italic;
+  }
+  .container ._li .newColor.data-v-6fad280d {
+    color: red;
+  }
+  .container .showTips.data-v-6fad280d {
+    margin-top: 30rpx;
+    margin-left: 100rpx;
+    font-size: 30rpx;
+    font-weight: lighter;
+  }
+  .container .footer.data-v-6fad280d {
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15rpx;
+    height: 100%;
+    line-height: 90rpx;
+    background-color: #26E07F;
+    color: white;
+    margin-top: 60rpx;
+    text-align: center;
+  }
