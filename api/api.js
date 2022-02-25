@@ -126,10 +126,11 @@ import {
         data:data
       })
     },
-    systemInit:function(){
+    systemInit:function(data){
       return http({
         url:url.systemInit,
-        method:'GET'
+        method:'GET',
+        data:data
       })
     },
     getMyIntegral:function(data){

@@ -4,9 +4,10 @@ import util from 'utils/util.js'
 App({
   onLaunch() {
     let menuVersion = util.getMenuVersionIndex() || 0;
-    api.systemInit().then(res=>{
+    let uid = util.getUserId();
+    let data={uid:uid}
+    api.systemInit(data).then(res=>{
       let category=res.category;
-      console.log(category)
       let systemVersion = parseInt(category)
       if (systemVersion > menuVersion) {
         this.loadMenu(systemVersion);
