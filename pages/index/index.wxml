@@ -1,3 +1,6 @@
+<van-dialog id="van-dialog" />
+ 
+
 <view class="_div data-v-6923d3fa newIndex">
     <view class="_div data-v-6923d3fa whitebg title">
       <view class="_h1 data-v-6923d3fa">当前选择的题库为：<view class="_h2 data-v-6923d3fa">{{selectCategory}}</view>

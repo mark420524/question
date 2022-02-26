@@ -4,7 +4,7 @@ const app = getApp()
 const apis = app.apis;
 const utils = app.utils;
 var selector = require('../../components/selector/index.js')
-
+import Dialog from '../../components/vant/dialog/dialog';
 var show = false;
 var item = {};
 Page({
@@ -96,7 +96,9 @@ Page({
     wx.setStorageSync('selectData', selectData)
   },
   onLoad() {
+    
     this.init();
+    this.initNotice();
   },
   init(){
               
@@ -120,6 +122,33 @@ Page({
           this.initUserId();
       }
       this.initQuestionCount(utils.getAnswerCid());
+  },
+  initNotice(){
+      let data={uid:utils.getUserId()}
+      apis.getNotifyInfo(data).then(res=>{
+        let showConfirmButton = 1;
+          if (res){
+              let currentIndex = utils.getNotifyIndex();
+              console.log('currentindex',currentIndex);
+              let newIndex = res.id;
+              if (!res.stopService && currentIndex>=newIndex) {
+                return false;
+              }
+              utils.setNotifyIndex(newIndex);
+              if(res.stopService){
+                showConfirmButton=0;
+              }
+            Dialog.alert({
+                title: res.title,
+                message: res.message,
+                showConfirmButton:showConfirmButton,
+                theme: 'round-button'
+            }).then((e) => {
+                
+            });
+          }
+      })
+   
   },
   goQuestion(type){
       let cid = wx.getStorageSync('cid') ;

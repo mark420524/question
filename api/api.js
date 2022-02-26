@@ -23,6 +23,7 @@ import {
     myIntegral:'user/integral',
     myIntegralList:'user/integral/list',
     questionCorrect:'question/correct',
+    notifyInfo:'notify/info',
   }
   module.exports = {
     userLogin(code) {
@@ -148,6 +149,12 @@ import {
     questionCorrect:function(data){
       return http({
         url:url.questionCorrect,
+        data:data
+      })
+    },
+    getNotifyInfo:function(data){
+      return http({
+        url:url.notifyInfo,
         data:data
       })
     }

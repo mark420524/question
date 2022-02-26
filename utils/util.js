@@ -94,6 +94,14 @@ const getCollectionIndex= _=>{
   return wx.getStorageSync('index' );
 }
 
+const setNotifyIndex= index=>{
+  wx.setStorageSync('notifyIndex',index);
+}
+
+const getNotifyIndex= _=>{
+  return wx.getStorageSync('notifyIndex' ) || 0;
+}
+
 const buildDate= (str) => {
   let arr = str.split('-')
   let startDate = new Date();
@@ -122,5 +130,7 @@ module.exports = {
   getMenuVersionIndex:getMenuVersionIndex,
   setMenuVersionIndex:setMenuVersionIndex,
   setCollectionIndex:setCollectionIndex,
-  getCollectionIndex:getCollectionIndex
+  getCollectionIndex:getCollectionIndex,
+  getNotifyIndex:getNotifyIndex,
+  setNotifyIndex:setNotifyIndex
 }
