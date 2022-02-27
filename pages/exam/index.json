@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"免费试卷",
+    "usingComponents": {
+        "van-search": "../../components/vant/search/index"
+      }
+}

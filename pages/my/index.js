@@ -94,7 +94,7 @@ Page({
                 this.getTabBar()) {
                   
                 this.getTabBar().setData({
-                  active: 1,
+                  active: 2,
                 })
               }
           }

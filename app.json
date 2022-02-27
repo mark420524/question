@@ -2,6 +2,7 @@
   "pages":[
     
     "pages/index/index",
+    "pages/exam/index",
     "pages/result/index",
     "pages/rank/index",
     "pages/integral/index",
@@ -34,6 +35,10 @@
       "text": "首页",
       "pagePath": "pages/index/index" 
        
+    },
+    {
+      "text": "试卷",
+      "pagePath": "pages/exam/index"
     },
     {
       "text":"我的",

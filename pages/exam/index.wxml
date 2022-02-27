@@ -1,0 +1,26 @@
+<van-search value="{{ searchVal }}" placeholder="请输入搜索关键词" 
+  id="searchText"
+  use-action-slot
+  bind:search="onCofirmSearch"
+  shape="round"
+  background="#ffffff"
+><view slot="action" bind:tap="actionSearch">搜索</view>
+</van-search>
+
+<view class="container">
+<view class="history-search-top" wx:if="{{examList.length == 0}}">
+    <text>历史搜索</text>
+    <image bindtap="clearSearchContent" src="/static/images/remove.png" mode="aspectFill"/>
+  </view>
+
+
+  <view class="history-search" wx:if="{{examList.length == 0}}" >
+    <text bindtap="onTapHistory" data-val="{{item}}" wx:for="{{historys}}"
+        wx:key="index"
+    >{{item}}</text>
+  </view>
+  <view class="empty-view"  wx:if="{{examList.length == 0}}">
+    <image class="empty" src="/static/images/empty.png" mode="aspectFill"/>
+  </view>
+
+</view>

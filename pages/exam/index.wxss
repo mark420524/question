@@ -1,0 +1,55 @@
+.empty-view {
+    min-height: 400rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-grow: 1;
+    width: 100vw;
+  }
+  .empty {
+    width: 200rpx;
+    height: 200rpx;
+  }
+  .history-search-top {
+    display: flex;
+    width: calc(100vw - 40rpx);
+    background-color: white;
+    margin-top:20rpx;
+    align-items: center;
+    padding: 20rpx;
+    justify-content: space-between;
+  }
+  .history-search-top text {
+    color: gray;
+    font-size: 30rpx;
+  }
+  .history-search-top image {
+    width: 40rpx;
+    height: 40rpx;
+  }
+  .history-search {
+    padding: 20rpx;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100vw - 40rpx);
+  }
+  .history-search text {
+    height: 44rpx;
+    padding: 0 20rpx;
+    border-radius: 22rpx;
+    background-color: #f0f0f0;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+    color: gray;
+    font-size: 22rpx;
+    text-align: center;
+    line-height: 44rpx;
+  }
+  .search-tool {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
