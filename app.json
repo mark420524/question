@@ -2,7 +2,7 @@
   "pages":[
     
     "pages/index/index",
-    "pages/exam/index",
+    "pages/search/index",
     "pages/result/index",
     "pages/rank/index",
     "pages/integral/index",
@@ -37,8 +37,8 @@
        
     },
     {
-      "text": "试卷",
-      "pagePath": "pages/exam/index"
+      "text": "搜索",
+      "pagePath": "pages/search/index"
     },
     {
       "text":"我的",

@@ -14,10 +14,10 @@ Page({
             text: "答题"
           },
           {
-            pagePath: "/pages/exam/index",
-            iconPath: "todo-list-o",
-            selectedIconPath: "todo-list-o",
-            text: "试卷"
+            pagePath: "/pages/search/index",
+            iconPath: "search",
+            selectedIconPath: "search",
+            text: "搜索"
           },
           {
             pagePath: "/pages/my/index",

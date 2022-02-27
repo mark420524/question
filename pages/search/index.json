@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText":"免费试卷",
+    "navigationBarTitleText":"题库搜索",
     "usingComponents": {
         "van-search": "../../components/vant/search/index"
       }
