@@ -38,7 +38,7 @@ Page({
 
         let hs = [val.trim()];
         for (let h of this.data.historys) {
-        if (h !== this.data.searchVal) {
+        if (h !== val ) {
             hs.push(h);
         }
         if (hs.length === 0) {
