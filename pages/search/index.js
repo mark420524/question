@@ -1,9 +1,13 @@
+const app = getApp();
+const apis = app.apis;
+const utils = app.utils;
 Page({
     data:{
-        examList:[],
+      questionList:[],
         historys:[],
-        searchVal:[]
-
+        searchVal:[],
+        pages:0,
+        size:10,
     },
     onLoad(){
         this.reloadHistory();
@@ -34,8 +38,11 @@ Page({
         }
       },
     search(val){
-        console.log(val);
-
+      val = val.trim();
+      if (!val) {
+        utils.showWxToast('请输入搜索关键词');
+        return;
+      }
         let hs = [val.trim()];
         for (let h of this.data.historys) {
         if (h !== val ) {
@@ -49,6 +56,10 @@ Page({
 
         this.reloadHistory();
         this.reloadData();
+        this.searchData(this.data.pages, val);
+    },
+    searchData(page, val){
+      console.log(page,val);
     },
     onTapHistory: function(e) {
         this.setData({
