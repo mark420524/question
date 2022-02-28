@@ -16,7 +16,8 @@
     "pages/bank/index",
     "custom-tab-bar/index",
     "pages/share/index",
-    "pages/help/index"
+    "pages/help/index",
+    "pages/more/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,6 +40,10 @@
     {
       "text": "搜索",
       "pagePath": "pages/search/index"
+    },
+    {
+      "text":"更多",
+      "pagePath": "pages/more/index"
     },
     {
       "text":"我的",

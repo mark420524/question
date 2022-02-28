@@ -20,6 +20,13 @@ Page({
             text: "搜索"
           },
           {
+            
+            pagePath: "/pages/more/index",
+            iconPath: "more-o",
+            selectedIconPath: "more-o",
+            text: "更多"
+          },
+          {
             pagePath: "/pages/my/index",
             iconPath: "contact",
             selectedIconPath: "contact",
