@@ -107,7 +107,7 @@ Page({
     })
   },
   onShow(){
-
+    
   },
   onReady(){
     
@@ -137,7 +137,8 @@ Page({
       wx.hideLoading( )
       console.log(res)
       let toast = '';
-      if ( (/^\d{1},\d{1},\d{1}$/.test(res)) ) {
+      
+      if ( (/^\d{1,},\d{1,},\d{1,}$/.test(res)) ) {
         let arr = res.split(',');
         toast='签到成功，获得积分+'+arr[0];
         that.setData({
