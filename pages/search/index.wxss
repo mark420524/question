@@ -9,6 +9,7 @@
     background-color: white;
     flex-grow: 1;
     width: 100vw;
+    height: 100vw;
   }
   .empty {
     width: 200rpx;

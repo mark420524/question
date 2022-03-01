@@ -52,7 +52,10 @@ Page({
         this.search(val);
     },
     search(val){
-      if (val == this.data.searchVal) {
+      if(!val){
+          return;
+      }
+      if (this.data.searchVal== val ) {
         return ;
       }
       

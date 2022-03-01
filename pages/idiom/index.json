@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"成语大全",
+    "usingComponents": {
+        "van-search": "../../components/vant/search/index"
+      }
+}

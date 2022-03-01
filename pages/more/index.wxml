@@ -8,7 +8,10 @@
   link-type="navigateTo"
   url="/pages/word/index"
   text="汉语词典" />
-  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="smile-o"
+   link-type="navigateTo"
+   url="/pages/idiom/index"
+   text="成语大全" />
   <van-grid-item icon="photo-o" text="文字" />
   <van-grid-item icon="photo-o" text="文字" />
 </van-grid>
