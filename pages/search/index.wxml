@@ -1,13 +1,14 @@
 <van-search value="{{ searchVal }}" placeholder="请输入搜索关键词" 
   id="searchText"
+  label="{{label}}"
   use-action-slot
   bind:search="onCofirmSearch"
-  shape="round"
+  
   background="#ffffff"
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
 
-<view class="container">
+<view class="container" wx:if="{{type==1}}">
 <view wx:if="{{questionList.length == 0}}">
   <view class="history-search-top" >
     <text>历史搜索</text>
@@ -25,7 +26,7 @@
 <view wx:else >
   <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果</view>
   <view wx:for="{{ questionList }}" wx:for-item="listItem" wx:key="index">
-        <view class="itemParent" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
+        <view class="itemParent" bindtap="goQuestion" wx:for="{{listItem}}" data-id="{{ item.id }}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
            
            
             <view class="item remark">

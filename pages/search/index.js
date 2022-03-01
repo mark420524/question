@@ -6,6 +6,7 @@ Page({
       questionList:[],
         historys:[],
         searchVal:'',
+        label:'题库',
         pages:0,
         size:10,
         type:1,
@@ -97,7 +98,7 @@ Page({
         apis.searchQuestion(data).then(res=>{
           wx.hideLoading( );
           let list = res.list;
-          console.log('search question res',res)
+          //console.log('search question res',res)
           if(list){
             that.setData({
               ['questionList[' + page + ']']
@@ -125,6 +126,13 @@ Page({
       },
       reloadData(){
           console.log('search')
+      },
+      goQuestion(e){
+        let id = e.currentTarget.dataset.id;
+        console.log(id)
+        wx.navigateTo({
+          url: '/pages/share/index?type=5&qid='+id,
+        })
       },
     onShow(){ 
         if (typeof this.getTabBar === 'function' &&
