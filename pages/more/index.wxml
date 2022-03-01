@@ -3,8 +3,11 @@
 <image class="toolBanner" src="/static/images/tools.jpg"/>
 <view class="body">
 
-<van-grid>
-  <van-grid-item icon="photo-o" text="文字" />
+<van-grid square>
+  <van-grid-item icon="bulb-o" 
+  link-type="reLaunch"
+  url="/pages/search/index?type=2"
+  text="汉语词典" />
   <van-grid-item icon="photo-o" text="文字" />
   <van-grid-item icon="photo-o" text="文字" />
   <van-grid-item icon="photo-o" text="文字" />

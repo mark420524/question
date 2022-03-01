@@ -6,22 +6,23 @@ Page({
       questionList:[],
         historys:[],
         searchVal:'',
-        label:'题库',
+        label:'',
         pages:0,
         size:10,
         type:1,
         totalSize:0,
     },
-    onLoad(){
-      //type 1-搜索题库 2-搜索汉字 3-搜索成语
-      this.init();
-        this.reloadHistory();
+    onLoad( ){ 
+      this.init( );
+      this.reloadHistory();
     },
-    init(){
+    init( ){
+      let label = '题库'; 
       this.setData({
         totalSize:0,
         pages:0,
-        questionList:[]
+        questionList:[],
+        label:label 
       })
     },
     actionSearch( ){
@@ -30,7 +31,7 @@ Page({
         this.search(val);
     },
     clearSearchContent: function() {
-        wx.setStorageSync('historys'+this.data.type, JSON.stringify([]));
+        wx.setStorageSync('historys' , JSON.stringify([]));
         this.reloadHistory();
       },
     onCofirmSearch(e){
@@ -40,7 +41,7 @@ Page({
     
     reloadHistory: function() {
         try {
-          var historys = wx.getStorageSync('historys'+ this.data.type)
+          var historys = wx.getStorageSync('historys' )
           if (historys) {
             this.setData({
               historys: JSON.parse(historys)
@@ -62,7 +63,7 @@ Page({
           }
           
         }
-        wx.setStorageSync('historys' + this.data.type, JSON.stringify(hs));
+        wx.setStorageSync('historys' , JSON.stringify(hs));
 
         this.reloadHistory();
         this.reloadData();
@@ -83,11 +84,8 @@ Page({
         title: '正在搜索请稍候',
       })
       
-      let type = this.data.type;
-      let that = this;
-      
-      
-      if (type==1){
+       
+      let that = this;  
         let data = {
           cid: utils.getAnswerCid(),
           uid: utils.getUserId(),
@@ -110,7 +108,7 @@ Page({
             utils.showWxToast(emptyText);
           }
         })
-      }
+       
     },
     onReachBottom(){
       let page = this.data.pages;
