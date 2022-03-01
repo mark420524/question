@@ -23,6 +23,7 @@
   </view>
 </view>
 <view wx:else >
+  <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果</view>
   <view wx:for="{{ questionList }}" wx:for-item="listItem" wx:key="index">
         <view class="itemParent" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
            
@@ -35,6 +36,4 @@
     </view>
 
 </view>
-
-
 </view>

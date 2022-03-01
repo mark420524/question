@@ -1,3 +1,6 @@
+.container{
+  margin-bottom: 100rpx;
+}
 .empty-view {
     min-height: 400rpx;
     display: flex;
@@ -65,12 +68,20 @@
     margin-top: 20rpx;
     font-size: 34rpx;
     width: 100%;
-   
-  
 }
 
 .item {
   margin-left: 20rpx;
   float: left;
   height: 100%;
+}
+.totalSize{
+  padding-left: 40rpx;
+  /* padding-top: 40rpx; */
+  padding-bottom: 20rpx;
+  /* margin-left: 40rpx; */
+  
+  background-color: white;
+  margin: 0 auto;
+  font-size: 32rpx;
 }
