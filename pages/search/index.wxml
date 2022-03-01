@@ -8,19 +8,33 @@
 </van-search>
 
 <view class="container">
-<view class="history-search-top" wx:if="{{questionList.length == 0}}">
+<view wx:if="{{questionList.length == 0}}">
+  <view class="history-search-top" >
     <text>历史搜索</text>
     <image bindtap="clearSearchContent" src="/static/images/remove.png" mode="aspectFill"/>
   </view>
-
-
-  <view class="history-search" wx:if="{{questionList.length == 0}}" >
+  <view class="history-search"  >
     <text bindtap="onTapHistory" data-val="{{item}}" wx:for="{{historys}}"
         wx:key="index"
     >{{item}}</text>
   </view>
-  <view class="empty-view"  wx:if="{{questionList.length == 0}}">
+  <view class="empty-view"   >
     <image class="empty" src="/static/images/empty.png" mode="aspectFill"/>
   </view>
+</view>
+<view wx:else >
+  <view wx:for="{{ questionList }}" wx:for-item="listItem" wx:key="index">
+        <view class="itemParent" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
+           
+           
+            <view class="item remark">
+              {{  index * size +  itemIndex+1 }}   {{  item.question }}     
+            </view> 
+            <view class="clear"></view>
+        </view>
+    </view>
+
+</view>
+
 
 </view>

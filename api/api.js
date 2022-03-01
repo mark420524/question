@@ -24,6 +24,7 @@ import {
     myIntegralList:'user/integral/list',
     questionCorrect:'question/correct',
     notifyInfo:'notify/info',
+    searchData:'question/search',
   }
   module.exports = {
     userLogin(code) {
@@ -155,6 +156,12 @@ import {
     getNotifyInfo:function(data){
       return http({
         url:url.notifyInfo,
+        data:data
+      })
+    },
+    searchQuestion:function(data){
+      return http({
+        url:url.searchData,
         data:data
       })
     }

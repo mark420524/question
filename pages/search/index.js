@@ -8,9 +8,15 @@ Page({
         searchVal:[],
         pages:0,
         size:10,
+        type:1,
     },
     onLoad(){
+      //type 1-搜索题库 2-搜索汉字 3-搜索成语
+      this.init();
         this.reloadHistory();
+    },
+    init(){
+
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
@@ -28,7 +34,7 @@ Page({
     
     reloadHistory: function() {
         try {
-          var historys = wx.getStorageSync('historys')
+          var historys = wx.getStorageSync('historys'+ this.data.type)
           if (historys) {
             this.setData({
               historys: JSON.parse(historys)
@@ -52,20 +58,44 @@ Page({
             break;
         }
         }
-        wx.setStorageSync('historys', JSON.stringify(hs));
+        wx.setStorageSync('historys' + this.data.type, JSON.stringify(hs));
 
         this.reloadHistory();
         this.reloadData();
         this.searchData(this.data.pages, val);
     },
-    searchData(page, val){
-      console.log(page,val);
+    searchData(page, val,emptyText){
+      let type = this.data.type;
+      let that = this;
+      if (type==1){
+        let data = {
+          cid: utils.getAnswerCid(),
+          uid: utils.getUserId(),
+          keywords:val,
+          page:page,
+          size:this.data.size
+        }
+        apis.searchQuestion(data).then(res=>{
+          let list = res.list;
+          console.log('search question res',res)
+          if(list){
+            that.setData({
+              ['questionList[' + page + ']']
+              :list
+          })
+          }else if(emptyText){
+            utils.showWxToast(emptyText);
+          }
+        })
+      }
     },
     onTapHistory: function(e) {
+        let val = e.currentTarget.dataset.val;
         this.setData({
-          searchVal: e.currentTarget.dataset.val,
+          searchVal: val,
         });
         this.reloadData();
+        this.searchData(this.data.pages, val);
       },
       reloadData(){
           console.log('search')
