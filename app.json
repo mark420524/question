@@ -17,7 +17,8 @@
     "custom-tab-bar/index",
     "pages/share/index",
     "pages/help/index",
-    "pages/more/index"
+    "pages/more/index",
+    "pages/word/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

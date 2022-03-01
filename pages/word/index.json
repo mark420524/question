@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText":"汉字搜索",
+    "usingComponents": {
+        "van-search": "../../components/vant/search/index",
+        "van-dialog": "../../components/vant/dialog/index" ,
+        "van-collapse": "../../components/vant/collapse/index",
+        "van-collapse-item": "../../components/vant/collapse-item/index",
+        "van-cell": "../../components/vant/cell/index"
+        
+      }
+}

@@ -5,8 +5,8 @@
 
 <van-grid square>
   <van-grid-item icon="bulb-o" 
-  link-type="reLaunch"
-  url="/pages/search/index?type=2"
+  link-type="navigateTo"
+  url="/pages/word/index"
   text="汉语词典" />
   <van-grid-item icon="photo-o" text="文字" />
   <van-grid-item icon="photo-o" text="文字" />

@@ -1,0 +1,28 @@
+.container{
+   background-color: white;
+   padding-left: 40rpx ;
+   
+}
+
+.main{
+  font-size: 100rpx;
+  text-align:center;
+   
+}
+.item{
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-weight: bolder;
+  color: #999;
+}
+.itemLabel{
+  color: black;
+  font-weight: normal;
+}
+.itemValue{
+  text-align: center;
+}
+
+
+ 
+ 

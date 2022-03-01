@@ -15,6 +15,10 @@ App({
         console.log('题库分类已经最新无需加载');
       }
     })
+    wx.cloud.init({
+      //set your cloud  env 
+      env: ''
+    })
     // 登录
     /*
     wx.login({
