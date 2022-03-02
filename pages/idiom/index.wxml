@@ -10,24 +10,24 @@
 
 
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
-  <van-collapse-item title="有赞微商城" name="1">
-    提供多样店铺模板，快速搭建网上商城
-  </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
-    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
-  </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3"  >
-          
+  <view wx:for="{{ idiomList }}" wx:for-item="listItem" wx:key="index">
+        <view  wx:for="{{listItem}}"  wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >  
+              <van-collapse-item title="{{item.word}}" name="{{  index * size +  itemIndex+1 }} ">
+                <van-cell title="拼音：" center="true" value="{{item.pinyin}}"   />
+                <van-cell title="解释：" center="true" value="{{item.explanation}}"   />
+                <van-cell title="例子：" center="true" value="{{item.example}}"   />
+              <van-collapse value="{{ activeTwoNames }}" bind:change="onItemChange">
+              <van-collapse-item title="出处" name="example{{  index * size +  itemIndex+1 }}">
+                {{item.derivation}}
+              </van-collapse-item>
+              
+              
+            </van-collapse>
+              </van-collapse-item>
+
+            </view> 
+  </view>
 
 
-    <van-collapse value="{{ activeTwoNames }}" bind:change="onItemChange">
-    <van-collapse-item title="有赞微商城" name="4">
-      提供多样店铺模板，快速搭建网上商城
-    </van-collapse-item>
-    <van-collapse-item title="有赞零售" name="5">
-      网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
-    </van-collapse-item>
-     
-  </van-collapse>
-  </van-collapse-item>
+
 </van-collapse>
