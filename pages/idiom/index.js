@@ -1,7 +1,9 @@
 Page({
     data:{
         searchVal:'',
-        label:'成语'
+        label:'成语',
+        pages:0,
+        size:10
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
@@ -17,6 +19,7 @@ Page({
         if(!val){
             return;
         }
+        val = val.trim();
         if (this.data.searchVal== val ) {
             return ;
         }

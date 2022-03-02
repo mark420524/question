@@ -55,12 +55,12 @@ Page({
       if(!val){
           return;
       }
+      val = val.trim();
       if (this.data.searchVal== val ) {
         return ;
       }
       
-      console.log(val)
-      val = val.trim()
+      console.log(val); 
       let re=/[\u4e00-\u9fa5]/;
       let that = this;
       if (val && re.test(val)) {

@@ -1,4 +1,4 @@
-<van-search value="{{ searchVal }}" placeholder="请输入搜索关键词" 
+<van-search value="{{ searchVal }}" placeholder="请输入一个汉字" 
   id="searchText"
   label="{{label}}"
   use-action-slot
