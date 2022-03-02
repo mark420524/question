@@ -3,7 +3,7 @@
   label="{{label}}"
   use-action-slot
   bind:search="onCofirmSearch"
-  maxlength="1"
+  maxlength="12"
   background="#ffffff"
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>

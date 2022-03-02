@@ -73,14 +73,14 @@ Page({
         .get({
           success: function(res) { 
             wx.hideLoading( );
-            if (res.data || res.data.length>0) {
+            if (res.data && res.data.length>0) {
               let word  = (res.data)[0];
               //console.log('word ',word)
               that.setData({
                 word:word
               })
             }else{
-              utils.showWxToast('字典查询到数据')
+              utils.showWxToast('字典未查询到数据')
             }
            
           }
