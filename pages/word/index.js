@@ -67,7 +67,7 @@ Page({
         wx.showLoading({
           title: '查询词典中',
         });
-        db.collection('words').where({ 
+        db.collection('words').limit(1).where({ 
           word: val
         })
         .get({

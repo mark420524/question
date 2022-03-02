@@ -7,3 +7,27 @@
   background="#ffffff"
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
+
+
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item title="有赞微商城" name="1">
+    提供多样店铺模板，快速搭建网上商城
+  </van-collapse-item>
+  <van-collapse-item title="有赞零售" name="2">
+    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  </van-collapse-item>
+  <van-collapse-item title="有赞美业" name="3"  >
+          
+
+
+    <van-collapse value="{{ activeTwoNames }}" bind:change="onItemChange">
+    <van-collapse-item title="有赞微商城" name="4">
+      提供多样店铺模板，快速搭建网上商城
+    </van-collapse-item>
+    <van-collapse-item title="有赞零售" name="5">
+      网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+    </van-collapse-item>
+     
+  </van-collapse>
+  </van-collapse-item>
+</van-collapse>
