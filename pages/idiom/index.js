@@ -26,7 +26,8 @@ Page({
             return;
         }
         val = val.trim();
-        if (this.data.searchVal== val ) {
+        console.log(pages,'this',this.data.pages)
+        if (this.data.searchVal== val && pages==this.data.pages ) {
             return ;
         }
         this.setData({
