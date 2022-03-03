@@ -21,7 +21,7 @@ Page({
         let val = e.detail;
         this.search(val,1);
     },
-    search(val,pages){
+    search(val,pages,emptyText){
         if(!val){
             return;
         }
@@ -29,6 +29,9 @@ Page({
         if (this.data.searchVal== val ) {
             return ;
         }
+        this.setData({
+          searchVal:val,
+        })
         console.log(val);
         let re=/[\u4e00-\u9fa5]{1,}/;
         let valre = new RegExp('^'+val);
@@ -55,6 +58,8 @@ Page({
                       
                       pages:pages
                     })
+                  }else if (emptyText){
+                    utils.showWxToast(emptyText)
                   }else{
                     utils.showWxToast('字典未查询到数据')
                   }
@@ -65,6 +70,12 @@ Page({
             utils.showWxToast('请输入汉字');
         }
     },
+    onReachBottom(){
+      let page = this.data.pages;
+      page++;
+      this.search(this.data.searchVal,page,'没有更多数据了')
+      console.log('reach bottom');
+   },
     onChange(event) {
         this.setData({
           activeNames: event.detail,
