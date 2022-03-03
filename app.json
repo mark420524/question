@@ -18,7 +18,8 @@
     "pages/share/index",
     "pages/help/index",
     "pages/more/index",
-    "pages/word/index"
+    "pages/word/index",
+    "pages/exportq/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

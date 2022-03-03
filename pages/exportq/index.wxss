@@ -1,0 +1,23 @@
+.container {
+    text-align: left;
+    margin-top: 200rpx;
+  }
+
+  .item{
+    margin-left: 100rpx;
+    margin-top: 40rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.itemLabel{
+    font-size: 32rpx;
+    font-weight: lighter;
+    font-style: italic;
+}
+.showTips{
+    margin-top: 30rpx;
+    margin-left: 100rpx;
+    font-size: 30rpx;
+    font-weight: lighter;
+}
