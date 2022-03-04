@@ -1,0 +1,4 @@
+.container{
+    background-color: white;
+    padding-left: 40rpx ;
+ }

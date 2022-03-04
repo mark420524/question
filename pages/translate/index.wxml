@@ -1,0 +1,27 @@
+<van-search value="{{ searchVal }}" placeholder="请输入搜索内容" 
+  id="searchText"
+  
+  use-action-slot
+  bind:search="onCofirmSearch"
+  
+  background="#ffffff"
+><view slot="action" bind:tap="actionSearch">搜索</view>
+</van-search>
+
+
+<view class="container"  >
+ <view class="main redColor">{{ word.word }}</view>
+
+ <van-cell title="音标：" center="true" value="{{word.phonetic}}"   />
+ <van-cell title="英文释义：" center="true" value="{{word.definition}}"   />
+ <van-cell title="中文释义：" center="true" value="{{word.translation}}"   />
+ <van-cell title="标签：" center="true" value-class="itemValue" value="{{word.tag}}"   />
+ <van-collapse value="{{ activeNames }}" >
+  <van-collapse-item title="词性变化：" name="1">
+    {{word.exchange}}
+  </van-collapse-item>
+   
+   
+</van-collapse>
+ 
+</view>

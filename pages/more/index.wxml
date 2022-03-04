@@ -16,6 +16,9 @@
   link-type="navigateTo"
    url="/pages/exportq/index"
   icon="guide-o" text="题库导出" />
-  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item 
+  link-type="navigateTo"
+  url="/pages/translate/index"
+  icon="font-o" text="英汉词典" />
 </van-grid>
 </view>
