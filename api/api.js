@@ -25,6 +25,7 @@ import {
     questionCorrect:'question/correct',
     notifyInfo:'notify/info',
     searchData:'question/search',
+    exportInfo:'export/info'
   }
   module.exports = {
     userLogin(code) {
@@ -162,6 +163,12 @@ import {
     searchQuestion:function(data){
       return http({
         url:url.searchData,
+        data:data
+      })
+    },
+    getExportInfo:function(data){
+      return http({
+        url:url.exportInfo,
         data:data
       })
     }

@@ -21,3 +21,20 @@
     font-size: 30rpx;
     font-weight: lighter;
 }
+.footer{
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15rpx;
+    height: 100%;
+    line-height: 90rpx;
+    background-color: #26E07F;
+    color: white;
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.form{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+}

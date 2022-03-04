@@ -4,6 +4,20 @@
       <view class="item"> 题库数量：<label class="itemLabel"><label class="redColor"> {{ count  }}</label> 题，需要消耗<label class="redColor">{{ count }}</label>积分</label></view>
     </view>
     <view class="showTips" > 导出需要消耗积分：<label class="redColor">1题消耗1积分</label> </view>
-    <view class="showTips" > 您目前所剩积分为：<label class="redColor">1</label> </view>
-    <view bindtap="" class="footer"  > {{showVal}}</view>
+    <view class="showTips" > 您目前所剩积分为：<label class="redColor">{{integral}}</label> </view>
+    <view class="showTips" wx:if="{{!enough}}"> 您的积分不足，暂无法导出 </view>
+    <view   wx:else>
+      <view class="title showTips" >题库会以pdf格式发送附件到您的邮箱，请注意查收 </view>
+    <view class="form">
+      <van-field
+        value="{{ email }}"
+        label="邮箱"
+        placeholder="请输入导出邮箱"
+        border="{{ false }}"
+        bind:change="onChange"
+      />
+    </view>
+      <view bindtap="exportQuestion"  class="footer"  > {{showVal}}</view>
+    </view>
+   
   </view>
