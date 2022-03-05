@@ -5,6 +5,8 @@
 
 利用微信小程序方便进行答题操作
 
+增加了汉字查询、成语查询、英汉词典等功能
+
 交流 qq群：123955944
 
 
@@ -26,3 +28,7 @@
 ![image](screenshot/8.jpg)
 ![image](screenshot/9.jpg)
 ![image](screenshot/10.jpg)
+
+![成语](screenshot/idiom.jpg)
+
+![词典](screenshot/eng_dict.jpg)
