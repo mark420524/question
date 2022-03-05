@@ -33,6 +33,7 @@ Page({
         console.log('val',val);
         this.search(val,1);
       }else{
+        /*
         wx.getClipboardData({
           success (res){
             let data=res.data ;
@@ -56,6 +57,7 @@ Page({
             }
           }
         })
+        */
       }
       
     },

@@ -14,6 +14,7 @@ Page({
     },
     onLoad(){
         let that = this;
+        /*
         wx.getClipboardData({
             success (res){
               let data=res.data ;
@@ -35,6 +36,7 @@ Page({
               }
             }
           })
+          */
     },
     onCofirmSearch(e){
         let val = e.detail;

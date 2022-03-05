@@ -18,6 +18,7 @@ Page({
       this.setData({ 
         label:label 
       })
+      /*
       wx.getClipboardData({
         success (res){
           let data=res.data ;
@@ -40,6 +41,7 @@ Page({
           }
         }
       })
+      */
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
