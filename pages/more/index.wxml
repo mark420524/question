@@ -7,7 +7,7 @@
   <van-grid-item icon="bulb-o" 
   link-type="navigateTo"
   url="/pages/word/index"
-  text="汉语词典" />
+  text="汉语字典" />
   <van-grid-item icon="smile-o"
    link-type="navigateTo"
    url="/pages/idiom/index"

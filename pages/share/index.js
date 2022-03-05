@@ -24,6 +24,7 @@ Page({
              
             number:{right:'0',error:'0',count:'0'},
             alreadyChooseAnswer: false,
+            showMore:0
             
              
         
@@ -44,7 +45,8 @@ Page({
             showAnswer : showAnswer,
             alreadyChooseAnswer : false 
          });
-        
+        let show = 1;
+        show = parseInt( options.show);
         
         if(options ){
             apis.question({
@@ -53,9 +55,11 @@ Page({
             }).then(res=>{
                 _this.setData({
                     question: res,
-                    questionCount: res.length 
+                    questionCount: res.length ,
+                    showMore:show,
+                    nowIndex:0
                 })
-                _this.setData({ nowIndex:0});
+                 
                 _this.buildRightIndex();
             });
         }

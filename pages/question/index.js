@@ -811,7 +811,7 @@ Page({
         return {
             title:'亲爱的，这个题你会么？',
             imageUrl:'',//图片样式
-            path:'/pages/share/index?type=5&qid=' +id
+            path:'/pages/share/index?show=1&type=5&qid=' +id
         }   
     }
 })

@@ -129,7 +129,7 @@ Page({
         let id = e.currentTarget.dataset.id;
         console.log(id)
         wx.navigateTo({
-          url: '/pages/share/index?type=5&qid='+id,
+          url: '/pages/share/index?show=0&type=5&qid='+id,
         })
       },
     onShow(){ 

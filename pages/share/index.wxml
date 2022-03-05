@@ -37,7 +37,7 @@
         </view>
         <view bindtap="multiplySubmit" data-id="{{question[nowIndex].id}}"  class="_view data-v-7542c5d7 multiplySubmit" hidden="{{!(question[nowIndex].multiply)}}" > 提交 </view>
 
-        <view bindtap="loadMoreQuestion"    class="_view data-v-7542c5d7 multiplySubmit"   > 查看更多题目 </view>
+        <view bindtap="loadMoreQuestion"  wx:if="{{ showMore }}"  class="_view data-v-7542c5d7 multiplySubmit"   > 查看更多题目 </view>
         <view style="height:180rpx;" class="_view data-v-7542c5d7"></view>
       </view>
   </view>
