@@ -1,4 +1,7 @@
 <wxs src="../../common/filter.wxs" module="util"></wxs>
+<van-dialog
+ id="van-dialog"  
+/> 
 <van-search value="{{ searchVal }}" placeholder="请输入搜索内容" 
   id="searchText"
   

@@ -1,6 +1,7 @@
 const app = getApp();
 const utils = app.utils;
 const db = wx.cloud.database();
+import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
         word:{},
@@ -11,7 +12,30 @@ Page({
         let val = keyword.data.value;
         this.search(val);
     },
-    
+    onLoad(){
+        let that = this;
+        wx.getClipboardData({
+            success (res){
+              let data=res.data ;
+              
+              let re=/^\w/;
+              if (data && re.test(data)){
+                let message = '检测到您的剪贴板存在内容“'+data+'”，要搜索相关词语么？';
+                Dialog.confirm({
+                  title: '', 
+                  message: message
+                }).then(() => {
+                  // on confirm 
+                  that.search(data )
+                })
+                .catch(() => {
+                  // on cancel
+                  console.log('cancel')
+                });
+              }
+            }
+          })
+    },
     onCofirmSearch(e){
         let val = e.detail;
         this.search(val);
@@ -42,7 +66,7 @@ Page({
                 let word  = (res.data)[0];
                 //console.log('word ',word)
                 if (word.tag) {
-                    let tag = word.tag.replace('zk','中考').replace('gk','高考');
+                    let tag = word.tag.replace('zk','中考').replace('gk','高考').replace('ky','考研');
                     word.tag = tag;
                 }
                 if (word.exchange) {
