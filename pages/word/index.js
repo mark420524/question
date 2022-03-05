@@ -85,7 +85,7 @@ Page({
            
           }
         })
-        this.setData({
+        that.setData({
           searchVal:val
         })
       }else{

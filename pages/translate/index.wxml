@@ -1,3 +1,4 @@
+<wxs src="../../common/filter.wxs" module="util"></wxs>
 <van-search value="{{ searchVal }}" placeholder="请输入搜索内容" 
   id="searchText"
   
@@ -13,15 +14,17 @@
  <view class="main redColor">{{ word.word }}</view>
 
  <van-cell title="音标：" center="true" value="{{word.phonetic}}"   />
- <van-cell title="英文释义：" center="true" value="{{word.definition}}"   />
- <van-cell title="中文释义：" center="true" value="{{word.translation}}"   />
  <van-cell title="标签：" center="true" value-class="itemValue" value="{{word.tag}}"   />
- <van-collapse value="{{ activeNames }}" >
-  <van-collapse-item title="词性变化：" name="1">
+  <van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item title="中文释义：" name="1">
+    {{util.format(word.translation)}}
+  </van-collapse-item>
+  <van-collapse-item title="英文释义：" name="2">
+    {{util.format(word.definition)}}
+  </van-collapse-item>
+  <van-collapse-item title="词性变化：" name="3">
     {{word.exchange}}
   </van-collapse-item>
-   
-   
 </van-collapse>
  
 </view>

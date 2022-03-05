@@ -2,3 +2,8 @@
     background-color: white;
     padding-left: 40rpx ;
  }
+ .main{
+    font-size: 50rpx;
+    text-align:center;
+     
+  }
