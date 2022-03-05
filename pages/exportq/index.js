@@ -39,6 +39,20 @@ Page({
          })
     },
     exportQuestion(){
-        console.log('email',this.data.email)
+        let email = this.data.email;
+        console.log('email',email)
+        let re = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+        if (email && re.test(email)) { 
+            let data={
+                uid:utils.getUserId(),
+                cid:utils.getAnswerCid(),
+                email:email
+            }
+            apis.exportQuestions(data).then(res=>{
+                utils.showWxToast(res);
+            })
+        }else{
+            utils.showWxToast('请输入正确的邮箱格式喔!');
+        }
     },
 })
