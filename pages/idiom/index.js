@@ -16,7 +16,13 @@ Page({
         let val = keyword.data.value;
         this.search(val,1);
     },
-    
+    onLoad(options){
+      options = options||{};
+      
+      let val = options.val;
+      console.log('val',val);
+      this.search(val,1);
+    },
     onCofirmSearch(e){
         let val = e.detail;
         this.search(val,1);
@@ -62,7 +68,7 @@ Page({
                   }else if (emptyText){
                     utils.showWxToast(emptyText)
                   }else{
-                    utils.showWxToast('字典未查询到数据')
+                    utils.showWxToast('成语未查询到数据')
                   }
                  
                 }

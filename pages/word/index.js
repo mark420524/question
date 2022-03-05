@@ -97,4 +97,13 @@ Page({
         activeNames: event.detail,
       });
     },
+    viewIdiom(){
+      let searchVal = this.data.searchVal;
+      if(searchVal){
+        wx.navigateTo({
+          url: '/pages/idiom/index?val='+searchVal,
+        })
+      }
+       
+    }
 })
