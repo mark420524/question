@@ -7,7 +7,9 @@
   background="#ffffff"
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
-
+<van-dialog
+ id="idiomDialog"  
+/> 
 
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
   <view wx:for="{{ idiomList }}" wx:for-item="listItem" wx:key="index">

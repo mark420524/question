@@ -1,6 +1,7 @@
 const app = getApp();
 const db = wx.cloud.database()
 const utils = app.utils;
+import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
         searchVal:'',
@@ -26,8 +27,37 @@ Page({
       options = options||{};
       this.init();
       let val = options.val;
-      console.log('val',val);
-      this.search(val,1);
+      let that = this;
+      if(val){
+        //从字典页面跳转过来
+        console.log('val',val);
+        this.search(val,1);
+      }else{
+        wx.getClipboardData({
+          success (res){
+            let data=res.data ;
+            
+            let re=/[\u4e00-\u9fa5]{1,}/;
+            if (data && re.test(data)){
+              let message = '检测到您的剪贴板存在内容“'+data+'”，要搜索相关成语么？';
+              Dialog.confirm({
+                title: '',
+                selector:'#idiomDialog',
+                message: message
+              }).then(() => {
+                // on confirm
+                
+                that.search(data,1 )
+              })
+              .catch(() => {
+                // on cancel
+                console.log('cancel')
+              });
+            }
+          }
+        })
+      }
+      
     },
     onCofirmSearch(e){
         let val = e.detail;

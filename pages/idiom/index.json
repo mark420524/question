@@ -3,6 +3,7 @@
     "usingComponents": {
         "van-search": "../../components/vant/search/index",
         "van-collapse": "../../components/vant/collapse/index",
+        "van-dialog": "../../components/vant/dialog/index" ,
         "van-cell": "../../components/vant/cell/index",
         "van-collapse-item": "../../components/vant/collapse-item/index"
       }
