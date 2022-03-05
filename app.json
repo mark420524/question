@@ -20,7 +20,8 @@
     "pages/more/index",
     "pages/word/index",
     "pages/exportq/index",
-    "pages/translate/index"
+    "pages/translate/index",
+    "pages/idiom/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
