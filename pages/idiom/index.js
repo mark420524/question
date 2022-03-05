@@ -11,6 +11,12 @@ Page({
         activeNames:['1'],
         activeTwoNames:['4']
     },
+    init( ){ 
+      this.setData({ 
+        pages:1,
+        idiomList:[] 
+      })
+    },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
         let val = keyword.data.value;
@@ -18,7 +24,7 @@ Page({
     },
     onLoad(options){
       options = options||{};
-      
+      this.init();
       let val = options.val;
       console.log('val',val);
       this.search(val,1);
@@ -35,10 +41,13 @@ Page({
         console.log(pages,'this',this.data.pages)
         if (this.data.searchVal== val && pages==this.data.pages ) {
             return ;
+        }else if(val!=this.data.searchVal){
+          this.init();
+          this.setData({
+            searchVal: val,
+          });
         }
-        this.setData({
-          searchVal:val,
-        })
+        
         console.log(val);
         let re=/[\u4e00-\u9fa5]{1,}/;
         let valre = new RegExp('^'+val);
