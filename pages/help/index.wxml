@@ -15,5 +15,8 @@
   <van-collapse-item title="题库更新" name="3">
     多样的题库将会持续不断地更新，敬请期待
   </van-collapse-item>
+  <van-collapse-item title="词典功能" name="4">
+    汉字字典查询，成语大全查询，英汉词典查询
+  </van-collapse-item>
 </van-collapse>
 </view>

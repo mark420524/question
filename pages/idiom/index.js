@@ -37,7 +37,7 @@ Page({
           success (res){
             let data=res.data ;
             
-            let re=/[\u4e00-\u9fa5]{1,}/;
+            let re=/^[\u4e00-\u9fa5]{1,}/;
             if (data && re.test(data)){
               let message = '检测到您的剪贴板存在内容“'+data+'”，要搜索相关成语么？';
               Dialog.confirm({
