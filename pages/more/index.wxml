@@ -5,20 +5,33 @@
 
 <van-grid square>
   <van-grid-item icon="bulb-o" 
+  icon-color="green"
   link-type="navigateTo"
   url="/pages/word/index"
   text="汉语字典" />
   <van-grid-item icon="smile-o"
    link-type="navigateTo"
+   icon-color="red"
    url="/pages/idiom/index"
    text="成语大全" />
   <van-grid-item 
   link-type="navigateTo"
+  icon-color="#32bf44;"
    url="/pages/exportq/index"
   icon="guide-o" text="题库导出" />
   <van-grid-item 
   link-type="navigateTo"
+  icon-color="blue"
   url="/pages/translate/index"
   icon="font-o" text="英汉词典" />
+</van-grid>
+
+<van-grid square>
+  <van-grid-item icon="flower-o" 
+  link-type="navigateTo"
+  icon-color="#229c69"
+  url="/pages/word/index"
+  text="唐诗" />
+   
 </van-grid>
 </view>
