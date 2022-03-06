@@ -9,8 +9,9 @@
 }
 .tips{
     font-size: 34rpx;
-    
+    /*
     font-weight: lighter;
+    */
 }
 .copyText{
     margin: 0 auto;

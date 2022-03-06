@@ -19,7 +19,7 @@
     margin-top: 30rpx;
     margin-left: 100rpx;
     font-size: 30rpx;
-    font-weight: lighter;
+    /*font-weight: lighter;*/
 }
 .footer{
     margin: 0 auto;
