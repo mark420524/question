@@ -28,10 +28,14 @@
 
 <van-grid square>
   <van-grid-item icon="flower-o" 
-  link-type="navigateTo"
-  icon-color="#229c69"
-  url="/pages/word/index"
-  text="唐诗" />
    
+  icon-color="#229c69"
+  
+  text="唐诗" />
+  <van-grid-item icon="flag-o" 
+   
+   icon-color="red"
+   
+   text="宋词" />
 </van-grid>
 </view>
