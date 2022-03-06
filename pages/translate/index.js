@@ -5,7 +5,8 @@ import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
         word:{},
-        activeNames:['1']
+        activeNames:['1'],
+        label:'英文'
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
@@ -50,9 +51,9 @@ Page({
         if (this.data.searchVal== val ) {
           return ;
         }
-        console.log(val)
+        //console.log(val)
         let valre = new RegExp('^'+val+'$','i');
-        console.log(valre)
+        //console.log(valre)
         let that = this;
         wx.showLoading({
             title: '查询词典中',
@@ -75,7 +76,7 @@ Page({
                     let exchange = word.exchange.replace('p:','过去式:').replace('d:','过去分词:')
                     .replace('i:','现在分词:').replace('3:','第三人称单数:').replace('r:','形容词比较级:')
                     .replace('t:','形容词最高级:').replace('s:','名词复数:');
-                    console.log(exchange)
+                    //console.log(exchange)
                     word.exchange = exchange;
                 }
                 that.setData({

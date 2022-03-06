@@ -4,7 +4,7 @@
 /> 
 <van-search value="{{ searchVal }}" placeholder="请输入搜索内容" 
   id="searchText"
-  
+  label="{{label}}"
   use-action-slot
   bind:search="onCofirmSearch"
   
