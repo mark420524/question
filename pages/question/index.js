@@ -60,6 +60,9 @@ Page({
         //
     },
     onLoad(options){
+        wx.showLoading({
+          title: '正在加载题库',
+        })
         options = options || {}
         console.log('options', options)
         
@@ -69,14 +72,7 @@ Page({
         let type = this.getAnswerType();
         // type 1 答题 2 错题  3 收藏 4 模拟考试
         clearInterval(this.data.time_inter)
-        if (type==1) {
-          Notify({
-            message: '以为您自动定位到上次答题位置',
-            duration: 2000,
-            selector: '#custom-selector',
-            type: 'success'
-          });
-        }
+        
         let showTime = false;
         let favorite = false;
         let startExam = 0;
@@ -117,6 +113,7 @@ Page({
                
             }
         }else{
+            //TODO 尝试分页获取数据现在list太大了。。。
             apis.question({
                 uid: this.getUserId(),
                 cid:cid,
@@ -138,10 +135,18 @@ Page({
                 _this.initMenuAnswer(type);
                 if (type==1  ) {
                     _this.buildMenuIndex();
+                    Notify({
+                        message: '以为您自动定位到上次答题位置',
+                        duration: 2000,
+                        selector: '#custom-selector',
+                        type: 'success'
+                    });
+                    
                 }else{
                     _this.setData({ nowIndex:0});
                 }
                 _this.buildRightIndex();
+                wx.hideLoading()
             });
         }
         
