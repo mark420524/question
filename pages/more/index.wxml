@@ -25,7 +25,7 @@
   url="/pages/translate/index"
   icon="font-o" text="英汉词典" />
 </van-grid>
-
+<!-- 
 <van-grid square>
   <van-grid-item icon="flower-o" 
    
@@ -38,4 +38,5 @@
    
    text="宋词" />
 </van-grid>
+-->
 </view>
