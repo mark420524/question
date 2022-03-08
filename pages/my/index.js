@@ -18,7 +18,7 @@ Page({
                         wx.setStorageSync("userInfo",userInfo)
                         userInfo.uid = _this.getUserId();
                         apis.updateUser(userInfo).then(res=>{
-                            console.log('updateUser', res);
+                            //console.log('updateUser', res);
                             if (res) {
                                 utils.showWxToast(  '授权成功' );
                             }else{
@@ -48,7 +48,7 @@ Page({
               })
         },
         openCoupon(){
-            console.log('打开早晚券')
+            //console.log('打开早晚券')
             wx.navigateToMiniProgram({
                 appId:'wx7cd1c3802bbb34fa',
                 path:'/pages/index/index',
