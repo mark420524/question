@@ -21,7 +21,8 @@
     "pages/word/index",
     "pages/exportq/index",
     "pages/translate/index",
-    "pages/idiom/index"
+    "pages/idiom/index",
+    "pages/poetry/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
