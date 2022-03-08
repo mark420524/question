@@ -74,15 +74,35 @@ Page({
         })
         .get({
           success: function(res) { 
-            wx.hideLoading( );
             if (res.data && res.data.length>0) {
+              wx.hideLoading();
               let word  = (res.data)[0];
               //console.log('word ',word)
               that.setData({
                 word:word
               })
             }else{
-              utils.showWxToast('字典未查询到数据')
+              //TODO 查繁体,可以封装下，
+              //算了懒得封装，反正没人用
+              db.collection('words').limit(1).where({ 
+                oldword: val
+              })
+              .get({
+                success: function(res) {
+                  wx.hideLoading();
+                  if (res.data && res.data.length>0) {
+                    
+                    let word  = (res.data)[0];
+                    //console.log('word ',word)
+                    that.setData({
+                      word:word
+                    })
+                  }else{
+                    utils.showWxToast('字典未查询到数据')
+                  }
+                 }
+              })
+             
             }
            
           }
