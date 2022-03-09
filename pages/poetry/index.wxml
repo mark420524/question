@@ -7,3 +7,12 @@
   background="#ffffff"
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
+
+
+<van-tabs active="{{ active }}" 
+bind:change="onChange">
+<view wx:for="{{categoryList}}" 
+  wx:for-item="item" wx:key="index">
+  <van-tab title="{{item.title}}" ></van-tab>
+</view>
+</van-tabs>
