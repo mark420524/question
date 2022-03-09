@@ -5,7 +5,7 @@ Page({
            
     },
     onLoad( ){
-        
+        //TODO 关于题库不足100题时答题提示的问题
         this.init();
     },
  
