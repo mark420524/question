@@ -1,0 +1,28 @@
+.itemParent{
+    background-color: white;
+    padding-left : 20rpx;
+    padding-top: 40rpx;
+    margin-left:0 auto;
+    width: 100%;
+    height: 110rpx;
+    margin-top: 20rpx;
+}
+.item {
+    margin-left: 20rpx;
+    float: left;
+    height: 100%;
+}
+.index{
+    margin-top: 20rpx;
+}
+
+.title{
+    margin-left: 30rpx;
+    font-size: 34rpx;
+    font-weight: bolder;
+    max-width: 40%;
+   
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
