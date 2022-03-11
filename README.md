@@ -12,7 +12,7 @@
 
 #### 扫码预览
 
-![image](static/images/gh_749516412a83_258.jpg)
+![image](screenshot/gh_749516412a83_258.jpg)
 
 #### 工具使用
 
