@@ -2,9 +2,7 @@
     "navigationBarTitleText":"答题结果",
     "usingComponents": {
         "van-image": "../../components/vant/image/index",
-        "van-divider": "../../components/vant/divider/index",
-        "van-cell": "../../components/vant/cell/index",
-        "van-cell-group": "../../components/vant/cell-group/index" 
+        "van-divider": "../../components/vant/divider/index"
          
     }
 }

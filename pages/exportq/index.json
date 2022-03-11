@@ -1,8 +1,7 @@
 {
     "navigationBarTitleText": "题库导出",
     "usingComponents": {
-      "van-field": "../../components/vant/field/index",
-      "van-cell-group": "../../components/vant/cell-group/index"
+      "van-field": "../../components/vant/field/index"
       
     }
   }
