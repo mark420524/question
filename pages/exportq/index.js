@@ -39,7 +39,9 @@ Page({
          })
     },
     exportQuestion(){
+        let that = this;
         let email = this.data.email;
+        let count = this.data.count;
         console.log('email',email)
         let re = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
         if (email && re.test(email)) { 
@@ -49,7 +51,18 @@ Page({
                 email:email
             }
             apis.exportQuestions(data).then(res=>{
-                utils.showWxToast(res);
+                let signRegex = /^\d+$/;
+                if(signRegex.test(res)){
+                    utils.showWxToast('已提交，请十分钟后查看邮箱附件');
+                    that.setData({
+                        integral:res ,
+                        enough: res >=count
+                    })
+                    
+                }else{
+                    utils.showWxToast(res); 
+                }
+                
             })
         }else{
             utils.showWxToast('请输入正确的邮箱格式喔!');
