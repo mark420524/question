@@ -5,7 +5,7 @@
 }
 
 .main{
-  font-size: 100rpx;
+  font-size: 50rpx;
   text-align:center;
    
 }

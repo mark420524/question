@@ -16,7 +16,8 @@
  <van-cell title="拼音：" center="true" value="{{word.pinyin}}"   />
  <van-cell title="笔画：" center="true" value="{{word.strokes}}"   />
  <van-cell title="部首：" center="true" value="{{word.radicals}}"   />
- <van-cell title="繁体：" center="true" value-class="itemValue" value="{{word.oldword}}"   />
+ <van-cell title="繁体：" center="true" value="{{word.oldword}}"   />
+ <van-cell title="五笔：" center="true" value="{{word.wubi}}"   />
  <van-cell title="相关成语" bind:click="viewIdiom" is-link value="查看" />
  <van-collapse value="{{ activeNames }}" bind:change="onChange">
   <van-collapse-item title="解析：" name="1">
