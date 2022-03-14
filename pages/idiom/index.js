@@ -101,7 +101,7 @@ Page({
                   wx.hideLoading( );
                   if (res.data && res.data.length>0) {
                     that.setData({
-                      ['idiomList[' + pages + ']']
+                      ['idiomList[' + (pages-1) + ']']
                       :res.data,
                       
                       pages:pages

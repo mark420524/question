@@ -3,13 +3,13 @@
   label="{{label}}"
   use-action-slot
   bind:search="onCofirmSearch"
-  maxlength="1"
+  
   background="#ffffff"
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
 
 
-<van-tabs active="{{ active }}" 
+<van-tabs   active="{{ active }}" 
 bind:change="onChange">
 <view wx:for="{{categoryList}}" 
   wx:for-item="item" wx:key="index">
@@ -22,7 +22,7 @@ bind:change="onChange">
             <view class="item index "  >
             {{  index * size +  itemIndex+1 }} </view>
             
-            <view class="item title">
+            <view class="item ">
                 {{  item.title }} 
                 <view wx:if="{{index==2}}" class="">・{{  item.first }}</view>
                 <view class="time">  {{  item.dynasty }}・{{  item.author }}  </view>
