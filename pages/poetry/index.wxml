@@ -1,6 +1,7 @@
-<van-search value="{{ searchVal }}" placeholder="请输入关键词" 
+<view class="titleSticky"> 
+<van-search value="{{ searchVal }}" placeholder="请输入关键词，作者、诗词、诗名" 
   id="searchText"
-  label="{{label}}"
+  
   use-action-slot
   bind:search="onCofirmSearch"
   
@@ -16,20 +17,17 @@ bind:change="onChange">
   <van-tab title="{{item.title}}" ></van-tab>
 </view>
 </van-tabs>
-
+</view>
 <view wx:for="{{ poetryList }}" wx:for-item="listItem" wx:key="index">
-        <view class="itemParent" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
+        <view class="itemParent" data-id="{{item._id}}" bindtap="goToPoetry" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
             <view class="item index "  >
             {{  index * size +  itemIndex+1 }} </view>
             
-            <view class="item ">
+            <view class="item title">
                 {{  item.title }} 
-                <view wx:if="{{index==2}}" class="">・{{  item.first }}</view>
-                <view class="time">  {{  item.dynasty }}・{{  item.author }}  </view>
+                <label wx:if="{{item.index==2}}" class="">・{{  item.first }}</label>
+                <view class="author">  {{  item.dynasty }}・{{  item.author }}  </view>
             </view>
-        
-           
-            
             <view class="clear"></view>
         </view>
 
