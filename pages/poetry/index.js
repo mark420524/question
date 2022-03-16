@@ -111,7 +111,7 @@ Page({
         )
         .get({
           success: function(res) { 
-            console.log('res poetryList',res)
+            //console.log('res poetryList',res)
             wx.hideLoading( );
             if (res.data && res.data.length>0) {
               that.setData({
