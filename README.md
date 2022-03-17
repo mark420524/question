@@ -49,8 +49,8 @@
 
 #### 页面截图
 
-![image](screenshot/0.jpg)
-![image](screenshot/1.jpg)
+
+
 ![image](screenshot/2.jpg)
 ![image](screenshot/5.jpg)
 ![image](screenshot/7.jpg)
