@@ -13,7 +13,7 @@
 }
 .author{
     font-weight: 400;
-    font-size: 40rpx;
+    font-size: 36rpx;
     margin-top:30rpx;
     color:#585858;
 }
