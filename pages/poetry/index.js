@@ -100,7 +100,7 @@ Page({
       
       let offset = (pages-1)*this.data.size;
       let that = this;
-      
+      //console.log(params)
           
       wx.showLoading({
           title: '查询中',
@@ -136,8 +136,11 @@ Page({
       console.log('reach bottom');
    },
    goToPoetry(e){
-     let id = e.currentTarget.dataset.id;
-      console.log(id)
-      wx.setStorageSync('poetryId', id)
+     let item = e.currentTarget.dataset.item;
+     //console.log(item)
+      wx.setStorageSync('poetryItem', item)
+      wx.navigateTo({
+        url: '/pages/detail/index',
+      })
    }
 })

@@ -1,8 +1,11 @@
 Page({
     data:{
-
+        item:{}
     },
-    onLoad(options){
-        console.log(options)
+    onLoad(){
+        let item = wx.getStorageSync('poetryItem' );
+        console.log(item)
+        
+        this.setData({item:item})
     },
 })

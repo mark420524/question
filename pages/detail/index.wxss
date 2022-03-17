@@ -1,0 +1,24 @@
+.container{
+    background-color: white;
+    padding-top:30rpx;
+}
+.item{
+    
+    text-align: center;
+}
+.title{
+    font-weight: 500;
+    font-size: 50rpx;
+    
+}
+.author{
+    font-weight: 400;
+    font-size: 40rpx;
+    margin-top:30rpx;
+    color:#585858;
+}
+.content{
+    font-weight: 500;
+    font-size: 40rpx;
+    margin-top:20rpx;
+}

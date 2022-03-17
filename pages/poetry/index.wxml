@@ -19,7 +19,7 @@ bind:change="onChange">
 </van-tabs>
 </view>
 <view wx:for="{{ poetryList }}" wx:for-item="listItem" wx:key="index">
-        <view class="itemParent" data-id="{{item._id}}" bindtap="goToPoetry" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
+        <view class="itemParent" data-item="{{item}}" bindtap="goToPoetry" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
             <view class="item index "  >
             {{  index * size +  itemIndex+1 }} </view>
             

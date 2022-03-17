@@ -1,0 +1,12 @@
+
+<view class="container">
+    <view class="item">
+        <view class=" title">{{ item.title}}</view>
+        <view class=" author">{{ item.dynasty}}・{{ item.author}}</view>
+        <view class="content" wx:for="{{item.paragraphs}}" wx:key="index" wx:for-item="listItem">
+            {{listItem}}
+        </view>
+    </view>
+    <van-divider/>
+    <view class="note">{{item.notes}}</view>
+</view>
