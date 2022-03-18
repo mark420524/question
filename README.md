@@ -39,7 +39,7 @@
 
 #### 扫码添加QQ群讨论
 
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=oH2Uv8YJ5URz81DsRK-cZ-BpONQM6BRg&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="技术交流学习" title="技术交流学习"></a>
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=oH2Uv8YJ5URz81DsRK-cZ-BpONQM6BRg&jump_from=webapi"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="技术交流学习" title="技术交流学习"></a>
 
 
 
