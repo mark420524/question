@@ -10,7 +10,8 @@
     <view class="item">题目纠错，管理员审核通过后一次性<label class="redColor"> +10</label></view>
   </van-collapse-item>
   <van-collapse-item title="积分使用" name="2">
-    积分可以用于导出题库，导出功能已经开发完成，欢迎使用
+    积分可以用于导出题库，导出功能已经开发完成，欢迎使用。
+    导出题库规则：<label class="redColor">1题消耗1积分</label>
   </van-collapse-item>
   <van-collapse-item title="题库更新" name="3">
     多样的题库将会持续不断地更新，敬请期待

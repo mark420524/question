@@ -1,4 +1,4 @@
-const record = wx.getRecorderManager();
+//const record = wx.getRecorderManager();
 Page({
     data:{
         item:{}
@@ -10,7 +10,7 @@ Page({
           title: item.title,
         })
         this.setData({item:item})
-        console.log('record',record)
+        //console.log('record',record)
     },
     onHide: function() {
        console.log('onhide')
