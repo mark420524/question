@@ -6,18 +6,7 @@ Page({
         searchVal:'',
         active: 0,
         categoryList:[
-          {
-            id:1,
-            title:'唐诗'
-          },
-          {
-            id:2,
-            title:'宋词'
-          },
-          {
-            id:4,
-            title:'元曲'
-          }
+          {},{},{},
         ],
         index:1,
         poetryList:[],
@@ -30,14 +19,31 @@ Page({
         this.search( 1, val);
     },
     onLoad( ){
+      this.loadMenu();
       this.init();
       this.search( 1);
     },
     init( ){ 
       this.setData({ 
         pages:1,
-        poetryList:[] 
+        poetryList:[]
       })
+    },
+    loadMenu(){
+      let that = this;
+      db.collection('potery_category').orderBy('sort','asc') 
+        .where({
+          status:1
+        })
+        .get({
+          success: function(res) {
+            that.setData({ 
+              categoryList:res.data,
+              active: 0
+            })
+          }
+        }
+        );
     },
     onChange(event) { 
         let index = event.detail.index; 
