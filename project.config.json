@@ -9,6 +9,10 @@
             {
                 "type": "folder",
                 "value": "screenshot"
+            },
+            {
+                "type": "folder",
+                "value": "data"
             }
         ]
     },
