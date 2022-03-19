@@ -7,7 +7,7 @@ Page({
         searchVal:'',
         label:'成语',
         pages:1,
-        size:10,
+        size:20,
         idiomList:[],
         activeNames:['1'],
         activeTwoNames:['4']

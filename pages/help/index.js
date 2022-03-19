@@ -16,7 +16,6 @@ Page({
           success: function(res) {
             that.setData({ 
               integralList:res.data,
-              
             })
           }
         }
