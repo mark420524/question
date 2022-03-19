@@ -23,7 +23,8 @@
     "pages/translate/index",
     "pages/idiom/index",
     "pages/poetry/index",
-    "pages/detail/index"
+    "pages/detail/index",
+    "pages/children/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
