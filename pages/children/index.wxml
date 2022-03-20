@@ -1,0 +1,6 @@
+<view class="container">
+    <view>三字经</view>
+    <view>百家姓</view>
+    <view>弟子规</view>
+    <view>千家诗</view>
+</view>
