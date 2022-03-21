@@ -127,5 +127,12 @@ Page({
         })
       }
        
-    }
+    },
+    onShareAppMessage(){
+      return {
+          title:'亲爱的，这个字你认识么',
+          imageUrl:'',//图片样式
+          path:''//链接
+      }
+    },
 })

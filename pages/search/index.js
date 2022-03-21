@@ -140,5 +140,12 @@ Page({
               active: 1,
             })
           }
-      }
+      },
+      onShareAppMessage(){
+        return {
+            title:'亲爱的，来这里答题喽',
+            imageUrl:'',//图片样式
+            path:''//链接
+        }
+    },
 })
