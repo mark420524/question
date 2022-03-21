@@ -33,12 +33,16 @@
   url="/pages/poetry/index"
   text="诗词歌赋" />
   
-  <van-grid-item icon="flag-o" 
+  <van-grid-item icon="fire-o" 
   link-type="navigateTo"
    icon-color="red"
+   
+   text="试卷搜索" />
+   <van-grid-item icon="flag-o" 
+  link-type="navigateTo"
+   icon-color="#32bf44;"
    url="/pages/children/index"
    text="萌宝启蒙" />
-    
 </van-grid>
 
 </view>
