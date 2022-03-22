@@ -3,7 +3,7 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
-        userInfo:wx.getStorageSync('userInfo')
+        userInfo:{}
     }, 
         // 去登陆
         toLogin(){
@@ -41,7 +41,9 @@ Page({
                 
                  
         },
-        
+        onLoad(){
+            
+        },
         aboutMe(){
             wx.navigateTo({
                 url: '/pages/about/index',
@@ -90,6 +92,8 @@ Page({
             return uid;
         },
         onShow(){ 
+            let userInfo = wx.getStorageSync('userInfo');
+            this.setData({userInfo:userInfo})
             if (typeof this.getTabBar === 'function' &&
                 this.getTabBar()) {
                   
