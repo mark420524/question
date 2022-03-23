@@ -1,0 +1,7 @@
+.container{
+    padding-bottom: 40rpx;
+    background-color: white;
+}
+.itemText{
+    font-weight: bold;
+}

@@ -1,6 +1,23 @@
 <view class="container">
-    <view>三字经</view>
-    <view>百家姓</view>
-    <view>弟子规</view>
-    <view>千家诗</view>
+   
+    
+
+<van-grid  column-num="2" reverse  >
+  <van-grid-item  
+  text-class="itemText"
+  text="三字经"  />
+  <van-grid-item  
+  text-class="itemText"
+   text="百家姓" />
+</van-grid>
+
+<van-grid  column-num="2"  >
+  <van-grid-item  
+  text-class="itemText"
+  text="弟子规" />
+  <van-grid-item  
+  text-class="itemText"
+   text="千家诗" />
+</van-grid>
+
 </view>

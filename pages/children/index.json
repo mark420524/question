@@ -1,3 +1,8 @@
 {
-    "navigationBarTitleText": "萌宝启蒙"
+    "navigationBarTitleText": "萌宝启蒙",
+    "usingComponents": {
+      
+      "van-grid": "../../components/vant/grid/index",
+      "van-grid-item": "../../components/vant/grid-item/index"
+    }
   }
