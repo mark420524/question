@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "van-dialog": "../../components/vant/dialog/index"
-  }
+  },
+  "lazyCodeLoading": "requiredComponents"
 }
