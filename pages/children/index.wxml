@@ -1,13 +1,15 @@
 <view class="container">
-   
-    
-
+<!-- TODO 页面好丑，待优化 2022年3月24日21点54分-->
 <van-grid  column-num="2" reverse  >
   <van-grid-item  
   text-class="itemText"
+  bind:click="handlerChildren"
+  data-type="sanzijing"
   text="三字经"  />
   <van-grid-item  
   text-class="itemText"
+  bind:click="handlerChildren"
+  data-type="baijiaxing"
    text="百家姓" />
 </van-grid>
 
@@ -17,6 +19,8 @@
   text="弟子规" />
   <van-grid-item  
   text-class="itemText"
+  bind:click="handlerChildren"
+  data-type="qianziwen"
    text="千字文" />
 </van-grid>
 
