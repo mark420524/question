@@ -61,5 +61,6 @@
     
     "position": "bottom"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents" 
 }

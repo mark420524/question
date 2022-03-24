@@ -17,7 +17,7 @@
   text="弟子规" />
   <van-grid-item  
   text-class="itemText"
-   text="千家诗" />
+   text="千字文" />
 </van-grid>
 
 </view>
