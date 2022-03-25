@@ -34,7 +34,8 @@ Page({
             examResult:'',
             countTime: 1800,
             showModify:false,
-            modifyReason:'' 
+            modifyReason:'',
+            active:0 
         
     },
     onReady(){
@@ -818,5 +819,21 @@ Page({
             imageUrl:'',//图片样式
             path:'/pages/share/index?show=1&type=5&qid=' +id
         }   
+    },
+    tabClick(e){
+        console.log(e.detail);
+        let index = e.detail.index;
+        let showAnswer = false;
+        if (index==1) {
+            //背题模式
+            showAnswer = true;
+        }else{
+            showAnswer = false;
+        }
+        this.setData({
+            active:index,
+            showAnswer:showAnswer
+        })
+        this.buildRightIndex();
     }
 })

@@ -5,7 +5,9 @@
         "van-image": "../../components/vant/image/index",
         "van-dialog": "../../components/vant/dialog/index",
         "van-field":"../../components/vant/field/index",
-        "van-notify":"../../components/vant/notify/index"
+        "van-notify":"../../components/vant/notify/index",
+        "van-tabs":"../../components/vant/tabs/index",
+        "van-tab":"../../components/vant/tab/index"
         
     }
 }

@@ -1,5 +1,13 @@
 
 <van-notify   id="custom-selector" />
+<view>
+  
+  <van-tabs type="card" color="#00c719" active="{{active}}" bind:click="tabClick">
+    <van-tab title="答题模式"></van-tab>
+    <van-tab title="背题模式"></van-tab>
+  </van-tabs>
+    
+</view>
 <view  class="_view data-v-7542c5d7 container">
   <view class="content" bindtouchstart='touchStart' bindtouchend="touchEnd">
       <view class="_view data-v-7542c5d7 title">
