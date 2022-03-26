@@ -182,10 +182,7 @@ Page({
                 return ;
             }
            
-            const right = e.currentTarget.dataset.right
-            let userAnswer = [];
-            userAnswer[0] = index ;
-            
+            const right = e.currentTarget.dataset.right;
             let optionSelect = [];
             let activeClass= this.data.activeClass;
             for(let j=0;j<=index;j++){
@@ -205,14 +202,9 @@ Page({
             this.setData({
                 alreadyChooseAnswer: true,
                 optionSelect: optionSelect,
-                optionSelect:optionSelect,
                 activeClass:activeClass,
-                 
             });
-             
-            this.addMenuCount(right, this.data.menuId);
-             
-            
+            this.addMenuCount(right);
         }, 
         addMenuCount(right ) {
             let rightCount = 0
@@ -222,7 +214,6 @@ Page({
             if(right){
                 rightCount++; 
             }else{
-                 
                 errorCount++;
             } 
             let number = {};
@@ -243,9 +234,7 @@ Page({
 			for (let i=0;i<rightArr.length;i++) {
 				rightIndex[rightIndex.length]=rightArr[i].charCodeAt()-'A'.charCodeAt();
 			}
-            
             //1 单选
-            
             let optionSelect = [];
             console.log('rigthIndex',rightIndex)
             for(let j=0;j<question.selectList.length;j++){
@@ -256,7 +245,6 @@ Page({
                     activeClass[j]='';
                 }
             }
-            
             this.setData({
                 optionSelect: optionSelect,
                 activeClass: activeClass,
@@ -264,11 +252,10 @@ Page({
                 alreadyChooseAnswer:false
             }) 
         },
-          
+        
         showWxToast(toastMsg){
             utils.showWxToast(toastMsg);
         },
-       
         // 显示解析
         showAnaly(){
             this.setData({ isShow_analy:!this.data.isShow_analy})
@@ -277,17 +264,5 @@ Page({
             wx.reLaunch({
               url: '/pages/index/index',
             })
-        }
-        
-       
-        
-        
-         
-     
-        
-       
-       
-       
-         
-     
+        }   
 })
