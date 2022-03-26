@@ -20,9 +20,11 @@ Page({
             alreadyChooseAnswer: false,
             showMore:0,
             type:5,
-            totalCount: 12345,
+            totalCount: 0,
             todayIntegral:10,
-            todayAnswerRight:true
+            todayAnswerRight:true,
+            showAnalysis:false,
+            showTodayAnswerTips:false,
     },
     onReady(){
         
@@ -44,7 +46,7 @@ Page({
         let show = 1;
         show = parseInt( options.show);
         
-        if(options ){
+        if(type==5 ){
             apis.question({
                 qid:options.qid,
                 type:type
@@ -53,11 +55,34 @@ Page({
                     question: res,
                     questionCount: res.length ,
                     showMore:show,
-                    nowIndex:0
+                    nowIndex:0,
+                    showAnalysis:true,
+                    showTodayAnswerTips:false,
                 })
                  
                 _this.buildRightIndex();
             });
+        }else if(type==6){
+            apis.todayQuestionInfo({
+                uid:utils.getUserId()
+            }).then(res=>{
+                console.log(res)
+                if(res && res.questions){
+                    _this.setData({
+                        question: res.questions,
+                        todayIntegral:res.integral,
+                        totalCount:res.totalCount,
+                        alreadyChooseAnswer:res.alreadyAnswer,
+                        showMore:show,
+                        nowIndex:0,
+                        showAnalysis:false,
+                        showTodayAnswerTips:true,
+                    })
+                    _this.buildRightIndex();
+                }else{
+                    utils.showWxToast('今日一题尚未刷新，请耐心等待')
+                }
+            })
         }
         
         

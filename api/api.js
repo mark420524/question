@@ -26,7 +26,8 @@ import {
     notifyInfo:'notify/info',
     searchData:'question/search',
     exportInfo:'export/info',
-    exportQuestions:'export/'
+    exportQuestions:'export/',
+    todayQuestionInfo:'question/today',
   }
   module.exports = {
     userLogin(code) {
@@ -176,6 +177,12 @@ import {
     exportQuestions:function(data){
       return http({
         url:url.exportQuestions,
+        data:data
+      })
+    },
+    todayQuestionInfo:function(data){
+      return http({
+        url:url.todayQuestionInfo,
         data:data
       })
     }
