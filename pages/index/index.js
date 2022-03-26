@@ -304,6 +304,11 @@ Page({
           active: 0,
         })
       }
+  },
+  todayQuestion(){
+      wx.navigateTo({
+        url: '/pages/share/index?type=6&show=0&qid=1',
+      })
   }
  
   

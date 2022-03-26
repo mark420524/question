@@ -35,6 +35,12 @@
         <image src="/static/images/icons8-signin-100.png" class="_img data-v-6923d3fa"></image> 签到
       </view>
     </view>
+    <view bindtap="todayQuestion" class="_div data-v-6923d3fa whitebg choose"  >
+      <view class="_h2 data-v-6923d3fa">每日一题<label class="_span data-v-6923d3fa">
+          <image src="/static/images/right_double.png" alt class="_img data-v-6923d3fa"></image>
+        </label>
+      </view>
+    </view>
     <view bindtap="chooseCategory" class="_div data-v-6923d3fa whitebg choose"  >
       <view class="_h2 data-v-6923d3fa">{{changeCategory}}<label class="_span data-v-6923d3fa">
           <image src="/static/images/right_double.png" alt class="_img data-v-6923d3fa"></image>
@@ -42,6 +48,5 @@
       </view>
     </view>
   </view>
-
   <import src="../../components/selector/index.wxml"/>
   <template is="areaData" data="{{...item}}"/>
