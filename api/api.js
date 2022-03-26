@@ -28,6 +28,7 @@ import {
     exportInfo:'export/info',
     exportQuestions:'export/',
     todayQuestionInfo:'question/today',
+    answerTodayQuestion:'question/today/answer'
   }
   module.exports = {
     userLogin(code) {
@@ -183,6 +184,12 @@ import {
     todayQuestionInfo:function(data){
       return http({
         url:url.todayQuestionInfo,
+        data:data
+      })
+    },
+    answerTodayQuestion:function(data){
+      return http({
+        url:url.answerTodayQuestion,
         data:data
       })
     }

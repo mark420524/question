@@ -78,7 +78,10 @@ Page({
                         showAnalysis:false,
                         showTodayAnswerTips:true,
                     })
-                    _this.buildRightIndex();
+                    if(!res.alreadyAnswer){
+                        _this.buildRightIndex();
+                    }
+                    
                 }else{
                     utils.showWxToast('今日一题尚未刷新，请耐心等待')
                 }
@@ -128,35 +131,30 @@ Page({
                     }else{
                         activeClass[j]='active multiplyNotChoice';
                     }
-                    
                 } else if(this.data.optionSelect[j]){
                     activeClass[j]='error';
                 }else{
                     activeClass[j]='';
                 }   
             }
-            
-             
-            this.setData( {
-                 activeClass : activeClass,
-                 alreadyChooseAnswer:true 
-            });
-            
-            
-             
-            this.addMenuCount(right, this.data.menuId);
-             
+            if (this.data.type==5) {
+                this.setData( {
+                    activeClass : activeClass,
+                    alreadyChooseAnswer:true 
+                });
+                this.addMenuCount(right);
+            }else{
+                this.submitTodayAnswer(selectAnswer,this.data.optionSelect,activeClass);
+            }
         },
         chooseAnswer(  e ){
             //仅处理单选的选择 
-            
             const multiply= e.currentTarget.dataset.multiply;
             let id = e.currentTarget.dataset.id;
             let index  = e.currentTarget.dataset.index ;
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
-            const _this = this;
             if(multiply){
-                console.log('多选题', index );
+                //console.log('多选题', index );
                 let optionSelect = [];
                 let activeClass = [];
                 for(let j=0;j<this.data.optionSelect.length;j++){
@@ -181,7 +179,8 @@ Page({
                 
                 return ;
             }
-           
+            let userAnswer = [];
+            userAnswer[0]=index;
             const right = e.currentTarget.dataset.right;
             let optionSelect = [];
             let activeClass= this.data.activeClass;
@@ -197,14 +196,19 @@ Page({
                 }
             }
             optionSelect[index]=true;
+            if (this.data.type==5) {
+                // 统计对错等信息
+                this.setData({
+                    alreadyChooseAnswer: true,
+                    optionSelect: optionSelect,
+                    activeClass:activeClass,
+                });
+                this.addMenuCount(right);
+            }else{
+                this.submitTodayAnswer(userAnswer,optionSelect,activeClass);
+            }
             
-            // 统计对错等信息
-            this.setData({
-                alreadyChooseAnswer: true,
-                optionSelect: optionSelect,
-                activeClass:activeClass,
-            });
-            this.addMenuCount(right);
+            
         }, 
         addMenuCount(right ) {
             let rightCount = 0
@@ -248,8 +252,7 @@ Page({
             this.setData({
                 optionSelect: optionSelect,
                 activeClass: activeClass,
-                rightIndex:rightIndex,
-                alreadyChooseAnswer:false
+                rightIndex:rightIndex
             }) 
         },
         
@@ -264,5 +267,33 @@ Page({
             wx.reLaunch({
               url: '/pages/index/index',
             })
-        }   
+        },
+        submitTodayAnswer(userAnswer,optionSelect,activeClass){
+            wx.showLoading({
+              title: '正在答题，请稍候',
+            })
+            let that = this;
+            let data={
+                userAnswer:userAnswer,
+                uid:utils.getUserId()
+            }
+            console.log(data);
+            apis.answerTodayQuestion(data).then(res=>{
+                wx.hideLoading( );
+                console.log(res)
+                let reg = /^\d+$/;
+                if (reg.test(res)) {
+                    utils.showWxToast(res);
+                    that.setData({
+                        alreadyChooseAnswer: true,
+                        optionSelect: optionSelect,
+                        activeClass:activeClass,
+                    });
+                }else{
+                    utils.showWxToast(res?res:'答题失败，请稍候重试');
+                }
+                
+            })
+            
+        }
 })
