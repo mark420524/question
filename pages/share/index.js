@@ -11,23 +11,18 @@ Page({
             optionSelect: [],
             activeClass:[], 
             rightIndex:[],
-            
             question: [], 
             questionCount: 0,
             sysAnswer:[],//系统正确答案
             isShow_analy:false,
-            
-            time:'00 : 00',//计时
-           
             ishave_page:false,
-            showTime: false,
-             
             number:{right:'0',error:'0',count:'0'},
             alreadyChooseAnswer: false,
-            showMore:0
-            
-             
-        
+            showMore:0,
+            type:5,
+            totalCount: 12345,
+            todayIntegral:10,
+            todayAnswerRight:true
     },
     onReady(){
         
@@ -40,10 +35,11 @@ Page({
         console.log('options', options) 
         let _this = this;
         let showAnswer = false; 
-        let type = 5; 
+        let type = options.type; 
         this.setData( {
             showAnswer : showAnswer,
-            alreadyChooseAnswer : false 
+            alreadyChooseAnswer : false,
+            type:type
          });
         let show = 1;
         show = parseInt( options.show);

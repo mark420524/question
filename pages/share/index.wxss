@@ -269,3 +269,7 @@
     height: 45rpx;
     vertical-align: middle;
   }
+.todayTips{
+  margin: 32rpx 0;
+  color: #999;
+}
