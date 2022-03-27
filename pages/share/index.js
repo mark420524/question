@@ -70,7 +70,7 @@ Page({
             apis.todayQuestionInfo({
                 uid:utils.getUserId()
             }).then(res=>{
-                console.log(res)
+                //console.log(res)
                 wx.hideLoading( );
                 if(res && res.questions){
                     _this.setData({
@@ -98,7 +98,7 @@ Page({
     }, 
         multiplySubmit(e){
             let id = e.currentTarget.dataset.id;
-            console.log(this.data.optionSelect,this.data.alreadyChooseAnswer  )
+            //console.log(this.data.optionSelect,this.data.alreadyChooseAnswer  )
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             let selectAnswer = [];
             for (let i=0;i<this.data.optionSelect.length;i++){
@@ -235,18 +235,18 @@ Page({
         buildRightIndex(){
             console.log('rightindex-nowIndex' , this.data.nowIndex)
             let question = this.data.question[this.data.nowIndex];
-            console.log('rightindex-question', question)
+            //console.log('rightindex-question', question)
             let activeClass = [];
             let rightIndex = [];
             let answer = question.rightAnswer;
 			let rightArr = answer.split(',');
-            console.log('rightArr',rightArr,'nowIndex',this.data.nowIndex);
+            //console.log('rightArr',rightArr,'nowIndex',this.data.nowIndex);
 			for (let i=0;i<rightArr.length;i++) {
 				rightIndex[rightIndex.length]=rightArr[i].charCodeAt()-'A'.charCodeAt();
 			}
             //1 单选
             let optionSelect = [];
-            console.log('rigthIndex',rightIndex)
+            //console.log('rigthIndex',rightIndex)
             for(let j=0;j<question.selectList.length;j++){
                 optionSelect[j]= false;
                 if (this.data.showAnswer && rightIndex.indexOf(j)>-1) {
@@ -283,10 +283,10 @@ Page({
                 userAnswer:userAnswer.join(','),
                 uid:utils.getUserId()
             }
-            console.log(data);
+            //console.log(data);
             apis.answerTodayQuestion(data).then(res=>{
                 wx.hideLoading( );
-                console.log(res)
+                //console.log(res)
                 let reg = /^\d+$/;
                 if (reg.test(res)) {
                     let integral = parseInt(res);
