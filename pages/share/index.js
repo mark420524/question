@@ -38,6 +38,9 @@ Page({
         let _this = this;
         let showAnswer = false; 
         let type = options.type; 
+        wx.showLoading({
+          title: '加载中',
+        })
         this.setData( {
             showAnswer : showAnswer,
             alreadyChooseAnswer : false,
@@ -51,6 +54,7 @@ Page({
                 qid:options.qid,
                 type:type
             }).then(res=>{
+                wx.hideLoading( );
                 _this.setData({
                     question: res,
                     questionCount: res.length ,
@@ -67,6 +71,7 @@ Page({
                 uid:utils.getUserId()
             }).then(res=>{
                 console.log(res)
+                wx.hideLoading( );
                 if(res && res.questions){
                     _this.setData({
                         question: res.questions,
@@ -77,6 +82,7 @@ Page({
                         nowIndex:0,
                         showAnalysis:false,
                         showTodayAnswerTips:true,
+                        todayAnswerRight:res.answerIntegral>0
                     })
                     if(!res.alreadyAnswer){
                         _this.buildRightIndex();
@@ -274,7 +280,7 @@ Page({
             })
             let that = this;
             let data={
-                userAnswer:userAnswer,
+                userAnswer:userAnswer.join(','),
                 uid:utils.getUserId()
             }
             console.log(data);
@@ -283,11 +289,19 @@ Page({
                 console.log(res)
                 let reg = /^\d+$/;
                 if (reg.test(res)) {
-                    utils.showWxToast(res);
+                    let integral = parseInt(res);
+                    let message = '';
+                    if (integral>0) {
+                        message = '恭喜您，回答正确，积分+'+integral;
+                    }else{
+                        message = '很遗憾，回答错误';
+                    }
+                    utils.showWxToast(message);
                     that.setData({
                         alreadyChooseAnswer: true,
                         optionSelect: optionSelect,
                         activeClass:activeClass,
+                        todayAnswerRight:integral>0,
                     });
                 }else{
                     utils.showWxToast(res?res:'答题失败，请稍候重试');
