@@ -9,7 +9,7 @@
     
 </view>
 <view  class="_view data-v-7542c5d7 container">
-  <view class="content" bindtouchstart='touchStart' bindtouchend="touchEnd">
+  <view class="content" bindtouchstart='touchStart' bindtouchend="touchEnd" animation="{{animationData}}">
       <view class="_view data-v-7542c5d7 title">
         <view class="_view data-v-7542c5d7 right">
           <image src="/static/images/right.png" alt class="_img data-v-7542c5d7"></image>{{number.right}}

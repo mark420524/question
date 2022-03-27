@@ -57,7 +57,11 @@ Page({
             this.buildRightIndex();
             utils.setCollectionIndex(0);
         }
-        
+        this.turningAnimation = wx.createAnimation({
+            duration: 200,
+            timingFunction: 'ease',
+            transformOrigin: '50% 50% 0'
+        });
         //
     },
     onLoad(options){
@@ -758,7 +762,8 @@ Page({
             
             this.setData({
               "touch.x": e.changedTouches[0].clientX,
-              "touch.y": e.changedTouches[0].clientY
+              "touch.y": e.changedTouches[0].clientY,
+              animationData: this.turningAnimation.export()
             });
           },
           touchEnd(e) {
@@ -768,10 +773,21 @@ Page({
             let ret = utils.getTouchData(x,y,this.data.touch.x,this.data.touch.y);
             console.log(ret);
             if ('left'==ret) {
+                this.createAnimationByFirst('100%');
                 this.nextQuestion();
             }else if ('right'==ret){
+                this.createAnimationByFirst('-100%');
                 this.preQuestion();
             }
+            
+          },
+          createAnimationByFirst(first){
+            this.turningAnimation.translateX(first).step().translateX(0).opacity(1).step({
+                duration: 100
+              });
+              this.setData({
+                animationData: this.turningAnimation.export()
+              });
           },
           modifyQuestion(){
             this.setData({
