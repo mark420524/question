@@ -1,0 +1,18 @@
+.weui-panel, .weui-cells {
+    margin-top: 0;
+  }
+  
+  .weui-media-box__title {
+    font-size: 16px;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .weui-cell__bd button.weui-btn {
+    padding: 4px 0;
+    padding-bottom: 6px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1;
+    background-color: transparent !important;
+  }

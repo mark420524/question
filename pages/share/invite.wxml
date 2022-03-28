@@ -1,0 +1,16 @@
+
+  <view  >
+    <view  >
+      通过以下任意一种方式邀请好友使用，每邀请一位好友可获得10积分奖励，多邀多送！
+    </view>
+    <view  >
+      
+      <view >分享给微信好友或群组</view> 
+      <button class="weui-btn share" type="default" open-type="share">点击分享</button>  
+    </view>
+
+
+  <view  > 
+     查看奖励  
+  </view>
+</view>

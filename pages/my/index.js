@@ -101,5 +101,10 @@ Page({
                   active: 3,
                 })
               }
-          }
+        },
+        invite(){
+            wx.navigateTo({
+                url: '/pages/share/invite'
+            })
+        }
 })

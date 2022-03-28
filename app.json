@@ -24,7 +24,8 @@
     "pages/idiom/index",
     "pages/poetry/index",
     "pages/detail/index",
-    "pages/children/index"
+    "pages/children/index",
+    "pages/share/invite"
   ],
   "window": {
     "backgroundTextStyle": "light",

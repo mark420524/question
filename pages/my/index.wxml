@@ -11,6 +11,11 @@
     </view>
     <view class="_div data-v-b814dec6 list">
       <view class="_ul data-v-b814dec6">
+        <view bindtap="invite"    class="_li data-v-b814dec6">
+          <image src="/static/images/icons8-share-100.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">邀请朋友</label>
+          <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
+        </view>
+
         <view bindtap="goIntegral"    class="_li data-v-b814dec6">
           <image src="/static/images/icons8-shopping-basket-star-48.png" alt class="_img data-v-b814dec6"></image> <label class="_span data-v-b814dec6">我的积分</label>
           <image src="/static/images/toRight.png" class="_img data-v-b814dec6 right" alt srcset></image>
