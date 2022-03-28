@@ -5,7 +5,12 @@
     </view>
     <view class="showTips" > 导出需要消耗积分：<label class="redColor">1题消耗1积分</label> </view>
     <view class="showTips" > 您目前所剩积分为：<label class="redColor">{{integral}}</label> </view>
-    <view class="showTips" wx:if="{{!enough}}"> 您的积分不足，暂无法导出 </view>
+    <view wx:if="{{!enough}}">
+      <view class="showTips" > 
+      您的积分不足，暂无法导出，邀请好友赠送积分了，赶快去邀请吧。
+      </view>
+      <view bindtap="inviteFriend"  class="footer"  > 马上邀请</view>
+    </view>
     <view   wx:else>
       <view class="title showTips" >题库会以pdf格式发送附件到您的邮箱，请注意查收 </view>
     <view class="form">

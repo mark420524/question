@@ -68,4 +68,9 @@ Page({
             utils.showWxToast('请输入正确的邮箱格式喔!');
         }
     },
+    inviteFriend(){
+        wx.navigateTo({
+          url: '/pages/share/invite',
+        })
+    },
 })
