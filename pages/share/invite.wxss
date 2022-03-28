@@ -1,18 +1,19 @@
-.weui-panel, .weui-cells {
-    margin-top: 0;
-  }
-  
-  .weui-media-box__title {
-    font-size: 16px;
-    word-wrap: break-word;
-    white-space: normal;
-  }
-  
-  .weui-cell__bd button.weui-btn {
-    padding: 4px 0;
-    padding-bottom: 6px;
-    text-align: left;
-    font-size: 16px;
-    line-height: 1;
-    background-color: transparent !important;
-  }
+.container{
+    background-color: white;
+    padding: 40rpx 40rpx;
+}
+.title{
+    font-size: 32rpx;
+}
+.item{
+    margin-top: 20rpx;
+    font-size: 36rpx;
+}
+.shareInfo{
+    margin-top:20rpx;
+}
+.showReward{
+    background-color: white;
+    margin-top: 20rpx;
+    padding: 0rpx 40rpx;
+}

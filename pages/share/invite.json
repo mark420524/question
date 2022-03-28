@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText":"邀请好友"
+    "navigationBarTitleText":"邀请好友",
+    "usingComponents": {
+        "van-button": "../../components/vant/button/index"
+    }
 }

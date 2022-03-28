@@ -1,16 +1,20 @@
 
-  <view  >
-    <view  >
-      通过以下任意一种方式邀请好友使用，每邀请一位好友可获得10积分奖励，多邀多送！
+  <view class="container" >
+    <view class="title" >
+      通过以下任意一种方式邀请好友使用，每邀请一位好友可获得
+      <label class="redColor">+{{integral}}</label>
+      积分奖励，多邀多送！
+      <view class="redColor">只有通过本页面的分享邀请才能拿到积分奖励喔！</view>
     </view>
-    <view  >
-      
-      <view >分享给微信好友或群组</view> 
-      <button class="weui-btn share" type="default" open-type="share">点击分享</button>  
+    <view class="item" >
+      <view class="shareInfo">分享给微信好友或群组</view> 
+      <view class="shareInfo">
+      <van-button type="primary" open-type="share" size="large">点击分享</van-button>
+      </view>
     </view>
+</view>
 
-
-  <view  > 
-     查看奖励  
-  </view>
+<view class="showReward" > 
+       
+     <van-button  size="large">查看奖励</van-button>
 </view>
