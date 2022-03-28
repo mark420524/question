@@ -17,7 +17,7 @@ App({
     })
     wx.cloud.init({
       //set your cloud  env 
-      env: ''
+      env: 'rightanswer-9gmtbrkw2347f7cd'
     })
     // 登录
     /*
