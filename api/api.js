@@ -31,12 +31,11 @@ import {
     answerTodayQuestion:'question/today/answer'
   }
   module.exports = {
-    userLogin(code) {
+    userLogin(data) {
       return http({
         url: url.userLogin,
-        data: { code: code},
+        data: data,
         method: 'POST'
-        
       })
     },
     getUserPhone(params) {

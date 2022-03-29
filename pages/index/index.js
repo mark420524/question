@@ -95,12 +95,13 @@ Page({
     
     wx.setStorageSync('selectData', selectData)
   },
-  onLoad() {
-    
-    this.init();
+  onLoad(options) {
+    options = options || {} 
+    let inviteUid = options.uid || 0 ;
+    this.init(inviteUid);
     this.initNotice();
   },
-  init(){
+  init(inviteUid){
               
       let changeCategory = '';
       let selectCategory = wx.getStorageSync('selectCategory') ;
@@ -119,7 +120,7 @@ Page({
       if (uid) {
           console.log('用户已登录，要不要读取用户头像呢');
       }else{
-          this.initUserId();
+          this.initUserId(inviteUid);
       }
       this.initQuestionCount(utils.getAnswerCid());
   },
@@ -244,7 +245,7 @@ Page({
               }); 
           }
   },
-  initUserId(){
+  initUserId(inviteUid){
       console.log('准备登录')
       wx.showLoading({
       'title': '正在初始化，请稍候...',
@@ -253,8 +254,12 @@ Page({
       wx.login({
           success (res) {
               console.log(res)
+              let data={
+                inviteUid:inviteUid,
+                code:res.code
+              }
               if(res.code){
-                  apis.userLogin(res.code).then(res=>{
+                  apis.userLogin(data).then(res=>{
                     wx.hideLoading();
                     wx.setStorageSync('uid', res)
                   });
