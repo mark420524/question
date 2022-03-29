@@ -3,7 +3,7 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
-      questionList:[],
+      examList:[],
         historys:[],
         searchVal:'',
         label:'',
@@ -17,11 +17,11 @@ Page({
       this.reloadHistory();
     },
     init( ){
-      let label = '题库'; 
+      let label = '试卷'; 
       this.setData({
         totalSize:0,
         pages:0,
-        questionList:[],
+        examList:[],
         label:label 
       })
     },
@@ -99,7 +99,7 @@ Page({
           //console.log('search question res',res)
           if(list){
             that.setData({
-              ['questionList[' + page + ']']
+              ['examList[' + page + ']']
               :list,
               totalSize:res.totalSize,
               pages:page
@@ -116,10 +116,11 @@ Page({
       this.searchData(page,this.data.searchVal,'没有更多数据了')
       console.log('reach bottom');
    },
-    onTapHistory: function(e) {
+    onTapHistory: function(e) { 
         let val = e.detail; 
         this.searchData(0, val);
       },
+      
       goQuestion(e){
         let id = e.currentTarget.dataset.id;
         console.log(id)

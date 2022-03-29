@@ -1,0 +1,12 @@
+<view class="history-search-top" >
+    <text>历史搜索</text>
+    <image bindtap="clearSearchContent" src="/static/images/remove.png" mode="aspectFill"/>
+  </view>
+  <view class="history-search"  >
+    <text bindtap="onTapHistory" data-val="{{item}}" wx:for="{{historys}}"
+        wx:key="index"
+    >{{item}}</text>
+  </view>
+<view class="empty-view"   >
+<image class="empty" src="/static/images/empty.png" mode="aspectFill"/>
+</view>

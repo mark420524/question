@@ -9,21 +9,18 @@
 </van-search>
 
 <view class="container" wx:if="{{type==1}}">
-<view wx:if="{{questionList.length == 0}}">
+<view wx:if="{{examList.length == 0}}">
   <empty historys="{{historys}}" bind:click="onTapHistory"/>
 </view>
 <view wx:else >
   <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果</view>
   <view wx:for="{{ questionList }}" wx:for-item="listItem" wx:key="index">
         <view class="itemParent" bindtap="goQuestion" wx:for="{{listItem}}" data-id="{{ item.id }}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
-           
-           
             <view class="item remark">
               {{  index * size +  itemIndex+1 }}   {{  item.question }}     
             </view> 
             <view class="clear"></view>
         </view>
     </view>
-
 </view>
 </view>
