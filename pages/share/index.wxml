@@ -2,16 +2,10 @@
 
 <view  class="_view data-v-7542c5d7 container">
     <view class="content" >
-      <view wx:if="{{type==5}}" class="_view data-v-7542c5d7 title">
-        <view class="_view data-v-7542c5d7 right">
-          <image src="/static/images/right.png" alt class="_img data-v-7542c5d7"></image>{{number.right}}
-        </view>
-        <view class="_view data-v-7542c5d7 error">
-          <image src="/static/images/error.png" alt class="_img data-v-7542c5d7"></image>{{number.error}}
-        </view>
-        <view class="_view data-v-7542c5d7 count">
-          <image src="/static/images/count.png" alt class="_img data-v-7542c5d7"></image>{{number.count+'/'+questionCount}}
-        </view>
+      <view wx:if="{{type==5}}" >
+        <numbers number="{{number}}"  questionCount="{{questionCount}}"
+        showTime="{{false}}"
+        />
       </view>
       <view wx:else class="todayTips">
         每日一题:

@@ -1,0 +1,12 @@
+<view class="title">
+    <view class="item borderRadius right">
+        <image src="/static/images/right.png" alt class="itemImage"></image>{{number.right}}
+    </view>
+    <view class="item borderRadius error">
+        <image src="/static/images/error.png" alt class="itemImage"></image>{{number.error}}
+    </view>
+    <view class="item count">
+        <image src="/static/images/count.png" alt class="itemImage"></image>{{number.count+'/'+questionCount}}
+    </view>
+    <view wx:if="{{showTime}}" class="time">计时：{{time}}</view>
+</view>

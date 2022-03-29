@@ -36,60 +36,6 @@
   .container .wrongShow.data-v-7542c5d7 {
     display: block;
   }
-  .container .title.data-v-7542c5d7 {
-    text-align: center;
-    margin: 32rpx 0;
-  }
-  .container .title .right.data-v-7542c5d7 {
-    margin-right: 34rpx;
-    color: #2cbc00;
-  }
-  .container .title .error.data-v-7542c5d7 {
-    margin-right: 54rpx;
-    color: #f40000;
-  }
-  .container .title .error ._img.data-v-7542c5d7 {
-    margin-right: 74rpx;
-  }
-  .container .title .count.data-v-7542c5d7 {
-    margin-right: 22rpx;
-    color: #070707;
-    font-size: 24rpx;
-  }
-  .container .title .right.data-v-7542c5d7,
-  .container .title .error.data-v-7542c5d7 {
-    border-radius: 22rpx;
-    font-size: 28rpx;
-    border: 2rpx solid #eeeeee;
-  }
-  .container .title .right.data-v-7542c5d7,
-  .container .title .error.data-v-7542c5d7,
-  .container .title .count.data-v-7542c5d7 {
-    display: inline-block;
-    width: 128rpx;
-    height: 45rpx;
-    line-height: 45rpx;
-    vertical-align: top;
-    white-space: nowrap;
-  }
-  .container .title .right ._img.data-v-7542c5d7,
-  .container .title .error ._img.data-v-7542c5d7,
-  .container .title .count ._img.data-v-7542c5d7 {
-    width: 36rpx;
-    height: 36rpx;
-    margin-right: 28rpx;
-    float: left;
-    margin-left: 10rpx;
-    margin-top: 5rpx;
-  }
-  .container .title .time.data-v-7542c5d7 {
-    display: inline-block;
-    font-size: 24rpx;
-    color: #638bed;
-    text-align: right;
-    float: right;
-    margin-top: 5rpx;
-  }
   .container .analy.data-v-7542c5d7 {
     width: 90%;
     margin: 20rpx auto 0rpx;

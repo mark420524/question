@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText":"题目详情"
+    "navigationBarTitleText":"题目详情",
+    "usingComponents": {
+        "numbers":"../../components/numbers/index"
+    }
 }

@@ -98,7 +98,8 @@ Page({
             alreadyChooseAnswer : false,
             favorite : favorite,
             menuId:menuId,
-            startExam:startExam
+            startExam:startExam,
+            type:type
        });
         
         console.log('type=',type,'cid=',cid,'menuid',   menuId);

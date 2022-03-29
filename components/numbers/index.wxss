@@ -1,0 +1,45 @@
+ .title {
+    text-align: center;
+    margin: 32rpx 0;
+  }
+  .item{
+    display: inline-block;
+    width: 128rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  .borderRadius{
+    border-radius: 22rpx;
+    font-size: 28rpx;
+    border: 2rpx solid #eeeeee;
+  }
+  .right{ 
+    margin-right: 34rpx;
+    color: #2cbc00;
+  }
+  .error{
+    margin-right: 54rpx;
+    color: #f40000;
+  }
+  .count{
+    margin-right: 22rpx;
+    color: #070707;
+    font-size: 24rpx;
+  }
+  .itemImage {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 28rpx;
+    float: left;
+    margin-left: 10rpx;
+    margin-top: 5rpx;
+  }
+ .time  {
+    font-size: 24rpx;
+    color: #638bed;
+    text-align: right;
+    float: right;
+    margin-top: 5rpx;
+  }

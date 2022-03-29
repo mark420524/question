@@ -1,27 +1,16 @@
 
 <van-notify   id="custom-selector" />
-<view>
-  
+<view wx:if="{{ type != 4 }}">
   <van-tabs type="card" color="#00c719" active="{{active}}" bind:click="tabClick">
     <van-tab title="答题模式"></van-tab>
     <van-tab title="背题模式"></van-tab>
   </van-tabs>
-    
 </view>
 <view  class="_view data-v-7542c5d7 container">
   <view class="content" bindtouchstart='touchStart' bindtouchend="touchEnd" animation="{{animationData}}">
-      <view class="_view data-v-7542c5d7 title">
-        <view class="_view data-v-7542c5d7 right">
-          <image src="/static/images/right.png" alt class="_img data-v-7542c5d7"></image>{{number.right}}
-        </view>
-        <view class="_view data-v-7542c5d7 error">
-          <image src="/static/images/error.png" alt class="_img data-v-7542c5d7"></image>{{number.error}}
-        </view>
-        <view class="_view data-v-7542c5d7 count">
-          <image src="/static/images/count.png" alt class="_img data-v-7542c5d7"></image>{{number.count+'/'+questionCount}}
-        </view>
-        <view wx:if="{{showTime}}" class="_p data-v-7542c5d7 time">计时：{{time}}</view>
-      </view>
+      <numbers number="{{number}}" time="{{time}}" questionCount="{{questionCount}}"
+      showTime="{{showTime}}"
+      />
       <view class="_h6 data-v-7542c5d7 question">
         {{nowIndex+1}}.{{question[nowIndex].question}}
       </view>
@@ -54,11 +43,12 @@
           height="2rem" src="/static/images/icons8-edit-file-80.png" />
    </view>
     <view class="_view data-v-7542c5d7 footer" style=" {{isShow_analy ? 'box-shadow:0px 0px 10px rgba(0,0,0,0.2);' : ''}}">
-      
+     
       <view class="_view data-v-7542c5d7 analy" hidden="{{!(isShow_analy)}}">
         {{question[nowIndex].analysis}}
       </view>
-      <switch bindtap="showAnaly" checked="{{isShow_analy}}"  class="_switch data-v-7542c5d7" />
+      <switch  bindtap="showAnaly" checked="{{isShow_analy}}"  class="_switch data-v-7542c5d7" />
+      
       <view class="_ul data-v-7542c5d7">
         <view bindtap="preQuestion"   class="_li data-v-7542c5d7">上一题</view>
         <view wx:if="{{!startExam}}" class="_li data-v-7542c5d7"><button open-type="share" class="_button data-v-7542c5d7">求助</button></view>
