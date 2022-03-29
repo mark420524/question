@@ -1,9 +1,9 @@
 <view class="history-search-top" >
-    <text>历史搜索</text>
-    <image bindtap="clearSearchContent" src="/static/images/remove.png" mode="aspectFill"/>
+    <text class="topText">历史搜索</text>
+    <image class="historyImage" bindtap="clearSearchContent" src="/static/images/remove.png" mode="aspectFill"/>
   </view>
   <view class="history-search"  >
-    <text bindtap="onTapHistory" data-val="{{item}}" wx:for="{{historys}}"
+    <text bindtap="onTapHistory" data-val="{{item}}" wx:for="{{historys}}" class="itemText"
         wx:key="index"
     >{{item}}</text>
   </view>

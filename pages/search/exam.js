@@ -30,10 +30,7 @@ Page({
         let val = keyword.data.value;
         this.search(val);
     },
-    clearSearchContent: function() {
-        wx.setStorageSync('historys' , JSON.stringify([]));
-        this.reloadHistory();
-      },
+    
     onCofirmSearch(e){
         let val = e.detail;
         this.search(val);
@@ -64,9 +61,7 @@ Page({
           
         }
         wx.setStorageSync('historys' , JSON.stringify(hs));
-
         this.reloadHistory();
-        this.reloadData();
         this.searchData(0, val);
     },
     searchData(page, val,  emptyText){

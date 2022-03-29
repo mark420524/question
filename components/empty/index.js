@@ -1,6 +1,6 @@
 Component({
     properties: {
-        historys: Array,
+        historys: Array
     },
     attached: function() {
     },
@@ -8,6 +8,12 @@ Component({
         onTapHistory(e){
             let val = e.currentTarget.dataset.val;
             this.triggerEvent('click', val );
+        },
+        clearSearchContent() {
+            wx.setStorageSync('historys' , JSON.stringify([]));
+            this.setData({
+                historys: []
+            });
         }
     }
 })

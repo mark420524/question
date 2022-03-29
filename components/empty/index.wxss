@@ -21,11 +21,11 @@
     padding: 20rpx;
     justify-content: space-between;
   }
-  .history-search-top text {
+  .topText {
     color: gray;
     font-size: 30rpx;
   }
-  .history-search-top image {
+  .historyImage {
     width: 40rpx;
     height: 40rpx;
   }
@@ -36,7 +36,7 @@
     flex-wrap: wrap;
     width: calc(100vw - 40rpx);
   }
-  .history-search text {
+  .itemText {
     height: 44rpx;
     padding: 0 20rpx;
     border-radius: 22rpx;
