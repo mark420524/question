@@ -13,7 +13,7 @@ Page({
           })
           .get({
               success:res=>{
-                  console.log(res)
+                  //console.log(res)
                   if (res.data && res.data.length>0){
                     let item = res.data[0];
                     that.setData({
@@ -36,4 +36,9 @@ Page({
             path:'/pages/index/index?uid='+uid 
         }
     },
+    gotoInviteLog(){
+        wx.navigateTo({
+          url: '/pages/integral/invite',
+        })
+    }
 })

@@ -1,0 +1,18 @@
+<view class="">
+    <view wx:for="{{ inviteLogList }}" wx:for-item="listItem" wx:key="index">
+        <view class="itemParent" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
+            <view class="item intergralIndex "  >
+            {{  index * size +  itemIndex+1 }} </view>
+            <view class="item remark">
+                {{  item.nickName }} 
+                <view class="intergralTime">  {{  item.createTime }}</view>
+            </view>
+            <view  class="item score">获得
+                <label  class="addIntegral">
+                +{{  item.integral }} 
+                </label>积分
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>  
+</view>

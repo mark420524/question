@@ -50,7 +50,3 @@
     float: right;
     margin-right: 40rpx;
 }
-.totalIntegral{
-    font-size: 26rpx;
-    font-weight: lighter;
-}

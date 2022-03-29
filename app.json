@@ -25,7 +25,8 @@
     "pages/poetry/index",
     "pages/detail/index",
     "pages/children/index",
-    "pages/share/invite"
+    "pages/share/invite",
+    "pages/integral/invite"
   ],
   "window": {
     "backgroundTextStyle": "light",

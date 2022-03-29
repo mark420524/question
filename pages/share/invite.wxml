@@ -16,5 +16,5 @@
 
 <view class="showReward" > 
        
-     <van-button  size="large">查看奖励</van-button>
+     <van-button bind:click="gotoInviteLog" size="large">查看奖励</van-button>
 </view>
