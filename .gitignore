@@ -19,3 +19,4 @@ bin-release/
 .vscode/
 dist/
 node_modules/
+constant.js

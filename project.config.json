@@ -13,6 +13,10 @@
             {
                 "type": "folder",
                 "value": "data"
+            },
+            {
+                "type": "file",
+                "value": "constant.js.example"
             }
         ]
     },
