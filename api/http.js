@@ -1,7 +1,7 @@
 /**
  * 封装http 请求方法
  */
-const apiUrl = "http://127.0.0.1:8000/api/wx/"; //服务器api地址
+const apiUrl = "http://127.0.0.1:8000/"; //服务器api地址
 const http = (params) => {
   //返回promise 对象
   return new Promise((resolve, reject) => {
@@ -10,7 +10,7 @@ const http = (params) => {
       data: params.data,//请求参数
       header: params.header || {
         "Content-Type": "application/x-www-form-urlencoded",
-        "X-token-zaowanda":"442de8a8344540aeb37e73e7176ff504"
+        "X-token-zaowanda":""
       },
       method: params.method || 'POST',//默认为POST,可以不写，如常用请求格式为POST，可以设置POST为默认请求方式
       dataType: params.dataType,//返回的数据格式,默认为JSON，特殊格式可以在调用的时候传入参数
