@@ -466,8 +466,9 @@ Page({
                 rightIndex:rightIndex,
                 alreadyChooseAnswer:false
             })
-            
-            this.buildUserAnswer();
+            if (!this.data.showAnswer) {
+                this.buildUserAnswer();
+            }
             this.buildMenuCount();
             this.initFavoriteQuestion();
         },
