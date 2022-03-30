@@ -29,7 +29,8 @@ import {
     exportQuestions:'export/',
     todayQuestionInfo:'question/today',
     answerTodayQuestion:'question/today/answer',
-    getMyIviteList:'user/invite/list'
+    getMyIviteList:'user/invite/list',
+    searchExam:'exam/search'
   }
   module.exports = {
     userLogin(data) {
@@ -196,6 +197,12 @@ import {
     getMyIviteList:function(data){
       return http({
         url:url.getMyIviteList,
+        data:data
+      })
+    },
+    searchExam:function(data){
+      return http({
+        url:url.searchExam,
         data:data
       })
     }

@@ -62,7 +62,7 @@ Page({
         }
         wx.setStorageSync('historys' , JSON.stringify(hs));
         this.reloadHistory();
-        this.searchData(0, val);
+        this.searchData(0, val, '查无结果');
     },
     searchData(page, val,  emptyText){
       console.log(val,this.data.searchVal)
@@ -82,23 +82,21 @@ Page({
        
       let that = this;  
         let data = {
-          cid: utils.getAnswerCid(),
-          uid: utils.getUserId(),
+          
           keywords:val,
           page:page,
           size:this.data.size
         }
-        apis.searchQuestion(data).then(res=>{
+        apis.searchExam(data).then(res=>{
           wx.hideLoading( );
           let list = res.list;
-          //console.log('search question res',res)
           if(list){
             that.setData({
               ['examList[' + page + ']']
               :list,
               totalSize:res.totalSize,
               pages:page
-          })
+            })
           }else if(emptyText){
             utils.showWxToast(emptyText);
           }
