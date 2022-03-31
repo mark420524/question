@@ -205,6 +205,12 @@ import {
         url:url.searchExam,
         data:data
       })
+    },
+    exportExam:function(data){
+      return http({
+        url:url.exportExam,
+        data:data
+      })
     }
 
   }

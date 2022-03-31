@@ -40,3 +40,6 @@
     
     text-align: center;
 }
+.needMargin{
+    margin-top: 30rpx;
+}

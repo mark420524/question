@@ -114,6 +114,12 @@ const buildDate= (str) => {
   return startDate;
 }
 
+
+const validEmail = (email) => {
+  let re = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+  return (email && re.test(email)) ; 
+}
+
 module.exports = {
   formatTime: formatTime,
   getUserId: getUserId,
@@ -132,5 +138,6 @@ module.exports = {
   setCollectionIndex:setCollectionIndex,
   getCollectionIndex:getCollectionIndex,
   getNotifyIndex:getNotifyIndex,
-  setNotifyIndex:setNotifyIndex
+  setNotifyIndex:setNotifyIndex,
+  validEmail:validEmail
 }

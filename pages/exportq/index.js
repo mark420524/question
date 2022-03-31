@@ -43,8 +43,7 @@ Page({
         let email = this.data.email;
         let count = this.data.count;
         console.log('email',email)
-        let re = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
-        if (email && re.test(email)) { 
+        if (utils.validEmail(email)) { 
             let data={
                 uid:utils.getUserId(),
                 cid:utils.getAnswerCid(),

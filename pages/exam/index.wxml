@@ -19,4 +19,15 @@
     </view>
     <view bindtap="inviteFriend"  class="footer"  > 马上邀请</view>
 </view>
+<view wx:else="">
+    <van-field
+        value="{{ email }}"
+        label="邮箱"
+        placeholder="请输入下载邮箱"
+        border="{{ false }}"
+        bind:change="onChange"
+      />
+
+      <view bindtap="exportExam"  class="footer needMargin"  > 提交</view>
+</view>
 </van-cell-group>

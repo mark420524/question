@@ -1,3 +1,6 @@
+const app = getApp();
+const apis = app.apis;
+const utils = app.utils;
 const db = wx.cloud.database();
 Page({
     data:{
@@ -50,4 +53,39 @@ Page({
           url: '/pages/share/invite',
         })
     },
+    onChange(event) {
+        this.setData({
+            email:event.detail
+        })
+    },
+    exportExam(){
+        let that = this;
+        let email = this.data.email;
+        let examIntegral = this.data.examIntegral;
+        console.log('email',email)
+        
+        if (utils.validEmail(email)) { 
+            let data={
+                uid:utils.getUserId(),
+                eid:this.data.exam.id,
+                email:email
+            }
+            apis.exportExam(data).then(res=>{
+                let signRegex = /^\d+$/;
+                if(signRegex.test(res)){
+                    utils.showWxToast('已提交，请十分钟后查看邮箱附件');
+                    that.setData({
+                        integral:res ,
+                        enough: res >=examIntegral
+                    })
+                    
+                }else{
+                    utils.showWxToast(res); 
+                }
+                
+            })
+        }else{
+            utils.showWxToast('请输入正确的邮箱格式喔!');
+        }
+    }
 })

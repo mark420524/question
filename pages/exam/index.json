@@ -2,7 +2,8 @@
     "navigationBarTitleText": "试卷详情",
     "usingComponents": {
         "van-cell": "../../components/vant/cell/index",
-        "van-cell-group": "../../components/vant/cell-group/index"
+        "van-cell-group": "../../components/vant/cell-group/index",
+        "van-field": "../../components/vant/field/index"
         
     }
 }
