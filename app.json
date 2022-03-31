@@ -27,7 +27,8 @@
     "pages/children/index",
     "pages/share/invite",
     "pages/integral/invite",
-    "pages/search/exam"
+    "pages/search/exam",
+    "pages/exam/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

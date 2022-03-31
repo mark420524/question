@@ -5,11 +5,10 @@ Page({
     data:{
       examList:[],
         historys:[],
-        searchVal:'',
         label:'',
         pages:0,
         size:10,
-        type:1,
+        
         totalSize:0,
         showFilter:false,
         mainActiveIndex: 0,
@@ -57,6 +56,7 @@ Page({
     onLoad( ){ 
       this.init( );
       this.reloadHistory();
+      this.searchData(0, '', '查无结果');
     },
     init( ){
       let label = '试卷'; 
@@ -125,7 +125,7 @@ Page({
       let that = this;  
         let data = {
           
-          keywords:val,
+          examName:val,
           page:page,
           size:this.data.size
         }
@@ -156,32 +156,26 @@ Page({
         this.searchData(0, val);
       },
       
-      goQuestion(e){
-        let id = e.currentTarget.dataset.id;
-        console.log(id)
-        wx.navigateTo({
-          url: '/pages/share/index?show=0&type=5&qid='+id,
-        })
-      },
-    onShow(){ 
-        if (typeof this.getTabBar === 'function' &&
-            this.getTabBar()) {
-            this.getTabBar().setData({
-              active: 1,
-            })
-          }
-      },
       onShareAppMessage(){
         return {
-            title:'亲爱的，来这里答题喽',
+            title:'亲爱的，来这里搜试卷喽',
             imageUrl:'',//图片样式
             path:''//链接
         }
+    },
+    goExam(e){
+      let item = e.currentTarget.dataset.item;
+      console.log(item);
+      wx.setStorageSync('examItem', item)
+      wx.navigateTo({
+        url: '/pages/exam/index',
+      })
     },
     showFilter(){
       this.setData({
         showFilter:true
       })
+      return false;
     },
     onClickHide() {
       this.setData({ showFilter: false });

@@ -1,0 +1,42 @@
+.tipsCell{
+    background-color:  #fff;
+    box-sizing: border-box;
+    color: #323233;
+    display: flex;
+    font-size:  14px ;
+    line-height:  24px ;
+    padding:  10px   16px ;
+    position: relative;
+    width: 100%;
+}
+.title {
+    flex: 1;
+}
+.value{
+    flex: 1;
+}
+
+.cellValue{
+    color:   #969799;
+    overflow: hidden;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.showTips{
+    padding: 10rpx 30rpx;
+    font-size: 30rpx;
+    color: #323233;
+    /*font-weight: lighter;*/
+}
+.footer{
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15rpx;
+    height: 100%;
+    line-height: 90rpx;
+    background-color: #26E07F;
+    color: white;
+    
+    text-align: center;
+}

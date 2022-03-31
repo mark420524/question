@@ -1,0 +1,22 @@
+<van-cell-group title="试卷信息">
+ <van-cell title="名称：" center="true" value="{{exam.examName}}"   />
+ <van-cell title="版本：" center="true" value="{{exam.version}}"   />
+ <van-cell title="大小：" center="true" value="{{exam.fileSize}}"   />
+ <van-cell title="类型：" center="true" value="{{exam.fileType}}"   />
+</van-cell-group>
+<van-cell-group title="下载试卷">
+ <view class="tipsCell">
+  <view class="title">消耗积分</view>
+  <view class="value cellValue">每套试卷消耗<label class="redColor">{{examIntegral}}</label>积分</view>
+ </view>
+ <view class="tipsCell">
+  <view class="title">剩余积分</view>
+  <view class="value cellValue">您剩余<label class="redColor">{{userIntegral}}</label>积分</view>
+ </view>
+ <view wx:if="{{!enough}}">
+    <view class="showTips" > 
+    您的积分不足，暂无法导出，邀请好友赠送积分了，赶快去邀请吧。
+    </view>
+    <view bindtap="inviteFriend"  class="footer"  > 马上邀请</view>
+</view>
+</van-cell-group>
