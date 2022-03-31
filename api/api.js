@@ -30,7 +30,8 @@ import {
     todayQuestionInfo:'question/today',
     answerTodayQuestion:'question/today/answer',
     getMyIviteList:'user/invite/list',
-    searchExam:'exam/search'
+    searchExam:'exam/search',
+    exportExam:'export/exam'
   }
   module.exports = {
     userLogin(data) {
