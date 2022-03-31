@@ -28,9 +28,15 @@
               <view class="clear"></view>
           </view>
     </view>
-    <van-overlay show="{{ showFilter }}" bind:click="onClickHide">
-      <view class="filterBody">
-        <view class="block" catch:tap="noop"  >1231232</view>
+    <van-overlay z-index="99999" show="{{ showFilter }}"  >
+      <view class="filterBody" bindtap="onClickHide">
+        <van-tree-select
+          items="{{ items }}"
+          main-active-index="{{ mainActiveIndex }}"
+          active-id="{{ activeId }}"
+          bind:click-nav="onClickNav"
+          bind:click-item="onClickItem"
+        />
       </view>
     </van-overlay>
   </view>
