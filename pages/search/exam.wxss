@@ -24,6 +24,7 @@
   margin-left: 20rpx;
   float: left;
   height: 100%;
+  padding-right: 20rpx;
 }
 .totalSize{
   padding-left: 40rpx;
@@ -34,4 +35,22 @@
   background-color: white;
   margin: 0 auto;
   font-size: 32rpx;
+}
+
+.filterText{
+  float: right;
+  margin-right: 30rpx;
+}
+
+.filterBody {
+  display: flex;
+  position: absolute;
+  
+  right: 0;
+  height: 100%;
+}
+
+.block { 
+  height:  100%;
+  background-color: #fff;
 }

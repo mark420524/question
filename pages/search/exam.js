@@ -11,6 +11,7 @@ Page({
         size:10,
         type:1,
         totalSize:0,
+        showFilter:false,
     },
     onLoad( ){ 
       this.init( );
@@ -135,5 +136,13 @@ Page({
             imageUrl:'',//图片样式
             path:''//链接
         }
+    },
+    showFilter(){
+      this.setData({
+        showFilter:true
+      })
+    },
+    onClickHide() {
+      this.setData({ showFilter: false });
     },
 })

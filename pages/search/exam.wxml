@@ -9,18 +9,29 @@
 </van-search>
 
 <view class="container" wx:if="{{type==1}}">
-<view wx:if="{{examList.length == 0}}">
-  <empty historys="{{historys}}" bind:click="onTapHistory"/>
-</view>
-<view wx:else >
-  <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果</view>
-  <view wx:for="{{ examList }}" wx:for-item="listItem" wx:key="index">
-        <view class="itemParent" bindtap="goExam" wx:for="{{listItem}}" data-id="{{ item.id }}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
-            <view class="item remark">
-              {{  index * size +  itemIndex+1 }}   {{  item.remark }}     
-            </view> 
-            <view class="clear"></view>
-        </view>
+  <view wx:if="{{examList.length == 0}}">
+    <empty historys="{{historys}}" bind:click="onTapHistory"/>
+  </view>
+  <view wx:else >
+    <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果
+      <view bindtap="showFilter" class="filterText">
+        筛选
+        <van-icon name="filter-o" />
+      </view>
     </view>
-</view>
+    <view class="clear"></view>
+    <view wx:for="{{ examList }}" wx:for-item="listItem" wx:key="index">
+          <view class="itemParent" bindtap="goExam" wx:for="{{listItem}}" data-id="{{ item.id }}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
+              <view class="item remark">
+                {{  index * size +  itemIndex+1 }}.  {{  item.examName }}     
+              </view> 
+              <view class="clear"></view>
+          </view>
+    </view>
+    <van-overlay show="{{ showFilter }}" bind:click="onClickHide">
+      <view class="filterBody">
+        <view class="block" catch:tap="noop"  >1231232</view>
+      </view>
+    </van-overlay>
+  </view>
 </view>

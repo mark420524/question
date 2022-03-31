@@ -2,6 +2,8 @@
     "navigationBarTitleText":"试卷搜索",
     "usingComponents": {
         "van-search": "../../components/vant/search/index",
+        "van-icon": "../../components/vant/icon/index",
+        "van-overlay": "../../components/vant/overlay/index",
         "empty":"../../components/empty/index"
       }
 }

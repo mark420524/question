@@ -24,6 +24,7 @@
   margin-left: 20rpx;
   float: left;
   height: 100%;
+  padding-right: 20rpx;
 }
 .totalSize{
   padding-left: 40rpx;
