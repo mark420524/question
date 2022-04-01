@@ -9,14 +9,11 @@
   }
   .itemParent{
     background-color: white;
-    padding-left : 20rpx;
-    padding-top: 40rpx;
-    padding-bottom: 40rpx;
+    padding: 40rpx 20rpx;
     margin:0 auto;
     width: 100%;
     height: 100%;
     margin-top: 20rpx;
-    font-size: 34rpx;
     width: 100%;
 }
 

@@ -32,14 +32,18 @@
   </view>
 </view>
 
-<van-overlay z-index="99999"  show="{{ showFilter }}"  >
+<van-overlay z-index="99999"  show="{{ showFilter }}"  bindtap="onClickHide">
   <view class="filterBody" >
-    <van-tree-select
-      items="{{ items }}"
-      main-active-index="{{ mainActiveIndex }}"
-      active-id="{{ activeId }}"
-      bind:click-nav="onClickNav"
-      bind:click-item="onClickItem"
-    />
+
+    <view class="">
+      分类
+      <view wx:for="{{items }}" wx:key="index" wx:for-item="item">
+        <view class="">{{ item.name }}</view>
+        <view class="" wx:for="{{ item.children }}" wx:key="index" wx:for-item="childItem">
+          <view class="" data-id="{{ childItem.id }}">{{ childItem.name }}</view>
+        </view>
+      </view>
+    </view>
+
   </view>
 </van-overlay>

@@ -31,7 +31,8 @@ import {
     answerTodayQuestion:'question/today/answer',
     getMyIviteList:'user/invite/list',
     searchExam:'exam/search',
-    exportExam:'export/exam'
+    exportExam:'export/exam',
+    getExamMenu: "category/exam/list",
   }
   module.exports = {
     userLogin(data) {
@@ -210,6 +211,13 @@ import {
     exportExam:function(data){
       return http({
         url:url.exportExam,
+        data:data
+      })
+    },
+    getExamMenu:function(data){
+      return http({
+        url:url.getExamMenu,
+        method:'GET',
         data:data
       })
     }
