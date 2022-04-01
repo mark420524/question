@@ -13,7 +13,9 @@ Page({
         showFilter:false,
         mainActiveIndex: 0,
         activeId: null,
-        items:[]
+        items:[],
+        version:'',
+        fileType:''
     },
     onLoad( ){ 
       this.init( );
@@ -34,10 +36,21 @@ Page({
       let that = this;
       let data = {pid:0};
       apis.getExamMenu(data).then(res=>{
+        let items = that.buildItems(res);
+        //console.log('items',items);
         that.setData({
-          items: res
+          items: items
         })
       })
+    },
+    buildItems(res){
+      for (let i=0;i<res.length;i++){
+        res[i].text = res[i].name;
+        if (res[i].children && res[i].children.length>0) {
+          this.buildItems(res[i].children)
+        }
+      }
+      return res;
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
@@ -165,4 +178,5 @@ Page({
       this.setData({ activeId });
       return false;
     },
+    noop() {},
 })

@@ -40,9 +40,27 @@
 }
 
 .filterBody {
-  position: absolute;
-  right: 0;
-  height: 100%;
+  
+  height:100vh;
   background-color: #fff;
-  width: 70%;
+  width:500rpx;
+}
+.category{
+  padding: 40rpx 20rpx;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+.categoryName{
+  padding: 40rpx 20rpx;
+  font-size: 12px;
+  font-weight: normal;
+}
+.categoryInfo{
+  margin-left: 40rpx;
+}
+.footer{
+  position:absolute;
+  bottom: 0;
+  width: 100%;
 }

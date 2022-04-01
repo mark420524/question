@@ -3,8 +3,12 @@
     "usingComponents": {
         "van-search": "../../components/vant/search/index",
         "van-icon": "../../components/vant/icon/index",
-        "van-overlay": "../../components/vant/overlay/index",
+        "van-popup": "../../components/vant/popup/index",
         "van-tree-select": "../../components/vant/tree-select/index",
-        "empty":"../../components/empty/index"
+        "empty":"../../components/empty/index",
+        "van-radio-group": "../../components/vant/radio-group/index",
+        "van-radio": "../../components/vant/radio/index",
+        "van-button": "../../components/vant/button/index"
+        
       }
 }

@@ -8,7 +8,7 @@
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
 
-<view class="container"  catchtap="onClickHide">
+<view class="container">
   <view wx:if="{{examList.length == 0}}">
     <empty historys="{{historys}}" bind:click="onTapHistory"/>
   </view>
@@ -31,19 +31,47 @@
    
   </view>
 </view>
-
-<van-overlay z-index="99999"  show="{{ showFilter }}"  bindtap="onClickHide">
-  <view class="filterBody" >
-
-    <view class="">
-      分类
-      <view wx:for="{{items }}" wx:key="index" wx:for-item="item">
-        <view class="">{{ item.name }}</view>
-        <view class="" wx:for="{{ item.children }}" wx:key="index" wx:for-item="childItem">
-          <view class="" data-id="{{ childItem.id }}">{{ childItem.name }}</view>
-        </view>
-      </view>
-    </view>
-
+<van-popup   show="{{ showFilter }}" position="right"  bindtap="onClickHide">
+ 
+ <view class="filterBody" catchtap="noop"   >
+   <view class="category">分类</view>
+   <view class="categoryInfo">
+    <van-tree-select
+      items="{{ items }}"
+      main-active-index="{{ mainActiveIndex }}"
+      active-id="{{ activeId }}"
+      bind:click-nav="onClickNav"
+      bind:click-item="onClickItem"
+      height="300"
+    />
   </view>
-</van-overlay>
+   <view class="category">版本</view>
+   <view class="categoryInfo">
+   <!-- 要读后台获取版本信息-->
+    <van-radio-group
+        value="{{ version }}"
+        bind:change="onChange"
+        direction="horizontal"
+      >
+        <van-radio name="人教版">人教版</van-radio>
+        <van-radio name="苏教版">苏教版</van-radio>
+      </van-radio-group>
+  </view>
+  <view class="category">类型</view>
+   <view class="categoryInfo">
+    <van-radio-group
+        value="{{ fileType }}"
+        bind:change="onChange"
+        direction="horizontal"
+      >
+        <van-radio name=".doc">doc</van-radio>
+        <van-radio name=".pdf">pdf</van-radio>
+      </van-radio-group>
+   </view>
+
+   <view class="footer">
+    <van-button type="default">取消</van-button>
+    <van-button type="info">确认</van-button>
+   </view>
+ </view>
+</van-popup>
