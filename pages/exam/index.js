@@ -11,9 +11,13 @@ Page({
     },
     onLoad(){
         let item = wx.getStorageSync('examItem' );
-        
+        let that = this;
         this.setData({exam:item})
-        this.initExamIntegral(1110);
+        let data= {uid:utils.getUserId()}
+        apis.getMyIntegral(data).then(res=>{
+            res = res || 0;
+            that.initExamIntegral(res);
+        });
     },
     initExamIntegral(userIntegral){
         let that = this;
@@ -62,23 +66,27 @@ Page({
         let that = this;
         let email = this.data.email;
         let examIntegral = this.data.examIntegral;
+        let userIntegral = this.data.userIntegral;
         console.log('email',email)
         
         if (utils.validEmail(email)) { 
+            wx.showLoading({
+              title: '正在提交',
+            })
             let data={
                 uid:utils.getUserId(),
                 eid:this.data.exam.id,
                 email:email
             }
             apis.exportExam(data).then(res=>{
+                wx.hideLoading();
                 let signRegex = /^\d+$/;
                 if(signRegex.test(res)){
                     utils.showWxToast('已提交，请十分钟后查看邮箱附件');
                     that.setData({
-                        integral:res ,
-                        enough: res >=examIntegral
+                        userIntegral:userIntegral-examIntegral ,
+                        enough: (userIntegral-examIntegral) >=examIntegral
                     })
-                    
                 }else{
                     utils.showWxToast(res); 
                 }
