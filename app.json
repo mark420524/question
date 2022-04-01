@@ -28,7 +28,8 @@
     "pages/share/invite",
     "pages/integral/invite",
     "pages/search/exam",
-    "pages/exam/index"
+    "pages/exam/index",
+    "pages/detail/child"
   ],
   "window": {
     "backgroundTextStyle": "light",

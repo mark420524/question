@@ -16,10 +16,20 @@ Page({
           success: function(res) {
             wx.hideLoading( );
             let item =  res.data[0];
-            wx.setStorageSync('poetryItem', item)
-            wx.navigateTo({
+            
+            let index = item.index;
+            if (index==0){
+              wx.setStorageSync('poetryItem', item);
+              wx.navigateTo({
                 url: '/pages/detail/index',
-            })
+              })
+            }else{
+              wx.setStorageSync('childItem', item);
+              wx.navigateTo({
+                url: '/pages/detail/child',
+              })
+            }
+            
           },
           fail: function(res){
             wx.hideLoading( );

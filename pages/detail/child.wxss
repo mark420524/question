@@ -19,6 +19,10 @@
 }
 .content{
     font-weight: 500;
-    
+   
     margin-top:20rpx;
+}
+.subchapter{
+    font-weight: 500;
+    font-size: 45rpx;
 }

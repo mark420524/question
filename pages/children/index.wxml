@@ -16,12 +16,26 @@
 <van-grid  column-num="2"  >
   <van-grid-item  
   text-class="itemText"
+  data-type="dizigui"
+  bind:click="handlerChildren"
   text="弟子规" />
   <van-grid-item  
   text-class="itemText"
   bind:click="handlerChildren"
   data-type="qianziwen"
    text="千字文" />
+</van-grid>
+<van-grid  column-num="2"  >
+  <van-grid-item  
+  text-class="itemText"
+  data-type="shenglvqimeng1"
+  bind:click="handlerChildren"
+  text="声律启蒙上" />
+  <van-grid-item  
+  text-class="itemText"
+  bind:click="handlerChildren"
+  data-type="shenglvqimeng2"
+   text="声律启蒙下" />
 </van-grid>
 
 </view>

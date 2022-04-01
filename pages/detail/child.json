@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"诗词详情",
+    "usingComponents": {
+        "van-divider": "../../components/vant/divider/index" 
+      }
+}
