@@ -59,11 +59,17 @@ Page({
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
         let val = keyword.data.value;
+        if(val==this.data.searchVal){
+          return;
+        }
         this.search(val);
     },
     
     onCofirmSearch(e){
         let val = e.detail;
+        if(val==this.data.searchVal){
+          return;
+        }
         this.search(val);
     },
     
