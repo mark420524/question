@@ -1,6 +1,6 @@
 <view class="container">
 <!-- TODO 页面好丑，待优化 2022年3月24日21点54分-->
-<van-grid  column-num="2" reverse  >
+<van-grid  column-num="2"  >
   <van-grid-item  
   text-class="itemText"
   bind:click="handlerChildren"
@@ -13,7 +13,7 @@
    text="百家姓" />
 </van-grid>
 
-<van-grid  column-num="2"  >
+<van-grid  column-num="2"   >
   <van-grid-item  
   text-class="itemText"
   data-type="dizigui"

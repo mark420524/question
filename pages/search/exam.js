@@ -15,7 +15,8 @@ Page({
         activeId: null,
         items:[],
         version:'',
-        fileType:''
+        fileType:'',
+        pid:0
     },
     onLoad( ){ 
       this.init( );
@@ -29,7 +30,10 @@ Page({
         totalSize:0,
         pages:0,
         examList:[],
-        label:label 
+        label:label,
+        version:'',
+        fileType:'',
+        
       })
     },
     initExamMenu(){
@@ -93,9 +97,7 @@ Page({
     },
     searchData(page, val,  emptyText){
       console.log(val,this.data.searchVal)
-      if (val==this.data.searchVal && page==this.data.pages ) {
-         return;
-      }else if(val!=this.data.searchVal){
+      if(val!=this.data.searchVal){
         this.init();
         this.setData({
           searchVal: val,
@@ -109,11 +111,14 @@ Page({
        
       let that = this;  
         let data = {
-          
+          version:this.data.version,
+          fileType:this.data.fileType,
           examName:val,
           page:page,
+          pid:this.data.pid,
           size:this.data.size
         }
+        console.log(data);
         apis.searchExam(data).then(res=>{
           wx.hideLoading( );
           let list = res.list;
@@ -175,8 +180,26 @@ Page({
     onClickItem({ detail = {} }) {
       const activeId = this.data.activeId === detail.id ? null : detail.id;
   
-      this.setData({ activeId });
+      this.setData({ 
+        activeId:activeId,
+        pid:activeId
+      });
       return false;
     },
     noop() {},
+    cofirmFilter(){
+      this.searchData(0, this.data.searchVal, '查无结果');
+      this.setData({ showFilter: false });
+    },
+    onChangeVersion(event) {
+      this.setData({
+        version: event.detail,
+      });
+    },
+    onChangeFileType(event) {
+      
+      this.setData({
+        fileType: event.detail,
+      });
+    },
 })

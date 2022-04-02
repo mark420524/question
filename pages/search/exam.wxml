@@ -50,7 +50,7 @@
    <!-- 要读后台获取版本信息-->
     <van-radio-group
         value="{{ version }}"
-        bind:change="onChange"
+        bind:change="onChangeVersion"
         direction="horizontal"
       >
         <van-radio name="人教版">人教版</van-radio>
@@ -61,7 +61,7 @@
    <view class="categoryInfo">
     <van-radio-group
         value="{{ fileType }}"
-        bind:change="onChange"
+        bind:change="onChangeFileType"
         direction="horizontal"
       >
         <van-radio name=".doc">doc</van-radio>
@@ -70,8 +70,8 @@
    </view>
 
    <view class="footer">
-    <van-button type="default">取消</van-button>
-    <van-button type="info">确认</van-button>
+    <van-button bind:click="onClickHide" custom-class="footerButton" type="default">取消</van-button>
+    <van-button bind:click="cofirmFilter" custom-class="footerButton confirm" type="primary">确认</van-button>
    </view>
  </view>
 </van-popup>
