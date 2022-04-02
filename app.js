@@ -1,6 +1,7 @@
 // app.js
 import api from 'api/api.js'
 import util from 'utils/util.js'
+let appId = wx.getAccountInfoSync().miniProgram.appId;
 App({
   onLaunch() {
     let menuVersion = util.getMenuVersionIndex() || 0;
@@ -39,5 +40,6 @@ App({
     userInfo: null
   },
   apis: api,
-  utils: util
+  utils: util,
+  appId: appId
 })

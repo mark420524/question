@@ -256,7 +256,8 @@ Page({
               console.log(res)
               let data={
                 inviteUid:inviteUid,
-                code:res.code
+                code:res.code,
+                appId:app.appId
               }
               if(res.code){
                   apis.userLogin(data).then(res=>{

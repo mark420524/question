@@ -36,8 +36,10 @@ import {
   }
   module.exports = {
     userLogin(data) {
+      let appId = data.appId;
+      delete data.appId;
       return http({
-        url: url.userLogin,
+        url: url.userLogin+'/'+appId,
         data: data,
         method: 'POST'
       })
