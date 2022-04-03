@@ -61,14 +61,13 @@
 }
 .footer{
   position:absolute;
-  padding: 20rpx 40rpx;
+  padding: 20rpx 0;
+  
   bottom: 0;
   width: 100%;
 }
 .footerButton{
   width: 40%;
-  
-}
-.confirm{
   margin-left: 40rpx;
 }
+

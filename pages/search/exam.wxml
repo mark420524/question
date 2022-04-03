@@ -73,7 +73,7 @@
 
    <view class="footer">
     <van-button bind:click="onClickHide" custom-class="footerButton" type="default">取消</van-button>
-    <van-button bind:click="cofirmFilter" custom-class="footerButton confirm" type="primary">确认</van-button>
+    <van-button bind:click="cofirmFilter" custom-class="footerButton" type="primary">确认</van-button>
    </view>
  </view>
 </van-popup>
