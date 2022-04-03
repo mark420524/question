@@ -14,7 +14,14 @@ Page({
     },
     onLoad( ){ 
       this.init( );
+      this.selectCategory();
       this.reloadHistory();
+    },
+    selectCategory(){
+      let selectCategory = wx.getStorageSync('selectCategory') ;
+      this.setData({
+        selectCategory:selectCategory?selectCategory:'暂无'
+      })
     },
     init( ){
       let label = '题库'; 
@@ -104,6 +111,9 @@ Page({
        
     },
     onReachBottom(){
+      if (!this.data.searchVal) {
+        return;
+      }
       let page = this.data.pages;
       page++;
       this.searchData(page,this.data.searchVal,'没有更多数据了')
@@ -127,7 +137,8 @@ Page({
             this.getTabBar().setData({
               active: 1,
             })
-          }
+        }
+        this.selectCategory();
       },
       onShareAppMessage(){
         return {
