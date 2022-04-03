@@ -1,22 +1,24 @@
 <page-meta page-style="{{ showFilter ? 'overflow: hidden;' : '' }}" />
-<van-search value="{{ searchVal }}" placeholder="请输入搜索关键词" 
-  id="searchText"
-  label="{{label}}"
-  use-action-slot
-  bind:search="onCofirmSearch"
-  
-  background="#ffffff"
-><view slot="action" bind:tap="actionSearch">搜索</view>
-</van-search>
-
 <view class="container">
-  <view >
+  <view class="titleSticky"> 
+    <van-search value="{{ searchVal }}" placeholder="请输入搜索关键词" 
+      id="searchText"
+      label="{{label}}"
+      use-action-slot
+      bind:search="onCofirmSearch"
+      
+      background="#ffffff"
+    ><view slot="action" bind:tap="actionSearch">搜索</view>
+    </van-search>
+
     <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果
       <view catchtap="showFilter" class="filterText">
         筛选
         <van-icon name="filter-o" />
       </view>
     </view>
+  </view>
+  <view >
     <view class="clear"></view>
     <view wx:for="{{ examList }}" wx:for-item="listItem" wx:key="index">
           <view class="itemParent" bindtap="goExam" wx:for="{{listItem}}" data-item="{{ item }}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
