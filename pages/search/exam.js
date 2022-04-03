@@ -194,6 +194,11 @@ Page({
     },
     noop() {},
     cofirmFilter(){
+      this.setData({
+        totalSize:0,
+        pages:0,
+        examList:[]
+      })
       this.searchData(0, this.data.searchVal, '查无结果');
       this.setData({ showFilter: false });
     },

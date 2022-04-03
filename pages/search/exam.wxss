@@ -43,7 +43,7 @@
   
   height:100vh;
   background-color: #fff;
-  width:500rpx;
+  width: 100%;
 }
 .category{
   padding: 40rpx 20rpx;

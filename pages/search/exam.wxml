@@ -10,10 +10,7 @@
 </van-search>
 
 <view class="container">
-  <view wx:if="{{examList.length == 0}}">
-    <empty historys="{{historys}}" bind:click="onTapHistory"/>
-  </view>
-  <view wx:else >
+  <view >
     <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果
       <view catchtap="showFilter" class="filterText">
         筛选
@@ -54,6 +51,7 @@
         bind:change="onChangeVersion"
         direction="horizontal"
       >
+        <van-radio name="">全部</van-radio>
         <van-radio name="人教版">人教版</van-radio>
         <van-radio name="苏教版">苏教版</van-radio>
       </van-radio-group>
@@ -65,6 +63,7 @@
         bind:change="onChangeFileType"
         direction="horizontal"
       >
+        <van-radio name="">全部</van-radio>
         <van-radio name=".doc">doc</van-radio>
         <van-radio name=".pdf">pdf</van-radio>
       </van-radio-group>
