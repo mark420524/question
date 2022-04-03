@@ -45,7 +45,12 @@
     <view class="_view data-v-7542c5d7 footer" style=" {{isShow_analy ? 'box-shadow:0px 0px 10px rgba(0,0,0,0.2);' : ''}}">
      
       <view class="_view data-v-7542c5d7 analy" hidden="{{!(isShow_analy)}}">
+        <view wx:if="{{ type!=4 }}">
         {{question[nowIndex].analysis}}
+        </view>
+        <view wx:else>
+          模拟考试暂不显示解析
+        </view>
       </view>
       <switch  bindtap="showAnaly" checked="{{isShow_analy}}"  class="_switch data-v-7542c5d7" />
       
