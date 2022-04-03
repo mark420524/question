@@ -51,7 +51,7 @@
 
 #### 页面截图
 
-![image](screenshot/1.png)
+![image](screenshot/3.jpg)
 
 ![image](screenshot/2.jpg)
 ![image](screenshot/5.jpg)
