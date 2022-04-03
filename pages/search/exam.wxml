@@ -1,3 +1,4 @@
+<page-meta page-style="{{ showFilter ? 'overflow: hidden;' : '' }}" />
 <van-search value="{{ searchVal }}" placeholder="请输入搜索关键词" 
   id="searchText"
   label="{{label}}"
