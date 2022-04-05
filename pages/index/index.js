@@ -265,6 +265,10 @@ Page({
                     wx.setStorageSync('uid', res)
                   });
               }
+          },
+          fail(res) {
+            wx.hideLoading();
+            console.log(res)
           }
       });
   },
