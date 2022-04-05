@@ -3,22 +3,24 @@
     <view wx:for="{{ integralList }}" wx:for-item="listItem" wx:key="index">
         <view class="itemParent" wx:for="{{listItem}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="itemIndex" >
             <view class="item intergralIndex "  >
-            {{  index * size +  itemIndex+1 }} </view>
+            {{  index * size +  itemIndex+1 }} 
+            </view>
             
             <view class="item remark">
                 {{  item.remark }} 
                 <view class="intergralTime">  {{  item.createTime }}    </view>
             </view>
-        
-            <view wx:if="{{item.type==1}}" class="item score">获得<label  class="addIntegral">
-            +{{  item.integral }} 
-            </label>积分
-            <view class="totalIntegral"> 剩余: {{  item.afterCount }}    </view>
+            <view wx:if="{{item.type==1}}" class="item score">获得
+                <label  class="addIntegral">
+                +{{  item.integral }} 
+                </label>积分
+                <view class="totalIntegral"> 剩余: {{  item.afterCount }}    </view>
             </view>
-            <view wx:else class="item score">消耗<label  class="redColor">
-            -{{  item.integral }} 
-            </label>积分
-            <view class="totalIntegral"> 剩余:  {{  item.afterCount }}    </view>
+            <view wx:else class="item score">消耗
+                <label  class="redColor">
+                -{{  item.integral }} 
+                </label>积分
+                <view class="totalIntegral"> 剩余:  {{  item.afterCount }}    </view>
             </view>
             <view class="clear"></view>
         </view>
