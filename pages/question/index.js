@@ -51,7 +51,7 @@ Page({
     },
     onShow( ){
         let index = utils.getCollectionIndex() || 0;
-        console.log('show',index);
+        //console.log('show',index);
         if (index) {
             this.setData({ nowIndex:index-1});
             this.buildRightIndex();
@@ -102,7 +102,7 @@ Page({
             type:type
        });
         
-        console.log('type=',type,'cid=',cid,'menuid',   menuId);
+        //console.log('type=',type,'cid=',cid,'menuid',   menuId);
         if(options.index){
             // bank过来
             const bankIndex = options.index
@@ -171,7 +171,7 @@ Page({
         },
         multiplySubmit(e){
             let id = e.currentTarget.dataset.id;
-            console.log(this.data.optionSelect)
+            //console.log(this.data.optionSelect)
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             let selectAnswer = [];
             for (let i=0;i<this.data.optionSelect.length;i++){
@@ -187,7 +187,7 @@ Page({
                 })
                 return false;
             }
-            console.log(selectAnswer);
+            //console.log(selectAnswer);
             
             
             let right = 1;
@@ -241,7 +241,7 @@ Page({
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             const _this = this;
             if(multiply){
-                console.log('多选题', index );
+                //console.log('多选题', index );
                 let optionSelect = [];
                 let activeClass = [];
                 for(let j=0;j<this.data.optionSelect.length;j++){
@@ -326,7 +326,7 @@ Page({
             if(currentIndex && currentIndex.current){
                 current = currentIndex.current;
             }
-            console.log(307, current)
+            //console.log(307, current)
             current += index;
             currentIndex.current  = current;
             menuInfo[this.data.menuId] = currentIndex;
@@ -341,7 +341,7 @@ Page({
             let menuInfo = wx.getStorageSync('menuCount') || {}
             let currentIndex = menuInfo[this.data.menuId];
             let current = 0;
-            console.log('currentIndex', currentIndex)
+            //console.log('currentIndex', currentIndex)
             if(currentIndex){
                 current = currentIndex.current;
             }
@@ -370,7 +370,7 @@ Page({
                 rightCount++;
                 let type = this.getAnswerType();
                 if (type==2 && this.getAutoRemove()) {
-                    console.log('自动移除错题');
+                    //console.log('自动移除错题');
                     this.removeUserWrongQuestion();
                 }
 
@@ -379,7 +379,7 @@ Page({
                 this.addUserWrongQuestion();
                 errorCount++;
             }
-            console.log(27,'rightCount', rightCount, 'errorCount', errorCount, 'count', count)
+            //console.log(27,'rightCount', rightCount, 'errorCount', errorCount, 'count', count)
             menuCount.rightCount  = rightCount;
             menuCount.errorCount = errorCount;
             menuCount.count = count  ;
@@ -421,7 +421,7 @@ Page({
             let count = 0
             let menuInfo = wx.getStorageSync('menuCount') || {}
             let menuCount = menuInfo[this.data.menuId] || {};
-            console.log(menuCount)
+            //console.log(menuCount)
             
             if (menuCount  ) {
                 rightCount = menuCount.rightCount || 0;
@@ -436,14 +436,14 @@ Page({
            
         },
         buildRightIndex(){
-            console.log('rightindex-nowIndex' , this.data.nowIndex)
+            //console.log('rightindex-nowIndex' , this.data.nowIndex)
             let question = this.data.question[this.data.nowIndex];
-            console.log('rightindex-question', question)
+            //console.log('rightindex-question', question)
             let activeClass = [];
             let rightIndex = [];
             let answer = question.rightAnswer;
 			let rightArr = answer.split(',');
-            console.log('rightArr',rightArr,'nowIndex',this.data.nowIndex);
+            //console.log('rightArr',rightArr,'nowIndex',this.data.nowIndex);
 			for (let i=0;i<rightArr.length;i++) {
 				rightIndex[rightIndex.length]=rightArr[i].charCodeAt()-'A'.charCodeAt();
 			}
@@ -451,7 +451,7 @@ Page({
             //1 单选
             
             let optionSelect = [];
-            console.log('rigthIndex',rightIndex)
+            //console.log('rigthIndex',rightIndex)
             for(let j=0;j<question.selectList.length;j++){
                 optionSelect[j]= false;
                 if (this.data.showAnswer && rightIndex.indexOf(j)>-1) {
@@ -486,10 +486,10 @@ Page({
             let question = this.data.question[this.data.nowIndex];
             let  id = question.id;
             let custAnswer = this.getCurrentMenuAnswer();
-            console.log('buildUserAnswer-custAnswer', custAnswer);
+            //console.log('buildUserAnswer-custAnswer', custAnswer);
             if (custAnswer[id]) {
                 let rightIndex = this.data.rightIndex;
-                console.log('buildUserAnswer-rightIndex', this.data.rightIndex);
+                //console.log('buildUserAnswer-rightIndex', this.data.rightIndex);
                 let useChooseAnswer = custAnswer[id];
                 let optionSelect = this.data.optionSelect;
                 let activeClass = this.data.activeClass;
@@ -503,7 +503,7 @@ Page({
                         activeClass[useChooseAnswer[ i]] = 'error';
                     }
                 }
-                console.log('buildUserAnswer-useChooseAnswer',  useChooseAnswer);
+                //console.log('buildUserAnswer-useChooseAnswer',  useChooseAnswer);
                 for (let i=0;i<rightIndex.length;i++) {
                     if (useChooseAnswer.indexOf(rightIndex[i])>-1) {
                         activeClass[rightIndex[i]] = 'active';
@@ -544,7 +544,7 @@ Page({
             const _this = this
             
             if(this.data.nowIndex>=this.data.question.length-1){
-                console.log('last')
+                //console.log('last')
                 
                 let type = utils.getAnswerType();
                 if ( type==4) {
@@ -578,7 +578,7 @@ Page({
                 type: type
             }
             apis.saveUserWrongAnswer(data).then(  res  => {
-                console.log(res)
+                //console.log(res)
             })
         },
         initFavoriteQuestion(){
@@ -597,10 +597,10 @@ Page({
             })
         },
         favoriteQuestion( e){
-            console.log(e)
+            //console.log(e)
             const _this = this;
             let type = e.currentTarget.dataset.type;
-            console.log('type',type);
+            //console.log('type',type);
             let msg = '取消收藏成功';
             let favorite = false;
             if(type==1){
@@ -659,7 +659,7 @@ Page({
                 if (cTime<=0) {
                     _this.setData({ time : '00:00'  });
                     clearInterval(_this.data.time_inter)
-                    console.log('倒计时结束自动交卷！');
+                    //console.log('倒计时结束自动交卷！');
                     _this.autoExamSubmit('亲，答题时间到了', false);
                     
                     
@@ -701,7 +701,7 @@ Page({
             this.to('bank')
         },
         autoExamSubmit(title,showCancel){
-            console.log(showCancel,title)
+            //console.log(showCancel,title)
             let that = this;
             wx.showModal({
                 title:title,
@@ -715,7 +715,6 @@ Page({
                 success(res){
                     
                     if(res.confirm){
-                        console.log(2222)
                         that.examSubmit();
                     }
                 },
@@ -741,7 +740,7 @@ Page({
             let s = parseInt(second);
             second = m * 60 + s;
             let useTime =  this.data.countTime-second;
-            console.log(this.data.time, minute,useTime )
+            //console.log(this.data.time, minute,useTime )
             let data={
                 uid: this.getUserId(),
                 cid: this.getAnswerCid(),
@@ -773,7 +772,7 @@ Page({
             let x = e.changedTouches[0].clientX;
             let y = e.changedTouches[0].clientY;
             let ret = utils.getTouchData(x,y,this.data.touch.x,this.data.touch.y);
-            console.log(ret);
+            //console.log(ret);
             if ('left'==ret) {
                 this.createAnimationByFirst('100%');
                 this.nextQuestion();
@@ -797,14 +796,13 @@ Page({
             })
           },
           modifyClose(e){
-              console.log('modifyClose');
               const modifyReason = this.selectComponent('#modifyReason');
               modifyReason.setData({value:''})
               
           },
           confirmModify(e){
              // console.log(e.detail.dialog   )
-              console.log('确定提交纠错')
+              //console.log('确定提交纠错')
               const modifyReason = this.selectComponent('#modifyReason');
               let reason = modifyReason.value;
               if (reason) {
@@ -825,13 +823,13 @@ Page({
               
           },
           confirmText(e){
-              console.log(e)
+              //console.log(e)
           },
           
     onShareAppMessage(res){
         let question = this.data.question[this.data.nowIndex];
         let  id = question.id;
-        console.log('id',id);
+        //console.log('id',id);
         return {
             title:'亲爱的，这个题你会么？',
             imageUrl:'',//图片样式
@@ -839,7 +837,7 @@ Page({
         }   
     },
     tabClick(e){
-        console.log(e.detail);
+        //console.log(e.detail);
         let index = e.detail.index;
         let showAnswer = false;
         if (index==1) {
