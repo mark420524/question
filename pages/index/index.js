@@ -58,7 +58,7 @@ Page({
     }else{
         cid = selectData.firstId;
     }
-    let selectCategory = '暂无';
+    let selectCategory = '';
     if(selectData.firstId){
         selectCategory = selectData.province;
     }
@@ -68,14 +68,17 @@ Page({
     if(selectData.thirdId){
         selectCategory += '>' + selectData.country;
     }
-    wx.setStorageSync('selectCategory', selectCategory)
+    if (selectCategory) {
+        wx.setStorageSync('selectCategory', selectCategory)
+        this.setData({
+            selectCategory: selectCategory
+        })
+    }
+    
     if (cid) {
         wx.setStorageSync('cid', cid);
         this.initQuestionCount(cid);
     }
-    this.setData({
-        selectCategory: selectCategory
-    })
   },
   bindChange: function (e) {
     selector.updateAreaData(this, 1, e);
