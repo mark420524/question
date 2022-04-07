@@ -5,7 +5,7 @@
         <view class=" author">{{ item.author}}</view>
         <view class="content" wx:for="{{item.content}}" wx:key="index" wx:for-item="listItem">
             <view class="subchapter">章节： {{listItem.chapter}}</view>
-            <view class="content" wx:for="{{listItem.paragraphs}}" wx:for-item="paragraphItem">
+            <view class="content" wx:for="{{listItem.paragraphs}}" wx:key="index" wx:for-item="paragraphItem">
                 {{paragraphItem}}
             </view>
         </view>

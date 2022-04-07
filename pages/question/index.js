@@ -130,6 +130,22 @@ Page({
                 
                 res.forEach((item,index)=>{
                     conclusion[item.id] = { right:undefined}
+                    //前台格式化right，后台数据不在返回
+                    let rightIndex=[];
+                    let answer = item.rightAnswer;
+                    let rightArr = answer.split(',');
+                    for (let i=0;i<rightArr.length;i++) {
+                        rightIndex[rightIndex.length]=rightArr[i].charCodeAt()-'A'.charCodeAt();
+                    }
+                    for(let j=0;j<item.selectList.length;j++){
+                        let optionItem = item.selectList[j];
+                        if (rightIndex.indexOf(j)>-1) {
+                            optionItem.right = 1;
+                        }else{
+                            delete optionItem.right
+                        }
+                        item.selectList[j] = optionItem;
+                    }               
                 })
                 
                 _this.setData({

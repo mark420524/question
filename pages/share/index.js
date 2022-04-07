@@ -233,7 +233,7 @@ Page({
             this.setData( {number:number}); 
         }, 
         buildRightIndex(){
-            console.log('rightindex-nowIndex' , this.data.nowIndex)
+            //console.log('rightindex-nowIndex' , this.data.nowIndex)
             let question = this.data.question[this.data.nowIndex];
             //console.log('rightindex-question', question)
             let activeClass = [];
