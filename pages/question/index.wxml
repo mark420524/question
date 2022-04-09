@@ -56,8 +56,7 @@
       
       <view class="_ul data-v-7542c5d7">
         <view bindtap="preQuestion"   class="_li data-v-7542c5d7">上一题</view>
-        <view wx:if="{{!startExam}}" class="_li data-v-7542c5d7"><button open-type="share" class="_button data-v-7542c5d7">求助</button></view>
-        <view wx:else  class="emptyView"></view>
+        <view class="_li data-v-7542c5d7"><button open-type="share" class="_button data-v-7542c5d7">求助</button></view>
         <view bindtap="favoriteQuestion" data-type="{{favorite?0:1}}"  class="_li data-v-7542c5d7">
           <image class="_img data-v-7542c5d7 hidden {{favorite ? 'showInline' : ''}}" src="/static/images/isStar.png" alt></image>
           <image class="_img data-v-7542c5d7 hidden {{favorite ? '' : 'showInline'}}" src="/static/images/icons8-star-black.png" alt></image>
