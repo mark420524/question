@@ -8,10 +8,8 @@
     padding:  20rpx 30rpx 40rpx 50rpx;
 }
 .tips{
-    font-size: 34rpx;
-    /*
-    font-weight: lighter;
-    */
+    font-size: 14px;
+    color: #323233;
 }
 .copyText{
     margin: 0 auto;
