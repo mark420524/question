@@ -28,10 +28,10 @@
   /* padding-top: 40rpx; */
   padding-bottom: 20rpx;
   /* margin-left: 40rpx; */
-  
+  color: #323233;
   background-color: white;
   margin: 0 auto;
-  font-size: 32rpx;
+  font-size: 14px;
 }
 
 .filterText{
