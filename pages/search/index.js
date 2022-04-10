@@ -6,7 +6,7 @@ Page({
       questionList:[],
         historys:[],
         searchVal:'',
-        label:'',
+        label:'题库',
         pages:0,
         size:10,
         type:1,
@@ -24,12 +24,10 @@ Page({
       })
     },
     init( ){
-      let label = '题库'; 
       this.setData({
         totalSize:0,
         pages:0,
-        questionList:[],
-        label:label 
+        questionList:[]
       })
     },
     actionSearch( ){
