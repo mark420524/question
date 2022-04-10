@@ -1,0 +1,26 @@
+<view class="container">
+      <view>
+        {{nowIndex+1}}.{{question[nowIndex].question}}
+      </view>
+      <view class="answer">
+        <block wx:key="index" key="{{index}}" wx:for="{{question[nowIndex].selectList}}" wx:for-index="index" wx:for-item="item">
+          <view class="item {{activeClass[index]}}" bindtap="chooseAnswer" data-right="{{item.right}}" data-multiply="{{question[nowIndex].multiply}}" data-index="{{index}}" data-id="{{question[nowIndex].id}}" >
+            <view class="check">
+              <view class="circleBack"></view>
+            </view>
+            <view class="option">{{item.title}}</view>
+            <view class="rightIcon {{(item.right && (showAnswer || alreadyChooseAnswer) ? 'rightShow' : '')}}">
+              <image src="/static/images/icons8-ok-50.png" class="iconImage"></image>
+            </view>
+            <view class="wrongIcon {{(!item.right && optionSelect[index] && alreadyChooseAnswer ? 'wrongShow' : '')}}">
+              <image src="/static/images/icons8-multiply-50.png" class="iconImage"></image>
+            </view>
+          </view>
+        </block>
+        <view class="analy" hidden="{{!(isShow_analy)}}" style="visibility:hidden">
+          {{question[nowIndex].analysis}}
+        </view>
+        <view bindtap="multiplySubmit" data-id="{{question[nowIndex].id}}"  class="multiplySubmit" hidden="{{!(question[nowIndex].multiply)}}" > 提交 </view>
+        <view style="height:180rpx;"></view>
+      </view>
+</view>

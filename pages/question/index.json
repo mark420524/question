@@ -8,7 +8,7 @@
         "van-notify":"../../components/vant/notify/index",
         "van-tabs":"../../components/vant/tabs/index",
         "van-tab":"../../components/vant/tab/index",
-        "numbers":"../../components/numbers/index"
-        
+        "numbers":"../../components/numbers/index",
+        "question":"../../components/question/index"
     }
 }

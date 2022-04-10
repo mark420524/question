@@ -186,7 +186,8 @@ Page({
             return utils.getUserId();
         },
         multiplySubmit(e){
-            let id = e.currentTarget.dataset.id;
+            let detail = e.detail;
+            let id = detail.id;
             //console.log(this.data.optionSelect)
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             let selectAnswer = [];
@@ -250,10 +251,10 @@ Page({
         },
         chooseAnswer(  e ){
             //仅处理单选的选择 
-            
-            const multiply= e.currentTarget.dataset.multiply;
-            let id = e.currentTarget.dataset.id;
-            let index  = e.currentTarget.dataset.index ;
+            let detail = e.detail
+            const multiply= detail.multiply;
+            let id = detail.id;
+            let index  = detail.index ;
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             const _this = this;
             if(multiply){
