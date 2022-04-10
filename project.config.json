@@ -21,6 +21,10 @@
             {
                 "type": "file",
                 "value": "LICENSE"
+            },
+            {
+                "type": "folder",
+                "value": ".git"
             }
         ]
     },
