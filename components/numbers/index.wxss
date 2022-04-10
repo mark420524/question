@@ -1,3 +1,7 @@
+ .main{
+  width: 90%;
+  margin: 20rpx auto;
+ }
  .title {
     text-align: center;
     margin: 32rpx 0;

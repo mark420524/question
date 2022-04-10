@@ -89,7 +89,6 @@
   }
   .emptyView {
     width: 132rpx;
-      
     font-size: 32rpx;
   }
   .container .footer ._ul ._li.data-v-7542c5d7:nth-child(3) {
@@ -103,6 +102,8 @@
     vertical-align: middle;
   }
 .todayTips{
-  margin: 32rpx 0;
+  width: 90%;
+  margin: 20rpx auto;
+  font-size: 32rpx;
   color: #999;
 }

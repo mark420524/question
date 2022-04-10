@@ -599,6 +599,9 @@ Page({
             })
         },
         initFavoriteQuestion(){
+            if (this.data.type==3) {
+                return;
+            }
             const _this = this;
             let data = {
                 cid: this.getAnswerCid(),

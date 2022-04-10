@@ -12,7 +12,7 @@
         从题库全部<label class="redColor">{{totalCount}}</label>题中，随机抽取一题，答题完全正确即可获得积分
         <label class="redColor">+{{todayIntegral}}</label>。每天0点刷新题目。
       </view>
-      <view wx:if="{{showTodayAnswerTips && alreadyChooseAnswer}}">
+      <view class="todayTips" wx:if="{{showTodayAnswerTips && alreadyChooseAnswer}}">
         <view wx:if="{{todayAnswerRight}}" class="redColor">恭喜您，今天题目回答正确，获得积分<label >+{{todayIntegral}}</label></view>
         <view wx:else class="redColor">今天题目已作答，很遗憾，回答错误。天道酬勤，再接再砺。</view>
       </view>
