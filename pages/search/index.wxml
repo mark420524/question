@@ -9,7 +9,7 @@
 ><view slot="action" bind:tap="actionSearch">搜索</view>
 </van-search>
 </view>
-<view class="container" wx:if="{{type==1}}">
+<view class="container">
 <view wx:if="{{questionList.length == 0}}">
   <empty historys="{{historys}}" bind:click="onTapHistory"/>
 </view>

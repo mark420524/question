@@ -6,19 +6,18 @@ Page({
             nowIndex:0,//当前显示题目的index
             menuId:0,
             showAnswer: false,
-            optionItem:['A','B','C','D','E','F','G','H','I','J','K','L','M','N'],
             favorite: false,
             optionSelect: [],
             activeClass:[], 
             rightIndex:[],
             question: [], 
             questionCount: 0,
-            sysAnswer:[],//系统正确答案
+            
             isShow_analy:false,
-            ishave_page:false,
+            
             number:{right:'0',error:'0',count:'0'},
             alreadyChooseAnswer: false,
-            showMore:0,
+            showMore: false,
             type:5,
             totalCount: 0,
             todayIntegral:10,
@@ -177,9 +176,11 @@ Page({
         },
         chooseAnswer(  e ){
             //仅处理单选的选择 
-            const multiply= e.currentTarget.dataset.multiply;
-            let id = e.currentTarget.dataset.id;
-            let index  = e.currentTarget.dataset.index ;
+            let detail = e.detail
+            const multiply= detail.multiply;
+            let id = detail.id;
+            let index  = detail.index ;
+            const right = detail.right
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             if(multiply){
                 //console.log('多选题', index );
@@ -209,7 +210,7 @@ Page({
             }
             let userAnswer = [];
             userAnswer[0]=index;
-            const right = e.currentTarget.dataset.right;
+            
             let optionSelect = [];
             let activeClass= this.data.activeClass;
             for(let j=0;j<=index;j++){
@@ -290,11 +291,6 @@ Page({
         // 显示解析
         showAnaly(){
             this.setData({ isShow_analy:!this.data.isShow_analy})
-        },
-        loadMoreQuestion(){
-            wx.reLaunch({
-              url: '/pages/index/index',
-            })
         },
         submitTodayAnswer(userAnswer,optionSelect,activeClass){
             wx.showLoading({

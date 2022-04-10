@@ -16,32 +16,14 @@
         <view wx:if="{{todayAnswerRight}}" class="redColor">恭喜您，今天题目回答正确，获得积分<label >+{{todayIntegral}}</label></view>
         <view wx:else class="redColor">今天题目已作答，很遗憾，回答错误。天道酬勤，再接再砺。</view>
       </view>
-      <view class="_h6 data-v-7542c5d7 question">
-        {{nowIndex+1}}.{{question[nowIndex].question}}
-      </view>
-      <view class="_view data-v-7542c5d7 answer">
-        <block wx:key="index" key="{{index}}" wx:for="{{question[nowIndex].selectList}}" wx:for-index="index" wx:for-item="item">
-          <view class="_view data-v-7542c5d7 item {{activeClass[index]}}" bindtap="chooseAnswer" data-right="{{item.right}}" data-multiply="{{question[nowIndex].multiply}}" data-index="{{index}}" data-id="{{question[nowIndex].id}}" >
-            <view class="_view data-v-7542c5d7 check">
-              <view class="_view data-v-7542c5d7"></view>
-            </view>
-            <view class="_view data-v-7542c5d7 option">{{item.title}}</view>
-            <view class="_view data-v-7542c5d7 rightIcon {{(item.right && (showAnswer || alreadyChooseAnswer) ? 'rightShow' : '')}}">
-              <image src="/static/images/icons8-ok-50.png" class="_img data-v-7542c5d7"></image>
-            </view>
-            <view class="_view data-v-7542c5d7 wrongIcon {{(!item.right && optionSelect[index] && alreadyChooseAnswer ? 'wrongShow' : '')}}">
-              <image src="/static/images/icons8-multiply-50.png" class="_img data-v-7542c5d7"></image>
-            </view>
-          </view>
-        </block>
-        <view class="_view data-v-7542c5d7 analy" hidden="{{!(isShow_analy)}}" style="visibility:hidden">
-          {{question[nowIndex].analysis}}
-        </view>
-        <view bindtap="multiplySubmit" data-id="{{question[nowIndex].id}}"  class="_view data-v-7542c5d7 multiplySubmit" hidden="{{!(question[nowIndex].multiply)}}" > 提交 </view>
-
-        <view bindtap="loadMoreQuestion"  wx:if="{{ showMore }}"  class="_view data-v-7542c5d7 multiplySubmit"   > 查看更多题目 </view>
-        <view style="height:180rpx;" class="_view data-v-7542c5d7"></view>
-      </view>
+      <question question="{{question}}" nowIndex="{{nowIndex}}" is-show_analy="{{isShow_analy}}"
+      active-class="{{activeClass}}" show-answer="{{showAnswer}}" already-choose-answer="{{alreadyChooseAnswer}}"
+      option-select="{{optionSelect}}"
+      show-more="{{ showMore }}"
+      bind:chooseanswer="chooseAnswer"
+      bind:multiplysubmit="multiplySubmit"
+       />
+     
   </view>
     
 

@@ -7,7 +7,6 @@ Page({
             nowIndex:0,//当前显示题目的index
             menuId:0,
             showAnswer: false,
-            optionItem:['A','B','C','D','E','F','G','H','I','J','K','L','M','N'],
             favorite: false,
             optionSelect: [],
             activeClass:[], 
@@ -15,7 +14,7 @@ Page({
             
             question: [], 
             questionCount: 0,
-            sysAnswer:[],//系统正确答案
+            
             isShow_analy:false,
             conclusion:{ },//最后错误或正确列表
             time:'00 : 00',//计时
@@ -255,6 +254,7 @@ Page({
             const multiply= detail.multiply;
             let id = detail.id;
             let index  = detail.index ;
+            const right = detail.right
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             const _this = this;
             if(multiply){
@@ -284,7 +284,7 @@ Page({
                 return ;
             }
            
-            const right = e.currentTarget.dataset.right
+            
             let conclusion = this.data.conclusion;
             conclusion[id].right = right||0;
             

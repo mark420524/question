@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText":"题目详情",
     "usingComponents": {
-        "numbers":"../../components/numbers/index"
+        "numbers":"../../components/numbers/index",
+        "question":"../../components/question/index"
     }
 }
