@@ -56,7 +56,7 @@ Page({
             }).then(res=>{
                 wx.hideLoading( );
                 _this.setData({
-                    question: res,
+                    question: _this.buildQuestion(res),
                     questionCount: res.length ,
                     showMore:show,
                     nowIndex:0,
@@ -74,7 +74,7 @@ Page({
                 wx.hideLoading( );
                 if(res && res.questions){
                     _this.setData({
-                        question: res.questions,
+                        question: _this.buildQuestion(res.questions),
                         todayIntegral:res.integral,
                         totalCount:res.totalCount,
                         alreadyChooseAnswer:res.alreadyAnswer,
@@ -96,6 +96,28 @@ Page({
         
         
     }, 
+    buildQuestion(res){
+        res.forEach((item,index)=>{
+            
+            //前台格式化right，后台数据不在返回
+            let rightIndex=[];
+            let answer = item.rightAnswer;
+            let rightArr = answer.split(',');
+            for (let i=0;i<rightArr.length;i++) {
+                rightIndex[rightIndex.length]=rightArr[i].charCodeAt()-'A'.charCodeAt();
+            }
+            for(let j=0;j<item.selectList.length;j++){
+                let optionItem = item.selectList[j];
+                if (rightIndex.indexOf(j)>-1) {
+                    optionItem.right = 1;
+                }else{
+                    delete optionItem.right
+                }
+                item.selectList[j] = optionItem;
+            }               
+        })
+        return res;
+    },
         multiplySubmit(e){
             let id = e.currentTarget.dataset.id;
             //console.log(this.data.optionSelect,this.data.alreadyChooseAnswer  )
