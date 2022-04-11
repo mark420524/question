@@ -77,7 +77,11 @@ Page({
           searchVal: val,
         });
       }
-      
+      let cid = utils.getAnswerCid();
+      if (!cid) {
+        utils.showWxToast('请先选择题库');
+        return ;
+      }
       wx.showLoading({
         title: '正在搜索请稍候',
       })
@@ -85,7 +89,7 @@ Page({
        
       let that = this;  
         let data = {
-          cid: utils.getAnswerCid(),
+          cid: cid,
           uid: utils.getUserId(),
           keywords:val,
           page:page,
