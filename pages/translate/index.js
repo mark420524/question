@@ -83,7 +83,7 @@ Page({
                   word:word
                 })
               }else{
-                utils.showWxToast('字典未查询到数据')
+                utils.showWxToast('词典未查询到数据')
               }
              
             }

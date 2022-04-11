@@ -55,3 +55,7 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 ![成语](screenshot/idiom.jpg)
 
 ![词典](screenshot/eng_dict.jpg)
+
+#### 后台截图
+
+![编辑问题](screenshot/admin-1.png)
