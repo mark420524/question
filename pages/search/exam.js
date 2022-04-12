@@ -102,7 +102,7 @@ Page({
         this.searchData(0, val, '查无结果');
     },
     searchData(page, val,  emptyText){
-      console.log(val,this.data.searchVal)
+      //console.log(val,this.data.searchVal)
       if(val!=this.data.searchVal){
         this.init();
         this.setData({
@@ -124,7 +124,7 @@ Page({
           pid:this.data.pid,
           size:this.data.size
         }
-        console.log(data);
+        //console.log(data);
         apis.searchExam(data).then(res=>{
           wx.hideLoading( );
           let list = res.list;
@@ -145,7 +145,7 @@ Page({
       let page = this.data.pages;
       page++;
       this.searchData(page,this.data.searchVal,'没有更多数据了')
-      console.log('reach bottom');
+      //console.log('reach bottom');
    },
     onTapHistory: function(e) { 
         let val = e.detail; 
@@ -161,7 +161,7 @@ Page({
     },
     goExam(e){
       let item = e.currentTarget.dataset.item;
-      console.log(item);
+      //console.log(item);
       wx.setStorageSync('examItem', item)
       wx.navigateTo({
         url: '/pages/exam/index',

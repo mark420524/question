@@ -68,7 +68,7 @@ Page({
         this.searchData(0, val);
     },
     searchData(page, val,  emptyText){
-      console.log(val,this.data.searchVal)
+      //console.log(val,this.data.searchVal)
       if (val==this.data.searchVal && page==this.data.pages ) {
          return;
       }else if(val!=this.data.searchVal){
@@ -119,7 +119,7 @@ Page({
       let page = this.data.pages;
       page++;
       this.searchData(page,this.data.searchVal,'没有更多数据了')
-      console.log('reach bottom');
+      //console.log('reach bottom');
    },
     onTapHistory: function(e) {
         let val = e.detail; 
@@ -127,7 +127,7 @@ Page({
       },
       goQuestion(e){
         let id = e.currentTarget.dataset.id;
-        console.log(id)
+        //console.log(id)
         wx.navigateTo({
           url: '/pages/share/index?show=0&type=5&qid='+id,
         })
