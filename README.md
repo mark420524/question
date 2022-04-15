@@ -28,6 +28,12 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 2. ~~宋词的搜索~~(已完成)
 3. 歇后语的搜索
 4. 后台管理页面开发完善中
+5. 后台sass版api接口开放
+
+#### 代码运行
+
+1. 将`utils/constant.js.example` 重命名为`constant.js`
+2. `constant.js`里面配置后台接口地址和请求接口的`token`
 
 #### 扫码添加QQ群讨论
 
