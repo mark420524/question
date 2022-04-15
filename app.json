@@ -29,7 +29,8 @@
     "pages/integral/invite",
     "pages/search/exam",
     "pages/exam/index",
-    "pages/detail/child"
+    "pages/detail/child",
+    "pages/funny/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
