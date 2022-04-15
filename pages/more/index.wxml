@@ -43,6 +43,12 @@
    icon-color="#32bf44;"
    url="/pages/children/index"
    text="萌宝启蒙" />
+
+   <van-grid-item icon="music-o" 
+  link-type="navigateTo"
+   icon-color="blue"
+   url="/pages/funny/index"
+   text="娱乐专区" />
 </van-grid>
 
 </view>
