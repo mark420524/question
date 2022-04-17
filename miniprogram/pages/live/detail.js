@@ -17,5 +17,8 @@ Page({
      },
     unloadData(){
         wx.removeStorageSync( 'liveItem'  );
+    },
+    videoErrorCallback(e){
+        //utils.showWxToast('视频加载失败，请稍候重试');
     }
 })

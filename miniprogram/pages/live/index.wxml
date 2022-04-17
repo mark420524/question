@@ -1,4 +1,4 @@
-<scroll-view hover-class="none" hover-stop-propagation="false" scroll-y="true" style="height: 100vh;" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+<scroll-view hover-class="none" hover-stop-propagation="false" scroll-y="true" style="height: 100vh;" >
   
   <view class="box"> 
       <van-grid column-num="2" border="{{ false }}">
