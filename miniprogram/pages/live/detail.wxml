@@ -1,0 +1,28 @@
+<view hover-class="none" hover-stop-propagation="false">
+  
+  <view class="main">
+    <view  class="mainVideo">
+      <view  class="videoCenter">
+        <video 
+          id="myVideo" 
+          src="{{item.url}}" 
+          binderror="videoErrorCallback" 
+          danmu-list="{{danmuList}}" 
+          enable-danmu 
+          danmu-btn 
+          show-center-play-btn='{{false}}' 
+          show-play-btn="{{true}}" 
+          autoplay="{{true}}"
+          controls 
+          picture-in-picture-mode="{{[]}}" 
+          bindenterpictureinpicture='bindVideoEnterPictureInPicture' 
+          bindleavepictureinpicture='bindVideoLeavePictureInPicture'>
+        </video>
+      </view>
+
+      <view class="liveName">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>

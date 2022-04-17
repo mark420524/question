@@ -22,6 +22,7 @@ Page({
             }
             wx.hideLoading()
         }).catch(err=>{
+            utils.showWxToast('查无数据');
             wx.hideLoading()
         })
         
@@ -29,6 +30,10 @@ Page({
     handlerItemClick(e){
         
         let item = e.currentTarget.dataset.live;
-        console.log(item);
+        
+        wx.setStorageSync('liveItem', item)
+        wx.navigateTo({
+            url: '/pages/live/detail',
+          })
     }
 })

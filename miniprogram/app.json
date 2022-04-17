@@ -31,7 +31,8 @@
     "pages/exam/index",
     "pages/detail/child",
     "pages/funny/index",
-    "pages/live/index"
+    "pages/live/index",
+    "pages/live/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

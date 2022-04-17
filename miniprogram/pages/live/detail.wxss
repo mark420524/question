@@ -1,0 +1,15 @@
+
+.videoCenter{
+    display: flex;
+    justify-content: center;
+}
+#myVideo{
+    width: 100%;
+}
+.liveName{
+    color: black;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    padding: 30rpx;
+}
