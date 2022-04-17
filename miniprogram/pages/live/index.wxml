@@ -1,0 +1,16 @@
+<scroll-view hover-class="none" hover-stop-propagation="false" scroll-y="true" style="height: 100vh;" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+  
+  <view class="box"> 
+      <van-grid column-num="2" border="{{ false }}">
+        <van-grid-item use-slot wx:for="{{ items }}" wx:key="index" bind:click="handlerItemClick" data-live="{{item}}" wx:for-item="item">
+            <view class="item">
+             <view class="itemImage">
+                <image class="backgroupImage" src="cloud://rightanswer-9gmtbrkw2347f7cd.7269-rightanswer-9gmtbrkw2347f7cd-1309548476/background.jpg" mode="heightFix"></image>
+                <view class="liveText">直播</view>
+                <view class="">{{item.name}}</view>
+                </view>
+            </view>
+        </van-grid-item>
+        </van-grid>
+  </view>
+</scroll-view>

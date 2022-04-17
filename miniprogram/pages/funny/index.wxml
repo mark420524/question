@@ -2,6 +2,8 @@
  <van-grid square>
   <van-grid-item icon="play-circle-o" 
   icon-color="blue"
+  link-type="navigateTo"
+  url="/pages/live/index"
   text="电视直播" />
   <van-grid-item icon="gift-card-o"
   icon-color="red"

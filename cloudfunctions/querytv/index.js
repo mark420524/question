@@ -6,7 +6,7 @@ cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
     try {
-        let result = await axios.get('http://127.0.0.1:8000/api/wx/init?uid=3')
+        let result = await axios.get('https://mark420524.github.io/iptvapi/iptvstream.json')
         return {
             code: 0,
             data:result.data
