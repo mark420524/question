@@ -13,7 +13,7 @@ Page({
             name: "querytv"
         }).then(res=>{
             let result = res.result;
-            if (result.code===0) {
+            if (result.code===0 && result.data.length>0) {
                 that.setData({
                     items:result.data
                 })

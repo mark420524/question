@@ -13,10 +13,10 @@
           show-center-play-btn='{{false}}' 
           show-play-btn="{{true}}" 
           autoplay="{{true}}"
+          show-mute-btn="{{false}}"
           controls 
           picture-in-picture-mode="{{[]}}" 
-          bindenterpictureinpicture='bindVideoEnterPictureInPicture' 
-          bindleavepictureinpicture='bindVideoLeavePictureInPicture'>
+         >
         </video>
       </view>
 
