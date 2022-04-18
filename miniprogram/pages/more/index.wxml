@@ -48,7 +48,7 @@
   link-type="navigateTo"
    icon-color="blue"
    url="/pages/funny/index"
-   text="娱乐专区" />
+   text="休息一下" />
 </van-grid>
 
 </view>

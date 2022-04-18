@@ -1,0 +1,159 @@
+page {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container {
+    z-index: 1;
+    padding-top: 220rpx;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+    height: 100%;
+    
+  }
+  
+  .plate-wrap-box {
+    position: relative;
+    z-index: 999;
+    width: 500rpx;
+    height: 500rpx;
+    border-radius: 50%;
+    margin: 0 auto 60rpx;
+  }
+  
+  .plate-border {
+    position: relative;
+    z-index: 9;
+    width: 500rpx;
+    height: 500rpx;
+    background-color: #ffbe04;
+    border-radius: 50%;
+  }
+  
+  .plate-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    width: 440rpx;
+    height: 440rpx;
+    border: 1rpx solid #e88605;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  .plate-light {
+    z-index: 1;
+    width: 500rpx;
+    height: 500rpx;
+    border: none;
+  }
+  
+  .plate-box {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    width: 0;
+    height: 0;
+    font-size: 24rpx;
+  }
+  
+  .bulb {
+    position: absolute;
+    width: 16rpx;
+    height: 16rpx;
+    left: 50%;
+    top: -242rpx;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    background-color: #fff0c7;
+    filter: blur(0.5rpx);
+  }
+  
+  .text-box {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    width: 15rpx;
+    word-break: break-all;
+    top: -200rpx;
+    transform: translate(-100%, 0);
+    font-size: 28rpx;
+  }
+  
+  .plate-btn-wrap {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+  }
+  
+  .plate-btn-wrap::before {
+    content: '';
+    position: absolute;
+    z-index: 9;
+    left: calc(50% - 10rpx);
+    top: -40rpx;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 0;
+    border-bottom: 80rpx solid #e7211b;
+    border-left: 20rpx solid transparent;
+  }
+  
+  .plate-btn-wrap::after {
+    content: '';
+    position: absolute;
+    z-index: 9;
+    left: calc(50% + 10rpx);
+    top: -40rpx;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 0;
+    border-bottom: 80rpx solid #ca1518;
+    border-right: 20rpx solid transparent;
+  }
+  
+  .plate-btn-box {
+    position: relative;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e62d2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .plate-inner-btn {
+    position: relative;
+    z-index: 999;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    background-color: #ca1518;
+    font-size: 28rpx;
+    color: #fdcf03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lottery-plate-shadow {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50rpx;
+    border-radius: 50%;
+    background-color: #e4e3e3;
+    filter: blur(4rpx);
+    bottom: -35rpx;
+  }
+  

@@ -7,6 +7,8 @@
   text="电视直播" />
   <van-grid-item icon="gift-card-o"
   icon-color="red"
+  link-type="navigateTo"
+  url="/pages/integral/wheel"
    text="积分大转盘" />
  
  </van-grid>

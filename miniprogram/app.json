@@ -32,6 +32,7 @@
     "pages/detail/child",
     "pages/funny/index",
     "pages/live/index",
+    "pages/integral/wheel",
     "pages/live/detail"
   ],
   "window": {
