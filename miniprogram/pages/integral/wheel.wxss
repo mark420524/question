@@ -1,4 +1,14 @@
 
+.tips{
+  font-size: 32rpx;
+  text-align: center;
+  padding: 30rpx;
+  color: #999;
+}
+.operate{
+  margin-top: 20rpx;
+  color: red
+}
   .plate-wrap-box {
     position: relative;
     z-index: 999;
