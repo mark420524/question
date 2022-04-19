@@ -11,16 +11,24 @@
   }
   .liveText{
     position: absolute;
-	right: 0;
+	  right: 0;
     top: 0;
     border-radius: 200rpx;
-	font-size: 20rpx;
-	padding: 0rpx 10rpx;
-	height: 28rpx;
+    font-size: 20rpx;
+    padding: 0rpx 10rpx;
+    height: 28rpx;
     color: white;
     background-color: red;
   }
   .scroll_view {
     height: 100vh;
+  }
+  .name{
+    font-size: 16px;
+  }
+  .tips{
+    text-align: right;
+    font-size: 14px;
+    margin-left: 32rpx;
   }
  

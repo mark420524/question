@@ -7,7 +7,9 @@
              <view class="itemImage">
                 <image class="backgroupImage" src="cloud://rightanswer-9gmtbrkw2347f7cd.7269-rightanswer-9gmtbrkw2347f7cd-1309548476/background.jpg" mode="heightFix"></image>
                 <view class="liveText">直播</view>
-                <view class="">{{item.name}}</view>
+                <view class="name">{{item.name}}
+                <text class="tips">{{ item.width}}x{{item.height}}</text>
+                </view>
                 </view>
             </view>
         </van-grid-item>

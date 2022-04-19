@@ -49,13 +49,14 @@ Page({
     })
   },
   startRollTap() { //开始转盘
-    let that = this;
+    
     let num = this.data.num;
     let canRoll = this.data.canRoll;
     let lotteryArrLen=this.data.lotteryArrLen;
     if (canRoll) {
       canRoll = false;
       let aniData = this.aniData; //获取this对象上的动画对象
+      // TODO rightnum 从后台计算中奖概率
       let rightNum = ~~(Math.random() * lotteryArrLen); //生成随机数
       console.log(`随机数是${rightNum}`);
       console.log(`奖品是：${this.data.lottery[rightNum]}`);
