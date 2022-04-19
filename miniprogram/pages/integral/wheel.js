@@ -5,10 +5,11 @@ const apis = app.apis;
 Page({
   data: {
     lottery: ['奖品1', '奖品2','奖品3','奖品4','奖品5','奖品6'],
-    canRoll: true,
+    canRoll: false,
     num:1,
     lotteryArrLen:0,
-    alreadyWheel:true
+    alreadyWheel:true,
+    wheelIntegral:0
   },
 
   onLoad(opt) { 
@@ -26,6 +27,11 @@ Page({
     let data={uid:utils.getUserId()}
     apis.getIntegralWheel(data).then(res=>{
       console.log(res)
+      that.setData({
+        alreadyWheel:res.alreadyWheel,
+        canRoll:!res.alreadyWheel,
+        wheelIntegral:res.integral
+      })
     })
   },
   setPlateData(lottery) { //设置奖品数组

@@ -227,6 +227,7 @@ import {
     getIntegralWheel:function(data){
       return http({
         url:url.getIntegralWheel,
+        method:'GET',
         data:data
       })
     }
