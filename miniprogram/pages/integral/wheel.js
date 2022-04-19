@@ -1,10 +1,14 @@
 
+const app = getApp();
+const utils = app.utils;
+const apis = app.apis;
 Page({
   data: {
     lottery: ['奖品1', '奖品2','奖品3','奖品4','奖品5','奖品6'],
     canRoll: true,
     num:1,
-    lotteryArrLen:0
+    lotteryArrLen:0,
+    alreadyWheel:true
   },
 
   onLoad(opt) { 
@@ -15,6 +19,14 @@ Page({
       timingFunction: 'ease'
     });
     this.aniData = aniData; //将动画对象赋值给this的aniData属性
+    this.initTodayWheelInfo();
+  },
+  initTodayWheelInfo(){
+    let that = this;
+    let data={uid:utils.getUserId()}
+    apis.getIntegralWheel(data).then(res=>{
+      console.log(res)
+    })
   },
   setPlateData(lottery) { //设置奖品数组
     let lotteryArrLen = lottery.length; //获取奖品数组的长度，用来判断

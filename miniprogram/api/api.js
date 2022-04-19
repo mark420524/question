@@ -33,6 +33,7 @@ import {
     searchExam:'exam/search',
     exportExam:'export/exam',
     getExamMenu: "category/exam/list",
+    getIntegralWheel: 'user/integral/wheel'
   }
   module.exports = {
     userLogin(data) {
@@ -220,6 +221,12 @@ import {
       return http({
         url:url.getExamMenu,
         method:'GET',
+        data:data
+      })
+    },
+    getIntegralWheel:function(data){
+      return http({
+        url:url.getIntegralWheel,
         data:data
       })
     }
