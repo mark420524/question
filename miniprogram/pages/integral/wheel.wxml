@@ -1,4 +1,16 @@
 <view class="container">
+
+  <view class="tips">
+  每天免费抽取一次
+  <view>
+    <view>
+    今天已抽取获得积分+10
+    </view>
+  
+  </view>
+  </view>
+
+
   <view class="plate-wrap-box">
     <view class="plate-border" animation="{{ aniData }}">
       <!-- 转盘以及文字 -->

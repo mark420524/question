@@ -1,10 +1,10 @@
-let canRoll = true, //加控制，防止用户点击两次
-  num = 1, //用在动画上，让用户在第二次点击的时候可以接着上次转动的角度继续转
-  lotteryArrLen = 0  //放奖品的数组的长度
-  ; //放奖品
+
 Page({
   data: {
-    lottery: ['奖品1', '奖品2','奖品3','奖品4','奖品5','奖品6']
+    lottery: ['奖品1', '奖品2','奖品3','奖品4','奖品5','奖品6'],
+    canRoll: true,
+    num:1,
+    lotteryArrLen:0
   },
 
   onLoad(opt) { 
@@ -17,7 +17,7 @@ Page({
     this.aniData = aniData; //将动画对象赋值给this的aniData属性
   },
   setPlateData(lottery) { //设置奖品数组
-    lotteryArrLen = lottery.length; //获取奖品数组的长度，用来判断
+    let lotteryArrLen = lottery.length; //获取奖品数组的长度，用来判断
     if (lotteryArrLen < 2) { //数组的奖品只有一个，扩展数组的长度到4
       let evenArr = new Array(8); //创建一个数组，方便操作。
       for (let i = 0; i < 8; i++) {
@@ -44,11 +44,15 @@ Page({
 
     lotteryArrLen = lottery.length; //获取新的数组长度
     this.setData({
-      lottery: lottery //设置好值，用于页面展示
+      lottery: lottery,
+      lotteryArrLen:lotteryArrLen  
     })
   },
   startRollTap() { //开始转盘
     let that = this;
+    let num = this.data.num;
+    let canRoll = this.data.canRoll;
+    let lotteryArrLen=this.data.lotteryArrLen;
     if (canRoll) {
       canRoll = false;
       let aniData = this.aniData; //获取this对象上的动画对象
@@ -56,11 +60,14 @@ Page({
       console.log(`随机数是${rightNum}`);
       console.log(`奖品是：${this.data.lottery[rightNum]}`);
       aniData.rotate(3600 * num - 360 / lotteryArrLen * rightNum).step(); //设置转动的圈数
-      this.setData({
-        aniData: aniData.export()
-      })
+      
       num++;
-      canRoll = true;
+      
+      this.setData({
+        aniData: aniData.export(),
+        num:num,
+        canRoll:canRoll
+      })
     }
   }
 })
