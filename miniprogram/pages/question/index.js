@@ -783,8 +783,7 @@ Page({
             
             this.setData({
               "touch.x": e.changedTouches[0].clientX,
-              "touch.y": e.changedTouches[0].clientY,
-              animationData: this.turningAnimation.export()
+              "touch.y": e.changedTouches[0].clientY
             });
           },
           touchEnd(e) {
