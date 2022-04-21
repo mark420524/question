@@ -153,4 +153,11 @@
     filter: blur(4rpx);
     bottom: -35rpx;
   }
-  
+  .footTips{
+    padding: 20rpx;
+    font-size:25rpx;
+    color:#666;
+  }
+  .item{
+    margin-top:10rpx;
+  }

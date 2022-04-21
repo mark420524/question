@@ -9,7 +9,8 @@ Page({
     num:1,
     lotteryArrLen:0,
     alreadyWheel:true,
-    wheelIntegral:0
+    wheelIntegral:0,
+    wheelInfo:[]
   },
 
   onLoad(opt) { 
@@ -34,7 +35,8 @@ Page({
         canRoll:!res.alreadyWheel,
         wheelIntegral:res.integral,
         lottery: lottery,
-        lotteryArrLen:lotteryArrLen  
+        lotteryArrLen:lotteryArrLen,
+        wheelInfo:lotteryInfo
       })
     })
   },
