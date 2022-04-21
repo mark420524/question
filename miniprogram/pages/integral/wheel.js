@@ -4,7 +4,7 @@ const utils = app.utils;
 const apis = app.apis;
 Page({
   data: {
-    lottery: ['+10', '+20','+30','+50','+100'],
+    lottery: [],
     canRoll: false,
     num:1,
     lotteryArrLen:0,
@@ -13,8 +13,7 @@ Page({
   },
 
   onLoad(opt) { 
-    this.setPlateData(this.data.lottery); //执行设置转盘表面的文字
-    
+      
     let aniData = wx.createAnimation({ //创建动画对象
       duration: 2000,
       timingFunction: 'ease'
@@ -27,10 +26,15 @@ Page({
     let data={uid:utils.getUserId()}
     apis.getIntegralWheel(data).then(res=>{
       //console.log(res)
+      let lotteryInfo = res.lotteryInfo;
+      let lottery = that.setPlateData(lotteryInfo);
+      let lotteryArrLen = lottery.length;
       that.setData({
         alreadyWheel:res.alreadyWheel,
         canRoll:!res.alreadyWheel,
-        wheelIntegral:res.integral
+        wheelIntegral:res.integral,
+        lottery: lottery,
+        lotteryArrLen:lotteryArrLen  
       })
     })
   },
@@ -40,19 +44,14 @@ Page({
     let evenArr = new Array(lotteryArrLen * 2); //创建扩展数组
     for (let i = 0; i < (lotteryArrLen * 2); i++) {
       if (i % 2 == 1) {
-        evenArr[i] = lottery[dataLen]; //将原来数组的值赋值给新数组
+        evenArr[i] = '+' + lottery[dataLen].integral; //将原来数组的值赋值给新数组
         dataLen++; //原来数组的索引加一
       } else {
         evenArr[i] = '谢谢'
       }
     }
     lottery = [...evenArr]; //将整合好的数组赋值给lottery数组
-
-    lotteryArrLen = lottery.length; //获取新的数组长度
-    this.setData({
-      lottery: lottery,
-      lotteryArrLen:lotteryArrLen  
-    })
+    return lottery;
   },
   startRollTap() { //开始转盘
     
@@ -66,6 +65,7 @@ Page({
       canRoll = false;
       let aniData = this.aniData; //获取this对象上的动画对象
       // TODO rightnum 从后台计算中奖概率
+      wx.hideLoading( )
       let rightNum = ~~(Math.random() * lotteryArrLen); //生成随机数
       console.log(`随机数是${rightNum}`);
       console.log(`+是：${this.data.lottery[rightNum]}`);
