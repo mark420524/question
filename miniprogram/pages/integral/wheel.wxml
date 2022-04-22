@@ -3,10 +3,10 @@
   <view class="tips">
   每天免费抽取一次，每天0点刷新抽奖次数
   <view wx:if="{{alreadyWheel}}" class="operate">
-    <view >
+    <view wx:if="{{wheelIntegral>0}}">
     今天已抽取获得积分+{{wheelIntegral}}
     </view>
-  
+    <view wx:else>很遗憾，未中奖。再接再厉，明天继续吧</view>
   </view>
   </view>
 

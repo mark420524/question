@@ -64,22 +64,37 @@ Page({
       wx.showLoading({
         title: '抽奖中',
       })
-      canRoll = false;
+      
       let aniData = this.aniData; //获取this对象上的动画对象
       // TODO rightnum 从后台计算中奖概率
-      wx.hideLoading( )
-      let rightNum = ~~(Math.random() * lotteryArrLen); //生成随机数
-      console.log(`随机数是${rightNum}`);
-      console.log(`+是：${this.data.lottery[rightNum]}`);
-      aniData.rotate(3600 * num - 360 / lotteryArrLen * rightNum).step(); //设置转动的圈数
-      
-      num++;
-      
-      this.setData({
-        aniData: aniData.export(),
-        num:num,
-        canRoll:canRoll
+      let data = {uid:utils.getUserId()};
+      let that = this;
+      apis.userIntegralWheel(data).then(res=>{
+        wx.hideLoading( );
+        if (res.alreadyWheel) {
+          //今天已经抽过了
+          that.setData({ 
+            canRoll:false,
+            alreadyWheel:true
+          })
+        }else {
+          console.log(res)
+          let rightNum = res.index;
+          aniData.rotate(3600 * num - 360 / lotteryArrLen * rightNum).step();
+          num++;
+          canRoll = false;
+          that.setData({
+            aniData: aniData.export(),
+            num:num,
+            canRoll:canRoll,
+            alreadyWheel:false,
+            wheelIntegral:res.integral
+          })
+        }
+        utils.showWxToast(res.message);
       })
+      
+      
     }
   }
 })
