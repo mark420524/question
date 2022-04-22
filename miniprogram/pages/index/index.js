@@ -133,13 +133,12 @@ Page({
         let showConfirmButton = 1;
           if (res){
               let currentIndex = utils.getNotifyIndex();
-              console.log('currentindex',currentIndex);
               let newIndex = res.id;
-              if (!res.stopService && currentIndex>=newIndex) {
+              if (!res.stopService && !res.forbidden && currentIndex>=newIndex) {
                 return false;
               }
               utils.setNotifyIndex(newIndex);
-              if(res.stopService){
+              if(res.stopService || res.forbidden){
                 showConfirmButton=0;
               }
             Dialog.alert({
@@ -150,6 +149,7 @@ Page({
             }).then((e) => {
                 
             });
+            
           }
       })
    
