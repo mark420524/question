@@ -264,8 +264,10 @@ Page({
               }
               if(res.code){
                   apis.userLogin(data).then(res=>{
+                    
                     wx.hideLoading();
-                    wx.setStorageSync('uid', res)
+                    wx.setStorageSync('uid', res.userId)
+                    wx.setStorageSync('userToken', res.token)
                   });
               }
           },

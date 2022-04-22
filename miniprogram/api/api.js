@@ -4,7 +4,7 @@ import {
   
   var url = {
     systemInit:"init",
-    userLogin: "user/login",
+    userLogin: "v2/user/login",
     getUserPhone: "user/phone",
     getQuestionMenu: "category/list",
     userCardReceive: "card/receive",
