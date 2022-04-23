@@ -83,7 +83,7 @@ Page({
   bindChange: function (e) {
     selector.updateAreaData(this, 1, e);
     item = this.data.item;
-    console.log(item)
+    //console.log(item)
     let first = item.provinces[item.value[0]];
     let second = item.citys[item.value[1]] || {};
     let third = item.countys[item.value[2]] || {};
@@ -216,7 +216,7 @@ Page({
                                   wx.setStorageSync("userInfo",userInfo)
                                   userInfo.uid = _this.getUserId();
                                   apis.updateUser(userInfo).then(res=>{
-                                      console.log('updateUser', res);
+                                      //console.log('updateUser', res);
                                       if (res) {
                                           utils.showWxToast('授权成功');
                                       }else{
@@ -236,7 +236,7 @@ Page({
                           });
                       } else if (res.cancel) {
                           //如果用户点击了取消按钮
-                          console.log(3);
+                          //console.log(3);
                           wx.showToast({
                               title: '您拒绝了请求,不能正常使用小程序',
                               icon: 'error',
@@ -249,14 +249,14 @@ Page({
           }
   },
   initUserId(inviteUid){
-      console.log('准备登录')
+      //console.log('准备登录')
       wx.showLoading({
       'title': '正在初始化，请稍候...',
       'mask': true
       });
       wx.login({
           success (res) {
-              console.log(res)
+              //console.log(res)
               let data={
                 inviteUid:inviteUid,
                 code:res.code,
@@ -273,7 +273,7 @@ Page({
           },
           fail(res) {
             wx.hideLoading();
-            console.log(res)
+            //console.log(res)
           }
       });
   },
