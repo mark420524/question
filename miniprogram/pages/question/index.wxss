@@ -24,16 +24,7 @@
     max-height: 40vh;
     overflow: auto;
   }
-  .container .footer > ._button.data-v-7542c5d7 {
-    width: 138rpx;
-    height: 68rpx;
-    font-size: 32rpx;
-    color: #fefefe;
-    border-radius: 33rpx;
-    background: #2757ef;
-    line-height: 68rpx;
-    text-align: center;
-  }
+
   .container .footer > switch.data-v-7542c5d7 {
     position: absolute;
     right: 0%;

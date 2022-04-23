@@ -109,15 +109,7 @@
     border-radius: 100%;
     background: #aaaaaa;
   }
-   .answer > .item .check ._b.data-v-7542c5d7 {
-    margin-right: 10rpx;
-    font-weight: bold;
-    display: inline;
-    position: absolute;
-    left: 80rpx;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+
 .option {
     width: 60vw;
     word-break: break-all;
