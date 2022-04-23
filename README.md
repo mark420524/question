@@ -69,3 +69,11 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 #### 后台截图
 
 ![编辑问题](screenshot/admin-1.png)
+
+
+
+![题库分类](screenshot/admin-2.png)
+
+![题库列表](screenshot/admin-3.png)
+
+![每日一题答题记录](screenshot/admin-4.png)
