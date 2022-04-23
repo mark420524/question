@@ -174,7 +174,12 @@ Page({
       return false;
     },
     onClickHide() {
-      this.setData({ showFilter: false });
+      this.setData({ 
+        showFilter: false,
+        fileType:'',
+        version:'',
+        pid:0
+      });
     },
     onClickNav({ detail = {} }) {
       this.setData({
