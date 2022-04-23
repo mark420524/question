@@ -78,7 +78,7 @@ Page({
             alreadyWheel:true
           })
         }else {
-          console.log(res)
+          
           let rightNum = res.index;
           aniData.rotate(3600 * num - 360 / lotteryArrLen * rightNum).step();
           num++;
@@ -91,7 +91,14 @@ Page({
             wheelIntegral:res.integral
           })
         }
-        utils.showWxToast(res.message);
+        //只能通过着这样toast了，不然效果不好
+        setTimeout(function() {
+          that.setData({
+            alreadyWheel:true
+          });
+          utils.showWxToast(res.message);
+        }.bind(that), 2100)
+        
       })
       
       

@@ -6,7 +6,7 @@
     <view wx:if="{{wheelIntegral>0}}">
     今天已抽取获得积分+{{wheelIntegral}}
     </view>
-    <view wx:else>很遗憾，未中奖。再接再厉，明天继续吧</view>
+    <view wx:else>很遗憾，今天未中奖。再接再厉，明天继续呦</view>
   </view>
   </view>
 
@@ -44,8 +44,8 @@
    </view>
    <view class="item">2.每个账号每天抽取一次，0点刷新次数，抽中即可获得积分</view>
    <view class="item">3.我们将随时会对抽奖记录进行抽查。若发现违规操作，将直接清除所得积分，且不另行通知，严重者将对账号进行封禁</view>
-   <view class="item">4.抽奖规则随时会调整，具体以页面显示为主。规则调整不另行通知</view>
-   <view class="item">5.如对抽奖结果有疑问，随时联系我们。但最终结果以我们后台处理结果为主</view>
+   <view class="item">4.抽奖规则随时会调整，具体以页面显示为主。规则调整请恕不另行通知</view>
+   <view class="item">5.如对抽奖结果有疑问，随时联系我们。但最终结果以我们后台处理结果为准</view>
    <view class="item redColor">6.点击开始抽奖则默认您同意以上规则</view>
   </view>
 </view>
