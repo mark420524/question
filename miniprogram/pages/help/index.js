@@ -9,6 +9,7 @@ Page({
     onLoad(){
       let that = this;
       db.collection('integral_type')
+        .orderBy('sort', 'asc')
         .where({
           status:1
         })
