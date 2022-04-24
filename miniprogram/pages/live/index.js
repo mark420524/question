@@ -22,8 +22,9 @@ Page({
             }
             wx.hideLoading()
         }).catch(err=>{
-            utils.showWxToast('查无数据');
             wx.hideLoading()
+            utils.showWxToast('查无数据');
+            
         })
         
     },

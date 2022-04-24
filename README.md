@@ -1,8 +1,8 @@
 # 答题小程序
 
-**master是目前已上线的主分支，不再进行更新。develop是开发分支，将会做大的代码框架改动**
+**develop是目前已上线的主分支，包含云函数版接口**
 
-**develop分支开发完成后将会上线，届时master分支将保留，不再进行合并**
+**master不再进行更新，不包含云函数，且存在数据权限问题**
 
 #### 介绍
 答题，题目解析，分享，模拟考试，排名，签到功能，获得积分
@@ -53,12 +53,12 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 
 #### 页面截图
 
-![image](screenshot/3.jpg)
+![image](screenshot/question.png)
 
 ![image](screenshot/2.jpg)
 ![image](screenshot/5.jpg)
 ![image](screenshot/7.jpg)
-![image](screenshot/8.jpg)
+![image](screenshot/more.png)
 ![image](screenshot/9.jpg)
 ![image](screenshot/10.jpg)
 
