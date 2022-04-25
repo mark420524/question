@@ -1,5 +1,24 @@
+const db = wx.cloud.database();
 Page({
-    data:{},
+    data:{
+      toolsItems:[
+      ]
+    },
+    onLoad(){
+      let that = this;
+      db.collection('tools_item')
+        .orderBy('sort', 'asc')
+        .where({
+          status:1
+        })
+        .get({
+          success: function(res) {
+            that.setData({ 
+              toolsItems:res.data,
+            })
+          }
+        });
+    },
     onShow(){ 
         if (typeof this.getTabBar === 'function' &&
             this.getTabBar()) {

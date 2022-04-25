@@ -3,52 +3,13 @@
 <image class="toolBanner" src="/static/images/tools.jpg"/>
 <view class="body">
 
-<van-grid square>
-  <van-grid-item icon="bulb-o" 
-  icon-color="green"
-  link-type="navigateTo"
-  url="/pages/word/index"
-  text="汉语字典" />
-  <van-grid-item icon="smile-o"
-   link-type="navigateTo"
-   icon-color="red"
-   url="/pages/idiom/index"
-   text="成语大全" />
-  <van-grid-item 
-  link-type="navigateTo"
-  icon-color="#32bf44;"
-   url="/pages/exportq/index"
-  icon="guide-o" text="题库导出" />
-  <van-grid-item 
-  link-type="navigateTo"
-  icon-color="blue"
-  url="/pages/translate/index"
-  icon="font-o" text="英汉词典" />
-</van-grid>
-
-<van-grid square>
-  <van-grid-item icon="flower-o" 
-  link-type="navigateTo"
-  icon-color="#229c69"
-  url="/pages/poetry/index"
-  text="诗词歌赋" />
+<van-grid square  column-num="4">
+  <van-grid-item wx:for="{{toolsItems}}" wx:key="index" wx:for-item="item" icon="{{item.icon}}" 
+  icon-color="{{item.iconColor}}"
+  link-type="{{item.linkType}}"
+  url="{{item.url}}"
+  text="{{item.text}}" />
   
-  <van-grid-item icon="fire-o" 
-  link-type="navigateTo"
-   icon-color="red"
-   url="/pages/search/exam"
-   text="试卷搜索" />
-   <van-grid-item icon="flag-o" 
-  link-type="navigateTo"
-   icon-color="#32bf44;"
-   url="/pages/children/index"
-   text="萌宝启蒙" />
-
-   <van-grid-item icon="music-o" 
-  link-type="navigateTo"
-   icon-color="blue"
-   url="/pages/funny/index"
-   text="休息一下" />
 </van-grid>
 
 </view>
