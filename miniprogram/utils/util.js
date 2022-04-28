@@ -30,7 +30,6 @@ const  getMenuInfo = _ =>{
   return wx.getStorageSync('cidInfo')
 }
 const setAnswerType = type => {
-  console.log('set type', type)
   wx.setStorageSync('type', type) ;
 }
 
