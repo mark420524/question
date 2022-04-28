@@ -67,7 +67,7 @@ const getExamResult = right => {
     result='成绩优秀';
   }else if(right>70){
     result='成绩良好';
-  }else if(right>=70){
+  }else if(right>=60){
     result='成绩合格';
   }else  {
     result='成绩不合格';
