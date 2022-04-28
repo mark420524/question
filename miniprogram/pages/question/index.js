@@ -68,7 +68,7 @@ Page({
           title: '正在加载题库',
         })
         options = options || {}
-        console.log('options', options)
+        //console.log('options', options)
         
         let _this = this;
         let showAnswer = false;

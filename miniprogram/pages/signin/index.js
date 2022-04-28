@@ -38,7 +38,7 @@ Page({
       uid:utils.getUserId()
     }
     apis.getUserSignInfo(data).then(res=>{
-      console.log(res)
+      //console.log(res)
       if (res) {
         let totalSign = res.totalSign;
         let continuousSign=res.continuousSign;
@@ -55,10 +55,10 @@ Page({
         let startTime=res.startTime;
         let startDate = utils.buildDate(startTime);
         let endDate= utils.buildDate(today);
-        console.log(startDate, endDate);
+        //console.log(startDate, endDate);
         let startSeconds = startDate.getTime();
         let endSeconds = endDate.getTime();
-        console.log(startSeconds, endSeconds);
+        //console.log(startSeconds, endSeconds);
         let currentDate = new Date();
         while ((endSeconds - startSeconds)>0) {
           
@@ -112,7 +112,7 @@ Page({
   onReady(){
     
     const calendar = this.selectComponent('#calendar').calendar
-    console.log(this.data.dates)
+    //console.log(this.data.dates)
     if (calendar && this.data.dates.length>0) {
       calendar.setTodos({
         // 待办点标记设置
@@ -135,7 +135,7 @@ Page({
     })
     apis.userSignin(data).then(res=>{
       wx.hideLoading( )
-      console.log(res)
+      //console.log(res)
       let toast = '';
       
       if ( (/^\d{1,},\d{1,},\d{1,}$/.test(res)) ) {

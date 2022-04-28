@@ -48,7 +48,7 @@ Page({
     onChange(event) { 
         let index = event.detail.index; 
         let id = this.data.categoryList[index].id;
-        console.log(id); 
+        //console.log(id); 
         this.setData({
           index:id,
           pages:1,
@@ -63,7 +63,7 @@ Page({
     search(pages,val,emptyText){
       
       
-      console.log(pages,'this',this.data.pages);
+      //console.log(pages,'this',this.data.pages);
       let params = '';
       let index = this.data.index;
       
@@ -100,10 +100,7 @@ Page({
         ])
       }
       
-      console.log(val,index );
-      
-      
-      
+      //console.log(val,index );
       let offset = (pages-1)*this.data.size;
       let that = this;
       //console.log(params)
@@ -139,7 +136,7 @@ Page({
       let page = this.data.pages;
       page++;
       this.search(page,this.data.searchVal,'没有更多数据了')
-      console.log('reach bottom');
+      //console.log('reach bottom');
    },
    goToPoetry(e){
      let item = e.currentTarget.dataset.item;

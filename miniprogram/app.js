@@ -31,7 +31,7 @@ App({
   },
   loadMenu:function(systemVersion){
     api.getQuestionMenu(0).then(res =>{
-      console.log('menu info ', res);
+      //console.log('menu info ', res);
       wx.setStorageSync('cidInfo', res)
       util.setMenuVersionIndex(systemVersion);
     });

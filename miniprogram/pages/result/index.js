@@ -4,7 +4,7 @@ Page({
         examScore:0
     },
     onLoad(options){
-        console.log(options);
+       //console.log(options);
         let score = options.score;
         let cTime = options.time;
         let min = Math.floor(cTime/60)<10 ? '0'+Math.floor(cTime/60) : Math.floor(cTime/60) || 0;
