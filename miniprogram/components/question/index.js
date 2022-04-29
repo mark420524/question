@@ -21,13 +21,13 @@ Component({
             let id = e.currentTarget.dataset.id;
             let index  = e.currentTarget.dataset.index ;
             const right = e.currentTarget.dataset.right
-            let deatil = {id:id,index:index,multiply:multiply,right:right}
-            this.triggerEvent('chooseanswer', deatil);
+            let detail = {id:id,index:index,multiply:multiply,right:right}
+            this.triggerEvent('chooseanswer', detail);
         },
         multiplySubmit(e){
             let id = e.currentTarget.dataset.id;
-            let deatil = {id:id}
-            this.triggerEvent('multiplysubmit', deatil);
+            let detail = {id:id}
+            this.triggerEvent('multiplysubmit', detail);
         },
         loadMoreQuestion(){
             wx.reLaunch({
