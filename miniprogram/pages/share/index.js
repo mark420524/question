@@ -118,7 +118,6 @@ Page({
         return res;
     },
         multiplySubmit(e){
-            let id = e.currentTarget.dataset.id;
             //console.log(this.data.optionSelect,this.data.alreadyChooseAnswer  )
             if( this.data.showAnswer || this.data.alreadyChooseAnswer  ) return false;
             let selectAnswer = [];
