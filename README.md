@@ -18,7 +18,7 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 
 #### 扫码预览
 
-![image](screenshot/gh_749516412a83_258.jpg)
+![image](screenshot/zaowanda.jpg)
 
 #### 工具使用
 
