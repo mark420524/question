@@ -2,6 +2,7 @@ const app = getApp();
 const db = wx.cloud.database()
 const utils = app.utils;
 import Dialog from "../../components/vant/dialog/dialog";
+import context from "../../components/chinese/index";
 Page({
     data:{
       label:'',
@@ -11,6 +12,7 @@ Page({
     },
     onLoad( ){ 
       this.init()
+      
     },
     init( ){
       let label = '汉字'; 
@@ -135,4 +137,13 @@ Page({
           path:''//链接
       }
     },
+    createChineseWrite(char){
+      this.writerCtx = context({
+        id: 'hz-writer',
+        character: '吃',
+        page: this,
+      });
+      // You can call any normal HanziWriter method here
+      this.writerCtx.loopCharacterAnimation();
+    }
 })

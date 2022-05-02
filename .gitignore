@@ -19,4 +19,5 @@ bin-release/
 .vscode/
 dist/
 node_modules/
+miniprogram_npm/
 constant.js

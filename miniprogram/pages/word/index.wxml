@@ -9,7 +9,7 @@
 </van-search>
 <van-dialog
  id="van-dialog"  
-/> 
+/>
 <view class="container"  >
  <view class="main redColor">{{ word.word }}</view>
 
@@ -28,5 +28,5 @@
   </van-collapse-item>
    
 </van-collapse>
- 
+
 </view>

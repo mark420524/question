@@ -1,0 +1,17 @@
+<view class="container" style="width: {{width}}px; height: {{height}}px;">
+  <canvas
+    id="writer-canvas"
+    type="{{type}}"
+    disable-scroll="{{disableScroll}}"
+    canvas-id="writer-canvas"
+    style="width: {{width}}px; height: {{height}}px;"
+  />
+  <view
+    wx:if="{{isQuizzing}}"
+    class="blocker"
+    catchtouchstart="_touchStart"
+    catchtouchend="_touchEnd"
+    catchtouchcancel="_touchEnd"
+    catchtouchmove="_touchMove"
+  />
+</view>
