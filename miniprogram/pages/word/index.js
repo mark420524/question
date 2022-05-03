@@ -13,7 +13,7 @@ Page({
     },
     onLoad( ){ 
       this.init()
-     //this.createChineseWrite('刘')
+     //this.createChineseWrite('珂')
     },
     init( ){
       let label = '汉字'; 

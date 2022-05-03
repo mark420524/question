@@ -1,5 +1,6 @@
 <view class="container" style="width: {{width}}px; height: {{height}}px;">
   <canvas
+    
     id="writer-canvas"
     type="{{type}}"
     disable-scroll="{{disableScroll}}"

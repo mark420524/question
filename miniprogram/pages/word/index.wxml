@@ -13,7 +13,7 @@
 
 <view class="container"  >
   <view wx:if="{{showWrite}}">
-  <comp id="hz-writer" width="200" height="100" />
+  <comp id="hz-writer" width="200" height="120" />
   <!--
   <view class="main redColor">{{ word.word }}</view>
   -->
