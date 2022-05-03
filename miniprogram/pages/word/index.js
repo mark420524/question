@@ -64,7 +64,9 @@ Page({
       if (this.data.searchVal== val ) {
         return ;
       }
-      
+      this.setData({
+        showWrite:false,
+      })
       console.log(val); 
       let re=/[\u4e00-\u9fa5]/;
       let that = this;
@@ -82,8 +84,11 @@ Page({
               let word  = (res.data)[0];
               //console.log('word ',word)
               that.setData({
-                word:word
+                word:word,
+                showWrite:true,
+
               })
+              that.createChineseWrite(val)
             }else{
               //TODO 查繁体,可以封装下，
               //算了懒得封装，反正没人用
