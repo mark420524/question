@@ -11,6 +11,8 @@
 
 增加了汉字查询、成语查询、英汉词典、诗词歌赋、萌宝启蒙等功能
 
+增加了汉字笔画书写功能
+
 交流 qq群：123955944
 
 gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/question)
@@ -77,3 +79,13 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 ![题库列表](screenshot/admin-3.png)
 
 ![每日一题答题记录](screenshot/admin-4.png)
+
+#### 参考项目
+
+1. 汉字writer [https://github.com/chanind/hanzi-writer](https://github.com/chanind/hanzi-writer)
+2. 汉字笔画write 小程序版 [https://github.com/chanind/hanzi-writer-miniprogram](https://github.com/chanind/hanzi-writer-miniprogram)
+
+3. 日历插件 [https://github.com/treadpit/wx_calendar](https://github.com/treadpit/wx_calendar)
+4. 抽奖大转盘 [https://github.com/xing00/wxapp-turn-table](https://github.com/xing00/wxapp-turn-table)
+
+5. 三级联动 [https://github.com/z1511676208/chooseAddr](https://github.com/z1511676208/chooseAddr)
