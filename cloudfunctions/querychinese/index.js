@@ -1,0 +1,23 @@
+// 云函数入口文件
+const cloud = require('wx-server-sdk')
+const axios = require("axios");
+cloud.init()
+
+// 云函数入口函数
+exports.main = async (event, context) => {
+    try {
+        let chinese = event.chinese
+        const VERSION = 2.0
+        let url = 'https://cdn.jsdelivr.net/npm/hanzi-writer-data@' + VERSION + '/' + chinese + '.json';
+        let result = await axios.get(url)
+        return {
+            code: 0,
+            data:result.data
+        };
+    }catch(err){
+        console.log(err)
+        return {
+            code: -1
+        };
+    }
+}

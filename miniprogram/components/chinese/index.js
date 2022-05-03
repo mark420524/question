@@ -491,6 +491,7 @@ var getCharDataUrl = function getCharDataUrl(char) {
 };
 
 exports.default = function (char, onLoad, onError) {
+  /*
   wx.request({
     url: getCharDataUrl(char),
     header: {
@@ -501,6 +502,20 @@ exports.default = function (char, onLoad, onError) {
     },
     fail: onError
   });
+  */
+ let data={
+  chinese:encodeURIComponent(char)
+ }
+ wx.cloud.callFunction({
+  name: "querychinese",
+  data:data
+  }).then(res=>{
+    let result = res.result;
+    onLoad(result.data);
+     
+  }).catch(err=>{
+    onError
+  })
 };
 
 /***/ })
