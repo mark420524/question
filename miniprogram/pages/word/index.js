@@ -8,11 +8,12 @@ Page({
       label:'',
       searchVal:'',
       word:{},
-      activeNames:[ ]
+      activeNames:[ ],
+      showWrite:false
     },
     onLoad( ){ 
       this.init()
-      
+     //this.createChineseWrite('刘')
     },
     init( ){
       let label = '汉字'; 
@@ -138,9 +139,10 @@ Page({
       }
     },
     createChineseWrite(char){
+      this.writerCtx = null;
       this.writerCtx = context({
         id: 'hz-writer',
-        character: '吃',
+        character: char,
         page: this,
       });
       // You can call any normal HanziWriter method here

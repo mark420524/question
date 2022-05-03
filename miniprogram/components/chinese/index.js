@@ -351,8 +351,24 @@ var RenderTarget = function () {
 
     this.view = view;
     this.eventEmitter = new _EventEmitter2.default();
+    /*
     this.ctx = polyfillCanvasCtx(wx.createCanvasContext('writer-canvas', view));
     this.canvas = this.view.selectComponent('#writer-canvas');
+    */
+   let that = this;
+    const query =  wx.createSelectorQuery().in(this.view)
+    query .select('#writer-canvas').fields({
+      node:true
+    }).exec(
+      function(res){
+        //
+        let ctxnode = res[0].node
+        let   canvas = ctxnode.getContext('2d')
+        console.log(canvas)
+        that.ctx = canvas;
+        //console.log('this.ctx',this.ctx)
+        that.canvas = ctxnode
+      });
   }
 
   RenderTarget.prototype.addPointerStartListener = function addPointerStartListener(callback) {

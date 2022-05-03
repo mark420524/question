@@ -10,8 +10,13 @@
 <van-dialog
  id="van-dialog"  
 />
+
 <view class="container"  >
- <view class="main redColor">{{ word.word }}</view>
+  <view wx:if="{{showWrite}}">
+  <comp id="hz-writer" width="200" height="100" />
+  <view class="main redColor">{{ word.word }}</view>
+ </view>
+
 
  <van-cell title="拼音：" center="true" value="{{word.pinyin}}"   />
  <van-cell title="笔画：" center="true" value="{{word.strokes}}"   />
