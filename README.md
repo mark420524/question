@@ -41,7 +41,49 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 #### 代码运行
 
 1. 将`utils/constant.js.example` 重命名为`constant.js`
+
 2. `constant.js`里面配置后台接口地址和请求接口的`token`
+
+3. 汉字笔画功能了修改npm包的源码，使用构建npm功能完成之后 `hanzi_witer/index.js`里面找到代码`_animationFrame`方法内容替换为下面代码：
+
+   ```javascript
+   var ctx = this._target.ctx
+     if( ctx){
+       ctx.clearRect(0, 0, this._positioner.width, this._positioner.height);
+   
+       ctx.save();
+       ctx.translate(this._positioner.xOffset, this._positioner.height - this._positioner.yOffset);
+       ctx.transform(1, 0, 0, -1, 0, 0);
+       ctx.scale(this._positioner.scale, this._positioner.scale);
+       func(ctx);
+       ctx.restore();
+       if (ctx.draw) ctx.draw();
+     }else{
+       let that = this
+       const query =  wx.createSelectorQuery().in(this._target.view)
+       query .select('#writer-canvas').fields({
+         node:true
+       }).exec(
+         function(res){
+           //
+           let ctxnode = res[0].node
+           let   ctx = ctxnode.getContext('2d')
+           
+           that._target.ctx = ctx;
+           ctx.clearRect(0, 0, that._positioner.width, that._positioner.height);
+   
+           ctx.save();
+           ctx.translate(that._positioner.xOffset, that._positioner.height - that._positioner.yOffset);
+           ctx.transform(1, 0, 0, -1, 0, 0);
+           ctx.scale(that._positioner.scale, that._positioner.scale);
+           func(ctx);
+           ctx.restore();
+           if (ctx.draw) ctx.draw();
+         });
+     }
+   ```
+
+   
 
 #### 扫码添加QQ群讨论
 

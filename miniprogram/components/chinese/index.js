@@ -364,7 +364,7 @@ var RenderTarget = function () {
         //
         let ctxnode = res[0].node
         let   canvas = ctxnode.getContext('2d')
-        console.log(canvas)
+        //console.log(canvas)
         that.ctx = canvas;
         //console.log('this.ctx',this.ctx)
         that.canvas = ctxnode
