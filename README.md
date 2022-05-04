@@ -44,7 +44,7 @@ gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/questio
 
 2. `constant.js`里面配置后台接口地址和请求接口的`token`
 
-3. 汉字笔画功能了修改npm包的源码，使用构建npm功能完成之后 `hanzi_witer/index.js`里面找到代码`_animationFrame`方法内容替换为下面代码：
+3. 汉字笔画功能了修改npm包的源码，使用构建npm功能完成之后 找到构建后的`hanzi_witer/index.js`里面找到代码`_animationFrame`方法内容替换为下面代码：
 
    ```javascript
    var ctx = this._target.ctx
