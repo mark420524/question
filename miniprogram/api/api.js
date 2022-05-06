@@ -33,7 +33,8 @@ import {
     searchExam:'exam/search',
     exportExam:'export/exam',
     getExamMenu: "category/exam/list",
-    integralWheel: 'user/integral/wheel'
+    integralWheel: 'user/integral/wheel',
+    examInfo:'exam/info',
   }
   module.exports = {
     userLogin(data) {
@@ -234,6 +235,13 @@ import {
     userIntegralWheel:function(data){
       return http({
         url:url.integralWheel,
+        method:'POST',
+        data:data
+      })
+    },
+    examInfo:function(data){
+      return http({
+        url:url.examInfo,
         method:'POST',
         data:data
       })
