@@ -35,6 +35,7 @@ import {
     getExamMenu: "category/exam/list",
     integralWheel: 'user/integral/wheel',
     examInfo:'exam/info',
+    getInviteIntegral:'setting/invite'
   }
   module.exports = {
     userLogin(data) {
@@ -244,6 +245,12 @@ import {
         url:url.examInfo,
         method:'POST',
         data:data
+      })
+    },
+    getInviteIntegral:function(){
+      return http({
+        url:url.getInviteIntegral,
+        method:'GET' 
       })
     }
 
