@@ -90,7 +90,7 @@ Page({
               })
               that.createChineseWrite(val)
             }else{
-              //TODO 查繁体,可以封装下，
+              //查繁体,可以封装下，
               //算了懒得封装，反正没人用
               db.collection('words').limit(1).where({ 
                 oldword: val

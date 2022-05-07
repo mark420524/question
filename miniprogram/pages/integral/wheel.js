@@ -66,7 +66,7 @@ Page({
       })
       
       let aniData = this.aniData; //获取this对象上的动画对象
-      // TODO rightnum 从后台计算中奖概率
+      
       let data = {uid:utils.getUserId()};
       let that = this;
       apis.userIntegralWheel(data).then(res=>{

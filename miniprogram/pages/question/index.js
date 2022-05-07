@@ -748,7 +748,7 @@ Page({
                 'title': '正在交卷，请稍候...',
                 'mask': true
             });
-            //TODO 请求后台保存答题结果
+            
             let number = this.data.number;
             let right = number.right||0;
             let error = number.error||0;
