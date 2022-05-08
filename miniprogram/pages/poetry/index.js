@@ -1,4 +1,6 @@
 
+const app = getApp();
+const apis = app.apis;
 const db = wx.cloud.database()
 const _ = db.command
 Page({
@@ -31,19 +33,20 @@ Page({
     },
     loadMenu(){
       let that = this;
-      db.collection('potery_category').orderBy('sort','asc') 
-        .where({
-          status:1
+      let data={
+        dbname:'potery_category',
+        params:{
+          status:1,
+        },
+        sort:'sort',
+        functionName:'querydata'
+      }
+      apis.callfunction(data).then(res=>{
+        that.setData({
+          categoryList:res,
+          active: 0
         })
-        .get({
-          success: function(res) {
-            that.setData({ 
-              categoryList:res.data,
-              active: 0
-            })
-          }
-        }
-        );
+      })
     },
     onChange(event) { 
         let index = event.detail.index; 
