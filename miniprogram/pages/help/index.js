@@ -1,4 +1,5 @@
-const db = wx.cloud.database();
+const app = getApp();
+const apis = app.apis;
 Page({
     data:{
         activeName:'1',
@@ -8,19 +9,19 @@ Page({
     },
     onLoad(){
       let that = this;
-      db.collection('integral_type')
-        .orderBy('sort', 'asc')
-        .where({
-          status:1
+      let data={
+        dbname:'integral_type',
+        params:{
+          status:1,
+        },
+        sort:'sort',
+        functionName:'querydata'
+      }
+      apis.callfunction(data).then(res=>{
+        that.setData({
+          integralList:res
         })
-        .get({
-          success: function(res) {
-            that.setData({ 
-              integralList:res.data,
-            })
-          }
-        }
-        );
+      })
     },
     onChange(event) {
         this.setData({
