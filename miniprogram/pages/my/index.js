@@ -49,18 +49,10 @@ Page({
                 url: '/pages/about/index',
               })
         },
-        openCoupon(){
-            //console.log('打开早晚券')
-            wx.navigateToMiniProgram({
-                appId:'wx7cd1c3802bbb34fa',
-                path:'/pages/index/index',
-                success:function(res){
-                    console.log(res)
-                },
-                fail:function(res){
-                    console.log(res)
-                }
-            })
+        openOther(){
+            wx.navigateTo({
+                url: '/pages/other/index',
+              })
         },
         // 清除缓存
         clearCache(){

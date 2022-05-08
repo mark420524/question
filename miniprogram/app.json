@@ -33,7 +33,8 @@
     "pages/funny/index",
     "pages/live/index",
     "pages/integral/wheel",
-    "pages/live/detail"
+    "pages/live/detail",
+    "pages/other/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

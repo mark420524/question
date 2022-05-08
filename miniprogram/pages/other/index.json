@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "其他工具",
+    "usingComponents": {
+        "van-grid": "../../components/vant/grid/index",
+        "van-grid-item": "../../components/vant/grid-item/index"
+    }
+  }
+  

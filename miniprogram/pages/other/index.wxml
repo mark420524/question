@@ -1,0 +1,11 @@
+
+
+<van-grid column-num="2" border="{{ false }}">
+  <van-grid-item wx:for="{{toolsItems}}" wx:key="index"
+  bindclick="handlerItemClick"
+  wx:for-item="item" icon="{{item.icon}}" 
+  icon-color="{{item.iconColor}}"
+  data-appid="{{item.appId}}"
+  data-path="{{item.path}}"
+  text="{{item.text}}" />
+</van-grid>
