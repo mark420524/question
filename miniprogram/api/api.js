@@ -1,5 +1,5 @@
 import {
-    http
+    http,callfunction
   } from 'http.js'
   
   var url = {
@@ -252,6 +252,9 @@ import {
         url:url.getInviteIntegral,
         method:'GET' 
       })
+    },
+    callfunction:function(data){
+      return callfunction(data)
     }
 
   }

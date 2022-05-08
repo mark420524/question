@@ -1,4 +1,5 @@
-const db = wx.cloud.database();
+const app = getApp();
+const apis = app.apis;
 Page({
     data:{
       toolsItems:[
@@ -6,23 +7,23 @@ Page({
     },
     onLoad(){
       let that = this;
-      db.collection('tools_item')
-        .orderBy('sort', 'asc')
-        .where({
-          status:1
+      let data={
+        dbname:'tools_item',
+        params:{
+          status:1,
+        },
+        sort:'sort',
+        functionName:'querydata'
+      }
+      apis.callfunction(data).then(res=>{
+        that.setData({
+          toolsItems:res
         })
-        .get({
-          success: function(res) {
-            that.setData({ 
-              toolsItems:res.data,
-            })
-          }
-        });
+      })
     },
     onShow(){ 
         if (typeof this.getTabBar === 'function' &&
             this.getTabBar()) {
-              
             this.getTabBar().setData({
               active: 2,
             })
