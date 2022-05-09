@@ -31,7 +31,7 @@ Page({
                 uid: utils.getUserId() 
             }
             apis.favoriteCount(data).then( res=>{
-                console.log('favorite',res);
+                //console.log('favorite',res);
                 let favoriteCount = res;
                 if (res) {
                     showVal = '查看收藏';

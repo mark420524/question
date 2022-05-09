@@ -13,7 +13,7 @@ Page({
         //console.log('record',record)
     },
     onHide: function() {
-       console.log('onhide')
+       //console.log('onhide')
       },
     onUnload: function() {
         this.unloadData();

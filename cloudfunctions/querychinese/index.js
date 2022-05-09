@@ -15,7 +15,7 @@ exports.main = async (event, context) => {
             data:result.data
         };
     }catch(err){
-        console.log(err)
+        //console.log(err)
         return {
             code: -1
         };

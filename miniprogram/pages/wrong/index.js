@@ -33,7 +33,7 @@ Page({
                 uid: utils.getUserId() 
             }
             apis.wrongCount(data).then(res=>{
-                console.log('wrong',res);
+                //console.log('wrong',res);
                 let wrongCount = res;
                 if (res) {
                     showVal = '查看错题';

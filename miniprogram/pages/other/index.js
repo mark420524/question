@@ -31,10 +31,10 @@ Page({
         appId: dataset.appid,
         path:  dataset.path,
         success:function(res){
-            console.log(res)
+            //console.log(res)
         },
         fail:function(res){
-            console.log(res)
+            //console.log(res)
         }
     })
     }

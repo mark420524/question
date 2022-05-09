@@ -22,7 +22,7 @@ Page({
         });
     },
     onHide: function() {
-       console.log('onhide')
+       //console.log('onhide')
       },
     onUnload: function() {
         this.unloadData();
@@ -45,7 +45,7 @@ Page({
         let email = this.data.email;
         let examIntegral = this.data.examIntegral;
         let userIntegral = this.data.userIntegral;
-        console.log('email',email)
+        //console.log('email',email)
         
         if (utils.validEmail(email)) { 
             wx.showLoading({

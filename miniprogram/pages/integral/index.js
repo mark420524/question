@@ -24,7 +24,7 @@ Page({
         this.buildUserLog(this.data.pages,'没有更多数据了')
     },
     onPullDownRefresh() {
-        console.log('pulldownrefresh')
+        //console.log('pulldownrefresh')
     },
     onReachBottom(){
         let page = this.data.pages;
@@ -33,7 +33,7 @@ Page({
             pages:page
         })
         this.buildUserLog(page,'没有更多数据了')
-        console.log('reach bottom');
+        //console.log('reach bottom');
     },
     buildUserLog(page, emptyText){
         let that = this;
@@ -42,7 +42,7 @@ Page({
             page: page,
             size:this.data.size 
         }
-        console.log('page',page)
+        //console.log('page',page)
         apis.getMyIntegralList(data).then(res=>{
             
             if (res) {

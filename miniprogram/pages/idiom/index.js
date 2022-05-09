@@ -30,7 +30,7 @@ Page({
       let that = this;
       if(val){
         //从字典页面跳转过来
-        console.log('val',val);
+        //console.log('val',val);
         this.search(val,1);
       }else{
         /*
@@ -70,7 +70,7 @@ Page({
             return;
         }
         val = val.trim();
-        console.log(pages,'this',this.data.pages)
+        //console.log(pages,'this',this.data.pages)
         if (this.data.searchVal== val && pages==this.data.pages ) {
             return ;
         }else if(val!=this.data.searchVal){
@@ -80,10 +80,10 @@ Page({
           });
         }
         
-        console.log(val);
+        //console.log(val);
         let re=/[\u4e00-\u9fa5]{1,}/;
         let valre = new RegExp('^'+val);
-        console.log(valre)
+        //console.log(valre)
         let offset = (pages-1)*this.data.size;
         let that = this;
         if (re.test(val)) {
@@ -97,7 +97,7 @@ Page({
               })
               .get({
                 success: function(res) { 
-                    console.log('res idom',res)
+                  //  console.log('res idom',res)
                   wx.hideLoading( );
                   if (res.data && res.data.length>0) {
                     that.setData({
@@ -122,7 +122,7 @@ Page({
       let page = this.data.pages;
       page++;
       this.search(this.data.searchVal,page,'没有更多数据了')
-      console.log('reach bottom');
+      //console.log('reach bottom');
    },
     onChange(event) {
         this.setData({

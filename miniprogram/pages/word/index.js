@@ -67,7 +67,7 @@ Page({
       this.setData({
         showWrite:false,
       })
-      console.log(val); 
+      //console.log(val); 
       let re=/[\u4e00-\u9fa5]/;
       let that = this;
       if (val && re.test(val)) {

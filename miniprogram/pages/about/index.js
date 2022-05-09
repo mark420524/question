@@ -14,7 +14,9 @@ Page({
       copyGroupInfo(){
         wx.setClipboardData({
             data: this.data.qqGroup,
-            success (res) {console.log(res)}
+            success (res) {
+              //console.log(res)
+            }
         });
       }
 })

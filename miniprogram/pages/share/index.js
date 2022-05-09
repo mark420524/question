@@ -33,7 +33,7 @@ Page({
     },
     onLoad(options){ 
         options = options || {} 
-        console.log('options', options) 
+        //console.log('options', options) 
         let _this = this;
         let showAnswer = false; 
         let type = options.type; 

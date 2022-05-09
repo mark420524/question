@@ -23,7 +23,7 @@ Page({
             uid: utils.getUserId()
         }
         apis.getExportInfo(data).then(res=>{
-            console.log(res)
+            //console.log(res)
             that.setData({
                 count:res.count,
                 integral:res.integral,
@@ -42,7 +42,7 @@ Page({
         let that = this;
         let email = this.data.email;
         let count = this.data.count;
-        console.log('email',email)
+        //console.log('email',email)
         if (utils.validEmail(email)) { 
             let data={
                 uid:utils.getUserId(),
