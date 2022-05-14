@@ -1,0 +1,11 @@
+.guide{
+    padding: 30rpx;
+}
+.item{
+    margin-top: 20rpx;
+    font-size: 24rpx;
+}
+.title{
+    font-weight: bold;
+    font-size: 38rpx;
+}

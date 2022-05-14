@@ -1,18 +1,20 @@
 <van-grid square  column-num="3">
     <van-grid-item
-     
     icon="browsing-history-o"
-     
     text="加密文档"
+    bindclick="handlerItemClick"
+    data-type="1"
     />
     <van-grid-item 
     icon="delete-o"
-     
+    bindclick="handlerItemClick"
     text="清除密码"
+    data-type="2"
     />
     <van-grid-item 
     icon="desktop-o"
-     
+    bindclick="handlerItemClick"
     text="添加水印"
+    data-type="3"
     />
 </van-grid>

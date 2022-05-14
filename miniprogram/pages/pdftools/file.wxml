@@ -1,0 +1,21 @@
+<view>
+    <view class="main guide">
+        <view class="title">上传须知</view>
+        <view>
+            <view class="item">1. 由于服务器资源有限，每个账户每天的免费处理次数为<label class="redColor">{{count}}</label>次</view>
+            
+            <view class="item">2. 免费次数用完后可以使用积分处理，每次消耗<label class="redColor">{{integral}}</label>积分</view>
+            <view class="item redColor">3. 上传文档无论处理是否成功都消耗次数或积分 </view> 
+        </view>
+        <view wx:if="{{type==1}}">
+            <view class="item">4. 加密仅限文档无所有者密码保护，即文档可复制、编辑、打印等</view>
+            <view class="item">5. 只读配置即加密完成后，文档打开需要密码，打开之后不可以复制、编辑、列印等</view>
+        </view>
+        <view wx:if="{{type==2}}">
+            <view class="item">4. 解密仅限文档无密码保护，即文档可正常打开，但无复制、编辑等权限</view>
+        </view>
+        <view wx:if="{{type==3}}">
+            <view class="item">4. 添加水印仅限文档为所有者，即文档无密码可正常打开且有复制、编辑等权限</view>
+        </view>
+    </view>
+</view>
