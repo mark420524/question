@@ -58,10 +58,8 @@ Page({
         clearCache(){
             this.setData({ userInfo:{} })
             wx.removeStorageSync("userInfo" );
-            wx.removeStorageSync("uid" );
-            wx.removeStorageSync('userToken');
             wx.showToast({
-                title: '清除成功，关闭小程序重新进入才能使用',
+                title: '清除成功',
                 icon:'none',
                 duration: 2000
             })
