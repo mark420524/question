@@ -1,19 +1,17 @@
 <van-grid square  column-num="3">
     <van-grid-item
-    icon-color="green"
-    icon=""
+     
+    icon="browsing-history-o"
      
     text="加密文档"
     />
-    <van-grid-item
-    icon-color="green"
-    icon=""
+    <van-grid-item 
+    icon="delete-o"
      
     text="清除密码"
     />
-    <van-grid-item
-    icon-color="green"
-    icon=""
+    <van-grid-item 
+    icon="desktop-o"
      
     text="添加水印"
     />
