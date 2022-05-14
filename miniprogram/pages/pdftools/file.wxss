@@ -9,3 +9,13 @@
     font-weight: bold;
     font-size: 38rpx;
 }
+.chooseFile{
+    margin-top: 20rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+.readonly{
+    margin-top: 20rpx;
+}

@@ -1,3 +1,9 @@
 {
-    "navigationBarTitleText":"上传文件"
+    "navigationBarTitleText":"上传文件",
+    "usingComponents": {
+        "van-uploader": "../../components/vant/uploader/index",
+        "van-button": "../../components/vant/button/index",
+        "van-switch": "../../components/vant/switch/index",
+        "van-cell": "../../components/vant/cell/index"
+      }
 }

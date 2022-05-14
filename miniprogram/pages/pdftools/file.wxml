@@ -18,4 +18,21 @@
             <view class="item">4. 添加水印仅限文档为所有者，即文档无密码可正常打开且有复制、编辑等权限</view>
         </view>
     </view>
+    <view class="readonly">
+    <van-cell title="是否只读">
+        <van-switch slot="right-icon"  checked="{{ readonly }}" size="24px" bind:change="onChangeReadonly" /> 
+    </van-cell>
+    </view>
+    <view class="main chooseFile">
+       
+        <van-uploader   max-count="1"
+        accept="file"  bind:after-read="afterRead"
+        max-size="{{maxSize}}"
+        use-before-read
+        bind:before-read="beforeRead"
+        >
+        <van-button icon="plus"    type="primary">上传pdf文件</van-button>
+        </van-uploader>
+        
+    </view>
 </view>
