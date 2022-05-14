@@ -9,7 +9,13 @@
   link-type="{{item.linkType}}"
   url="{{item.url}}"
   text="{{item.text}}" />
-  
+  <van-grid-item
+  icon-color=""
+  icon=""
+  link-type="navigateTo"
+   url="/pages/pdftools/index"
+   text="pdf工具"
+  />
 </van-grid>
 
 </view>

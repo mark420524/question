@@ -1,0 +1,20 @@
+<van-grid square  column-num="3">
+    <van-grid-item
+    icon-color="green"
+    icon=""
+     
+    text="加密文档"
+    />
+    <van-grid-item
+    icon-color="green"
+    icon=""
+     
+    text="清除密码"
+    />
+    <van-grid-item
+    icon-color="green"
+    icon=""
+     
+    text="添加水印"
+    />
+</van-grid>

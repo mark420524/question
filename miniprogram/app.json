@@ -34,7 +34,8 @@
     "pages/live/index",
     "pages/integral/wheel",
     "pages/live/detail",
-    "pages/other/index"
+    "pages/other/index",
+    "pages/pdftools/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
