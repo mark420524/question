@@ -1,6 +1,6 @@
 {
   "pages":[ 
-    "pages/pdftools/index",
+    
     "pages/index/index",
     "pages/search/index",
     "pages/result/index",
@@ -35,6 +35,7 @@
     "pages/integral/wheel",
     "pages/live/detail",
     "pages/other/index",
+    "pages/pdftools/index",
     "pages/pdftools/file"
   ],
   "window": {

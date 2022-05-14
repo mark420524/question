@@ -6,3 +6,4 @@
 {"text":"试卷搜索","url":"/pages/search/exam","linkType":"navigateTo","iconColor":"red;","icon":"fire-o","status":1,"sort":6,"_id":6}
 {"text":"萌宝启蒙","url":"/pages/children/index","linkType":"navigateTo","iconColor":"#32bf44;","icon":"flag-o","status":1,"sort":7,"_id":7}
 {"text":"休息一下","url":"/pages/funny/index","linkType":"navigateTo","iconColor":"blue","icon":"music-o","status":1,"sort":8,"_id":8}
+{"text":"pdf工具","url":"/pages/pdftools/index","linkType":"navigateTo","iconColor":"green","icon":"bag-o","status":1,"sort":9,"_id":9}
