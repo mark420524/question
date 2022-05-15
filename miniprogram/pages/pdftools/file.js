@@ -6,7 +6,8 @@ Page({
         integral:100,
         type:1,
         maxSize:100*1024*1024,
-        readonly:true
+        readonly:true,
+        showDownload:false,
     },
     onLoad(options){
         options = options||{}
@@ -45,5 +46,12 @@ Page({
     },
     onChangeReadonly(e){  
         this.setData({ readonly: e.detail });
+    },
+    downloadFile(){
+        console.log('download')
+    },
+    onChangeWaterMark(e){
+        let waterMark = e.detail;
+        console.log(waterMark)
     }
 })

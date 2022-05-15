@@ -18,10 +18,19 @@
             <view class="item">4. 添加水印仅限文档为所有者，即文档无密码可正常打开且有复制、编辑等权限</view>
         </view>
     </view>
-    <view class="readonly">
+    <view wx:if="{{type==1}}" class="marginTop">
     <van-cell title="是否只读">
         <van-switch slot="right-icon"  checked="{{ readonly }}" size="24px" bind:change="onChangeReadonly" /> 
     </van-cell>
+    </view>
+    <view wx:if="{{type==3}}" class="marginTop">
+        <van-field
+            label="水印字符"
+            maxlength="5"
+            placeholder="请输入5个字符以内"
+            border="{{ false }}"
+            bind:change="onChangeWaterMark"
+        />
     </view>
     <view class="main chooseFile">
        
@@ -34,5 +43,11 @@
         <van-button icon="plus"    type="primary">上传pdf文件</van-button>
         </van-uploader>
         
+    </view>
+
+    <view wx:if="{{showDownload}}"  bindtap="downloadFile" class="marginTop">
+        <van-cell title="文件名字">
+            <van-icon slot="right-icon" name="down"   />
+        </van-cell>
     </view>
 </view>

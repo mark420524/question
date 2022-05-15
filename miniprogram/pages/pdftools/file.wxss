@@ -16,6 +16,6 @@
     align-items: center;
     flex-flow: column;
 }
-.readonly{
+.marginTop{
     margin-top: 20rpx;
 }

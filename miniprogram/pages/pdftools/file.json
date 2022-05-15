@@ -4,6 +4,9 @@
         "van-uploader": "../../components/vant/uploader/index",
         "van-button": "../../components/vant/button/index",
         "van-switch": "../../components/vant/switch/index",
-        "van-cell": "../../components/vant/cell/index"
+        "van-cell": "../../components/vant/cell/index",
+        "van-icon": "../../components/vant/icon/index",
+        "van-field": "../../components/vant/field/index"
+        
       }
 }
