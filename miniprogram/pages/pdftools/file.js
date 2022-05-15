@@ -4,7 +4,7 @@ const utils = app.utils;
 Page({
     data:{
         count:5,
-        alreadyUpload:1,
+        alreadyUpload:123,
         integral:100,
         type:1,
         maxSize:100*1024*1024,
@@ -13,14 +13,41 @@ Page({
         filePassword:'',
         waterMark:'',
         fileName:'',
-        fileTempUrl:''
+        fileTempUrl:'',
+        userIntegral:0,
+        balanceCount:0,
+        showIntegralTips:false,
+        notEnough:false,
     },
     onLoad(options){
         options = options||{}
         let type = parseInt( options.type);
-
-        this.setData({
-            type: type
+        this.initInfo(type)
+       
+    },
+    initInfo(type) {
+        let that = this;
+        let data = {
+            uid:utils.getUserId(),
+            type:type
+        }
+        apis.getTodayHandleInfo(data).then(res=>{
+            console.log(res)
+            let freeCount = res.freeCount;
+            let alreadyUpload=res.count;
+            let balanceCount = freeCount-alreadyUpload;
+            balanceCount=balanceCount<=0?0:balanceCount
+            let enough = balanceCount==0 && res.needIntegral>res.integral;
+            that.setData({
+                type: type,
+                count: freeCount,
+                integral:res.needIntegral,
+                userIntegral:res.integral,
+                alreadyUpload:alreadyUpload,
+                balanceCount:balanceCount,
+                showIntegralTips:balanceCount==0,
+                notEnough:enough
+            })
         })
     },
     afterRead(e){
@@ -93,12 +120,25 @@ Page({
         if (res && res.path) {
             utils.showWxToast('处理成功');
             let tempurl = res.domain + res.path;
+            let count = res.count;
+            let balanceCount = this.data.count-count;
+            balanceCount=balanceCount<=0?0:balanceCount
             this.setData({
                 fileTempUrl:tempurl,
-                showDownload:true
+                showDownload:true,
+                alreadyUpload:count,
+                balanceCount:balanceCount
             })
         }else{
-            this.showWxToast(res)
+            utils.showWxToast(res)
+            let alreadyUpload = this.data.alreadyUpload;
+            alreadyUpload++;
+            let balanceCount = this.data.count-alreadyUpload;
+            balanceCount=balanceCount<=0?0:balanceCount
+            this.setData({
+                alreadyUpload:alreadyUpload,
+                balanceCount:balanceCount
+            })
         }
     },
     getFileExtension(filename) {

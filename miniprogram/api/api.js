@@ -37,7 +37,8 @@ import {
     examInfo:'exam/info',
     getInviteIntegral:'setting/invite',
     encryptPdf:'pdf/encrypt',
-    decryptPdf:'pdf/decrypt'
+    decryptPdf:'pdf/decrypt',
+    todayHandleInfo:'pdf/info'
   }
   module.exports = {
     userLogin(data) {
@@ -267,6 +268,12 @@ import {
     decryptPdf:function(data){
       return uploadFile({
         url:url.decryptPdf,
+        data:data
+      })
+    },
+    getTodayHandleInfo:function(data){
+      return http({
+        url:url.todayHandleInfo,
         data:data
       })
     }

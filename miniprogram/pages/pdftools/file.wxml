@@ -5,7 +5,7 @@
             <view class="item">1. 由于服务器资源有限，每个账户每天的免费处理次数为<label class="redColor">{{count}}</label>次</view>
             
             <view class="item">2. 免费次数用完后可以使用积分处理，每次消耗<label class="redColor">{{integral}}</label>积分</view>
-            <view class="item redColor">3. 上传文档无论处理是否成功都消耗次数或积分 </view> 
+            <view class="item">3. 上传文档无论处理是否成功都消耗次数或积分 </view> 
         </view>
         <view wx:if="{{type==1}}">
             <view class="item">4. 加密仅限文档无所有者密码保护，即文档可复制、编辑、打印等</view>
@@ -17,7 +17,22 @@
         <view wx:if="{{type==3}}">
             <view class="item">4. 添加水印仅限文档为所有者，即文档无密码可正常打开且有复制、编辑等权限</view>
         </view>
+        <view class="redColor item">
+            您今天已经处理文件{{alreadyUpload}}次，免费次数剩余{{balanceCount}}次
+        </view>
+        <view wx:if="{{showIntegralTips}}"> 
+            <view class="redColor item">
+                免费次数已消耗完，再次上传将消耗积分
+            </view>
+            <view  class="redColor item">
+                您目前剩余积分为:{{userIntegral}}
+            </view>
+            <view wx:if="{{notEnough}}"  class="redColor item">
+                您目前剩余积分不足，赶紧邀请好友获得积分吧
+            </view>
+        </view>
     </view>
+   
     <view wx:if="{{type==1}}" class="marginTop">
         <van-field
             label="加密密钥"
@@ -42,22 +57,27 @@
             bind:change="onChangeWaterMark"
         />
     </view>
-    <view class="main chooseFile">
-       
-        <van-uploader   max-count="1"
-        accept="file"  bind:after-read="afterRead"
-        max-size="{{maxSize}}"
-        use-before-read
-        bind:before-read="beforeRead"
-        >
-        <van-button icon="plus"    type="primary">上传pdf文件</van-button>
-        </van-uploader>
-        
+    <view>
+        <view wx:if="{{notEnough}}" class="main flexColumn" >
+            <van-button   icon="share-o"   type="primary"> 邀请朋友  </van-button> 
+        </view>
+        <view  wx:else class="main flexColumn"> 
+            <van-uploader   max-count="1"
+            accept="file"  bind:after-read="afterRead"
+            max-size="{{maxSize}}"
+            use-before-read
+            bind:before-read="beforeRead"
+            disabled="{{notEnough}}"
+            >
+            <van-button icon="plus"  disabled="{{notEnough}}"   type="primary">上传pdf文件</van-button>
+            </van-uploader> 
+        </view>
     </view>
-
     <view wx:if="{{showDownload}}"  bindtap="downloadFile" class="marginTop">
         <van-cell title="{{fileName}}">
             <van-icon slot="right-icon" name="down"   />
         </van-cell>
     </view>
+
+    
 </view>

@@ -9,7 +9,7 @@
     font-weight: bold;
     font-size: 38rpx;
 }
-.chooseFile{
+.flexColumn{
     margin-top: 20rpx;
     padding: 20rpx 20rpx;
     display: flex;
