@@ -19,16 +19,26 @@
         </view>
     </view>
     <view wx:if="{{type==1}}" class="marginTop">
+        <van-field
+            label="加密密钥"
+            maxlength="12"
+            placeholder="请输入12个字符以内" 
+            input-align="right" 
+            required
+            password
+            bind:change="onChangePassword"
+        />
     <van-cell title="是否只读">
         <van-switch slot="right-icon"  checked="{{ readonly }}" size="24px" bind:change="onChangeReadonly" /> 
     </van-cell>
+
     </view>
     <view wx:if="{{type==3}}" class="marginTop">
         <van-field
             label="水印字符"
             maxlength="5"
             placeholder="请输入5个字符以内"
-            border="{{ false }}"
+            required
             bind:change="onChangeWaterMark"
         />
     </view>

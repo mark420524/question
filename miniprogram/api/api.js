@@ -1,5 +1,5 @@
 import {
-    http,callfunction
+    http,uploadFile,callfunction
   } from 'http.js'
   
   var url = {
@@ -35,7 +35,8 @@ import {
     getExamMenu: "category/exam/list",
     integralWheel: 'user/integral/wheel',
     examInfo:'exam/info',
-    getInviteIntegral:'setting/invite'
+    getInviteIntegral:'setting/invite',
+    encryptPdf:'pdf/encrypt'
   }
   module.exports = {
     userLogin(data) {
@@ -255,6 +256,12 @@ import {
     },
     callfunction:function(data){
       return callfunction(data)
+    },
+    encryptPdf:function(data){
+      return uploadFile({
+        url:url.encryptPdf,
+        data:data
+      })
     }
 
   }

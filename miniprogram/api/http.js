@@ -69,8 +69,8 @@ const uploadFile = (params) => {
     wx.uploadFile({
       url: apiUrl + params.url,//服务器url+参数中携带的接口具体地址
       formData: params.data,//请求参数
-      filePath: params.filePath,
-      name: params.name,
+      filePath: params.data.filePath,
+      name: params.data.name || 'file',
       header: params.header || {
         "Content-Type": "multipart/form-data",
       },
