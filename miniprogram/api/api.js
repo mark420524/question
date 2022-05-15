@@ -36,7 +36,8 @@ import {
     integralWheel: 'user/integral/wheel',
     examInfo:'exam/info',
     getInviteIntegral:'setting/invite',
-    encryptPdf:'pdf/encrypt'
+    encryptPdf:'pdf/encrypt',
+    decryptPdf:'pdf/decrypt'
   }
   module.exports = {
     userLogin(data) {
@@ -260,6 +261,12 @@ import {
     encryptPdf:function(data){
       return uploadFile({
         url:url.encryptPdf,
+        data:data
+      })
+    },
+    decryptPdf:function(data){
+      return uploadFile({
+        url:url.decryptPdf,
         data:data
       })
     }

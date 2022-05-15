@@ -33,7 +33,8 @@ Page({
         let data={
             uid:utils.getUserId(),
             filePath:file.url,
-            type:handleType
+            type:handleType,
+            fileName:this.data.fileName
         }
         wx.showLoading({
           title: '上传处理中',
@@ -43,6 +44,7 @@ Page({
         if ( type==1) {
             //加密
             let password = this.data.filePassword;
+            data.readonly=this.data.readonly?1:0;
             if (password) {
                 data.password = password;
             }else{
@@ -68,24 +70,15 @@ Page({
             //upload
             if (type==1) {
                 apis.encryptPdf(data).then(res=>{
-                    console.log(res)
+                    //console.log(res)
                     wx.hideLoading( )
-                    if (res && res.path) {
-                        utils.showWxToast('处理成功');
-                        let tempurl = res.domain + res.path;
-                        that.setData({
-                            fileTempUrl:tempurl,
-                            showDownload:true
-                        })
-                    }else{
-                        utils.showWxToast(res)
-                    }
-                    
+                    that.handlerUploadFileRes(res)
                 })
             }else if(type==2){
                 apis.decryptPdf(data).then(res=>{
-                    console.log(res)
+                    //console.log(res)
                     wx.hideLoading( )
+                    that.handlerUploadFileRes(res)
                 })
             }else{
                 apis.addWatermark(data).then(res=>{
@@ -94,6 +87,18 @@ Page({
                 })
             }
 
+        }
+    },
+    handlerUploadFileRes(res){ 
+        if (res && res.path) {
+            utils.showWxToast('处理成功');
+            let tempurl = res.domain + res.path;
+            this.setData({
+                fileTempUrl:tempurl,
+                showDownload:true
+            })
+        }else{
+            this.showWxToast(res)
         }
     },
     getFileExtension(filename) {
@@ -108,11 +113,14 @@ Page({
         
         let ok = false;
         if (type==='file' && /^pdf$/i.test(suffix)) {
-            
-            if (size>this.data.maxSize) {
-                utils.showWxToast('文件超过最大限制')
-            }else{
-                ok = true;
+            if(size==0){
+                utils.showWxToast('文件大小为0')
+            }else {
+                if (size>this.data.maxSize) {
+                    utils.showWxToast('文件超过最大限制')
+                }else{
+                    ok = true;
+                }
             }
         }else{
             utils.showWxToast('请选择pdf文件')
@@ -123,7 +131,7 @@ Page({
         this.setData({ readonly: e.detail });
     },
     downloadFile(){
-        console.log('download')
+        console.log(this.data.fileTempUrl)
     },
     onChangeWaterMark(e){
         let waterMark = e.detail;
