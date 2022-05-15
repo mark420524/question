@@ -56,7 +56,7 @@
     </view>
 
     <view wx:if="{{showDownload}}"  bindtap="downloadFile" class="marginTop">
-        <van-cell title="文件名字">
+        <van-cell title="{{fileName}}">
             <van-icon slot="right-icon" name="down"   />
         </van-cell>
     </view>

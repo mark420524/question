@@ -1,16 +1,19 @@
 const app = getApp();
+const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
         count:5,
-        alreadyUpload:5,
+        alreadyUpload:1,
         integral:100,
         type:1,
         maxSize:100*1024*1024,
         readonly:true,
         showDownload:false,
         filePassword:'',
-        waterMark:''
+        waterMark:'',
+        fileName:'',
+        fileTempUrl:''
     },
     onLoad(options){
         options = options||{}
@@ -24,6 +27,9 @@ Page({
         const {file} = e.detail;
         console.log(file)
         let handleType = this.data.alreadyUpload>=this.data.count?2:1;
+        this.setData({
+            fileName: file.name
+        })
         let data={
             uid:utils.getUserId(),
             filePath:file.url,
@@ -53,12 +59,41 @@ Page({
                 msg = '请输入水印字符'
             }
         }
-        wx.hideLoading( )
+        
         console.log(data,msg)
         if(msg){
             utils.showWxToast(msg)
         }else{
+            let that = this;
             //upload
+            if (type==1) {
+                apis.encryptPdf(data).then(res=>{
+                    console.log(res)
+                    wx.hideLoading( )
+                    if (res && res.path) {
+                        utils.showWxToast('处理成功');
+                        let tempurl = res.domain + res.path;
+                        that.setData({
+                            fileTempUrl:tempurl,
+                            showDownload:true
+                        })
+                    }else{
+                        utils.showWxToast(res)
+                    }
+                    
+                })
+            }else if(type==2){
+                apis.decryptPdf(data).then(res=>{
+                    console.log(res)
+                    wx.hideLoading( )
+                })
+            }else{
+                apis.addWatermark(data).then(res=>{
+                    console.log(res)
+                    wx.hideLoading( )
+                })
+            }
+
         }
     },
     getFileExtension(filename) {
@@ -92,11 +127,15 @@ Page({
     },
     onChangeWaterMark(e){
         let waterMark = e.detail;
-        console.log(waterMark)
+        this.setData({
+            waterMark:waterMark
+        })
     },
     onChangePassword(e){
         let password = e.detail;
-        console.log(password)
+        this.setData({
+            filePassword:password
+        })
     }
     
 })
