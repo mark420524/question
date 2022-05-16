@@ -109,8 +109,8 @@ Page({
                 })
             }else{
                 apis.addWatermark(data).then(res=>{
-                    console.log(res)
                     wx.hideLoading( )
+                    that.handlerUploadFileRes(res)
                 })
             }
 
@@ -134,7 +134,7 @@ Page({
             let alreadyUpload = this.data.alreadyUpload;
             alreadyUpload++;
             let balanceCount = this.data.count-alreadyUpload;
-            balanceCount=balanceCount<=0?0:balanceCount
+            balanceCount=balanceCount<=0?0:balanceCount;
             this.setData({
                 alreadyUpload:alreadyUpload,
                 balanceCount:balanceCount

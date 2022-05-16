@@ -38,7 +38,8 @@ import {
     getInviteIntegral:'setting/invite',
     encryptPdf:'pdf/encrypt',
     decryptPdf:'pdf/decrypt',
-    todayHandleInfo:'pdf/info'
+    todayHandleInfo:'pdf/info',
+    addWatermark:'pdf/watermark',
   }
   module.exports = {
     userLogin(data) {
@@ -274,6 +275,12 @@ import {
     getTodayHandleInfo:function(data){
       return http({
         url:url.todayHandleInfo,
+        data:data
+      })
+    },
+    addWatermark:function(data){
+      return uploadFile({
+        url:url.addWatermark,
         data:data
       })
     }
