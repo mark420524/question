@@ -1,7 +1,7 @@
 import {
     http,uploadFile,callfunction
   } from 'http.js'
-  
+const fs = wx.getFileSystemManager();
   var url = {
     systemInit:"init",
     userLogin: "v2/user/login",
@@ -282,6 +282,47 @@ import {
       return uploadFile({
         url:url.addWatermark,
         data:data
+      })
+    },
+    getSystemInfo:function(data){
+      const res = wx.getSystemInfoSync() || {}; 
+      return res;
+    },
+
+    saveFileToDisk:function(data){
+      let res = this. getSystemInfo();
+      let platform = res.platform;
+       
+      return new Promise((resolve, reject) => {
+        if (platform=='windows' || platform=='mac') {
+          wx.saveFileToDisk({
+            filePath: data,
+            success: (res) => {
+              
+              resolve(res)
+            },
+            fail: (res) => {
+              console.log(res)
+              reject(res)
+            },
+            complete: (res) => {
+              console.log(res)
+            },
+          })
+        }else{
+          fs.saveFile({
+            tempFilePath:data,
+            success: (res) => {
+              resolve(res)
+            },
+            fail: (res) => {
+              reject(res)
+            },
+            complete: (res) => {
+              console.log(res)
+            },
+          })
+        }
       })
     }
 

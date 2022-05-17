@@ -170,8 +170,24 @@ Page({
     onChangeReadonly(e){  
         this.setData({ readonly: e.detail });
     },
-    downloadFile(){
-        console.log(this.data.fileTempUrl)
+    downloadFile(){ 
+        wx.showLoading({
+          title: '下载中',
+        })
+        wx.downloadFile({
+          url: this.data.fileTempUrl,
+          success (res) {
+            if (res.statusCode === 200) {
+               console.log(res.tempFilePath)
+               apis.saveFileToDisk(res.tempFilePath).then(res=>{
+                   wx.hideLoading();
+                   console.log(res)
+               }).catch(err=>{
+                    wx.hideLoading(); 
+               })
+            }
+          }
+        })
     },
     onChangeWaterMark(e){
         let waterMark = e.detail;
