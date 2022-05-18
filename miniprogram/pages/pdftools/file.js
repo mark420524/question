@@ -18,6 +18,7 @@ Page({
         balanceCount:0,
         showIntegralTips:false,
         notEnough:false,
+        email:''
     },
     onLoad(options){
         options = options||{}
@@ -200,6 +201,11 @@ Page({
         this.setData({
             filePassword:password
         })
-    }
+    },
+    onChangeEmail(event) {
+        this.setData({
+            email:event.detail
+        })
+    },
     
 })
