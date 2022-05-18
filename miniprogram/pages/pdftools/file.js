@@ -62,7 +62,8 @@ Page({
             uid:utils.getUserId(),
             filePath:file.url,
             type:handleType,
-            fileName:this.data.fileName
+            fileName:this.data.fileName,
+            email:this.data.email
         }
         wx.showLoading({
           title: '上传处理中',
