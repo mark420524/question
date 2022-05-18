@@ -17,8 +17,6 @@
 
 交流 qq群：123955944
 
-gitee地址 [https://gitee.com/siival/question](https://gitee.com/siival/question)
-
 
 #### 扫码预览
 
