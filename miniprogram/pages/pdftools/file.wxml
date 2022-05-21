@@ -59,7 +59,7 @@
         />
     </view>
     <view>
-        <view wx:if="{{notEnough}}" class="main flexColumn" >
+        <view wx:if="{{notEnough}}" bindtap="inviteFriend" class="main flexColumn" >
             <van-button   icon="share-o"   type="primary"> 邀请朋友  </van-button> 
         </view>
         <view wx:else>

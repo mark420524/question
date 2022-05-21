@@ -33,7 +33,7 @@ Page({
             type:type
         }
         apis.getTodayHandleInfo(data).then(res=>{
-            console.log(res)
+            //console.log(res)
             let freeCount = res.freeCount;
             let alreadyUpload=res.count;
             let balanceCount = freeCount-alreadyUpload;
@@ -53,11 +53,15 @@ Page({
     },
     afterRead(e){
         const {file} = e.detail;
-        console.log(file)
+        //console.log(file)
         let handleType = this.data.alreadyUpload>=this.data.count?2:1;
         this.setData({
             fileName: file.name
         })
+        if(!utils.validEmail(this.data.email)){
+            utils.showWxToast('请输入正确的邮箱');
+            return;
+        }
         let data={
             uid:utils.getUserId(),
             filePath:file.url,
@@ -91,7 +95,7 @@ Page({
             }
         }
         
-        console.log(data,msg)
+        //console.log(data,msg)
         if(msg){
             utils.showWxToast(msg)
         }else{
@@ -120,16 +124,20 @@ Page({
     },
     handlerUploadFileRes(res){ 
         if (res && res.path) {
-            utils.showWxToast('处理成功');
+            utils.showWxToast('处理成功,请五分钟后查收邮件');
             let tempurl = res.domain + res.path;
             let count = res.count;
             let balanceCount = this.data.count-count;
             balanceCount=balanceCount<=0?0:balanceCount
+            let enough = balanceCount==0 && this.data.integral>res.integral;
             this.setData({
                 fileTempUrl:tempurl,
                 showDownload:true,
                 alreadyUpload:count,
-                balanceCount:balanceCount
+                balanceCount:balanceCount,
+                showIntegralTips:balanceCount==0,
+                notEnough:enough,
+                userIntegral:res.integral
             })
         }else{
             utils.showWxToast(res)
@@ -137,9 +145,16 @@ Page({
             alreadyUpload++;
             let balanceCount = this.data.count-alreadyUpload;
             balanceCount=balanceCount<=0?0:balanceCount;
+            let userIntegral  = this.data.userIntegral;
+            userIntegral = userIntegral - this.data.integral;
+            userIntegral = userIntegral <=0?0:userIntegral;
+            let enough = balanceCount==0 && this.data.integral>userIntegral;
             this.setData({
                 alreadyUpload:alreadyUpload,
-                balanceCount:balanceCount
+                balanceCount:balanceCount,
+                showIntegralTips:balanceCount==0,
+                notEnough:enough,
+                userIntegral:userIntegral
             })
         }
     },
@@ -180,10 +195,10 @@ Page({
           url: this.data.fileTempUrl,
           success (res) {
             if (res.statusCode === 200) {
-               console.log(res.tempFilePath)
+               //console.log(res.tempFilePath)
                apis.saveFileToDisk(res.tempFilePath).then(res=>{
                    wx.hideLoading();
-                   console.log(res)
+                   //console.log(res)
                }).catch(err=>{
                     wx.hideLoading(); 
                })
@@ -208,5 +223,9 @@ Page({
             email:event.detail
         })
     },
-    
+    inviteFriend(){
+        wx.navigateTo({
+            url: '/pages/share/invite',
+        })
+    }
 })
