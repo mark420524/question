@@ -6,9 +6,8 @@ cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
     try {
-        let chinese = event.chinese
-        const VERSION = 2.0
-        let url = 'https://cdn.jsdelivr.net/npm/hanzi-writer-data@' + VERSION + '/' + chinese + '.json';
+        let chinese = event.chinese;
+        let url = 'https://mark420524.github.io/jsondata/hanzi/' + chinese + '.json';
         let result = await axios.get(url)
         return {
             code: 0,
