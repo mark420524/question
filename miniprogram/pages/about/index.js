@@ -1,3 +1,5 @@
+const app = getApp();
+const apis = app.apis;
 Page({
     data:{
         qqGroup:'123955944'
@@ -10,6 +12,14 @@ Page({
       },
       adClose() {
         console.log('Banner 广告关闭')
+      },
+      onLoad(){
+        let that = this;
+        apis.getQQGroup().then(res=>{
+          that.setData({
+            qqGroup:res
+          })
+        })
       },
       copyGroupInfo(){
         wx.setClipboardData({

@@ -40,6 +40,7 @@ const fs = wx.getFileSystemManager();
     decryptPdf:'pdf/decrypt',
     todayHandleInfo:'pdf/info',
     addWatermark:'pdf/watermark',
+    getQQGroup:'setting/qqgroup',
   }
   module.exports = {
     userLogin(data) {
@@ -323,6 +324,12 @@ const fs = wx.getFileSystemManager();
             },
           })
         }
+      })
+    },
+    getQQGroup:function(){
+      return http({
+        url:url.getQQGroup,
+        method:'GET' 
       })
     }
 
