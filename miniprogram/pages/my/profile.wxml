@@ -1,4 +1,7 @@
-<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+<view  class="avatar-wrapper"> 
+<button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <label class="avatar-label">头像</label>
   <image class="avatar" src="{{avatarUrl}}"></image>
 </button> 
+</view>
 <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
