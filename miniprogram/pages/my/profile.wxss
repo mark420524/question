@@ -2,9 +2,14 @@
   padding: 0; 
   border-radius: 8px;
   margin-top: 20rpx;
-  margin-bottom: 40rpx;
+  background-color: white;
 }
-.avatar-label{
+.nickname-wrapper{
+  margin-top: 20rpx;
+  background-color: white;
+  height: 100rpx;
+}
+.profile-label{
   float: left;
   /* margin-left: 20rpx; */
   margin-top: 20rpx;
@@ -17,7 +22,8 @@
   float: right;
   margin-right: 40rpx;
 }
-  
-.container {
-  display: flex;
+.profile-input{
+  height: 56px;
+  float: right;
+  margin-right: 40rpx;
 }
