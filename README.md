@@ -5,6 +5,7 @@
 *develop 是开发分支，开发新功能，上线后合并到master分支* 
 
 #### 介绍
+
 答题，题目解析，分享，模拟考试，排名，签到功能，获得积分
 
 利用微信小程序方便进行答题操作
@@ -14,7 +15,6 @@
 增加了汉字笔画书写功能
 
 交流 qq群：123955944
-
 
 #### 扫码预览
 
@@ -41,7 +41,7 @@
 2. `constant.js`里面配置后台接口地址和请求接口的`token`
 
 3. 汉字笔画功能了修改npm包的源码，使用构建npm功能完成之后，找到构建后的`hanzi_witer/index.js`里面找到代码`_animationFrame`方法内容替换为下面代码：
-
+   
    ```javascript
    var ctx = this._target.ctx
      if( ctx){
@@ -64,7 +64,7 @@
            //
            let ctxnode = res[0].node
            let   ctx = ctxnode.getContext('2d')
-           
+   
            that._target.ctx = ctx;
            ctx.clearRect(0, 0, that._positioner.width, that._positioner.height);
    
@@ -79,13 +79,9 @@
      }
    ```
 
-   
-
 #### 扫码添加QQ群讨论
 
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=oH2Uv8YJ5URz81DsRK-cZ-BpONQM6BRg&jump_from=webapi"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="技术交流学习" title="技术交流学习"></a>
-
-
 
 ![image](screenshot/3.png)
 
@@ -114,8 +110,6 @@
 
 ![编辑问题](screenshot/admin-1.png)
 
-
-
 ![题库分类](screenshot/admin-2.png)
 
 ![题库列表](screenshot/admin-3.png)
@@ -125,9 +119,11 @@
 #### 参考项目
 
 1. 汉字writer [https://github.com/chanind/hanzi-writer](https://github.com/chanind/hanzi-writer)
+
 2. 汉字笔画write 小程序版 [https://github.com/chanind/hanzi-writer-miniprogram](https://github.com/chanind/hanzi-writer-miniprogram)
 
 3. 日历插件 [https://github.com/treadpit/wx_calendar](https://github.com/treadpit/wx_calendar)
+
 4. 抽奖大转盘 [https://github.com/xing00/wxapp-turn-table](https://github.com/xing00/wxapp-turn-table)
 
 5. 三级联动 [https://github.com/z1511676208/chooseAddr](https://github.com/z1511676208/chooseAddr)
