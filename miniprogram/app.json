@@ -1,7 +1,6 @@
 {
   "pages":[ 
     
-    "pages/my/profile",
     "pages/index/index",
     "pages/search/index",
     "pages/result/index",
@@ -37,6 +36,7 @@
     "pages/live/detail",
     "pages/other/index",
     "pages/pdftools/index",
+    "pages/my/profile",
     "pages/pdftools/file"
   ],
   "window": {
