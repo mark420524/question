@@ -6,6 +6,7 @@ Page({
    */
   data: {
     avatarUrl: '/static/images/avatar.png',
+    nickname:''
   },
 
   /**
@@ -68,6 +69,11 @@ Page({
     console.log(avatarUrl)
     this.setData({
       avatarUrl,
+    })
+  },
+  onChangeNickname(e){
+    this.setData({
+      nickname:e.detail
     })
   }
 })

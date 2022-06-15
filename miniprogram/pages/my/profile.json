@@ -1,3 +1,7 @@
 {
-    "navigationBarTitleText":"完善资料"
+    "navigationBarTitleText":"完善资料",
+    "usingComponents": {
+        "van-field": "../../components/vant/field/index",
+        "van-cell-group": "../../components/vant/cell-group/index"
+      }
 }

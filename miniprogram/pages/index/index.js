@@ -203,38 +203,12 @@ Page({
       }else{
           wx.showModal({
               title: '温馨提示',
-              content: '模拟考试需要授权登录，授权微信登录后可以使用答题排名同步信息等功能',
+              content: '模拟考试需要完善资料，完善资料后可以使用答题排名同步信息等功能',
               success(res) {
                   //如果用户点击了确定按钮
                   if (res.confirm) {
-                      wx.getUserProfile({
-                              desc: '获取你的昵称、头像、地区及性别',
-                              success: res => {
-                                  let userInfo = res.userInfo;
-                                  _this.setData({userInfo:userInfo});
-                                  
-                                  wx.setStorageSync("userInfo",userInfo)
-                                  userInfo.uid = _this.getUserId();
-                                  apis.updateUser(userInfo).then(res=>{
-                                      //console.log('updateUser', res);
-                                      if (res) {
-                                          utils.showWxToast('授权成功');
-                                      }else{
-                                          utils.showWxToast('授权失败，请去关于我们页面联系管理员');
-                                      }
-                                  })
-                              },
-                              fail: res => {
-                                  //拒绝授权
-                                  wx.showToast({
-                                      title: '您拒绝了请求,不能答题排名等功能',
-                                      icon: 'error',
-                                      duration: 2000
-                                  });
-                                  return;
-                              }
-                          });
-                      } else if (res.cancel) {
+                    _this.gotoProfile();
+                  } else if (res.cancel) {
                           //如果用户点击了取消按钮
                           //console.log(3);
                           wx.showToast({
@@ -248,6 +222,42 @@ Page({
               }); 
           }
   },
+  gotoProfile(){
+    wx.navigateTo({
+      url: '/pages/my/profile',
+    })
+  },
+  initUserProfile(){
+      let _this = this;
+    wx.getUserProfile({
+        desc: '获取您的昵称、头像',
+        success: res => {
+            let userInfo = res.userInfo;
+            _this.setData({userInfo:userInfo});
+            
+            wx.setStorageSync("userInfo",userInfo)
+            userInfo.uid = _this.getUserId();
+            apis.updateUser(userInfo).then(res=>{
+                //console.log('updateUser', res);
+                if (res) {
+                    utils.showWxToast('授权成功');
+                }else{
+                    utils.showWxToast('授权失败，请去关于我们页面联系管理员');
+                }
+            })
+        },
+        fail: res => {
+            //拒绝授权
+            wx.showToast({
+                title: '您拒绝了请求,不能答题排名等功能',
+                icon: 'error',
+                duration: 2000
+            });
+            return;
+        }
+    });
+  },
+
   initUserId(inviteUid){
       //console.log('准备登录')
       wx.showLoading({

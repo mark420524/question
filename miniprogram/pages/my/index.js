@@ -5,6 +5,12 @@ Page({
     data:{
         userInfo:{}
     }, 
+
+    gotoProfile(){
+        wx.navigateTo({
+          url: '/pages/my/profile',
+        })
+    },
         // 去登陆
         toLogin(){
             let _this = this

@@ -4,26 +4,19 @@
   margin-top: 20rpx;
   background-color: white;
 }
-.nickname-wrapper{
-  margin-top: 20rpx;
-  background-color: white;
-  height: 100rpx;
-}
+ 
 .profile-label{
   float: left;
   /* margin-left: 20rpx; */
   margin-top: 20rpx;
   font-size: 14px;
+  color: #646566
 }
 .avatar {
   display: block;
   width: 56px;
   height: 56px;
   float: right;
-  margin-right: 40rpx;
+  /*margin-right: 40rpx;*/
 }
-.profile-input{
-  height: 56px;
-  float: right;
-  margin-right: 40rpx;
-}
+ 

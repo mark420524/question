@@ -1,11 +1,18 @@
 <view  class="avatar-wrapper"> 
 <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-  <label class="profile-label">头像</label>
+  <label class="profile-label van-field__label">头像</label>
   <image class="avatar" src="{{avatarUrl}}"></image>
 </button> 
 </view>
-<view  class="nickname-wrapper">
-  <label class="">昵称</label>
-  <input type="nickname" class="profile-input" placeholder="请输入昵称"/>
-</view>
+
+<van-cell-group>
+  <van-field
+    value="{{ nickName }}"
+    label="昵称"
+    placeholder="请输入昵称"
+    input-align="right"
+    type="nickname"
+    bind:change="onChangeNickname"
+  />
+</van-cell-group>
 
