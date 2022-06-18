@@ -15,4 +15,9 @@
     bind:change="onChangeNickname"
   />
 </van-cell-group>
+<view class="submit">
+  <van-button type="primary" bind:click="submitUserInfo" size="large">完成</van-button>
+</view>
+
+ 
 

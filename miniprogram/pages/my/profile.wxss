@@ -19,4 +19,9 @@
   float: right;
   /*margin-right: 40rpx;*/
 }
+.submit{
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 90%;
+}
  

@@ -75,5 +75,8 @@ Page({
     this.setData({
       nickname:e.detail
     })
+  },
+  submitUserInfo(){
+    console.log(this.data)
   }
 })
