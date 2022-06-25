@@ -1,4 +1,6 @@
-
+const app = getApp();
+const apis = app.apis;
+const utils = app.utils;
 Page({
 
   /**
@@ -6,7 +8,8 @@ Page({
    */
   data: {
     avatarUrl: '/static/images/avatar.png',
-    nickname:''
+    nickname:'',
+    fileTempPath:'',
   },
 
   /**
@@ -68,7 +71,8 @@ Page({
     const { avatarUrl } = e.detail 
     console.log(avatarUrl)
     this.setData({
-      avatarUrl,
+      fileTempPath:avatarUrl,
+      avatarUrl:avatarUrl,
     })
   },
   onChangeNickname(e){
@@ -77,6 +81,24 @@ Page({
     })
   },
   submitUserInfo(){
-    console.log(this.data)
+    let filePath=this.data.fileTempPath;
+    let  nickName=this.data.nickname;
+    let data={
+        uid:utils.getUserId(),
+        filePath:filePath, 
+        nickName:nickName
+    }
+    console.log(filePath, data)
+    //没文件还不能上传,
+    if (filePath) {
+      apis.updateUserInfo(data).then(res=>{
+        console.log(res)
+      })
+    }else{
+      apis.updateUser(data).then(res=>{
+        console.log(res)
+      })
+    }
+    
   }
 })

@@ -41,6 +41,7 @@ const fs = wx.getFileSystemManager();
     todayHandleInfo:'pdf/info',
     addWatermark:'pdf/watermark',
     getQQGroup:'setting/qqgroup',
+    updateUserV2:'user/v2/updateUser',
   }
   module.exports = {
     userLogin(data) {
@@ -331,6 +332,12 @@ const fs = wx.getFileSystemManager();
         url:url.getQQGroup,
         method:'GET' 
       })
-    }
+    },
+    updateUserInfo:function(data){
+      return uploadFile({
+        url:url.updateUserV2,
+        data:data
+      })
+    },
 
   }
