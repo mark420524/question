@@ -44,7 +44,13 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    let userInfo = wx.getStorageSync('userInfo');
+    if (userInfo) {
+      this.setData({
+        avatarUrl:userInfo.avatarUrl,
+        nickname:userInfo.nickName
+      })
+    }
   },
 
   /**
@@ -81,6 +87,7 @@ Page({
     })
   },
   submitUserInfo(){
+    let userInfo = wx.getStorageSync('userInfo');
     let filePath=this.data.fileTempPath;
     let  nickName=this.data.nickname;
     let data={
@@ -93,10 +100,18 @@ Page({
     if (filePath) {
       apis.updateUserInfo(data).then(res=>{
         console.log(res)
+        if (res==1) {
+          userInfo.nickName = nickName;
+          wx.setStorageSync('userInfo', userInfo);
+
+        }
       })
     }else{
       apis.updateUser(data).then(res=>{
         console.log(res)
+        userInfo.nickName = nickName;
+        userInfo.avatarUrl=res;
+        wx.setStorageSync('userInfo', userInfo)
       })
     }
     
