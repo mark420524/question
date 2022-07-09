@@ -16,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.initInfo();
   },
 
   /**
@@ -25,12 +25,21 @@ Page({
   onReady: function () {
     
   },
-
+  initInfo(){
+    let userInfo = wx.getStorageSync('userInfo');
+    console.log(userInfo)
+    if (userInfo) {
+      this.setData({
+        avatarUrl:userInfo.avatarUrl,
+        nickName:userInfo.nickName
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.initInfo();
   },
 
   /**
@@ -44,13 +53,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    let userInfo = wx.getStorageSync('userInfo');
-    if (userInfo) {
-      this.setData({
-        avatarUrl:userInfo.avatarUrl,
-        nickname:userInfo.nickName
-      })
-    }
+    
   },
 
   /**
@@ -99,19 +102,21 @@ Page({
     //没文件还不能上传,
     if (filePath) {
       apis.updateUserInfo(data).then(res=>{
-        console.log(res)
+        userInfo.avatarUrl=res;
+        userInfo.nickName = nickName;
+        wx.setStorageSync('userInfo', userInfo)
+        utils.showWxToast('更新成功')
+      })
+    }else{
+      
+      apis.updateUser(data).then(res=>{
         if (res==1) {
           userInfo.nickName = nickName;
           wx.setStorageSync('userInfo', userInfo);
-
+          utils.showWxToast('更新成功')
+        }else{
+          utils.showWxToast('更新失败')
         }
-      })
-    }else{
-      apis.updateUser(data).then(res=>{
-        console.log(res)
-        userInfo.nickName = nickName;
-        userInfo.avatarUrl=res;
-        wx.setStorageSync('userInfo', userInfo)
       })
     }
     

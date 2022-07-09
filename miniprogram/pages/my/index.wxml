@@ -1,11 +1,11 @@
 <view class="_div data-v-b814dec6">
     <view class="_div data-v-b814dec6 header">
-      <view class="_div data-v-b814dec6 my">
+      <view class="_div data-v-b814dec6 my"  bindtap="gotoProfile" >
         <view class="_div data-v-b814dec6 left">
           <image src="{{userInfo.avatarUrl||'/static/images/default.jpg'}}" alt class="_img data-v-b814dec6"></image>
         </view>
         <view class="_div data-v-b814dec6 right">
-          <view wx:if="{{userInfo.nickName}}" class="_h4 data-v-b814dec6">{{userInfo.nickName}}</view><button wx:else class="_button data-v-b814dec6 toLogin"  bindtap="gotoProfile"  >登录/注册</button>
+          <view wx:if="{{userInfo.nickName}}" class="_h4 data-v-b814dec6">{{userInfo.nickName}}</view><button wx:else class="_button data-v-b814dec6 toLogin"  >登录/注册</button>
         </view>
       </view>
     </view>
