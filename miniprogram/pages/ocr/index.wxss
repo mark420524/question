@@ -1,0 +1,25 @@
+.guide{
+    padding: 30rpx;
+}
+.item{
+    margin-top: 20rpx;
+    font-size: 26rpx;
+}
+.title{
+    font-weight: bold;
+    font-size: 38rpx;
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    bottom: 0;
+    padding: 30rpx;
+}
+.operate{
+    display: flex;
+    justify-content: space-between;
+}
+.startTake{
+    margin-right: 60rpx;
+}

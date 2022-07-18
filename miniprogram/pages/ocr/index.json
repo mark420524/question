@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"文字提取",
+    "usingComponents": {
+        "van-button": "../../components/vant/button/index" 
+    }
+}

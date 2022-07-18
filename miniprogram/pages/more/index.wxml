@@ -9,6 +9,11 @@
   link-type="{{item.linkType}}"
   url="{{item.url}}"
   text="{{item.text}}" />
+  <van-grid-item  icon="aim" 
+  icon-color="red"
+  link-type="navigateTo"
+  url="/pages/ocr/index"
+  text="文字提取" />
 </van-grid>
 
 </view>
