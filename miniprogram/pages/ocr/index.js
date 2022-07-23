@@ -6,6 +6,7 @@ Page({
         ocrCount:5,
         alreadyCount:0,
         canOcr:false,
+        token:''
     },
     onLoad(){
       this.initOcrInfo();
@@ -16,7 +17,7 @@ Page({
       }
       let that = this;
       apis.ocrInfo(data).then(res=>{
-        console.log(res)
+        //console.log(res)
         that.setData({
           ocrCount:res.limit,
           alreadyCount:res.count,
@@ -26,8 +27,9 @@ Page({
     },
     chooseImage(e) {
       let canOcr = this.data.canOcr;
-      console.log(canOcr);
+      
       if (!canOcr) {
+        utils.showWxToast('今天免费次数已用完，联系管理员获取更多次数');
         return;
       }
       wx.showLoading({
@@ -39,14 +41,14 @@ Page({
       let that = this;
       apis.ocrGenerateToken(data).then(res=>{
         wx.hideLoading()
-        data.token = res;
         let alreadyCount = that.data.alreadyCount;
         alreadyCount++;
         that.setData({ 
           alreadyCount:alreadyCount,
-          canOcr:that.data.limit>alreadyCount
+          canOcr:that.data.limit>alreadyCount,
+          token:res
         })
-
+        that.uploadImage();
       })
       
     },
@@ -124,16 +126,15 @@ Page({
             
             let data= {
               uid:utils.getUserId(),
+              token:that.data.token
             }
             console.log(data)
             apis.imageUpload(data).then(res=>{
               wx.hideLoading();
               console.log(res)
               if(res){
-                wx.setStorageSync('previewImage', res)
-                wx.navigateTo({
-                  url: '/pages/preview/index',
-                })
+                //处理显示ocr iinfo
+
               }else{
                 utils.showWxToast('上传异常，请稍候重试')
               }

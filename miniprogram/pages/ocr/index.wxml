@@ -2,7 +2,7 @@
     <view class="main guide">
       <view class="title">提取建议</view>
       <view class="item">
-        1. 由于服务器资源有限，用户免费每天文字ocr提取次数为<label class="redColor">{{ocrCount}}</label>次
+        1. 由于服务器资源有限，用户每天免费文字ocr提取次数为<label class="redColor">{{ocrCount}}</label>次
       </view>
       <view class="item">
         2. 拍照识别是智能AI提取文字，会有较大误差，识别成功后请仔细核对
