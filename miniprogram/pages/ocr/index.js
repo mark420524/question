@@ -1,47 +1,93 @@
 const app = getApp();
 const apis = app.apis;
+const utils  = app.utils;
 Page({
     data:{
-        ocrCount:5
+        ocrCount:5,
+        alreadyCount:0,
+        canOcr:false,
+    },
+    onLoad(){
+      this.initOcrInfo();
+    },
+    initOcrInfo(){
+      let data={
+        uid:utils.getUserId() 
+      }
+      let that = this;
+      apis.ocrInfo(data).then(res=>{
+        console.log(res)
+        that.setData({
+          ocrCount:res.limit,
+          alreadyCount:res.count,
+          canOcr:res.limit>res.count
+        })
+      })
     },
     chooseImage(e) {
-        wx.showLoading({
-          title: '处理中',
+      let canOcr = this.data.canOcr;
+      console.log(canOcr);
+      if (!canOcr) {
+        return;
+      }
+      wx.showLoading({
+        title: '生成token中',
+      });
+      let data={
+        uid:utils.getUserId()
+      }
+      let that = this;
+      apis.ocrGenerateToken(data).then(res=>{
+        wx.hideLoading()
+        data.token = res;
+        let alreadyCount = that.data.alreadyCount;
+        alreadyCount++;
+        that.setData({ 
+          alreadyCount:alreadyCount,
+          canOcr:that.data.limit>alreadyCount
         })
-        let that = this;
-        let sourceType = e.currentTarget.dataset.sourceType;
-        if (sourceType==='camera') {
-          //校验是否授权
-          wx.getSetting({
-            success:function(res) {
-              if (res.authSetting['scope.camera']) {
-                //已经授权打开摄像头
-                that.choosePicture(sourceType); 
-              }else{
-                //去授权页面
-                wx.authorize({
-                  scope: 'scope.camera',
-                  success () {
-                    that.choosePicture(sourceType); 
-                  },
-                  fail(){
-                    that.openAuthCamera()	
-                  }
-                })
-              }
-            },
-            fail:function(){
-              utils.showWxToast('获取摄像头拍照权限失败');
-            },
-            complete:function(res){
-              wx.hideLoading( )
+
+      })
+      
+    },
+    uploadImage(){
+      wx.showLoading({
+        title: '上传文件中',
+      })
+      let that = this;
+      let sourceType = e.currentTarget.dataset.sourceType;
+      if (sourceType==='camera') {
+        //校验是否授权
+        wx.getSetting({
+          success:function(res) {
+            if (res.authSetting['scope.camera']) {
+              //已经授权打开摄像头
+              that.choosePicture(sourceType); 
+            }else{
+              //去授权页面
+              wx.authorize({
+                scope: 'scope.camera',
+                success () {
+                  that.choosePicture(sourceType); 
+                },
+                fail(){
+                  that.openAuthCamera()	
+                }
+              })
             }
-          });
-        }else {
-          wx.hideLoading( )
-          this.choosePicture(sourceType);
-        }
-      },
+          },
+          fail:function(){
+            utils.showWxToast('获取摄像头拍照权限失败');
+          },
+          complete:function(res){
+            wx.hideLoading( )
+          }
+        });
+      }else {
+        wx.hideLoading( )
+        this.choosePicture(sourceType);
+      }
+    },
       openAuthCamera(){
         wx.showModal({
           content: '检测到您没打开访问摄像头权限，是否打开？',
@@ -77,7 +123,7 @@ Page({
             wx.showLoading({ title: '上传中,请稍等…' })
             
             let data= {
-              filePath:file_path,
+              uid:utils.getUserId(),
             }
             console.log(data)
             apis.imageUpload(data).then(res=>{

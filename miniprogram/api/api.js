@@ -42,6 +42,8 @@ const fs = wx.getFileSystemManager();
     addWatermark:'pdf/watermark',
     getQQGroup:'setting/qqgroup',
     updateUserV2:'user/v2/updateUser',
+    ocrGenerateToken:'ocr/token/generate',
+    ocrInfo:'ocr/info',
   }
   module.exports = {
     userLogin(data) {
@@ -339,5 +341,16 @@ const fs = wx.getFileSystemManager();
         data:data
       })
     },
-
+    ocrGenerateToken:function(data){
+      return http({
+        url:url.ocrGenerateToken,
+        data:data
+      })
+    },
+    ocrInfo:function(data){
+      return http({
+        url:url.ocrInfo,
+        data:data
+      })
+    }
   }
