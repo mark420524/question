@@ -1,5 +1,5 @@
 import {
-    http,uploadFile,callfunction
+    http,uploadFile,callfunction,uploadFileToOcr
   } from 'http.js'
 const fs = wx.getFileSystemManager();
   var url = {
@@ -44,6 +44,7 @@ const fs = wx.getFileSystemManager();
     updateUserV2:'user/v2/updateUser',
     ocrGenerateToken:'ocr/token/generate',
     ocrInfo:'ocr/info',
+    uploadImageToOcr:'ocr'
   }
   module.exports = {
     userLogin(data) {
@@ -350,6 +351,12 @@ const fs = wx.getFileSystemManager();
     ocrInfo:function(data){
       return http({
         url:url.ocrInfo,
+        data:data
+      })
+    },
+    ocrImageUpload:function(data){
+      return uploadFileToOcr({
+        url:url.uploadImageToOcr,
         data:data
       })
     }

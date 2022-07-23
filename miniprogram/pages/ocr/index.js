@@ -126,10 +126,11 @@ Page({
             
             let data= {
               uid:utils.getUserId(),
-              token:that.data.token
+              token:that.data.token,
+              filePath:file_path
             }
             console.log(data)
-            apis.imageUpload(data).then(res=>{
+            apis.ocrImageUpload(data).then(res=>{
               wx.hideLoading();
               console.log(res)
               if(res){
