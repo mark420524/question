@@ -131,3 +131,15 @@
 4. 抽奖大转盘 [https://github.com/xing00/wxapp-turn-table](https://github.com/xing00/wxapp-turn-table)
 
 5. 三级联动 [https://github.com/z1511676208/chooseAddr](https://github.com/z1511676208/chooseAddr)
+
+#### 赞赏项目
+
+人都是要恰饭的。开源不易，请作者喝杯奶茶吧
+
+微信赞赏
+
+<img title="" src="screenshot/wechat.jpg" alt="" data-align="inline">
+
+支付宝赞赏
+
+![](screenshot/alipay.png)
