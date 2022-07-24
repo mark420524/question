@@ -34,8 +34,6 @@ Page({
     buildOcrResult(res){
       let textArr=[];
       for(let i=0;i<res.length;i++){
-        console.log(res[i].text)
-        console.log(res[i].text!='')
         if(res[i].text!=''){
           textArr.push(res[i])
         }
@@ -74,9 +72,7 @@ Page({
         wx.hideLoading()
         let alreadyCount = that.data.alreadyCount;
         alreadyCount++;
-        console.log(alreadyCount);
-        console.log(that.data.ocrCount)
-        console.log(that.data.ocrCount>alreadyCount)
+        
         that.setData({ 
           alreadyCount:alreadyCount,
           canOcr:that.data.ocrCount>alreadyCount,
@@ -166,12 +162,13 @@ Page({
             //console.log(data)
             apis.ocrImageUpload(data).then(res=>{
               wx.hideLoading();
-              console.log(res)
+              
               if(res){
+                let ocrResult = that.buildOcrResult(res);
                 //处理显示ocr iinfo
-                let allText = that.buildAllText(res)
+                let allText = that.buildAllText(ocrResult)
                 that.setData({
-                  ocrResult:that.buildOcrResult(res),
+                  ocrResult:ocrResult,
                   allText:allText,
                   showResult:true
                 })
@@ -185,6 +182,11 @@ Page({
       },
       copyText(e){  
         let text = e.currentTarget.dataset.text;
-        console.log(text)
+        wx.setClipboardData({
+          data: text,
+          success (res) {
+            //console.log(res)
+          }
+      });
       }
 })

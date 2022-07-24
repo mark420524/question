@@ -110,6 +110,8 @@
 
 ![词典](screenshot/eng_dict.jpg)
 
+![](screenshot/ocr.png)
+
 #### 后台截图
 
 ![编辑问题](screenshot/admin-1.png)
