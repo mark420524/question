@@ -23,3 +23,31 @@
 .startTake{
     margin-right: 60rpx;
 }
+.result{
+    margin-top: 20rpx;
+    padding: 30rpx;
+}
+.resultItem{
+    margin-top: 30rpx;
+    margin-left : 10rpx;
+    font-size: 28rpx;
+}
+.copyVal{
+    float: right;
+    margin-right: 20rpx;
+    
+    background-color: #fffefe;
+    color: green;
+}
+.allCopy{
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15rpx;
+    height: 100%;
+    line-height: 90rpx;
+    background-color: #26E07F;
+    color: white;
+    margin-top: 60rpx;
+    text-align: center;
+    margin-bottom: 100rpx;
+}

@@ -6,10 +6,41 @@ Page({
         ocrCount:5,
         alreadyCount:0,
         canOcr:false,
-        token:''
+        token:'',
+        ocrResult:[
+          {
+              "name": "8",
+              "text": "前器此中:" 
+          },
+          {
+              "name": "9",
+              "text": "设置金额 保存收钱码" 
+          }
+        ],
+        allText:'',
+        showResult:false
     },
     onLoad(){
       this.initOcrInfo();
+      //this.buildAllText(this.data.ocrResult)
+    },
+    buildAllText(res){
+      let text = '';
+      res.forEach(function(item){
+        text += item.text;
+      })
+      return text; 
+    },
+    buildOcrResult(res){
+      let textArr=[];
+      for(let i=0;i<res.length;i++){
+        console.log(res[i].text)
+        console.log(res[i].text!='')
+        if(res[i].text!=''){
+          textArr.push(res[i])
+        }
+      }
+      return textArr;
     },
     initOcrInfo(){
       let data={
@@ -27,7 +58,7 @@ Page({
     },
     chooseImage(e) {
       let canOcr = this.data.canOcr;
-      
+      let sourceType = e.currentTarget.dataset.sourceType;
       if (!canOcr) {
         utils.showWxToast('今天免费次数已用完，联系管理员获取更多次数');
         return;
@@ -43,21 +74,24 @@ Page({
         wx.hideLoading()
         let alreadyCount = that.data.alreadyCount;
         alreadyCount++;
+        console.log(alreadyCount);
+        console.log(that.data.ocrCount)
+        console.log(that.data.ocrCount>alreadyCount)
         that.setData({ 
           alreadyCount:alreadyCount,
-          canOcr:that.data.limit>alreadyCount,
+          canOcr:that.data.ocrCount>alreadyCount,
           token:res
         })
-        that.uploadImage();
+        that.uploadImage(sourceType);
       })
       
     },
-    uploadImage(){
+    uploadImage(sourceType){
       wx.showLoading({
         title: '上传文件中',
       })
       let that = this;
-      let sourceType = e.currentTarget.dataset.sourceType;
+      
       if (sourceType==='camera') {
         //校验是否授权
         wx.getSetting({
@@ -129,13 +163,18 @@ Page({
               token:that.data.token,
               filePath:file_path
             }
-            console.log(data)
+            //console.log(data)
             apis.ocrImageUpload(data).then(res=>{
               wx.hideLoading();
               console.log(res)
               if(res){
                 //处理显示ocr iinfo
-
+                let allText = that.buildAllText(res)
+                that.setData({
+                  ocrResult:that.buildOcrResult(res),
+                  allText:allText,
+                  showResult:true
+                })
               }else{
                 utils.showWxToast('上传异常，请稍候重试')
               }
@@ -144,4 +183,8 @@ Page({
           },
         })
       },
+      copyText(e){  
+        let text = e.currentTarget.dataset.text;
+        console.log(text)
+      }
 })

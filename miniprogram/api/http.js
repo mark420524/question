@@ -135,7 +135,7 @@ const uploadFileToOcr = (params) => {
         //接口访问正常返回数据
         if (res.statusCode==200) {
           res = res.data;
-          console.log('ocr info', res)
+          //console.log('ocr info', res)
           if (typeof(res)=='string'  ) {
             //console.log('res is string')
             res = JSON.parse(res)

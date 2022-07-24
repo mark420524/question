@@ -11,7 +11,13 @@
         3. 您当天已经已经提取文字次数<label class="redColor">{{alreadyCount}}</label>次
       </view>
     </view>
-
+    <view class="main result" wx:if="{{showResult}}">
+      <view class="title">识别结果</view>
+      <view class="resultItem" wx:for="{{ocrResult}}" wx:for-item="item" wx:key="index">
+        <view bindtap="copyText" data-text="{{item.text}}">{{item.text}}<text class="copyVal">复制</text></view>
+      </view>
+      <view bindtap="copyText" class="allCopy" data-text="{{allText}}">一键复制</view>
+    </view>
     <view class="main footer">
         <view class="operate">
             <view class="" bindtap="chooseImage" data-source-type="album">
