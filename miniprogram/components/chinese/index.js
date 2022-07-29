@@ -487,11 +487,11 @@ var removeEmptyKeys = exports.removeEmptyKeys = function removeEmptyKeys(obj) {
 exports.__esModule = true;
 var VERSION = '2.0';
 var getCharDataUrl = function getCharDataUrl(char) {
-  return 'https://cdn.jsdelivr.net/npm/hanzi-writer-data@' + VERSION + '/' + encodeURIComponent(char) + '.json';
+  return 'https://mark420524.github.io/jsondata/hanzi/' + encodeURIComponent(char) + '.json';
 };
 
 exports.default = function (char, onLoad, onError) {
-  /*
+  
   wx.request({
     url: getCharDataUrl(char),
     header: {
@@ -502,20 +502,9 @@ exports.default = function (char, onLoad, onError) {
     },
     fail: onError
   });
-  */
- let data={
-  chinese:encodeURIComponent(char)
- }
- wx.cloud.callFunction({
-  name: "querychinese",
-  data:data
-  }).then(res=>{
-    let result = res.result;
-    onLoad(result.data);
-     
-  }).catch(err=>{
-    onError
-  })
+  
+ 
+ 
 };
 
 /***/ })

@@ -47,6 +47,7 @@ const fs = wx.getFileSystemManager();
     uploadImageToOcr:'ocr',
     toolsItem:'tools/item',
     toolsApp:'tools/other',
+    chineseWord:'chinese/word',
   }
   module.exports = {
     userLogin(data) {
@@ -372,6 +373,12 @@ const fs = wx.getFileSystemManager();
       return http({
         url:url.toolsApp,
         method:'GET',
+      })
+    },
+    chineseWord:function(data){
+      return http({
+        url:url.chineseWord,
+        data:data
       })
     }
   }

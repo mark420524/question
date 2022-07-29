@@ -1,5 +1,5 @@
 const app = getApp();
-const db = wx.cloud.database()
+const apis = app.apis;
 const utils = app.utils;
 import Dialog from "../../components/vant/dialog/dialog";
 import context from "../../components/chinese/index";
@@ -74,47 +74,24 @@ Page({
         wx.showLoading({
           title: '查询词典中',
         });
-        db.collection('words').limit(1).where({ 
+        let data={ 
           word: val
-        })
-        .get({
-          success: function(res) { 
-            if (res.data && res.data.length>0) {
-              wx.hideLoading();
-              let word  = (res.data)[0];
-              //console.log('word ',word)
-              that.setData({
-                word:word,
-                showWrite:true,
-
-              })
-              that.createChineseWrite(val)
-            }else{
-              //查繁体,可以封装下，
-              //算了懒得封装，反正没人用
-              db.collection('words').limit(1).where({ 
-                oldword: val
-              })
-              .get({
-                success: function(res) {
-                  wx.hideLoading();
-                  if (res.data && res.data.length>0) {
-                    
-                    let word  = (res.data)[0];
-                    //console.log('word ',word)
-                    that.setData({
-                      word:word
-                    })
-                  }else{
-                    utils.showWxToast('字典未查询到数据')
-                  }
-                 }
-              })
-             
-            }
-           
+        }
+        apis.chineseWord(data).then(res=>{
+          //console.log(res)
+          if (res && res.word) {
+            wx.hideLoading();
+            let word  = res
+            //console.log('word ',word)
+            that.setData({
+              word:word,
+              showWrite:true, 
+            })
+            that.createChineseWrite(val)
+          }else{
+            utils.showWxToast('查无数据')
           }
-        })
+        }); 
         that.setData({
           searchVal:val
         })

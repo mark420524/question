@@ -30,9 +30,7 @@
   <van-collapse-item title="解析：" name="1">
     {{word.explanation}}
   </van-collapse-item>
-  <van-collapse-item title="更多：" name="2">
-    {{word.more}}
-  </van-collapse-item>
+  
    
 </van-collapse>
 

@@ -9,7 +9,7 @@ Page({
       let that = this;
       
       apis.toolsItem().then(res=>{
-        console.log(res)
+        //console.log(res)
         that.setData({
           toolsItems:res
         })
