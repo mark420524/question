@@ -10,15 +10,9 @@ Page({
     },
     initData(){
       let that = this;
-      let data={
-        dbname:'tools_list',
-        params:{
-          status:1,
-        },
-        sort:'sort',
-        functionName:'querydata'
-      }
-      apis.callfunction(data).then(res=>{
+      
+      apis.toolsApp( ).then(res=>{
+        console.log(res)
         that.setData({
           toolsItems:res
         })

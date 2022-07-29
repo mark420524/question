@@ -7,15 +7,9 @@ Page({
     },
     onLoad(){
       let that = this;
-      let data={
-        dbname:'tools_item',
-        params:{
-          status:1,
-        },
-        sort:'sort',
-        functionName:'querydata'
-      }
-      apis.callfunction(data).then(res=>{
+      
+      apis.toolsItem().then(res=>{
+        console.log(res)
         that.setData({
           toolsItems:res
         })

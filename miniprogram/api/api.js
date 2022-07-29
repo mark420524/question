@@ -44,7 +44,9 @@ const fs = wx.getFileSystemManager();
     updateUserV2:'user/v2/updateUser',
     ocrGenerateToken:'ocr/token/generate',
     ocrInfo:'ocr/info',
-    uploadImageToOcr:'ocr'
+    uploadImageToOcr:'ocr',
+    toolsItem:'tools/item',
+    toolsApp:'tools/other',
   }
   module.exports = {
     userLogin(data) {
@@ -358,6 +360,18 @@ const fs = wx.getFileSystemManager();
       return uploadFileToOcr({
         url:url.uploadImageToOcr,
         data:data
+      })
+    },
+    toolsItem:function(){
+      return http({
+        url:url.toolsItem,
+        method:'GET',
+      })
+    },
+    toolsApp:function(){
+      return http({
+        url:url.toolsApp,
+        method:'GET',
       })
     }
   }
