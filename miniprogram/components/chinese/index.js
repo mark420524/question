@@ -487,7 +487,7 @@ var removeEmptyKeys = exports.removeEmptyKeys = function removeEmptyKeys(obj) {
 exports.__esModule = true;
 var VERSION = '2.0';
 var getCharDataUrl = function getCharDataUrl(char) {
-  return 'https://mark420524.github.io/jsondata/hanzi/' + encodeURIComponent(char) + '.json';
+  return 'https://jsondata.siival.com/hanzi/' + encodeURIComponent(char) + '.json';
 };
 
 exports.default = function (char, onLoad, onError) {
