@@ -77,6 +77,8 @@ Page({
             that.setData({
               word:word
             })
+          }else{
+            utils.showWxToast('查无该词');
           }
         }) 
         that.setData({

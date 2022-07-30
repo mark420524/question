@@ -50,6 +50,7 @@ const fs = wx.getFileSystemManager();
     chineseWord:'chinese/word',
     chineseIdiom:'chinese/idiom',
     englishChinese:'english/chinese',
+    poetryCategory:'poetry/category',
   }
   module.exports = {
     userLogin(data) {
@@ -393,6 +394,12 @@ const fs = wx.getFileSystemManager();
       return http({
         url:url.englishChinese,
         data:data
+      })
+    },
+    poetryCategory:function( ){
+      return http({
+        url:url.poetryCategory,
+        method:'GET'
       })
     }
   }

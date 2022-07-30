@@ -32,16 +32,8 @@ Page({
       })
     },
     loadMenu(){
-      let that = this;
-      let data={
-        dbname:'potery_category',
-        params:{
-          status:1,
-        },
-        sort:'sort',
-        functionName:'querydata'
-      }
-      apis.callfunction(data).then(res=>{
+      let that = this; 
+      apis.poetryCategory( ).then(res=>{
         that.setData({
           categoryList:res,
           active: 0
