@@ -1,5 +1,5 @@
-const db = wx.cloud.database()
 const app = getApp();
+const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{},
@@ -7,16 +7,13 @@ Page({
       wx.showLoading({
         title: '查询中',
       })
-        let type = e.currentTarget.dataset.type;
-        db.collection('children').limit(1)
-        .where({
-          type:type
-        })
-        .get({
-          success: function(res) {
+      let type = e.currentTarget.dataset.type;
+      let data={
+        type:type
+      }
+      apis.chineseChildren(data).then(res=>{
             wx.hideLoading( );
-            let item =  res.data[0];
-            
+            let item =  res; 
             let index = item.index;
             if (index==0){
               wx.setStorageSync('poetryItem', item);
@@ -28,14 +25,8 @@ Page({
               wx.navigateTo({
                 url: '/pages/detail/child',
               })
-            }
-            
-          },
-          fail: function(res){
-            wx.hideLoading( );
-            utils.showWxToast('查询失败');
+            } 
           }
-        }
         );
         
     }
