@@ -1,5 +1,5 @@
 import {
-    http,uploadFile,callfunction,uploadFileToOcr
+    http,uploadFile,uploadFileToOcr
   } from 'http.js'
 const fs = wx.getFileSystemManager();
   var url = {
@@ -271,9 +271,6 @@ const fs = wx.getFileSystemManager();
         url:url.getInviteIntegral,
         method:'GET' 
       })
-    },
-    callfunction:function(data){
-      return callfunction(data)
     },
     encryptPdf:function(data){
       return uploadFile({
