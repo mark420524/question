@@ -1,8 +1,7 @@
 
 const app = getApp();
 const apis = app.apis;
-const db = wx.cloud.database()
-const _ = db.command
+const utils = app.utils;
 Page({
     data:{
         searchVal:'',
@@ -13,21 +12,21 @@ Page({
         index:1,
         poetryList:[],
         size:20,
-        pages:1
+        pages:0
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
         let val = keyword.data.value;
-        this.search( 1, val);
+        this.search( 0, val);
     },
     onLoad( ){
       this.loadMenu();
       this.init();
-      this.search( 1);
+      this.search( 0);
     },
     init( ){ 
       this.setData({ 
-        pages:1,
+        pages:0,
         poetryList:[]
       })
     },
@@ -46,75 +45,48 @@ Page({
         //console.log(id); 
         this.setData({
           index:id,
-          pages:1,
+          pages:0,
           poetryList:[] 
         })
-        this.search( 1  );
+        this.search( 0  );
       },
     onCofirmSearch(e){
         let val = e.detail;
-        this.search( 1,val);
+        this.search( 0,val);
     },
     search(pages,val,emptyText){
       
       
       //console.log(pages,'this',this.data.pages);
-      let params = '';
-      let index = this.data.index;
-      
       if (val){
         val = val.trim();
-         if(val!=this.data.searchVal){
+        if(val!=this.data.searchVal){
           this.init();
           this.setData({
-            searchVal: val,
-          });
-        }
-        let valre = new RegExp('^'+val);
-        let paragraphsValRe = new RegExp(val);
-        params =  _ .or([
-          {
-            title: valre
-          },
-          {
-            author: valre
-          },
-          {
-            paragraphs: paragraphsValRe
-          }
-        ]).and([
-          {
-            index:index
-          }
-        ])
-      }else{
-        params = _ .and([
-          {
-            index:index
-          }
-        ])
+          searchVal: val,
+        });
       }
+    }
+      let index = this.data.index;
+      let params = {
+        cid:index,
+        word:val||'',
+        page:pages,
+        size:this.data.size
+      };
       
-      //console.log(val,index );
-      let offset = (pages-1)*this.data.size;
       let that = this;
-      //console.log(params)
           
       wx.showLoading({
           title: '查询中',
         });
-        db.collection('poetry').skip(offset).limit(that.data.size)
-        .where( 
-          params
-        )
-        .get({
-          success: function(res) { 
+        apis.poetryInfo(params).then(res=> {
             //console.log('res poetryList',res)
             wx.hideLoading( );
-            if (res.data && res.data.length>0) {
+            if (res) {
               that.setData({
-                ['poetryList[' + (pages-1) + ']']
-                :res.data,
+                ['poetryList[' + (pages ) + ']']
+                :res ,
                 pages:pages
               })
             }else if (emptyText){
@@ -123,8 +95,8 @@ Page({
               utils.showWxToast('诗词未查询到数据')
             }
             
-          }
-        })
+          })
+         
       
     },
     onReachBottom(){
