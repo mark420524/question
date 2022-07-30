@@ -1,4 +1,5 @@
 const app = getApp();
+const apis = app.apis;
 const utils  = app.utils;
 Page({
     data:{
@@ -9,24 +10,16 @@ Page({
         wx.showLoading({
           title: '正在查询数据',
         })
-        wx.cloud.callFunction({
-            name: "querytv"
-        }).then(res=>{
-            let result = res.result;
-            if (result.code===0 && result.data.length>0) {
+        apis.openTvInfo().then(res=>{
+            wx.hideLoading()
+            if (res) {
                 that.setData({
-                    items:result.data
+                    items:res
                 })
             }else{
                 utils.showWxToast('查无数据');
             }
-            wx.hideLoading()
-        }).catch(err=>{
-            wx.hideLoading()
-            utils.showWxToast('查无数据');
-            
         })
-        
     },
     handlerItemClick(e){
         

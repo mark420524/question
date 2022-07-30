@@ -53,6 +53,7 @@ const fs = wx.getFileSystemManager();
     poetryCategory:'poetry/category',
     poetryInfo:'chinese/poetry',
     chineseChildren:'chinese/children',
+    openTvInfo:'tv/info',
   }
   module.exports = {
     userLogin(data) {
@@ -414,6 +415,12 @@ const fs = wx.getFileSystemManager();
       return http({
         url:url.chineseChildren,
         data:data
+      })
+    },
+    openTvInfo:function(){
+      return http({
+        url:url.openTvInfo,
+        method:'GET'
       })
     }
   }
