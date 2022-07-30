@@ -1,6 +1,6 @@
 const app = getApp();
 const utils = app.utils;
-const db = wx.cloud.database();
+const apis = app.apis;
 import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
@@ -51,43 +51,34 @@ Page({
         if (this.data.searchVal== val ) {
           return ;
         }
-        //console.log(val)
-        let valre = new RegExp('^'+val+'$','i');
-        //console.log(valre)
+        
         let that = this;
         wx.showLoading({
             title: '查询词典中',
         });
-        db.collection('english').limit(1).where({ 
-            word: valre
-          })
-          .get({
-            success: function(res) { 
-              wx.hideLoading( );
-             
-              if (res.data && res.data.length>0) {
-                let word  = (res.data)[0];
-                //console.log('word ',word)
-                if (word.tag) {
-                    let tag = word.tag.replace('zk','中考').replace('gk','高考').replace('ky','考研');
-                    word.tag = tag;
-                }
-                if (word.exchange) {
-                    let exchange = word.exchange.replace('p:','过去式:').replace('d:','过去分词:')
-                    .replace('i:','现在分词:').replace('3:','第三人称单数:').replace('r:','形容词比较级:')
-                    .replace('t:','形容词最高级:').replace('s:','名词复数:');
-                    //console.log(exchange)
-                    word.exchange = exchange;
-                }
-                that.setData({
-                  word:word
-                })
-              }else{
-                utils.showWxToast('词典未查询到数据')
-              }
-             
+        let data = { 
+          word: val
+        };
+        apis.englishChinese(data).then(res=>{
+          wx.hideLoading( );
+          if (res  ) {
+            let word  =res;
+            if (word.tag) {
+                let tag = word.tag.replace('zk','中考').replace('gk','高考').replace('ky','考研');
+                word.tag = tag;
             }
-          })
+            if (word.exchange) {
+                let exchange = word.exchange.replace('p:','过去式:').replace('d:','过去分词:')
+                .replace('i:','现在分词:').replace('3:','第三人称单数:').replace('r:','形容词比较级:')
+                .replace('t:','形容词最高级:').replace('s:','名词复数:');
+                //console.log(exchange)
+                word.exchange = exchange;
+            }
+            that.setData({
+              word:word
+            })
+          }
+        }) 
         that.setData({
             searchVal:val
         })
