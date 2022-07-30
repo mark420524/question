@@ -48,6 +48,7 @@ const fs = wx.getFileSystemManager();
     toolsItem:'tools/item',
     toolsApp:'tools/other',
     chineseWord:'chinese/word',
+    chineseIdiom:'chinese/idiom',
   }
   module.exports = {
     userLogin(data) {
@@ -378,6 +379,12 @@ const fs = wx.getFileSystemManager();
     chineseWord:function(data){
       return http({
         url:url.chineseWord,
+        data:data
+      })
+    },
+    chineseIdiom:function(data){
+      return http({
+        url:url.chineseIdiom,
         data:data
       })
     }

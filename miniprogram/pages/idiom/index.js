@@ -1,12 +1,12 @@
 const app = getApp();
-const db = wx.cloud.database()
+const apis = app.apis;
 const utils = app.utils;
 import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
         searchVal:'',
         label:'成语',
-        pages:1,
+        pages:0,
         size:20,
         idiomList:[],
         activeNames:['1'],
@@ -82,28 +82,23 @@ Page({
         
         //console.log(val);
         let re=/[\u4e00-\u9fa5]{1,}/;
-        let valre = new RegExp('^'+val);
-        //console.log(valre)
-        let offset = (pages-1)*this.data.size;
         let that = this;
+        
         if (re.test(val)) {
-            
+          let data = {
+            word: val,
+            page:pages,
+            size:this.data.size
+          }
             wx.showLoading({
                 title: '查询中',
               });
-              db.collection('idiom').skip(offset).limit(that.data.size)
-              .where({
-                word: valre
-              })
-              .get({
-                success: function(res) { 
-                  //  console.log('res idom',res)
-                  wx.hideLoading( );
-                  if (res.data && res.data.length>0) {
+              apis.chineseIdiom(data).then(res=>{
+                wx.hideLoading( );
+                  if (res && res.length>0) {
                     that.setData({
-                      ['idiomList[' + (pages-1) + ']']
-                      :res.data,
-                      
+                      ['idiomList[' + (pages) + ']']
+                      :res,
                       pages:pages
                     })
                   }else if (emptyText){
@@ -111,8 +106,6 @@ Page({
                   }else{
                     utils.showWxToast('成语未查询到数据')
                   }
-                 
-                }
               })
         }else{
             utils.showWxToast('请输入汉字');
