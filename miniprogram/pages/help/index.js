@@ -9,15 +9,7 @@ Page({
     },
     onLoad(){
       let that = this;
-      let data={
-        dbname:'integral_type',
-        params:{
-          status:1,
-        },
-        sort:'sort',
-        functionName:'querydata'
-      }
-      apis.callfunction(data).then(res=>{
+      apis.getIntegral().then(res=>{
         that.setData({
           integralList:res
         })

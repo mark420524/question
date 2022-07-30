@@ -54,6 +54,7 @@ const fs = wx.getFileSystemManager();
     poetryInfo:'chinese/poetry',
     chineseChildren:'chinese/children',
     openTvInfo:'tv/info',
+    getIntegral: 'setting/integral',
   }
   module.exports = {
     userLogin(data) {
@@ -420,6 +421,12 @@ const fs = wx.getFileSystemManager();
     openTvInfo:function(){
       return http({
         url:url.openTvInfo,
+        method:'GET'
+      })
+    },
+    getIntegral:function(data){
+      return http({
+        url:url.getIntegral,
         method:'GET'
       })
     }
