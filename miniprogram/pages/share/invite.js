@@ -18,7 +18,7 @@ Page({
         let uid = utils.getUserId();
         return {
             title:'亲爱的，来这里答题喽',
-            imageUrl:'cloud://rightanswer-9gmtbrkw2347f7cd.7269-rightanswer-9gmtbrkw2347f7cd-1309548476/2.png', 
+            imageUrl:'http://image.siival.com/2.png', 
             path:'/pages/index/index?uid='+uid 
         }
     },
