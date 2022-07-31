@@ -80,8 +80,7 @@
         "baseURL": "",
         "servePath": ""
     },
-    "isGameTourist": false,
-    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "isGameTourist": false, 
     "condition": {
         "search": {
             "list": []
