@@ -16,10 +16,6 @@ App({
         console.log('题库分类已经最新无需加载');
       }
     })
-    wx.cloud.init({
-      //set your cloud  env 
-      env: 'rightanswer-9gmtbrkw2347f7cd'
-    })
     // 登录
     /*
     wx.login({
