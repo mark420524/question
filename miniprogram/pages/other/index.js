@@ -10,11 +10,18 @@ Page({
     },
     initData(){
       let that = this;
-      
+      let appId = app.appId;
       apis.toolsApp( ).then(res=>{
         //console.log(res)
+        let arr = [];
+        for (let i=0;i<res.length;i++) {
+          if (res[i].appId==appId) {
+            continue;
+          }
+          arr[arr.length] = res[i];
+        }
         that.setData({
-          toolsItems:res
+          toolsItems:arr
         })
       })
       
