@@ -8,7 +8,7 @@ Page({
    */
   data: {
     avatarUrl: '/static/images/avatar.png',
-    nickname:'',
+    nickName:'',
     fileTempPath:'',
   },
 
@@ -27,7 +27,7 @@ Page({
   },
   initInfo(){
     let userInfo = wx.getStorageSync('userInfo');
-    console.log(userInfo)
+    //console.log(userInfo)
     if (userInfo) {
       this.setData({
         avatarUrl:userInfo.avatarUrl,
@@ -86,34 +86,43 @@ Page({
   },
   onChangeNickname(e){
     this.setData({
-      nickname:e.detail
+      nickName:e.detail
     })
   },
   submitUserInfo(){
-    let userInfo = wx.getStorageSync('userInfo');
+    let userInfo = wx.getStorageSync('userInfo') || {};
     let filePath=this.data.fileTempPath;
-    let  nickName=this.data.nickname;
+    let  nickName=this.data.nickName;
     let data={
         uid:utils.getUserId(),
         filePath:filePath, 
         nickName:nickName
     }
-    console.log(filePath, data)
+    wx.showLoading({
+      title: '正在保存',
+    })
+    //console.log(filePath, data)
     //没文件还不能上传,
     if (filePath) {
       apis.updateUserInfo(data).then(res=>{
+        wx.hideLoading( );
         userInfo.avatarUrl=res;
         userInfo.nickName = nickName;
-        wx.setStorageSync('userInfo', userInfo)
-        utils.showWxToast('更新成功')
+        wx.setStorageSync('userInfo', userInfo) 
+        wx.navigateBack({
+          delta: 1,
+        })
       })
     }else{
-      
       apis.updateUser(data).then(res=>{
+        wx.hideLoading( );
         if (res==1) {
           userInfo.nickName = nickName;
           wx.setStorageSync('userInfo', userInfo);
           utils.showWxToast('更新成功')
+          wx.navigateBack({
+            delta: 1,
+          })
         }else{
           utils.showWxToast('更新失败')
         }
