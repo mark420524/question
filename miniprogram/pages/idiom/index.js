@@ -14,14 +14,14 @@ Page({
     },
     init( ){ 
       this.setData({ 
-        pages:1,
+        pages:0,
         idiomList:[] 
       })
     },
     actionSearch( ){
         const keyword = this.selectComponent('#searchText')
         let val = keyword.data.value;
-        this.search(val,1);
+        this.search(val,0);
     },
     onLoad(options){
       options = options||{};
@@ -31,7 +31,7 @@ Page({
       if(val){
         //从字典页面跳转过来
         //console.log('val',val);
-        this.search(val,1);
+        this.search(val,0);
       }else{
         /*
         wx.getClipboardData({
@@ -48,7 +48,7 @@ Page({
               }).then(() => {
                 // on confirm
                 
-                that.search(data,1 )
+                that.search(data,0 )
               })
               .catch(() => {
                 // on cancel
@@ -63,7 +63,7 @@ Page({
     },
     onCofirmSearch(e){
         let val = e.detail;
-        this.search(val,1);
+        this.search(val,0);
     },
     search(val,pages,emptyText){
         if(!val){
