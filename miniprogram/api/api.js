@@ -55,6 +55,7 @@ const fs = wx.getFileSystemManager();
     chineseChildren:'chinese/children',
     openTvInfo:'tv/info',
     getIntegral: 'setting/integral',
+    getUserInfo:'user/info'
   }
   module.exports = {
     userLogin(data) {
@@ -425,6 +426,12 @@ const fs = wx.getFileSystemManager();
       return http({
         url:url.getIntegral,
         method:'GET'
+      })
+    },
+    getUserInfo:function(data){
+      return http({
+        url:url.getUserInfo,
+        data:data
       })
     }
   }

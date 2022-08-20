@@ -121,11 +121,21 @@ Page({
       
       let uid = this.getUserId();
       if (uid) {
-          console.log('用户已登录，要不要读取用户头像呢');
+          
+          this.initUserInfo(uid);
       }else{
           this.initUserId(inviteUid);
       }
       this.initQuestionCount(utils.getAnswerCid());
+  },
+  initUserInfo(uid){
+    let data={
+      uid:uid
+    }
+    console.log(data)
+    apis.getUserInfo(data).then(res=>{
+      wx.setStorageSync('userInfo', res)
+    })
   },
   initNotice(){
       let data={uid:utils.getUserId()}
