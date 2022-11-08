@@ -1,0 +1,55 @@
+.guide{
+    padding: 30rpx;
+}
+.item{
+    margin-top: 20rpx;
+    font-size: 28rpx;
+}
+.title{
+    font-weight: bold;
+    font-size: 38rpx;
+}
+.flexColumn{
+    margin-top: 20rpx;
+    padding: 20rpx 20rpx;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+.marginTop{
+    margin-top: 20rpx;
+}
+.footer{
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15rpx;
+    height: 100%;
+    line-height: 90rpx;
+    background-color: #26E07F;
+    color: white;
+    
+    text-align: center;
+}
+.needMargin{
+    margin-top: 30rpx;
+}
+.result{
+    margin-top: 20rpx;
+    padding: 30rpx;
+}
+.title{
+    font-weight: bold;
+    font-size: 38rpx;
+}
+.resultItem{
+    margin-top: 30rpx;
+    margin-left : 10rpx;
+    font-size: 28rpx;
+}
+.copyVal{
+    float: right;
+    margin-right: 20rpx;
+    
+    background-color: #fffefe;
+    color: green;
+}

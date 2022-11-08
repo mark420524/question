@@ -1,0 +1,40 @@
+<view>
+    <view class="main guide">
+        <view class="title">生成须知</view>
+        <view>
+            <view class="item">1. 由于服务器资源有限，每个账户每天的免费处理次数为<label class="redColor">{{count}}</label>次</view>
+            
+            <view class="item">2. 免费次数用完后可以使用可以联系我们付费处理</view>
+            <view class="item">3. 生成短链有效期为<label class="redColor">{{expireDays}}</label>天</view> 
+        </view>
+        
+        <view class="redColor item">
+            您今天已经生成短链{{alreadyUpload}}次，免费次数剩余{{balanceCount}}次
+        </view>
+    </view>
+   
+    <view  class="marginTop">
+        <van-field
+            label="长链接"
+            
+            placeholder="请输入长链接" 
+            input-align="right" 
+            required
+            bind:change="onChangeUrl"
+        /> 
+    </view>
+    
+    <view>
+        <view bindtap="generateShort"  class="footer needMargin"  > 生成</view>
+    </view>
+    
+    <view class="main result" >
+        <view class="title">生成结果</view>
+        <view class="resultItem"   >
+            <view bindtap="copyText" data-text=" ">测试<text class="copyVal">复制</text></view>
+        </view>
+    </view>
+     
+
+    
+</view>

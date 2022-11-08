@@ -36,7 +36,8 @@
     "pages/pdftools/index",
     "pages/my/profile",
     "pages/pdftools/file",
-    "pages/ocr/index"
+    "pages/ocr/index",
+    "pages/short/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
