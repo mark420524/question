@@ -55,7 +55,9 @@ const fs = wx.getFileSystemManager();
     chineseChildren:'chinese/children',
     openTvInfo:'tv/info',
     getIntegral: 'setting/integral',
-    getUserInfo:'user/info'
+    getUserInfo:'user/info',
+    getShortUrlInfo:'short/info',
+    generateShortUrl:'short/generate'
   }
   module.exports = {
     userLogin(data) {
@@ -431,6 +433,19 @@ const fs = wx.getFileSystemManager();
     getUserInfo:function(data){
       return http({
         url:url.getUserInfo,
+        data:data
+      })
+    },
+    getShortUrlInfo:function(data){
+      return http({
+        url:url.getShortUrlInfo,
+        data:data,
+        method:'GET'
+      })
+    },
+    generateShortUrl:function(data){
+      return http({
+        url:url.generateShortUrl,
         data:data
       })
     }

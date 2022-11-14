@@ -5,20 +5,12 @@ Page({
     data:{
         count:5,
         alreadyUpload:123, 
-        type:1,
-        maxSize:100*1024*1024,
-        readonly:true,
-        showDownload:false,
-        filePassword:'',
-        waterMark:'',
-        fileName:'',
-        fileTempUrl:'',
-        userIntegral:0,
-        balanceCount:0,
-        showIntegralTips:false,
-        notEnough:false,
+        balanceCount:0, 
         url:'',
-        expireDays:15
+        expireDays:15,
+        showResult:false,
+        shortUrl:'',
+        generateShow:false,
     },
     onLoad(options){
         this.initInfo()
@@ -28,7 +20,19 @@ Page({
         let data = {
             uid:utils.getUserId()
         }
-        
+        apis.getShortUrlInfo(data).then(res=>{
+            let freeCount = res.freeCount;
+            let alreadyUpload=res.count;
+            let balanceCount = freeCount-alreadyUpload;
+            balanceCount=balanceCount<=0?0:balanceCount
+            that.setData({
+                expireDays:res.days,
+                count:freeCount,
+                alreadyUpload:alreadyUpload,
+                balanceCount:balanceCount,
+                generateShow:balanceCount>0
+            })
+        })
     },
     
     onChangeUrl(event) {
@@ -37,9 +41,31 @@ Page({
         })
     },
     generateShort(){
-        console.log(this.data.url)
+        //console.log(this.data.url)
+        let data={
+            longUrl:this.data.url,
+            uid:utils.getUserId()
+        }
+        let that = this;
+        apis.generateShortUrl(data).then(res=>{
+            let count = res.count || 0 ;
+            let balanceCount = that.data.count-count;
+            balanceCount=balanceCount<=0?0:balanceCount
+            that.setData({
+                showResult:true,
+                balanceCount:balanceCount,
+                alreadyUpload:count,
+                shortUrl:res.shortUrl
+            })
+        })
     },
     copyText(e){
-        console.log('copy text')
+        let shortUrl = e.currentTarget.dataset.text;
+        wx.setClipboardData({
+            data: shortUrl,
+            success (res) {
+              //console.log(res)
+            }
+        });
     }
 })

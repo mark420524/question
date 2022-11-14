@@ -20,7 +20,6 @@ const http = (params) => {
       responseType: params.responseType,//响应的数据类型
       success: function(res) {
         //接口访问正常返回数据
-        //console.log(res)
         if (res.statusCode==200) {
           res = res.data;
           if (res.code == 0) {
@@ -31,7 +30,9 @@ const http = (params) => {
             var errMsg = res.message
             errorToast(errMsg);
           }
-        }else{
+        }else if (res.data) {
+          errorToast(res.data.message);
+        } else{
           errorToast("接口异常!");
         }
         
@@ -75,6 +76,8 @@ const uploadFile = (params) => {
             //2. 操作不成功返回数据，以toast方式弹出响应信息，如后端未格式化非操作成功异常信息，则可以统一定义异常提示 
             errorToast(res.message);
           }
+        }else if (res.data) {
+          errorToast(res.data.message);
         }else{
           errorToast("接口异常!");
         }
@@ -123,6 +126,8 @@ const uploadFileToOcr = (params) => {
           if (res.code == 0) {
             //1. 操作成功返回数据,原则上只针对服务器端返回成功的状态（如本例中为000000）
             resolve(res.data)
+          } else if (res.data) {
+            errorToast(res.data.message);
           } else {
             //2. 操作不成功返回数据，以toast方式弹出响应信息，如后端未格式化非操作成功异常信息，则可以统一定义异常提示 
             errorToast(res.message);
