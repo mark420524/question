@@ -9,6 +9,7 @@ Page({
         showVal:'立即导出',
         email:'',
         showName:'导出题库',
+        type:0,
     },
     onLoad(options){
         //console.log(options)
@@ -26,7 +27,8 @@ Page({
         let selectCategory = wx.getStorageSync('selectCategory') ;
         let that = this;
         that.setData({
-            selectCategory:selectCategory
+            selectCategory:selectCategory,
+            type:type
         })
         let data={
             cid : utils.getAnswerCid(),
@@ -59,7 +61,8 @@ Page({
             let data={
                 uid:utils.getUserId(),
                 cid:utils.getAnswerCid(),
-                email:email
+                email:email,
+                type:this.data.type
             }
             apis.exportQuestions(data).then(res=>{
                 let signRegex = /^\d+$/;
