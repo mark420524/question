@@ -1,6 +1,6 @@
 <view class="container">
     <view class="title">
-      <view class="item"> 导出题库：<label class="itemLabel">{{selectCategory}}</label></view>
+      <view class="item"> {{showName}}：<label class="itemLabel">{{selectCategory}}</label></view>
       <view class="item"> 题库数量：<label class="itemLabel"><label class="redColor"> {{ count  }}</label> 题，需要消耗<label class="redColor">{{ count }}</label>积分</label></view>
     </view>
     <view class="showTips" > 导出需要消耗积分：<label class="redColor">1题消耗1积分</label> </view>

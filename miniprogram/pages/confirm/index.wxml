@@ -5,5 +5,6 @@
       <view class="_li data-v-057df0c5"> 考试时间：<label class="_span data-v-057df0c5"><label class="_span data-v-057df0c5 newColor">30</label>分钟</label></view>
       <view class="_li data-v-057df0c5"> 合格标准：<label class="_span data-v-057df0c5">满分<label class="_span data-v-057df0c5 newColor">100</label>分，<label class="_span data-v-057df0c5 newColor">60</label>分及格</label></view>
     </view>
-    <view bindtap="startExam" class="_div data-v-057df0c5 footer"  > 开始模拟考试</view>
+    <view bindtap="startExam" class="footer"  > 开始模拟考试</view>
+    <view bindtap="exportExam" class="footer exportExam"  > 导出模拟试卷</view>
   </view>

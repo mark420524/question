@@ -7,12 +7,22 @@ Page({
         count:0,
         enough:true,
         showVal:'立即导出',
-        email:''
+        email:'',
+        showName:'导出题库',
     },
-    onLoad(){
-        this.init();
+    onLoad(options){
+        //console.log(options)
+        let type = options.type || 0;
+        this.init(type);
     },
-    init(){
+    init(type){
+        let showName = '导出题库';
+        if (type==1) {
+            showName='模拟试卷';
+        }
+        wx.setNavigationBarTitle({
+            title: showName,
+          })
         let selectCategory = wx.getStorageSync('selectCategory') ;
         let that = this;
         that.setData({
@@ -20,14 +30,16 @@ Page({
         })
         let data={
             cid : utils.getAnswerCid(),
-            uid: utils.getUserId()
+            uid: utils.getUserId(),
+            type:type
         }
         apis.getExportInfo(data).then(res=>{
             //console.log(res)
             that.setData({
                 count:res.count,
                 integral:res.integral,
-                enough:res.integral>=res.count
+                enough:res.integral>=res.count,
+                showName:showName
             })
         })
     },

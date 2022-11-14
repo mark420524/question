@@ -27,6 +27,9 @@ Page({
         wx.redirectTo({
             url:'/pages/'+url+'/index?' + params 
         });
+    },
+    exportExam(){
+        this.go('exportq','type=1')
     }
  
  

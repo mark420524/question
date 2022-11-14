@@ -17,7 +17,7 @@
   .container ._li .newColor.data-v-057df0c5 {
     color: red;
   }
-  .container .footer.data-v-057df0c5 {
+  .footer  {
     margin: 0 auto;
     width: 50%;
     border-radius: 15rpx;
@@ -27,4 +27,10 @@
     color: white;
     margin-top: 60rpx;
     text-align: center;
+  }
+
+  .exportExam{
+    margin-top: 30rpx;
+    background: #ebeceb;
+    color: #03ad54;
   }
