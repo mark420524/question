@@ -3,7 +3,7 @@
 }
 .item{
     margin-top: 20rpx;
-    font-size: 28rpx;
+    font-size: 26rpx;
 }
 .title{
     font-weight: bold;
@@ -37,10 +37,7 @@
     margin-top: 20rpx;
     padding: 30rpx;
 }
-.title{
-    font-weight: bold;
-    font-size: 38rpx;
-}
+
 .resultItem{
     margin-top: 30rpx;
     margin-left : 10rpx;
@@ -49,7 +46,6 @@
 .copyVal{
     float: right;
     margin-right: 20rpx;
-    
     background-color: #fffefe;
     color: green;
 }

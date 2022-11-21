@@ -42,8 +42,13 @@ Page({
     },
     generateShort(){
         //console.log(this.data.url)
+        let longUrl = this.data.url;
+        if (!longUrl) {
+            utils.showWxToast('请输入长链接');
+            return;
+        }
         let data={
-            longUrl:this.data.url,
+            longUrl: longUrl,
             uid:utils.getUserId()
         }
         let that = this;
