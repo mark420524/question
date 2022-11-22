@@ -9,11 +9,6 @@
   link-type="{{item.linkType}}"
   url="{{item.url}}"
   text="{{item.text}}" />
-  <van-grid-item   icon="shrink" 
-  icon-color="green"
-  link-type="navigateTo"
-  url="/pages/short/index"
-  text="短链生成" />
 </van-grid>
 
 </view>
