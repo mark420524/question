@@ -27,8 +27,10 @@ Page({
   // 事件处理函数
   onReady: function (e) {
     var that = this;
-    //请求数据
-    selector.updateAreaData(that, 0, e);
+    apis.getQuestionMenu(0).then(res =>{
+      //console.log('menu info ', res);
+      selector.updateAreaData(that, 0, e, res);
+    });
   },
   hiddenFloatView: function (e) {
     selector.animationEvents(this, 200, false,400);

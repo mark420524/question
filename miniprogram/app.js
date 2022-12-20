@@ -4,33 +4,6 @@ import util from 'utils/util.js'
 let appId = wx.getAccountInfoSync().miniProgram.appId;
 App({
   onLaunch() {
-    let menuVersion = util.getMenuVersionIndex() || 0;
-    let uid = util.getUserId();
-    let data={uid:uid}
-    api.systemInit(data).then(res=>{
-      let category=res.category;
-      let systemVersion = parseInt(category)
-      if (systemVersion > menuVersion) {
-        this.loadMenu(systemVersion);
-      }else{
-        console.log('题库分类已经最新无需加载');
-      }
-    })
-    // 登录
-    /*
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    */
-  },
-  loadMenu:function(systemVersion){
-    api.getQuestionMenu(0).then(res =>{
-      //console.log('menu info ', res);
-      wx.setStorageSync('cidInfo', res)
-      util.setMenuVersionIndex(systemVersion);
-    });
   },
   globalData: {
     userInfo: null
