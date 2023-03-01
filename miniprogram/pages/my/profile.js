@@ -89,6 +89,11 @@ Page({
       nickName:e.detail
     })
   },
+  onBlurNickname(e) {
+    this.setData({
+      nickName:e.detail.value
+    })
+  },
   submitUserInfo(){
     let userInfo = wx.getStorageSync('userInfo') || {};
     let filePath=this.data.fileTempPath;

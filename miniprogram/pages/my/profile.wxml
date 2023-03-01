@@ -13,6 +13,7 @@
     input-align="right"
     type="nickname"
     bind:change="onChangeNickname"
+    bind:blur="onBlurNickname"
   />
 </van-cell-group>
 <view class="submit">
