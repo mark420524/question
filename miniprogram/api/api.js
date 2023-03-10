@@ -57,7 +57,8 @@ const fs = wx.getFileSystemManager();
     getIntegral: 'setting/integral',
     getUserInfo:'user/info',
     getShortUrlInfo:'short/info',
-    generateShortUrl:'short/generate'
+    generateShortUrl:'short/generate',
+    initShowAd:'init/showAd'
   }
   module.exports = {
     userLogin(data) {
@@ -446,6 +447,12 @@ const fs = wx.getFileSystemManager();
     generateShortUrl:function(data){
       return http({
         url:url.generateShortUrl,
+        data:data
+      })
+    },
+    initShowAd:function(data){
+      return http({
+        url:url.initShowAd,
         data:data
       })
     }

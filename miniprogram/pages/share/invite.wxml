@@ -18,3 +18,7 @@
        
      <van-button bind:click="gotoInviteLog" size="large">查看奖励</van-button>
 </view>
+
+<view class="adContainer"  wx:if="{{showAd}}">
+  <ad unit-id="adunit-fc452319284dee39" ad-intervals="30"></ad>
+</view>

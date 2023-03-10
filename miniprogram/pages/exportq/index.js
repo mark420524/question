@@ -3,6 +3,7 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
+        showAd:app.globalData.showAd,
         selectCategory: '', 
         count:0,
         enough:true,

@@ -9,3 +9,7 @@
     </view>
     <view bindtap="goQuestion" class="_div data-v-3a55b41c footer"  > {{ showVal}}</view>
   </view>
+
+  <view class="adContainer"  wx:if="{{showAd}}">
+    <ad unit-id="adunit-1cbc1d3898c0030a" ad-intervals="30"></ad>
+  </view>

@@ -1,5 +1,6 @@
 Page({
     data: {
+        showAd:getApp().globalData.showAd,
         examTime:'29分59秒',
         examScore:0
     },

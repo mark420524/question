@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showAd:getApp().globalData.showAd,
     avatarUrl: '/static/images/avatar.png',
     nickName:'',
     fileTempPath:'',

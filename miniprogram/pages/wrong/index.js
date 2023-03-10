@@ -3,7 +3,7 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
-      
+        showAd:getApp().globalData.showAd,
             selectCategory: '',
             wrongCount: 0,
             showVal: '查看错题',

@@ -3,6 +3,7 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
+      showAd:getApp().globalData.showAd,
       questionList:[],
         historys:[],
         searchVal:'',

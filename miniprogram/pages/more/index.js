@@ -3,7 +3,8 @@ const apis = app.apis;
 Page({
     data:{
       toolsItems:[
-      ]
+      ],
+      showAd:app.globalData.showAd
     },
     onLoad(){
       let that = this;

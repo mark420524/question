@@ -3,6 +3,7 @@ const apis = app.apis;
 const utils  = app.utils;
 Page({
     data:{
+      showAd:getApp().globalData.showAd,
         ocrCount:5,
         alreadyCount:0,
         canOcr:false,

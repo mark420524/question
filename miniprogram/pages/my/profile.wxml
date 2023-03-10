@@ -1,3 +1,7 @@
+<view  wx:if="{{showAd}}">
+  <ad unit-id="adunit-673fd3c394b51bc1" ad-intervals="30"></ad>
+</view>
+
 <view  class="avatar-wrapper"> 
 <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
   <label class="profile-label van-field__label">头像</label>
@@ -19,6 +23,8 @@
 <view class="submit">
   <van-button type="primary" bind:click="submitUserInfo" size="large">完成</van-button>
 </view>
+
+
 
  
 

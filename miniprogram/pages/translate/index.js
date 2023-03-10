@@ -4,6 +4,7 @@ const apis = app.apis;
 import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
+      showAd:getApp().globalData.showAd,
         word:{},
         activeNames:['1'],
         label:'英文'

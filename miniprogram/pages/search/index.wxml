@@ -12,6 +12,10 @@
 <view class="container">
 <view wx:if="{{questionList.length == 0}}">
   <empty historys="{{historys}}" bind:click="onTapHistory"/>
+  <view class="adContainer"  wx:if="{{showAd}}">
+    <ad unit-id="adunit-7fd47b31ef4d3f67" ad-intervals="30"></ad>
+  </view>
+  
 </view>
 <view wx:else >
   <view class="totalSize"> 以为您搜索到<label class="redColor">{{ totalSize }}</label>个结果</view>

@@ -25,6 +25,10 @@
   <view wx:else  class="signAlready"  >今天已签到，获得积分<label class="redColor">+{{addPoints}}</label></view>
 </view>
 
+<view class="adContainer"  wx:if="{{showAd}}">
+  <ad unit-id="adunit-6b7d9d116ddd7fa2" ad-intervals="30"></ad>
+</view>
+
 
 
 

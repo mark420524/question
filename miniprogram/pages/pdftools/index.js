@@ -1,5 +1,7 @@
 Page({
-    data:{},
+    data:{
+      showAd:getApp().globalData.showAd,
+    },
     handlerItemClick(e){
         let dataset = e.currentTarget.dataset;
         let type=dataset.type;

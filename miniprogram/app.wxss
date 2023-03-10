@@ -23,3 +23,6 @@ page {
   top: 0;
   z-index: 1;
 }
+.adContainer{
+  margin-top: 30rpx;
+}

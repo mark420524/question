@@ -1,11 +1,10 @@
-<!--
-<view class="adContainer">
-  <ad unit-id="xxxx"></ad>
-</view>
--->
 <view class="main">
 <view class="tips">本小程序是个人开发维护的开源小程序，仅供学习使用，<label class="redColor">如有商业用途，请及时联系我们</label>。使用过程中有各种问题、或者题目有任何问题均可以联系我们。
  QQ群号:{{qqGroup}}</view>
 </view>
 
 <view class="main copyText" bindtap="copyGroupInfo">点我复制QQ群号</view>
+
+<view class="adContainer"  wx:if="{{showAd}}">
+  <ad unit-id="adunit-869b1829bfed40ae" ad-intervals="30"></ad>
+</view>

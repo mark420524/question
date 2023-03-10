@@ -8,3 +8,7 @@
     <view bindtap="startExam" class="footer"  > 开始模拟考试</view>
     <view bindtap="exportExam" class="footer exportExam"  > 导出模拟试卷</view>
   </view>
+
+  <view class="adContainer"  wx:if="{{showAd}}">
+    <ad unit-id="adunit-68ad10f35410c664" ad-intervals="30"></ad>
+  </view>

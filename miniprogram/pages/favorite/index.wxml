@@ -6,3 +6,7 @@
     <view class="_div data-v-6fad280d showTips" wx:if="{{!favoriteCount}}"> 您收藏的题目会自动记录到这里 </view>
     <view bindtap="goQuestion" class="_div data-v-6fad280d footer"  > {{showVal}}</view>
   </view>
+
+  <view class="adContainer"  wx:if="{{showAd}}">
+    <ad unit-id="adunit-0eb83619f42f86db" ad-intervals="30"></ad>
+  </view>

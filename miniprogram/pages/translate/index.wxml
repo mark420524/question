@@ -31,3 +31,7 @@
 </van-collapse>
  
 </view>
+
+<view class="adContainer"  wx:if="{{showAd}}">
+  <ad unit-id="adunit-77213a3f047155f9" ad-intervals="30"></ad>
+</view>

@@ -3,6 +3,7 @@ const app=getApp();
 const apis = app.apis;
 Page({
     data:{
+      showAd:getApp().globalData.showAd,
       toolsItems:[]
     },
     onLoad(){

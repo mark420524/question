@@ -2,7 +2,8 @@ const app = getApp();
 const apis = app.apis;
 Page({
     data:{
-        qqGroup:'123955944'
+      showAd:app.globalData.showAd,
+      qqGroup:'123955944'
     },
     adLoad() {
         console.log('Banner 广告加载成功')

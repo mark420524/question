@@ -1,3 +1,7 @@
+<view  wx:if="{{showAd}}">
+  <ad unit-id="adunit-c81769cc293c68c7" ad-intervals="30"></ad>
+</view>
+
 <view>
 <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
   <van-collapse-item title="积分获得" name="1">

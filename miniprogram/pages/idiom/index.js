@@ -4,6 +4,7 @@ const utils = app.utils;
 import Dialog from "../../components/vant/dialog/dialog";
 Page({
     data:{
+      showAd:getApp().globalData.showAd,
         searchVal:'',
         label:'成语',
         pages:0,

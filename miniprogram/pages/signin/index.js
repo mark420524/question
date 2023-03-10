@@ -11,6 +11,7 @@ const utils = app.utils;
 
 Page({
   data: {
+    showAd:getApp().globalData.showAd,
     totalSign:123,
     contiueSign:12,
     showSubmit:1,

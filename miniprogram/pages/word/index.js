@@ -5,6 +5,7 @@ import Dialog from "../../components/vant/dialog/dialog";
 import context from "../../components/chinese/index";
 Page({
     data:{
+      showAd:getApp().globalData.showAd,
       label:'',
       searchVal:'',
       word:{},

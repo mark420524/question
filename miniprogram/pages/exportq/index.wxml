@@ -26,3 +26,7 @@
     </view>
    
   </view>
+
+  <view class="adContainer"  wx:if="{{showAd}}">
+    <ad unit-id="adunit-ae88a97dffcf63f2" ad-intervals="30"></ad>
+  </view>

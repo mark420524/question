@@ -1,12 +1,12 @@
 .empty-view {
-    min-height: 400rpx;
+    min-height: 200rpx;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     flex-grow: 1;
     width: 100vw;
-    height: 100vw;
+    height: 50vw;
   }
   .empty {
     width: 200rpx;

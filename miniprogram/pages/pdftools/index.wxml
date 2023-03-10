@@ -18,3 +18,7 @@
     data-type="3"
     />
 </van-grid>
+
+<view class="adContainer"  wx:if="{{showAd}}">
+    <ad unit-id="adunit-4e07bde61aa97b27" ad-intervals="30"></ad>
+</view>

@@ -35,3 +35,7 @@
 
 
 </van-collapse>
+
+<view class="adContainer"  wx:if="{{showAd}}">
+  <ad unit-id="adunit-e206024c420f871d" ad-type="video" ad-theme="white" ad-intervals="30"></ad>
+</view>

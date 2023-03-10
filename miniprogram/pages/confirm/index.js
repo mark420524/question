@@ -1,5 +1,6 @@
 Page({
     data:{
+        showAd:getApp().globalData.showAd,
         selectCategory: '',
     },
     onLoad( ){

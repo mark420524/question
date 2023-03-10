@@ -3,6 +3,7 @@ const apis = app.apis;
 const utils = app.utils;
 Page({
     data:{
+        showAd:getApp().globalData.showAd,
         count:5,
         alreadyUpload:123,
         integral:100,

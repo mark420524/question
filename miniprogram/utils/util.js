@@ -101,6 +101,14 @@ const getNotifyIndex= _=>{
   return wx.getStorageSync('notifyIndex' ) || 0;
 }
 
+const showAd = _ =>{
+  return wx.getStorageSync('showAd' ) ;
+}
+
+const setShowAd = showAd =>{
+  wx.setStorageSync('showAd', showAd)
+}
+
 const buildDate= (str) => {
   let arr = str.split('-')
   let startDate = new Date();
@@ -138,5 +146,7 @@ module.exports = {
   getCollectionIndex:getCollectionIndex,
   getNotifyIndex:getNotifyIndex,
   setNotifyIndex:setNotifyIndex,
-  validEmail:validEmail
+  validEmail:validEmail,
+  showAd:showAd,
+  setShowAd:setShowAd
 }

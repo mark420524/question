@@ -105,6 +105,7 @@ Page({
     let inviteUid = options.uid || 0 ;
     this.init(inviteUid);
     this.initNotice();
+    this.initShowAd();
   },
   init(inviteUid){
               
@@ -139,6 +140,13 @@ Page({
       wx.setStorageSync('userInfo', res)
     })
   },
+  initShowAd(){
+    let data={uid:utils.getUserId()}
+    apis.initShowAd(data).then(res=>{
+        let showAd = res || 0;
+        utils.setShowAd(showAd);
+    })
+  },
   initNotice(){
       let data={uid:utils.getUserId()}
       apis.getNotifyInfo(data).then(res=>{
@@ -153,6 +161,7 @@ Page({
               if(res.stopService || res.forbidden){
                 showConfirmButton=0;
               }
+              
             Dialog.alert({
                 title: res.title,
                 message: res.message,

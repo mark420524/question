@@ -9,3 +9,6 @@
   data-path="{{item.path}}"
   text="{{item.text}}" />
 </van-grid>
+<view class="adContainer"  wx:if="{{showAd}}">
+  <ad unit-id="adunit-c4b98a4535daf2ef" ad-type="video" ad-theme="white" ad-intervals="30"></ad>
+</view>
