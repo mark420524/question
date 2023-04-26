@@ -28,9 +28,12 @@
 
 > 后端接口：java 开发，mysql数据库
 
-#### 接口文档
+#### 后台接口
 
-  后台接口文档 [http://docs.siival.com/](http://docs.siival.com/)
+  关注微信公众号“技术成就自我”，回复关键字“后台”获得后台源码地址。
+  
+  ![image](screenshot/gh_873e5d0303d9.jpg)
+  
   
 ### 国内访问
 [https://gitcode.net/efit/question](https://gitcode.net/efit/question)
