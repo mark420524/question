@@ -34,9 +34,15 @@
 
   ![image](screenshot/gh_873e5d0303d9.jpg)
 
-### 国内访问
+#### 扫码添加QQ群讨论
 
-[https://gitcode.net/efit/question](https://gitcode.net/efit/question)
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=oH2Uv8YJ5URz81DsRK-cZ-BpONQM6BRg&jump_from=webapi"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="技术交流学习" title="技术交流学习"></a>
+
+![image](screenshot/3.png)
+
+#### 微信群
+
+![](screenshot/4.png)
 
 #### 待完成
 
@@ -91,16 +97,6 @@
          });
      }
    ```
-
-#### 扫码添加QQ群讨论
-
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=oH2Uv8YJ5URz81DsRK-cZ-BpONQM6BRg&jump_from=webapi"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="技术交流学习" title="技术交流学习"></a>
-
-![image](screenshot/3.png)
-
-#### 微信群
-
-![](screenshot/4.png)
 
 #### 页面截图
 
