@@ -115,3 +115,7 @@
     word-break: break-all;
     margin-left: 13%;
   }
+.questionImage{
+    width: 320px;
+    height: 200px;
+}

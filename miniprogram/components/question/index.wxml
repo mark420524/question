@@ -2,6 +2,9 @@
       <view>
         {{nowIndex+1}}.{{question[nowIndex].question}}
       </view>
+      <view wx:if="{{question[nowIndex].imageUrl}}" >
+        <image src="{{question[nowIndex].imageUrl}}" class="questionImage"/>
+      </view>
       <view class="answer">
         <block wx:key="index" key="{{index}}" wx:for="{{question[nowIndex].selectList}}" wx:for-index="index" wx:for-item="item">
           <view class="item {{activeClass[index]}}" bindtap="chooseAnswer" data-right="{{item.right}}" data-multiply="{{question[nowIndex].multiply}}" data-index="{{index}}" data-id="{{question[nowIndex].id}}" >
