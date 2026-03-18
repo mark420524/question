@@ -1,0 +1,142 @@
+{
+  "easycom": {
+     "autoscan": true,
+        "custom": {
+            "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+        }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/about/index",
+      "style": { "navigationBarTitleText": "关于" }
+    },
+    {
+      "path": "pages/bank/index",
+      "style": { "navigationBarTitleText": "题库" }
+    },
+    {
+      "path": "pages/children/index",
+      "style": { "navigationBarTitleText": "儿童" }
+    },
+    {
+      "path": "pages/confirm/index",
+      "style": { "navigationBarTitleText": "确认" }
+    },
+    {
+      "path": "pages/detail/index",
+      "style": { "navigationBarTitleText": "详情" }
+    },
+    {
+      "path": "pages/exam/index",
+      "style": { "navigationBarTitleText": "考试" }
+    },
+    {
+      "path": "pages/exportq/index",
+      "style": { "navigationBarTitleText": "导出" }
+    },
+    {
+      "path": "pages/favorite/index",
+      "style": { "navigationBarTitleText": "收藏" }
+    },
+    {
+      "path": "pages/funny/index",
+      "style": { "navigationBarTitleText": "趣味" }
+    },
+    {
+      "path": "pages/help/index",
+      "style": { "navigationBarTitleText": "帮助" }
+    },
+    {
+      "path": "pages/idiom/index",
+      "style": { "navigationBarTitleText": "成语" }
+    },
+    {
+      "path": "pages/integral/index",
+      "style": { "navigationBarTitleText": "积分" }
+    },
+    {
+      "path": "pages/live/index",
+      "style": { "navigationBarTitleText": "直播" }
+    },
+    {
+      "path": "pages/more/index",
+      "style": { "navigationBarTitleText": "更多" }
+    },
+    {
+      "path": "pages/my/index",
+      "style": { "navigationBarTitleText": "我的" }
+    },
+    {
+      "path": "pages/ocr/index",
+      "style": { "navigationBarTitleText": "拍照识别" }
+    },
+    {
+      "path": "pages/other/index",
+      "style": { "navigationBarTitleText": "其它" }
+    },
+    {
+      "path": "pages/pdftools/index",
+      "style": { "navigationBarTitleText": "PDF工具" }
+    },
+    {
+      "path": "pages/poetry/index",
+      "style": { "navigationBarTitleText": "诗词" }
+    },
+    {
+      "path": "pages/question/index",
+      "style": { "navigationBarTitleText": "题目" }
+    },
+    {
+      "path": "pages/rank/index",
+      "style": { "navigationBarTitleText": "排行榜" }
+    },
+    {
+      "path": "pages/result/index",
+      "style": { "navigationBarTitleText": "结果" }
+    },
+    {
+      "path": "pages/search/index",
+      "style": { "navigationBarTitleText": "搜索" }
+    },
+    {
+      "path": "pages/share/index",
+      "style": { "navigationBarTitleText": "分享" }
+    },
+    {
+      "path": "pages/short/index",
+      "style": { "navigationBarTitleText": "短视频" }
+    },
+    {
+      "path": "pages/signin/index",
+      "style": { "navigationBarTitleText": "签到" }
+    },
+    {
+      "path": "pages/translate/index",
+      "style": { "navigationBarTitleText": "翻译" }
+    },
+    {
+      "path": "pages/word/index",
+      "style": { "navigationBarTitleText": "单词" }
+    },
+    {
+      "path": "pages/wrong/index",
+      "style": { "navigationBarTitleText": "错题" }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "早晚答",
+    "backgroundColor": "#f5f6fa",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  }
+}
