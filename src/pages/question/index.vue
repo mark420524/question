@@ -1,16 +1,15 @@
 <template>
-  <view class="page">
-    <view class="page-header">
+  <view class="page-container page">
+    <view class="page-header business-card-rpx">
       <text class="title">答题模式</text>
       <text v-if="questionCount" class="subtitle">共 {{ questionCount }} 题</text>
     </view>
 
-    <view v-if="loading" class="loading">
-      <u-loading type="spinner" size="40" />
+    <view v-if="loading" class="loading-wrap">
       <text class="loading-text">加载中...</text>
     </view>
 
-    <view v-else class="question-card">
+    <view v-else class="question-card business-card-rpx">
       <view class="question-index">第 {{ currentIndex + 1 }} 题</view>
       <view class="question-content">{{ currentQuestion?.content || '暂无题目' }}</view>
 
@@ -27,8 +26,8 @@
       </view>
 
       <view class="actions">
-        <u-button type="default" size="small" @click="prevQuestion">上一题</u-button>
-        <u-button type="primary" size="small" @click="nextQuestion">下一题</u-button>
+        <view class="btn business-btn-rpx business-btn-secondary-rpx" @click="prevQuestion">上一题</view>
+        <view class="btn business-btn-rpx business-btn-primary-rpx" @click="nextQuestion">下一题</view>
       </view>
     </view>
   </view>
@@ -102,98 +101,100 @@ onMounted(() => {
 <style scoped>
 .page {
   padding: 24rpx;
-  min-height: 100vh;
-  background: #f5f6fa;
 }
 
 .page-header {
-  margin-bottom: 20rpx;
+  padding: 24rpx;
+  margin-bottom: 24rpx;
 }
 
 .title {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 700;
+  color: #1e293b;
 }
 
 .subtitle {
   font-size: 26rpx;
-  color: #666;
-  margin-top: 10rpx;
+  color: #64748b;
+  margin-top: 8rpx;
 }
 
-.loading {
-  padding: 40rpx;
+.loading-wrap {
+  padding: 60rpx;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  flex-direction: column;
 }
 
 .loading-text {
-  margin-top: 16rpx;
-  font-size: 26rpx;
-  color: #999;
+  font-size: 28rpx;
+  color: #94a3b8;
 }
 
 .question-card {
-  background: #fff;
-  border-radius: 20rpx;
-  padding: 24rpx;
-  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.07);
+  padding: 32rpx;
 }
 
 .question-index {
   font-size: 28rpx;
   font-weight: 600;
-  margin-bottom: 18rpx;
+  color: #2563eb;
+  margin-bottom: 20rpx;
 }
 
 .question-content {
   font-size: 30rpx;
-  color: #333;
-  margin-bottom: 26rpx;
+  color: #1e293b;
+  margin-bottom: 28rpx;
   line-height: 1.6;
 }
 
 .options {
   display: flex;
   flex-direction: column;
-  gap: 14rpx;
-  margin-bottom: 24rpx;
+  gap: 16rpx;
+  margin-bottom: 32rpx;
 }
 
 .option {
-  padding: 18rpx;
-  border-radius: 18rpx;
-  border: 1rpx solid rgba(0, 0, 0, 0.1);
-  background: #fff;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  border: 1rpx solid #e2e8f0;
+  background: #f8fafc;
   display: flex;
   align-items: center;
 }
 
 .option.selected {
-  border-color: #1c6ef2;
-  background: rgba(28, 110, 242, 0.1);
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
 }
 
 .option.correct {
-  border-color: #06c981;
-  background: rgba(6, 201, 129, 0.12);
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .option-label {
-  font-size: 26rpx;
-  font-weight: 700;
-  margin-right: 14rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-right: 16rpx;
+  color: #475569;
 }
 
 .option-text {
-  font-size: 26rpx;
-  color: #333;
+  font-size: 28rpx;
+  color: #1e293b;
 }
 
 .actions {
   display: flex;
+  gap: 24rpx;
   justify-content: space-between;
+}
+
+.btn {
+  flex: 1;
 }
 </style>

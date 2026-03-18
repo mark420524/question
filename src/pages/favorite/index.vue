@@ -1,21 +1,22 @@
 <template>
-  <view class="page">
-    <business-card title="收藏" :bordered="false">
+  <view class="page-container page">
+    <view class="business-card-rpx card-main">
+      <view class="business-section-title">我的收藏</view>
       <view class="info-row">
         <text class="label">收藏题库：</text>
-        <text class="value">{{ selectCategory || '未选择' }}</text>
+        <text class="value value-ellipsis">{{ selectCategory || '未选择' }}</text>
       </view>
       <view class="info-row">
         <text class="label">收藏数量：</text>
-        <text class="value">{{ favoriteCount }} 题</text>
+        <text class="value highlight">{{ favoriteCount }} 题</text>
       </view>
       <view v-if="!favoriteCount" class="hint">您收藏的题目会自动记录到这里</view>
-      <view class="footer" @click="goQuestion">
+      <view class="footer business-btn-rpx business-btn-primary-rpx" @click="goQuestion">
         <text>{{ showVal }}</text>
       </view>
-    </business-card>
+    </view>
 
-    <view v-if="showAd" class="ad">广告位</view>
+    <view v-if="showAd" class="ad-wrap">广告位</view>
   </view>
 </template>
 
@@ -58,43 +59,64 @@ onMounted(init)
 <style scoped>
 .page {
   padding: 24rpx;
-  background: #f5f6fa;
-  min-height: 100vh;
 }
+
+.card-main {
+  padding: 32rpx;
+}
+
 .info-row {
   display: flex;
-  padding: 16rpx 0;
+  padding: 24rpx 0;
   justify-content: space-between;
-  border-bottom: 1rpx solid #eee;
+  align-items: center;
+  border-bottom: 1rpx solid #e2e8f0;
 }
+
 .label {
-  color: #666;
-  font-size: 26rpx;
-}
-.value {
-  color: #1a1a1a;
-  font-size: 26rpx;
-}
-.hint {
-  margin: 20rpx 0;
-  color: #999;
-  font-size: 26rpx;
-}
-.footer {
-  margin-top: 18rpx;
-  padding: 18rpx;
-  background: #1c6ef2;
-  border-radius: 16rpx;
-  text-align: center;
-  color: #fff;
+  color: #64748b;
   font-size: 28rpx;
+  flex-shrink: 0;
+  margin-right: 16rpx;
 }
-.ad {
-  margin-top: 30rpx;
-  padding: 20rpx;
-  background: #fff;
-  border-radius: 14rpx;
+
+.value {
+  color: #1e293b;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.value-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 360rpx;
+}
+
+.value.highlight {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.hint {
+  margin: 24rpx 0;
+  color: #64748b;
+  font-size: 26rpx;
+}
+
+.footer {
+  margin-top: 32rpx;
+  width: 100%;
+}
+
+.ad-wrap {
+  margin-top: 32rpx;
+  padding: 24rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  border: 1rpx solid #e2e8f0;
   text-align: center;
-  color: #999;
+  color: #94a3b8;
+  font-size: 26rpx;
 }
 </style>

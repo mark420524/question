@@ -1,8 +1,8 @@
 <template>
-  <view class="page">
-    <view class="page__content">
-      <text class="page-title">bank 页面（占位）</text>
-      <text class="page-desc">此页面已迁移为 uni-app，后续根据业务逻辑填充。</text>
+  <view class="page-container page">
+    <view class="business-card-rpx card-main">
+      <view class="business-section-title">题库</view>
+      <text class="desc">此页面功能开发中，请从首页选择题库或开始答题。</text>
     </view>
   </view>
 </template>
@@ -11,19 +11,7 @@
 </script>
 
 <style scoped>
-.page {
-  padding: 30rpx;
-  background: #f5f6fa;
-  min-height: 100vh;
-}
-.page-title {
-  font-size: 34rpx;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 20rpx;
-}
-.page-desc {
-  font-size: 26rpx;
-  color: #666666;
-}
+.page { padding: 24rpx; }
+.card-main { padding: 32rpx; }
+.desc { font-size: 28rpx; color: #64748b; line-height: 1.6; }
 </style>

@@ -35,6 +35,10 @@
       "style": { "navigationBarTitleText": "详情" }
     },
     {
+      "path": "pages/detail/child",
+      "style": { "navigationBarTitleText": "详情" }
+    },
+    {
       "path": "pages/exam/index",
       "style": { "navigationBarTitleText": "考试" }
     },
@@ -135,7 +139,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "早晚答",
-    "backgroundColor": "#f5f6fa",
+    "backgroundColor": "#f8fafc",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": false
   }
