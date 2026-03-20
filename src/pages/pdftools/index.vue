@@ -1,29 +1,32 @@
 <template>
-  <view class="page">
-    <view class="page__content">
-      <text class="page-title">pdftools 页面（占位）</text>
-      <text class="page-desc">此页面已迁移为 uni-app，后续根据业务逻辑填充。</text>
+  <view class="page-container page">
+    <view class="business-card-rpx card-main">
+      <view class="business-section-title">PDF 工具</view>
+      <view class="grid">
+        <view class="grid-item" @click="goFile(1)">加密文档</view>
+        <view class="grid-item" @click="goFile(2)">清除密码</view>
+        <view class="grid-item" @click="goFile(3)">添加水印</view>
+      </view>
     </view>
+    <view v-if="showAd" class="ad-wrap">广告位</view>
   </view>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const showAd = ref(false)
+
+function goFile(type) {
+  uni.navigateTo({ url: '/pages/pdftools/file?type=' + type })
+}
 </script>
 
 <style scoped>
-.page {
-  padding: 30rpx;
-  background: #f5f6fa;
-  min-height: 100vh;
-}
-.page-title {
-  font-size: 34rpx;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 20rpx;
-}
-.page-desc {
-  font-size: 26rpx;
-  color: #666666;
-}
+.page { padding: 24rpx; }
+.card-main { padding: 32rpx; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24rpx; }
+.grid-item { padding: 32rpx; text-align: center; background: #f8fafc; border-radius: 12rpx; font-size: 28rpx; color: #1e293b; border: 1rpx solid #e2e8f0; }
+.grid-item:active { opacity: 0.9; }
+.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
 </style>

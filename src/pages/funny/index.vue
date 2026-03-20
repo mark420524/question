@@ -8,6 +8,7 @@
 </template>
 
 <script setup>
+function goWheel() { uni.navigateTo({ url: '/pages/integral/wheel' }) }
 </script>
 
 <style scoped>
