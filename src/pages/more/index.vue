@@ -1,20 +1,34 @@
 <template>
-  <view class="page-container page">
-    <view v-if="loading" class="loading-wrap">
-      <text class="loading-text">加载中...</text>
+  <view class="page-container tab-page more-page">
+    <view class="more-intro">
+      <text class="more-eyebrow">能力扩展</text>
+      <text class="more-title">更多工具</text>
+      <text class="more-lead">翻译、诗词、导出等能力，按需选用。</text>
     </view>
-    <view v-else class="tool-grid">
+
+    <view v-if="loading" class="more-loading">
+      <text class="more-loading-text">加载中…</text>
+    </view>
+
+    <view v-else class="more-grid">
       <view
         v-for="(item, idx) in toolsItems"
-        :key="idx"
-        class="tool-item business-card-rpx"
+        :key="toolRowKey(item, idx)"
+        class="more-tile"
         @click="onToolClick(item)"
       >
-        <text class="tool-text">{{ item.text }}</text>
+        <view class="more-tile-icon" :class="'more-tile-icon--' + toneClass(idx)">
+          {{ firstChar(item.text) }}
+        </view>
+        <text class="more-tile-text">{{ item.text }}</text>
       </view>
     </view>
 
-    <view v-if="showAd" class="ad-wrap">广告位</view>
+    <view v-if="!loading && toolsItems.length === 0" class="more-empty">
+      <text class="more-empty-text">暂无工具项</text>
+    </view>
+
+    <view v-if="showAd" class="ad-slot">广告位</view>
   </view>
 </template>
 
@@ -25,6 +39,20 @@ import * as api from '@/service/api'
 const toolsItems = ref([])
 const loading = ref(true)
 const showAd = ref(false)
+
+function toneClass(idx) {
+  return ['sky', 'rose', 'violet', 'jade', 'amber'][idx % 5]
+}
+
+function firstChar(text) {
+  if (!text || typeof text !== 'string') return '·'
+  return text.trim().charAt(0) || '·'
+}
+
+function toolRowKey(item, idx) {
+  if (item && item.id != null) return 'tool-' + item.id
+  return 'tool-' + idx + '-' + (item && item.text ? item.text : '')
+}
 
 function onToolClick(item) {
   if (item.url) {
@@ -47,45 +75,138 @@ onMounted(init)
 </script>
 
 <style scoped>
-.page {
-  padding: 24rpx;
+.more-page {
+  padding-bottom: 120rpx;
 }
 
-.loading-wrap {
-  padding: 80rpx;
-  text-align: center;
+.more-intro {
+  margin-bottom: 32rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
 }
 
-.loading-text {
-  font-size: 28rpx;
-  color: #94a3b8;
+.more-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
 }
 
-.tool-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24rpx;
+.more-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  letter-spacing: 1rpx;
+  margin-bottom: 12rpx;
 }
 
-.tool-item {
-  padding: 32rpx;
-  text-align: center;
-}
-
-.tool-text {
-  font-size: 28rpx;
-  font-weight: 500;
-  color: #1e293b;
-}
-
-.ad-wrap {
-  margin-top: 32rpx;
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 12rpx;
-  border: 1rpx solid #e2e8f0;
-  text-align: center;
-  color: #94a3b8;
+.more-lead {
+  display: block;
   font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.more-loading {
+  padding: 100rpx 32rpx;
+  text-align: center;
+}
+
+.more-loading-text {
+  font-size: 28rpx;
+  color: var(--tab-muted);
+}
+
+.more-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+.more-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+  padding: 36rpx 24rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+  min-height: 200rpx;
+}
+
+.more-tile:active {
+  opacity: 0.9;
+}
+
+.more-tile-icon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 24rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-tile-icon--sky {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.more-tile-icon--rose {
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+.more-tile-icon--violet {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.more-tile-icon--jade {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.more-tile-icon--amber {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.more-tile-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--tab-ink);
+  text-align: center;
+  line-height: 1.45;
+  letter-spacing: 0.5rpx;
+}
+
+.more-empty {
+  padding: 80rpx 32rpx;
+  text-align: center;
+}
+
+.more-empty-text {
+  font-size: 28rpx;
+  color: var(--tab-muted);
+}
+
+.ad-slot {
+  margin-top: 40rpx;
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx dashed var(--tab-line);
+  text-align: center;
+  font-size: 26rpx;
+  color: #94a3b8;
 }
 </style>

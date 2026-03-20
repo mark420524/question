@@ -1,38 +1,49 @@
 <template>
-  <view class="page-container page">
-    <view class="business-card-rpx card-main">
-      <view class="business-section-title">每日签到</view>
-      <view class="metrics">
-        <view class="metric">
-          <text class="metric-value">{{ totalSign }}</text>
-          <text class="metric-label">累计签到（天）</text>
-        </view>
-        <view class="metric">
-          <text class="metric-value">{{ continuousSign }}</text>
-          <text class="metric-label">连续签到（天）</text>
-        </view>
-      </view>
+  <view class="page-container tab-page signin-page">
+    <view class="sub-intro">
+      <text class="sub-eyebrow">习惯养成</text>
+      <text class="sub-title">每日签到</text>
+      <text class="sub-lead">坚持打卡积累积分，连续签到奖励更丰厚。</text>
+    </view>
 
-      <view v-if="canSign" class="btn-wrap">
-        <view class="btn business-btn-rpx business-btn-primary-rpx" @click="userSignin">立即签到</view>
-        <text class="hint">签到可获得积分</text>
+    <view class="metrics-row">
+      <view class="metric-card">
+        <text class="metric-value">{{ totalSign }}</text>
+        <text class="metric-label">累计签到（天）</text>
       </view>
-      <view v-else class="signed-wrap">
-        <text class="signed-text">今天已签到，获得积分 +{{ todayPoints }}</text>
+      <view class="metric-card">
+        <text class="metric-value">{{ continuousSign }}</text>
+        <text class="metric-label">连续签到（天）</text>
       </view>
+    </view>
 
-      <view class="calendar-section">
-        <view class="calendar-title">签到记录</view>
-        <view class="calendar-grid">
-          <view v-for="day in signDays" :key="day.dateLabel" class="grid-item" :class="{ signed: day.signed }">
-            <text class="day">{{ day.dateLabel }}</text>
-            <text class="status">{{ day.signed ? '已签' : '未签' }}</text>
-          </view>
+    <view class="action-card">
+      <view v-if="canSign" class="sign-block">
+        <view class="primary-btn" @click="userSignin">立即签到</view>
+        <text class="sign-hint">签到成功可获得积分</text>
+      </view>
+      <view v-else class="signed-block">
+        <text class="signed-title">今日已签到</text>
+        <text class="signed-points">获得积分 +{{ todayPoints }}</text>
+      </view>
+    </view>
+
+    <view class="calendar-card">
+      <text class="calendar-title">签到记录</text>
+      <view class="calendar-grid">
+        <view
+          v-for="day in signDays"
+          :key="day.dateLabel"
+          class="calendar-cell"
+          :class="{ 'calendar-cell--signed': day.signed }"
+        >
+          <text class="calendar-day">{{ day.dateLabel }}</text>
+          <text class="calendar-status">{{ day.signed ? '已签' : '未签' }}</text>
         </view>
       </view>
     </view>
 
-    <view v-if="showAd" class="ad-wrap">广告位</view>
+    <view v-if="showAd" class="ad-slot">广告位</view>
   </view>
 </template>
 
@@ -114,121 +125,186 @@ onMounted(loadSignInfo)
 </script>
 
 <style scoped>
-.page {
-  padding: 24rpx;
+.signin-page {
+  padding-bottom: 48rpx;
 }
 
-.card-main {
-  padding: 32rpx;
+.sub-intro {
+  margin-bottom: 28rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
 }
 
-.metrics {
+.sub-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.sub-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  margin-bottom: 10rpx;
+}
+
+.sub-lead {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.metrics-row {
   display: flex;
-  gap: 24rpx;
-  margin-bottom: 32rpx;
+  flex-direction: row;
+  gap: 20rpx;
+  margin-bottom: 24rpx;
 }
 
-.metric {
+.metric-card {
   flex: 1;
-  background: #f8fafc;
-  border-radius: 12rpx;
-  padding: 24rpx;
+  padding: 28rpx 20rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
   text-align: center;
 }
 
 .metric-value {
   display: block;
-  font-size: 36rpx;
-  font-weight: 700;
-  color: #2563eb;
+  font-size: 40rpx;
+  font-weight: 800;
+  color: var(--tab-brand);
+  font-variant-numeric: tabular-nums;
 }
 
 .metric-label {
+  display: block;
+  margin-top: 10rpx;
   font-size: 24rpx;
-  color: #64748b;
-  margin-top: 8rpx;
+  color: var(--tab-muted);
 }
 
-.btn-wrap {
-  margin-bottom: 32rpx;
+.action-card {
+  padding: 32rpx 28rpx;
+  margin-bottom: 24rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
 }
 
-.btn {
-  width: 100%;
+.primary-btn {
+  padding: 26rpx 32rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--tab-brand);
+  border-radius: var(--tab-radius-md);
+}
+
+.primary-btn:active {
+  opacity: 0.92;
+}
+
+.sign-hint {
+  display: block;
+  margin-top: 16rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: var(--tab-muted);
+}
+
+.signed-block {
+  text-align: center;
+  padding: 16rpx 0;
+}
+
+.signed-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--tab-ink);
   margin-bottom: 12rpx;
 }
 
-.hint {
-  font-size: 24rpx;
-  color: #64748b;
+.signed-points {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #059669;
 }
 
-.signed-wrap {
-  padding: 24rpx 0;
-  margin-bottom: 16rpx;
-}
-
-.signed-text {
-  font-size: 28rpx;
-  color: #10b981;
-  font-weight: 500;
-}
-
-.calendar-section {
-  padding-top: 24rpx;
-  border-top: 1rpx solid #e2e8f0;
+.calendar-card {
+  padding: 28rpx 24rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
 }
 
 .calendar-title {
+  display: block;
   font-size: 28rpx;
-  font-weight: 600;
-  color: #1e293b;
+  font-weight: 700;
+  color: var(--tab-ink);
   margin-bottom: 20rpx;
 }
 
 .calendar-grid {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 12rpx;
 }
 
-.grid-item {
+.calendar-cell {
   width: calc(33.333% - 8rpx);
-  padding: 16rpx;
-  border-radius: 12rpx;
+  padding: 18rpx 12rpx;
+  border-radius: var(--tab-radius-md);
   background: #f1f5f9;
   text-align: center;
+  box-sizing: border-box;
 }
 
-.grid-item.signed {
-  background: rgba(37, 99, 235, 0.1);
+.calendar-cell--signed {
+  background: rgba(14, 116, 144, 0.12);
+  border: 1rpx solid rgba(14, 116, 144, 0.25);
 }
 
-.day {
-  font-size: 24rpx;
-  color: #475569;
+.calendar-day {
   display: block;
+  font-size: 24rpx;
+  color: var(--tab-ink-soft);
 }
 
-.status {
+.calendar-status {
+  display: block;
+  margin-top: 8rpx;
   font-size: 22rpx;
   color: #94a3b8;
-  margin-top: 6rpx;
-  display: block;
 }
 
-.grid-item.signed .status {
-  color: #2563eb;
+.calendar-cell--signed .calendar-status {
+  color: var(--tab-brand);
+  font-weight: 600;
 }
 
-.ad-wrap {
+.ad-slot {
   margin-top: 32rpx;
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 12rpx;
-  border: 1rpx solid #e2e8f0;
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx dashed var(--tab-line);
   text-align: center;
-  color: #94a3b8;
   font-size: 26rpx;
+  color: #94a3b8;
 }
 </style>

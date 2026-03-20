@@ -1,35 +1,64 @@
 <template>
-  <view class="page-container page">
-    <view class="search-bar business-card-rpx">
+  <view class="page-container tab-page search-page">
+    <view class="search-intro">
+      <text class="search-eyebrow">题目检索</text>
+      <text class="search-title">搜索</text>
+      <text class="search-lead">在当前题库内输入关键词，快速定位题目。</text>
+    </view>
+
+    <view class="search-bar-card">
       <input
         v-model="searchVal"
         class="search-input"
-        :placeholder="selectCategory"
+        :placeholder="'搜索：' + selectCategory"
+        placeholder-class="search-placeholder"
+        confirm-type="search"
         @confirm="doSearch"
       />
-      <view class="search-btn business-btn-rpx business-btn-primary-rpx" @click="doSearch">搜索</view>
+      <view class="search-submit" @click="doSearch">搜索</view>
     </view>
-    <view v-if="questionList.length === 0" class="business-card-rpx card-main">
-      <view v-if="historys.length" class="history-title">搜索历史</view>
-      <view class="history-list">
-        <view v-for="h in historys" :key="h" class="history-item" @click="searchData(0, h)">{{ h }}</view>
+
+    <view v-if="questionList.length === 0" class="empty-panel">
+      <view v-if="historys.length" class="history-block">
+        <text class="history-label">最近搜索</text>
+        <view class="history-chips">
+          <view
+            v-for="(h, hIdx) in historys"
+            :key="'h-' + hIdx + '-' + h"
+            class="history-chip"
+            @click="searchData(0, h)"
+          >
+            {{ h }}
+          </view>
+        </view>
+      </view>
+      <view v-else class="empty-hint">
+        <text class="empty-hint-title">试试搜一道题</text>
+        <text class="empty-hint-sub">输入题干或知识点中的关键词</text>
       </view>
     </view>
-    <view v-else class="list-wrap">
-      <view class="total">已为您搜索到 <text class="highlight">{{ totalSize }}</text> 个结果</view>
-      <view v-for="(row, rowIdx) in questionList" :key="rowIdx" class="row">
+
+    <view v-else class="result-block">
+      <view class="result-meta">
+        已找到
+        <text class="result-count">{{ totalSize }}</text>
+        条相关结果
+      </view>
+      <view v-for="(row, rowIdx) in questionList" :key="'row-' + rowIdx" class="result-row">
         <view
           v-for="(item, colIdx) in row"
           :key="item.id"
-          class="item business-card-rpx"
+          class="result-item"
           @click="goQuestion(item)"
         >
-          {{ rowIdx * size + colIdx + 1 }} {{ item.question }}
+          <view class="result-index">{{ rowIdx * size + colIdx + 1 }}</view>
+          <text class="result-text">{{ item.question }}</text>
         </view>
       </view>
     </view>
-    <view v-if="loading" class="loading">加载中...</view>
-    <view v-if="showAd" class="ad-wrap">广告位</view>
+
+    <view v-if="loading" class="state-loading">加载中...</view>
+    <view v-if="showAd" class="ad-slot">广告位</view>
   </view>
 </template>
 
@@ -119,18 +148,223 @@ onReachBottom(() => {
 </script>
 
 <style scoped>
-.page { padding: 24rpx; }
-.search-bar { padding: 20rpx; margin-bottom: 16rpx; display: flex; gap: 16rpx; align-items: center; }
-.search-input { flex: 1; padding: 20rpx; border: 1rpx solid #e2e8f0; border-radius: 12rpx; font-size: 28rpx; }
-.search-btn { padding: 20rpx 32rpx; }
-.card-main { padding: 32rpx; margin-bottom: 24rpx; }
-.history-title { font-size: 28rpx; color: #64748b; margin-bottom: 16rpx; }
-.history-list { display: flex; flex-wrap: wrap; gap: 16rpx; }
-.history-item { padding: 16rpx 24rpx; background: #f1f5f9; border-radius: 8rpx; font-size: 26rpx; color: #475569; }
-.total { font-size: 26rpx; color: #64748b; margin-bottom: 16rpx; }
-.highlight { color: #2563eb; font-weight: 600; }
-.row { display: flex; flex-direction: column; gap: 12rpx; margin-bottom: 16rpx; }
-.item { padding: 24rpx; font-size: 28rpx; color: #1e293b; line-height: 1.5; }
-.loading { padding: 24rpx; text-align: center; color: #94a3b8; }
-.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
+.search-page {
+  padding-bottom: 120rpx;
+}
+
+.search-intro {
+  margin-bottom: 28rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
+}
+
+.search-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.search-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  letter-spacing: 1rpx;
+  margin-bottom: 12rpx;
+}
+
+.search-lead {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.search-bar-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 22rpx 24rpx;
+  font-size: 28rpx;
+  color: var(--tab-ink);
+  background: #f8fafc;
+  border-radius: var(--tab-radius-md);
+  border: 1rpx solid transparent;
+}
+
+.search-placeholder {
+  color: #94a3b8;
+}
+
+.search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 36rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--tab-brand);
+  border-radius: var(--tab-radius-md);
+  flex-shrink: 0;
+}
+
+.search-submit:active {
+  opacity: 0.9;
+}
+
+.empty-panel {
+  min-height: 200rpx;
+}
+
+.history-block {
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.history-label {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--tab-muted);
+  margin-bottom: 20rpx;
+}
+
+.history-chips {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.history-chip {
+  padding: 14rpx 26rpx;
+  font-size: 26rpx;
+  color: var(--tab-brand-deep);
+  background: #ccfbf1;
+  border-radius: 999rpx;
+  border: 1rpx solid rgba(14, 116, 144, 0.15);
+}
+
+.history-chip:active {
+  opacity: 0.85;
+}
+
+.empty-hint {
+  padding: 48rpx 32rpx;
+  text-align: center;
+}
+
+.empty-hint-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--tab-ink);
+  margin-bottom: 12rpx;
+}
+
+.empty-hint-sub {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.5;
+}
+
+.result-block {
+  margin-top: 8rpx;
+}
+
+.result-meta {
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  margin-bottom: 20rpx;
+  letter-spacing: 0.5rpx;
+}
+
+.result-count {
+  color: var(--tab-brand);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding: 0 6rpx;
+}
+
+.result-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20rpx;
+  padding: 26rpx 24rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.result-item:active {
+  opacity: 0.92;
+}
+
+.result-index {
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: var(--tab-brand);
+  background: #ccfbf1;
+  border-radius: 12rpx;
+  flex-shrink: 0;
+}
+
+.result-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--tab-ink);
+  line-height: 1.55;
+  min-width: 0;
+}
+
+.state-loading {
+  padding: 32rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+}
+
+.ad-slot {
+  margin-top: 32rpx;
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx dashed var(--tab-line);
+  text-align: center;
+  font-size: 26rpx;
+  color: #94a3b8;
+}
 </style>

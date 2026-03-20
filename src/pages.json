@@ -9,14 +9,18 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "首页",
-        "navigationBarBackgroundColor": "#ffffff",
-        "navigationBarTextStyle": "black"
+        "navigationBarTitleText": "早晚答",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
       }
     },
     {
       "path": "pages/about/index",
-      "style": { "navigationBarTitleText": "关于" }
+      "style": {
+        "navigationBarTitleText": "关于我们",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/bank/index",
@@ -48,7 +52,11 @@
     },
     {
       "path": "pages/favorite/index",
-      "style": { "navigationBarTitleText": "收藏" }
+      "style": {
+        "navigationBarTitleText": "我的收藏",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/funny/index",
@@ -56,7 +64,11 @@
     },
     {
       "path": "pages/help/index",
-      "style": { "navigationBarTitleText": "帮助" }
+      "style": {
+        "navigationBarTitleText": "使用帮助",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/idiom/index",
@@ -64,7 +76,11 @@
     },
     {
       "path": "pages/integral/index",
-      "style": { "navigationBarTitleText": "积分" }
+      "style": {
+        "navigationBarTitleText": "我的积分",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/live/index",
@@ -72,11 +88,19 @@
     },
     {
       "path": "pages/more/index",
-      "style": { "navigationBarTitleText": "更多" }
+      "style": {
+        "navigationBarTitleText": "更多",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/my/index",
-      "style": { "navigationBarTitleText": "我的" }
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/ocr/index",
@@ -84,7 +108,11 @@
     },
     {
       "path": "pages/other/index",
-      "style": { "navigationBarTitleText": "其它" }
+      "style": {
+        "navigationBarTitleText": "其他工具",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/pdftools/index",
@@ -96,11 +124,19 @@
     },
     {
       "path": "pages/question/index",
-      "style": { "navigationBarTitleText": "题目" }
+      "style": {
+        "navigationBarTitleText": "刷题",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/rank/index",
-      "style": { "navigationBarTitleText": "排行榜" }
+      "style": {
+        "navigationBarTitleText": "排行榜",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/result/index",
@@ -108,11 +144,19 @@
     },
     {
       "path": "pages/search/index",
-      "style": { "navigationBarTitleText": "搜索" }
+      "style": {
+        "navigationBarTitleText": "搜索",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/share/index",
-      "style": { "navigationBarTitleText": "分享" }
+      "style": {
+        "navigationBarTitleText": "题目分享",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/short/index",
@@ -120,7 +164,11 @@
     },
     {
       "path": "pages/signin/index",
-      "style": { "navigationBarTitleText": "签到" }
+      "style": {
+        "navigationBarTitleText": "每日签到",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/translate/index",
@@ -132,15 +180,51 @@
     },
     {
       "path": "pages/wrong/index",
-      "style": { "navigationBarTitleText": "错题" }
+      "style": {
+        "navigationBarTitleText": "错题集",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "早晚答",
-    "backgroundColor": "#f8fafc",
+    "backgroundColor": "#f0f2f5",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#6b7280",
+    "selectedColor": "#0e7490",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/tab-normal.png",
+        "selectedIconPath": "static/tabbar/tab-active.png"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "text": "搜索",
+        "iconPath": "static/tabbar/tab-normal.png",
+        "selectedIconPath": "static/tabbar/tab-active.png"
+      },
+      {
+        "pagePath": "pages/more/index",
+        "text": "更多",
+        "iconPath": "static/tabbar/tab-normal.png",
+        "selectedIconPath": "static/tabbar/tab-active.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/tab-normal.png",
+        "selectedIconPath": "static/tabbar/tab-active.png"
+      }
+    ]
   }
 }

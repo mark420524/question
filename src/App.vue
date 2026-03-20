@@ -22,10 +22,12 @@ export default {
 
 /* 小程序/uni-app 页面根节点（:root 在小程序可能不生效，page 作为兜底） */
 page {
-  background-color: #f8fafc;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: #1e293b;
-  line-height: 1.5;
+  background-color: #f0f2f5;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #12151c;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* 商务白色主题 - 全局样式变量 */
@@ -410,7 +412,7 @@ body {
 /* ---------- uni-app / 小程序 rpx 风格（页面内可直接使用） ---------- */
 .page-container {
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: #f0f2f5;
   padding: 24rpx;
   padding-bottom: 120rpx;
 }
@@ -441,7 +443,7 @@ body {
   content: '';
   width: 8rpx;
   height: 32rpx;
-  background: #2563eb;
+  background: #0e7490;
   border-radius: 4rpx;
   margin-right: 16rpx;
 }
@@ -459,7 +461,7 @@ body {
 }
 
 .business-btn-primary-rpx {
-  background-color: #2563eb;
+  background-color: #0e7490;
   color: #ffffff;
 }
 
@@ -478,4 +480,21 @@ body {
 .business-mb-2-rpx { margin-bottom: 16rpx; }
 .business-mb-4-rpx { margin-bottom: 32rpx; }
 .business-p-4-rpx { padding: 32rpx; }
+
+/* Tab 子页设计变量（与首页墨青体系一致，scoped 内可用 var(--tab-*)） */
+.tab-page {
+  --tab-ink: #12151c;
+  --tab-ink-soft: #3d4556;
+  --tab-muted: #6b7380;
+  --tab-line: rgba(18, 21, 28, 0.08);
+  --tab-surface: #ffffff;
+  --tab-brand: #0e7490;
+  --tab-brand-deep: #0c4a6e;
+  --tab-accent: #d97706;
+  --tab-radius-lg: 28rpx;
+  --tab-radius-md: 22rpx;
+  --tab-shadow-soft: 0 2rpx 12rpx rgba(18, 21, 28, 0.06);
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', -apple-system,
+    BlinkMacSystemFont, sans-serif;
+}
 </style>

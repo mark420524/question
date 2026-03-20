@@ -1,22 +1,26 @@
 <template>
-  <view class="page-container page">
-    <view class="business-card-rpx card-main">
-      <view class="business-section-title">我的收藏</view>
-      <view class="info-row">
-        <text class="label">收藏题库：</text>
-        <text class="value value-ellipsis">{{ selectCategory || '未选择' }}</text>
-      </view>
-      <view class="info-row">
-        <text class="label">收藏数量：</text>
-        <text class="value highlight">{{ favoriteCount }} 题</text>
-      </view>
-      <view v-if="!favoriteCount" class="hint">您收藏的题目会自动记录到这里</view>
-      <view class="footer business-btn-rpx business-btn-primary-rpx" @click="goQuestion">
-        <text>{{ showVal }}</text>
-      </view>
+  <view class="page-container tab-page favorite-page">
+    <view class="sub-intro">
+      <text class="sub-eyebrow">巩固</text>
+      <text class="sub-title">我的收藏</text>
+      <text class="sub-lead">重点题目单独存放，随时打开专项复习。</text>
     </view>
 
-    <view v-if="showAd" class="ad-wrap">广告位</view>
+    <view class="panel-card">
+      <view class="info-row">
+        <text class="info-label">收藏题库</text>
+        <text class="info-value info-value--ellipsis">{{ selectCategory || '未选择' }}</text>
+      </view>
+      <view class="info-divider" />
+      <view class="info-row">
+        <text class="info-label">收藏数量</text>
+        <text class="info-value info-value--accent">{{ favoriteCount }} 题</text>
+      </view>
+      <view v-if="!favoriteCount" class="panel-hint">收藏的题目会出现在这里</view>
+      <view class="panel-btn" @click="goQuestion">{{ showVal }}</view>
+    </view>
+
+    <view v-if="showAd" class="ad-slot">广告位</view>
   </view>
 </template>
 
@@ -57,66 +61,116 @@ onMounted(init)
 </script>
 
 <style scoped>
-.page {
-  padding: 24rpx;
+.favorite-page {
+  padding-bottom: 48rpx;
 }
 
-.card-main {
-  padding: 32rpx;
+.sub-intro {
+  margin-bottom: 28rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
+}
+
+.sub-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.sub-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  margin-bottom: 10rpx;
+}
+
+.sub-lead {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.panel-card {
+  padding: 28rpx 26rpx 32rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
 }
 
 .info-row {
   display: flex;
-  padding: 24rpx 0;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1rpx solid #e2e8f0;
+  gap: 20rpx;
+  padding: 20rpx 0;
 }
 
-.label {
-  color: #64748b;
+.info-divider {
+  height: 1rpx;
+  background: rgba(18, 21, 28, 0.06);
+}
+
+.info-label {
   font-size: 28rpx;
+  color: var(--tab-muted);
   flex-shrink: 0;
-  margin-right: 16rpx;
 }
 
-.value {
-  color: #1e293b;
+.info-value {
   font-size: 28rpx;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--tab-ink);
+  text-align: right;
 }
 
-.value-ellipsis {
+.info-value--ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 360rpx;
+  max-width: 380rpx;
 }
 
-.value.highlight {
-  color: #2563eb;
-  font-weight: 600;
+.info-value--accent {
+  color: var(--tab-brand);
 }
 
-.hint {
-  margin: 24rpx 0;
-  color: #64748b;
+.panel-hint {
+  margin-top: 20rpx;
   font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.5;
 }
 
-.footer {
+.panel-btn {
   margin-top: 32rpx;
-  width: 100%;
-}
-
-.ad-wrap {
-  margin-top: 32rpx;
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 12rpx;
-  border: 1rpx solid #e2e8f0;
+  padding: 26rpx 32rpx;
   text-align: center;
-  color: #94a3b8;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--tab-brand);
+  border-radius: var(--tab-radius-md);
+}
+
+.panel-btn:active {
+  opacity: 0.92;
+}
+
+.ad-slot {
+  margin-top: 32rpx;
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx dashed var(--tab-line);
+  text-align: center;
   font-size: 26rpx;
+  color: #94a3b8;
 }
 </style>

@@ -1,26 +1,30 @@
 <template>
-  <view class="page-container page">
-    <view class="business-card-rpx card-main">
-      <view class="business-section-title">错题集</view>
-      <view class="info-row">
-        <text class="label">错题题库：</text>
-        <text class="value value-ellipsis">{{ selectCategory || '未选择' }}</text>
-      </view>
-      <view class="info-row">
-        <text class="label">错题数量：</text>
-        <text class="value highlight">{{ wrongCount }} 题</text>
-      </view>
-      <view v-if="!wrongCount" class="hint">您答错的题目会自动记录到这里</view>
-      <view v-else class="hint row">
-        <text>答对自动移除错题集：</text>
-        <switch :checked="autoRemove" @change="onAutoRemoveChange" color="#2563eb" />
-      </view>
-      <view class="footer business-btn-rpx business-btn-primary-rpx" @click="goQuestion">
-        <text>{{ showVal }}</text>
-      </view>
+  <view class="page-container tab-page wrong-page">
+    <view class="sub-intro">
+      <text class="sub-eyebrow">复盘</text>
+      <text class="sub-title">错题集</text>
+      <text class="sub-lead">集中攻克答错过的题目，支持答对后自动移出。</text>
     </view>
 
-    <view v-if="showAd" class="ad-wrap">广告位</view>
+    <view class="panel-card">
+      <view class="info-row">
+        <text class="info-label">错题题库</text>
+        <text class="info-value info-value--ellipsis">{{ selectCategory || '未选择' }}</text>
+      </view>
+      <view class="info-divider" />
+      <view class="info-row">
+        <text class="info-label">错题数量</text>
+        <text class="info-value info-value--accent">{{ wrongCount }} 题</text>
+      </view>
+      <view v-if="!wrongCount" class="panel-hint">答错的题目会自动汇总到这里</view>
+      <view v-else class="switch-row">
+        <text class="switch-label">答对后自动移出错题集</text>
+        <switch :checked="autoRemove" color="#0e7490" @change="onAutoRemoveChange" />
+      </view>
+      <view class="panel-btn" @click="goQuestion">{{ showVal }}</view>
+    </view>
+
+    <view v-if="showAd" class="ad-slot">广告位</view>
   </view>
 </template>
 
@@ -77,76 +81,134 @@ onMounted(init)
 </script>
 
 <style scoped>
-.page {
-  padding: 24rpx;
+.wrong-page {
+  padding-bottom: 48rpx;
 }
 
-.card-main {
-  padding: 32rpx;
+.sub-intro {
+  margin-bottom: 28rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
+}
+
+.sub-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.sub-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  margin-bottom: 10rpx;
+}
+
+.sub-lead {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.panel-card {
+  padding: 28rpx 26rpx 32rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
 }
 
 .info-row {
   display: flex;
-  padding: 24rpx 0;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1rpx solid #e2e8f0;
+  gap: 20rpx;
+  padding: 20rpx 0;
 }
 
-.info-row:last-of-type {
-  border-bottom: none;
+.info-divider {
+  height: 1rpx;
+  background: rgba(18, 21, 28, 0.06);
 }
 
-.label {
-  color: #64748b;
+.info-label {
   font-size: 28rpx;
+  color: var(--tab-muted);
   flex-shrink: 0;
-  margin-right: 16rpx;
 }
 
-.value {
-  color: #1e293b;
+.info-value {
   font-size: 28rpx;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--tab-ink);
+  text-align: right;
 }
 
-.value-ellipsis {
+.info-value--ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 360rpx;
+  max-width: 380rpx;
 }
 
-.value.highlight {
-  color: #2563eb;
-  font-weight: 600;
+.info-value--accent {
+  color: var(--tab-brand);
 }
 
-.hint {
-  margin: 24rpx 0;
-  color: #64748b;
+.panel-hint {
+  margin-top: 20rpx;
   font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.5;
 }
 
-.hint.row {
+.switch-row {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 16rpx;
+  justify-content: space-between;
+  gap: 24rpx;
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid rgba(18, 21, 28, 0.06);
 }
 
-.footer {
-  margin-top: 32rpx;
-  width: 100%;
-}
-
-.ad-wrap {
-  margin-top: 32rpx;
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 12rpx;
-  border: 1rpx solid #e2e8f0;
-  text-align: center;
-  color: #94a3b8;
+.switch-label {
+  flex: 1;
   font-size: 26rpx;
+  color: var(--tab-ink-soft);
+  line-height: 1.45;
+}
+
+.panel-btn {
+  margin-top: 32rpx;
+  padding: 26rpx 32rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--tab-brand);
+  border-radius: var(--tab-radius-md);
+}
+
+.panel-btn:active {
+  opacity: 0.92;
+}
+
+.ad-slot {
+  margin-top: 32rpx;
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx dashed var(--tab-line);
+  text-align: center;
+  font-size: 26rpx;
+  color: #94a3b8;
 }
 </style>

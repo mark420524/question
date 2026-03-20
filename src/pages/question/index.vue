@@ -1,33 +1,41 @@
 <template>
-  <view class="page-container page">
-    <view class="page-header business-card-rpx">
-      <text class="title">答题模式</text>
-      <text v-if="questionCount" class="subtitle">共 {{ questionCount }} 题</text>
+  <view class="page-container tab-page question-page">
+    <view class="sub-intro">
+      <text class="sub-eyebrow">练习</text>
+      <text class="sub-title">刷题模式</text>
+      <text class="sub-lead">按当前题库顺序练习，可随时上一题 / 下一题切换。</text>
     </view>
 
-    <view v-if="loading" class="loading-wrap">
-      <text class="loading-text">加载中...</text>
+    <view class="stat-bar">
+      <text v-if="questionCount" class="stat-bar-text">共 {{ questionCount }} 题</text>
+      <text v-else class="stat-bar-text stat-bar-text--muted">加载题目中</text>
     </view>
 
-    <view v-else class="question-card business-card-rpx">
-      <view class="question-index">第 {{ currentIndex + 1 }} 题</view>
-      <view class="question-content">{{ currentQuestion?.content || '暂无题目' }}</view>
+    <view v-if="loading" class="state-loading">加载中...</view>
 
-      <view class="options">
+    <view v-else class="q-card">
+      <view class="q-badge-row">
+        <text class="q-badge">第 {{ currentIndex + 1 }} 题</text>
+        <text v-if="questionCount" class="q-badge-sub">/ {{ questionCount }}</text>
+      </view>
+      <text class="q-body">{{ currentQuestion?.content || '暂无题目' }}</text>
+
+      <view class="q-options">
         <view
           v-for="(option, idx) in currentQuestion?.options || []"
           :key="idx"
-          :class="['option', { selected: selectedOption === idx, correct: isCorrect(idx) }]"
+          class="q-option"
+          :class="{ 'q-option--on': selectedOption === idx, 'q-option--ok': isCorrect(idx) }"
           @click="selectOption(idx)"
         >
-          <text class="option-label">{{ option.label }}.</text>
-          <text class="option-text">{{ option.text }}</text>
+          <text class="q-opt-label">{{ option.label }}.</text>
+          <text class="q-opt-text">{{ option.text }}</text>
         </view>
       </view>
 
-      <view class="actions">
-        <view class="btn business-btn-rpx business-btn-secondary-rpx" @click="prevQuestion">上一题</view>
-        <view class="btn business-btn-rpx business-btn-primary-rpx" @click="nextQuestion">下一题</view>
+      <view class="q-actions">
+        <view class="q-btn q-btn--ghost" @click="prevQuestion">上一题</view>
+        <view class="q-btn q-btn--primary" @click="nextQuestion">下一题</view>
       </view>
     </view>
   </view>
@@ -99,102 +107,172 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.page {
-  padding: 24rpx;
+.question-page {
+  padding-bottom: 48rpx;
 }
 
-.page-header {
-  padding: 24rpx;
-  margin-bottom: 24rpx;
+.sub-intro {
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
 }
 
-.title {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #1e293b;
-}
-
-.subtitle {
-  font-size: 26rpx;
-  color: #64748b;
-  margin-top: 8rpx;
-}
-
-.loading-wrap {
-  padding: 60rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loading-text {
-  font-size: 28rpx;
-  color: #94a3b8;
-}
-
-.question-card {
-  padding: 32rpx;
-}
-
-.question-index {
-  font-size: 28rpx;
+.sub-eyebrow {
+  display: block;
+  font-size: 22rpx;
   font-weight: 600;
-  color: #2563eb;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.sub-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  margin-bottom: 10rpx;
+}
+
+.sub-lead {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.stat-bar {
   margin-bottom: 20rpx;
 }
 
-.question-content {
-  font-size: 30rpx;
-  color: #1e293b;
-  margin-bottom: 28rpx;
-  line-height: 1.6;
+.stat-bar-text {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
 }
 
-.options {
+.stat-bar-text--muted {
+  color: var(--tab-muted);
+  font-weight: 500;
+}
+
+.state-loading {
+  padding: 80rpx 32rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: var(--tab-muted);
+}
+
+.q-card {
+  padding: 32rpx 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.q-badge-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 24rpx;
+}
+
+.q-badge {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: var(--tab-brand);
+  background: #ccfbf1;
+  padding: 10rpx 20rpx;
+  border-radius: 999rpx;
+}
+
+.q-badge-sub {
+  font-size: 24rpx;
+  color: var(--tab-muted);
+}
+
+.q-body {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: var(--tab-ink);
+  line-height: 1.65;
+  margin-bottom: 28rpx;
+  letter-spacing: 0.5rpx;
+}
+
+.q-options {
   display: flex;
   flex-direction: column;
   gap: 16rpx;
   margin-bottom: 32rpx;
 }
 
-.option {
-  padding: 24rpx;
-  border-radius: 12rpx;
-  border: 1rpx solid #e2e8f0;
-  background: #f8fafc;
+.q-option {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12rpx;
+  padding: 24rpx 22rpx;
+  border-radius: var(--tab-radius-md);
+  border: 1rpx solid var(--tab-line);
+  background: #f8fafc;
 }
 
-.option.selected {
-  border-color: #2563eb;
-  background: rgba(37, 99, 235, 0.08);
+.q-option--on {
+  border-color: var(--tab-brand);
+  background: rgba(14, 116, 144, 0.08);
 }
 
-.option.correct {
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.1);
+.q-option--ok {
+  border-color: #059669;
+  background: rgba(5, 150, 105, 0.1);
 }
 
-.option-label {
+.q-opt-label {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: var(--tab-brand-deep);
+  flex-shrink: 0;
+}
+
+.q-opt-text {
+  font-size: 28rpx;
+  color: var(--tab-ink);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 0;
+}
+
+.q-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 20rpx;
+}
+
+.q-btn {
+  flex: 1;
+  padding: 24rpx 24rpx;
+  text-align: center;
   font-size: 28rpx;
   font-weight: 600;
-  margin-right: 16rpx;
-  color: #475569;
+  border-radius: var(--tab-radius-md);
 }
 
-.option-text {
-  font-size: 28rpx;
-  color: #1e293b;
+.q-btn--ghost {
+  color: var(--tab-ink-soft);
+  background: #f1f5f9;
+  border: 1rpx solid var(--tab-line);
 }
 
-.actions {
-  display: flex;
-  gap: 24rpx;
-  justify-content: space-between;
+.q-btn--primary {
+  color: #ffffff;
+  background: var(--tab-brand);
 }
 
-.btn {
-  flex: 1;
+.q-btn:active {
+  opacity: 0.9;
 }
 </style>

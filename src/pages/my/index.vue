@@ -1,49 +1,90 @@
 <template>
-  <view class="page-container page">
-    <view class="header-card business-card-rpx">
+  <view class="page-container tab-page my-page">
+    <view class="my-profile-card">
+      <view class="my-profile-accent" />
       <view class="user-row" @click="gotoProfile">
-        <image
-          class="avatar"
-          :src="userInfo.avatarUrl || '/static/images/default.jpg'"
-          mode="aspectFill"
-        />
+        <view class="avatar-wrap">
+          <image
+            class="avatar"
+            :src="userInfo.avatarUrl || '/static/images/default.jpg'"
+            mode="aspectFill"
+          />
+        </view>
         <view class="user-info">
           <text v-if="userInfo.nickName" class="nickname">{{ userInfo.nickName }}</text>
-          <button v-else class="login-btn" open-type="getUserProfile" @getuserinfo="onGetUserInfo">登录/注册</button>
+          <text v-else class="nickname-placeholder">点击登录账号</text>
+          <text class="user-sub">资料与排名同步 · 管理个人信息</text>
+          <button
+            v-if="!userInfo.nickName"
+            class="login-btn"
+            open-type="getUserProfile"
+            @getuserinfo="onGetUserInfo"
+          >
+            微信授权登录
+          </button>
         </view>
-        <text class="arrow">›</text>
+        <text class="user-chev">›</text>
       </view>
     </view>
 
-    <view class="menu-card business-card-rpx">
-      <view class="menu-item" @click="invite">
-        <text class="menu-text">邀请朋友</text>
-        <text class="menu-arrow">›</text>
+    <view class="my-section">
+      <text class="my-section-eyebrow">账户</text>
+      <text class="my-section-title">常用服务</text>
+    </view>
+
+    <view class="my-menu">
+      <view class="my-row" @click="invite">
+        <view class="my-mark my-mark--teal">邀</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">邀请朋友</text>
+          <text class="my-row-sub">分享小程序给好友</text>
+        </view>
+        <text class="my-row-chev">›</text>
       </view>
-      <view class="divider" />
-      <view class="menu-item" @click="goIntegral">
-        <text class="menu-text">我的积分</text>
-        <text class="menu-arrow">›</text>
+      <view class="my-divider" />
+      <view class="my-row" @click="goIntegral">
+        <view class="my-mark my-mark--amber">分</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">我的积分</text>
+          <text class="my-row-sub">查看积分与兑换</text>
+        </view>
+        <text class="my-row-chev">›</text>
       </view>
-      <view class="divider" />
-      <view class="menu-item" @click="openOther">
-        <text class="menu-text">其他工具</text>
-        <text class="menu-arrow">›</text>
+      <view class="my-divider" />
+      <view class="my-row" @click="openOther">
+        <view class="my-mark my-mark--violet">具</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">其他工具</text>
+          <text class="my-row-sub">扩展功能入口</text>
+        </view>
+        <text class="my-row-chev">›</text>
       </view>
-      <view class="divider" />
-      <view class="menu-item" @click="clearCache">
-        <text class="menu-text">清除缓存</text>
-        <text class="menu-arrow">›</text>
+      <view class="my-divider" />
+      <view class="my-row" @click="clearCache">
+        <view class="my-mark my-mark--slate">清</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">清除缓存</text>
+          <text class="my-row-sub">退出本地登录状态</text>
+        </view>
+        <text class="my-row-chev">›</text>
       </view>
-      <view class="divider" />
-      <view class="menu-item" @click="help">
-        <text class="menu-text">使用帮助</text>
-        <text class="menu-arrow">›</text>
+      <view class="my-divider" />
+      <view class="my-row" @click="help">
+        <view class="my-mark my-mark--sky">帮</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">使用帮助</text>
+          <text class="my-row-sub">常见问题与说明</text>
+        </view>
+        <text class="my-row-chev">›</text>
       </view>
-      <view class="divider" />
-      <view class="menu-item" @click="aboutMe">
-        <text class="menu-text">关于我们</text>
-        <text class="menu-arrow">›</text>
+      <view class="my-divider" />
+      <view class="my-row my-row--last" @click="aboutMe">
+        <view class="my-mark my-mark--rose">关</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">关于我们</text>
+          <text class="my-row-sub">版本与品牌信息</text>
+        </view>
+        <text class="my-row-chev">›</text>
       </view>
     </view>
   </view>
@@ -110,81 +151,224 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.page {
-  padding: 24rpx;
+.my-page {
+  padding-bottom: 120rpx;
 }
 
-.header-card {
-  padding: 32rpx;
-  margin-bottom: 24rpx;
+.my-profile-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 36rpx;
+  padding: 36rpx 32rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.my-profile-accent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8rpx;
+  background: linear-gradient(90deg, var(--tab-brand-deep), var(--tab-brand), #2dd4bf);
 }
 
 .user-row {
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.avatar-wrap {
+  padding: 4rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--tab-brand), #2dd4bf);
+  flex-shrink: 0;
 }
 
 .avatar {
   width: 96rpx;
   height: 96rpx;
   border-radius: 50%;
-  flex-shrink: 0;
+  display: block;
+  border: 4rpx solid var(--tab-surface);
 }
 
 .user-info {
   flex: 1;
   margin-left: 24rpx;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
 }
 
 .nickname {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  letter-spacing: 0.5rpx;
+}
+
+.nickname-placeholder {
   font-size: 32rpx;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--tab-muted);
+}
+
+.user-sub {
+  font-size: 24rpx;
+  color: var(--tab-muted);
+  line-height: 1.45;
 }
 
 .login-btn {
-  font-size: 30rpx;
-  color: #2563eb;
-  background: transparent;
+  align-self: flex-start;
+  margin-top: 8rpx;
+  padding: 12rpx 28rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--tab-brand);
+  border-radius: 999rpx;
   border: none;
-  padding: 0;
-  text-align: left;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .login-btn::after {
   border: none;
 }
 
-.arrow {
-  font-size: 36rpx;
-  color: #94a3b8;
+.user-chev {
+  font-size: 34rpx;
+  color: #c4cad4;
+  flex-shrink: 0;
+  margin-left: 12rpx;
+  font-weight: 300;
 }
 
-.menu-card {
-  padding: 0 32rpx;
+.my-section {
+  margin-bottom: 20rpx;
+  padding-bottom: 12rpx;
+  border-bottom: 1rpx solid var(--tab-line);
 }
 
-.menu-item {
+.my-section-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 8rpx;
+}
+
+.my-section-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+}
+
+.my-menu {
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+  overflow: hidden;
+}
+
+.my-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 28rpx 0;
+  padding: 26rpx 24rpx;
 }
 
-.menu-text {
-  font-size: 30rpx;
-  color: #1e293b;
+.my-row--last {
+  border-bottom: none;
 }
 
-.menu-arrow {
-  font-size: 36rpx;
-  color: #94a3b8;
+.my-row:active {
+  background: #f8fafc;
 }
 
-.divider {
+.my-divider {
   height: 1rpx;
-  background: #e2e8f0;
+  background: rgba(18, 21, 28, 0.06);
+  margin-left: 112rpx;
+}
+
+.my-mark {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 18rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.my-mark--teal {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.my-mark--amber {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.my-mark--violet {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.my-mark--slate {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.my-mark--sky {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.my-mark--rose {
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+.my-row-texts {
+  flex: 1;
+  margin-left: 22rpx;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.my-row-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--tab-ink);
+  letter-spacing: 0.5rpx;
+}
+
+.my-row-sub {
+  font-size: 24rpx;
+  color: var(--tab-muted);
+  line-height: 1.45;
+}
+
+.my-row-chev {
+  font-size: 30rpx;
+  color: #c4cad4;
+  flex-shrink: 0;
+  margin-left: 16rpx;
+  font-weight: 300;
 }
 </style>
