@@ -1,5 +1,6 @@
 <template>
   <view class="page-container tab-page question-page">
+    <AppHeader title="题库" />
     <view class="sub-intro">
       <text class="sub-eyebrow">练习</text>
       <text class="sub-title">刷题模式</text>
@@ -45,6 +46,7 @@
 import { ref, computed, onMounted } from 'vue'
 import * as api from '@/service/api'
 import * as utils from '@/utils/util'
+import AppHeader from '@/components/AppHeader.vue'
 
 const loading = ref(true)
 const questions = ref([])

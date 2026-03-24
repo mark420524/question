@@ -272,26 +272,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "static/tabbar/tab-normal.png",
-        "selectedIconPath": "static/tabbar/tab-active.png"
+        "iconPath": "static/tabbar/home-normal.svg",
+        "selectedIconPath": "static/tabbar/home-active.svg"
       },
       {
         "pagePath": "pages/search/index",
         "text": "搜索",
-        "iconPath": "static/tabbar/tab-normal.png",
-        "selectedIconPath": "static/tabbar/tab-active.png"
+        "iconPath": "static/tabbar/search-normal.svg",
+        "selectedIconPath": "static/tabbar/search-active.svg"
       },
       {
         "pagePath": "pages/more/index",
         "text": "更多",
-        "iconPath": "static/tabbar/tab-normal.png",
-        "selectedIconPath": "static/tabbar/tab-active.png"
+        "iconPath": "static/tabbar/more-normal.svg",
+        "selectedIconPath": "static/tabbar/more-active.svg"
       },
       {
         "pagePath": "pages/my/index",
         "text": "我的",
-        "iconPath": "static/tabbar/tab-normal.png",
-        "selectedIconPath": "static/tabbar/tab-active.png"
+        "iconPath": "static/tabbar/my-normal.svg",
+        "selectedIconPath": "static/tabbar/my-active.svg"
       }
     ]
   }

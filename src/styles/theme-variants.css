@@ -1,0 +1,56 @@
+/* 主题变体：暗色和海洋色系覆盖变量（class 方式切换） */
+
+.theme-dark {
+  --primary: #7c3aed;
+  --primary-light: #9f7aea;
+  --primary-dark: #5b21b6;
+
+  --bg-primary: #0b1220;
+  --bg-secondary: #0f1724;
+  --bg-tertiary: #111827;
+  --bg-inverse: #ffffff;
+
+  --text-primary: #e6eef8;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: rgba(255,255,255,0.04);
+
+  --shadow: 0 4px 10px rgba(2,6,23,0.6);
+  --tabbar-background-color: #0f1724;
+  --tabbar-item-active-color: var(--primary);
+  --tabbar-item-inactive-color: #94a3b8;
+}
+
+.theme-ocean {
+  --primary: #06b6d4;
+  --primary-light: #34d3e6;
+  --primary-dark: #0891b2;
+
+  --bg-primary: #f6feff;
+  --bg-secondary: #ecfeff;
+  --bg-tertiary: #e0fbff;
+  --bg-inverse: #08222a;
+
+  --text-primary: #042022;
+  --text-secondary: #054f52;
+  --text-muted: #0e7c86;
+  --border: rgba(4,32,34,0.06);
+
+  --shadow: 0 6px 18px rgba(6,27,31,0.06);
+  --tabbar-background-color: #ecfeff;
+  --tabbar-item-active-color: var(--primary);
+  --tabbar-item-inactive-color: #054f52;
+}
+
+/* 小幅度适配：当主题类生效时优化常见控件的可读性 */
+.theme-dark .card,
+.theme-ocean .card {
+  border-color: var(--border);
+  background-color: var(--bg-secondary);
+}
+
+.theme-dark .btn-primary,
+.theme-ocean .btn-primary {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+}

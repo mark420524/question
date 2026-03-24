@@ -1,5 +1,6 @@
 <template>
   <view class="page-container tab-page my-page">
+    <AppHeader title="我的" />
     <view class="my-profile-card">
       <view class="my-profile-accent" />
       <view class="user-row" @click="gotoProfile">
@@ -94,6 +95,7 @@
 import { ref, onMounted } from 'vue'
 import * as api from '@/service/api'
 import * as utils from '@/utils/util'
+import AppHeader from '@/components/AppHeader.vue'
 
 const userInfo = ref({})
 

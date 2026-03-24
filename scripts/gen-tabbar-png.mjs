@@ -78,6 +78,6 @@ function solidPng(width, height, r, g, b, a) {
 
 mkdirSync(outDir, { recursive: true })
 // 未选中 #9ca3af，选中 #0e7490（与 tabBar selectedColor 一致）
-writeFileSync(join(outDir, 'tab-normal.png'), solidPng(81, 81, 0x9c, 0xa3, 0xaf, 0xff))
-writeFileSync(join(outDir, 'tab-active.png'), solidPng(81, 81, 0x0e, 0x74, 0x90, 0xff))
+writeFileSync(join(outDir, 'tab-normal.png'), solidPng(81, 81, 0x94, 0xa3, 0xb8, 0xff))
+writeFileSync(join(outDir, 'tab-active.png'), solidPng(81, 81, 0x3b, 0x82, 0xf6, 0xff))
 console.log('written:', join(outDir, 'tab-normal.png'), join(outDir, 'tab-active.png'))

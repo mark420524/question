@@ -55,8 +55,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { onMounted, onUnload } from '@dcloudio/uni-app'
+import { ref, onMounted } from 'vue'
+import { onUnload } from '@dcloudio/uni-app'
 import * as api from '@/service/api'
 import * as utils from '@/utils/util'
 
