@@ -1,6 +1,5 @@
 <template>
   <view class="page-container tab-page my-page">
-    <AppHeader title="我的" />
     <view class="my-profile-card">
       <view class="my-profile-accent" />
       <view class="user-row" @click="gotoProfile">
@@ -26,6 +25,13 @@
         </view>
         <text class="user-chev">›</text>
       </view>
+    </view>
+
+    <view class="theme-row">
+      <text class="theme-label">主题</text>
+      <picker mode="selector" :range="themeOptions" @change="onThemePickerChange">
+        <text class="theme-value">{{ currentThemeLabel }}</text>
+      </picker>
     </view>
 
     <view class="my-section">
@@ -92,10 +98,36 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import * as api from '@/service/api'
 import * as utils from '@/utils/util'
-import AppHeader from '@/components/AppHeader.vue'
+// theme controls (moved to this page)
+const themeOptions = ['默认', '暗色', '海洋']
+const themeIds = ['', 'theme-dark', 'theme-ocean']
+const currentTheme = ref((typeof uni !== 'undefined' && uni.getStorageSync && uni.getStorageSync('appTheme')) || '')
+const currentThemeLabel = computed(() => {
+  const idx = themeIds.indexOf(currentTheme.value)
+  return themeOptions[idx === -1 ? 0 : idx]
+})
+
+function applyTheme(t) {
+  currentTheme.value = t || ''
+  try {
+    if (typeof globalThis !== 'undefined' && typeof globalThis.setAppTheme === 'function') {
+      globalThis.setAppTheme(t)
+    } else if (typeof document !== 'undefined') {
+      document.documentElement.classList.remove('theme-dark', 'theme-ocean')
+      if (t) document.documentElement.classList.add(t)
+    }
+  } catch (e) {}
+  if (typeof uni !== 'undefined' && uni.setStorageSync) uni.setStorageSync('appTheme', t)
+}
+
+function onThemePickerChange(e) {
+  const idx = parseInt(e.detail.value, 10) || 0
+  const id = themeIds[idx] || ''
+  applyTheme(id)
+}
 
 const userInfo = ref({})
 
@@ -155,6 +187,28 @@ onMounted(() => {
 <style scoped>
 .my-page {
   padding-bottom: 120rpx;
+}
+
+.theme-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18rpx 24rpx;
+  margin-bottom: 18rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+.theme-label {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--tab-ink);
+}
+.theme-value {
+  font-size: 26rpx;
+  color: var(--tab-muted);
 }
 
 .my-profile-card {

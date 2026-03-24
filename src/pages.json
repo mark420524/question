@@ -10,80 +10,80 @@
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "早晚答",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/about/index",
       "style": {
         "navigationBarTitleText": "关于我们",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/bank/index",
       "style": {
         "navigationBarTitleText": "题库",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/children/index",
       "style": {
         "navigationBarTitleText": "儿童国学",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/confirm/index",
       "style": {
         "navigationBarTitleText": "考前确认",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/detail/index",
       "style": {
         "navigationBarTitleText": "详情",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/detail/child",
       "style": {
         "navigationBarTitleText": "详情",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/exam/index",
       "style": {
         "navigationBarTitleText": "试卷导出",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/exportq/index",
       "style": {
         "navigationBarTitleText": "导出",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/favorite/index",
       "style": {
         "navigationBarTitleText": "我的收藏",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {

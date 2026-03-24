@@ -1,6 +1,5 @@
 <template>
   <view class="page-container tab-page search-page">
-    <AppHeader title="搜索" />
     <view class="search-intro">
       <text class="search-eyebrow">题目检索</text>
       <text class="search-title">搜索</text>
@@ -68,7 +67,6 @@ import { ref, onMounted } from 'vue'
 import { onReachBottom } from '@dcloudio/uni-app'
 import * as api from '@/service/api'
 import * as utils from '@/utils/util'
-import AppHeader from '@/components/AppHeader.vue'
 
 const searchVal = ref('')
 const selectCategory = ref('暂无')

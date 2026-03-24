@@ -1,11 +1,9 @@
 <template>
   <view class="page">
-    <AppHeader title="早晚答" />
 
     <view class="hero card">
       <view class="hero-left">
         <text class="hero-title">今日学习</text>
-        <text class="hero-sub">{{ selectCategory || '未选择题库' }}</text>
       </view>
       <view class="hero-right">
         <text class="count">{{ questionCount }}</text>
@@ -43,7 +41,6 @@
           <view class="tool-ico">📚</view>
           <view class="tool-meta">
             <text class="tool-name">{{ changeCategory }}</text>
-            <text class="tool-desc">选择学习内容</text>
           </view>
         </view>
 
@@ -51,7 +48,6 @@
           <view class="tool-ico">📝</view>
           <view class="tool-meta">
             <text class="tool-name">每日签到</text>
-            <text class="tool-desc">坚持学习习惯</text>
           </view>
         </view>
 
@@ -59,7 +55,6 @@
           <view class="tool-ico">💎</view>
           <view class="tool-meta">
             <text class="tool-name">积分商城</text>
-            <text class="tool-desc">兑换学习奖励</text>
           </view>
         </view>
 
@@ -67,14 +62,13 @@
           <view class="tool-ico">📊</view>
           <view class="tool-meta">
             <text class="tool-name">学习排行</text>
-            <text class="tool-desc">查看学习进度</text>
           </view>
         </view>
       </view>
     </view>
 
     <CategorySelector
-      :visible="selectorVisible"
+      v-model:visible="selectorVisible"
       :data="menuData"
       :value="selectorIndex"
       @cancel="selectorVisible = false"
@@ -88,7 +82,6 @@ import { ref, onMounted, computed } from 'vue'
 import CategorySelector from '@/components/CategorySelector.vue'
 import * as api from '@/service/api'
 import * as utils from '@/utils/util'
-import AppHeader from '@/components/AppHeader.vue'
 const questionCount = ref(0)
 const changeCategory = ref('切换题库')
 const selectCategory = ref('')

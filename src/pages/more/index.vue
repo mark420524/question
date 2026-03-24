@@ -1,6 +1,5 @@
 <template>
   <view class="page-container tab-page more-page">
-    <AppHeader title="更多" />
     <view class="more-intro">
       <text class="more-eyebrow">能力扩展</text>
       <text class="more-title">更多工具</text>
@@ -36,7 +35,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import * as api from '@/service/api'
-import AppHeader from '@/components/AppHeader.vue'
 
 const toolsItems = ref([])
 const loading = ref(true)
