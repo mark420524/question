@@ -1,11 +1,5 @@
 <template>
   <view class="page-container tab-page search-page">
-    <view class="search-intro">
-      <text class="search-eyebrow">题目检索</text>
-      <text class="search-title">搜索</text>
-      <text class="search-lead">在当前题库内输入关键词，快速定位题目。</text>
-    </view>
-
     <view class="search-bar-card">
       <input
         v-model="searchVal"
@@ -152,36 +146,6 @@ onReachBottom(() => {
   padding-bottom: 120rpx;
 }
 
-.search-intro {
-  margin-bottom: 28rpx;
-  padding-bottom: 20rpx;
-  border-bottom: 1rpx solid var(--tab-line);
-}
-
-.search-eyebrow {
-  display: block;
-  font-size: 22rpx;
-  font-weight: 600;
-  color: var(--tab-brand);
-  letter-spacing: 2rpx;
-  margin-bottom: 10rpx;
-}
-
-.search-title {
-  display: block;
-  font-size: 36rpx;
-  font-weight: 700;
-  color: var(--tab-ink);
-  letter-spacing: 1rpx;
-  margin-bottom: 12rpx;
-}
-
-.search-lead {
-  display: block;
-  font-size: 26rpx;
-  color: var(--tab-muted);
-  line-height: 1.55;
-}
 
 .search-bar-card {
   display: flex;

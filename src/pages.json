@@ -90,168 +90,168 @@
       "path": "pages/funny/index",
       "style": {
         "navigationBarTitleText": "趣味",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/help/index",
       "style": {
         "navigationBarTitleText": "使用帮助",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/idiom/index",
       "style": {
         "navigationBarTitleText": "成语词典",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/integral/index",
       "style": {
         "navigationBarTitleText": "我的积分",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/live/index",
       "style": {
         "navigationBarTitleText": "直播",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/more/index",
       "style": {
         "navigationBarTitleText": "更多",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/my/index",
       "style": {
         "navigationBarTitleText": "我的",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/ocr/index",
       "style": {
         "navigationBarTitleText": "拍照识别",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/other/index",
       "style": {
         "navigationBarTitleText": "其他工具",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/pdftools/index",
       "style": {
         "navigationBarTitleText": "PDF 工具",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/poetry/index",
       "style": {
         "navigationBarTitleText": "诗词",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/question/index",
       "style": {
         "navigationBarTitleText": "刷题",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/rank/index",
       "style": {
         "navigationBarTitleText": "排行榜",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/result/index",
       "style": {
         "navigationBarTitleText": "考试结果",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/search/index",
       "style": {
         "navigationBarTitleText": "搜索",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/share/index",
       "style": {
         "navigationBarTitleText": "题目分享",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/short/index",
       "style": {
         "navigationBarTitleText": "短链接",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/signin/index",
       "style": {
         "navigationBarTitleText": "每日签到",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/translate/index",
       "style": {
         "navigationBarTitleText": "中英词典",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/word/index",
       "style": {
         "navigationBarTitleText": "汉语字典",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     },
     {
       "path": "pages/wrong/index",
       "style": {
         "navigationBarTitleText": "错题集",
-        "navigationBarBackgroundColor": "#0c4a6e",
-        "navigationBarTextStyle": "white"
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
       }
     }
   ],

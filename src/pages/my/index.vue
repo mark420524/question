@@ -1,7 +1,6 @@
 <template>
   <view class="page-container tab-page my-page">
     <view class="my-profile-card">
-      <view class="my-profile-accent" />
       <view class="user-row" @click="gotoProfile">
         <view class="avatar-wrap">
           <image
@@ -27,19 +26,18 @@
       </view>
     </view>
 
-    <view class="theme-row">
-      <text class="theme-label">主题</text>
-      <picker mode="selector" :range="themeOptions" @change="onThemePickerChange">
-        <text class="theme-value">{{ currentThemeLabel }}</text>
-      </picker>
-    </view>
-
-    <view class="my-section">
-      <text class="my-section-eyebrow">账户</text>
-      <text class="my-section-title">常用服务</text>
-    </view>
-
     <view class="my-menu">
+      <view class="my-row" style="align-items: center;">
+        <view class="my-mark my-mark--sky">题</view>
+        <view class="my-row-texts">
+          <text class="my-row-title">切换主题</text>
+          <text class="my-row-sub">{{ currentThemeLabel }}</text>
+        </view>
+        <picker mode="selector" :range="themeOptions" @change="onThemePickerChange">
+          <text class="my-row-chev">选择</text>
+        </picker>
+      </view>
+      <view class="my-divider" />
       <view class="my-row" @click="invite">
         <view class="my-mark my-mark--teal">邀</view>
         <view class="my-row-texts">
@@ -222,15 +220,6 @@ onMounted(() => {
   box-shadow: var(--tab-shadow-soft);
 }
 
-.my-profile-accent {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 8rpx;
-  background: linear-gradient(90deg, var(--tab-brand-deep), var(--tab-brand), #2dd4bf);
-}
-
 .user-row {
   display: flex;
   flex-direction: row;
@@ -309,22 +298,6 @@ onMounted(() => {
   margin-bottom: 20rpx;
   padding-bottom: 12rpx;
   border-bottom: 1rpx solid var(--tab-line);
-}
-
-.my-section-eyebrow {
-  display: block;
-  font-size: 22rpx;
-  font-weight: 600;
-  color: var(--tab-brand);
-  letter-spacing: 2rpx;
-  margin-bottom: 8rpx;
-}
-
-.my-section-title {
-  display: block;
-  font-size: 32rpx;
-  font-weight: 700;
-  color: var(--tab-ink);
 }
 
 .my-menu {

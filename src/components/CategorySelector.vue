@@ -1,18 +1,16 @@
 <template>
-  <view v-if="visible" class="overlay" @click.self="onCancel">
-    <view class="sheet">
-      <view class="selector-header">
-        <view class="selector-action" @click="onCancel">取消</view>
-        <view class="selector-title">选择题库</view>
-        <view class="selector-action" @click="onConfirm">确定</view>
-      </view>
-
-      <picker mode="multiSelector" :range="range" :value="innerValue" @change="onPickerChange">
-        <view class="picker-preview">
-          <text class="picker-preview-text">{{ selectedLabel }}</text>
-        </view>
-      </picker>
+  <view v-if="visible"  >
+    <view class="selector-header">
+      <view class="selector-action" @click="onCancel">取消</view>
+      <view class="selector-title">选择题库</view>
+      <view class="selector-action" @click="onConfirm">确定</view>
     </view>
+
+    <picker mode="multiSelector" :range="range" :value="innerValue" @change="onPickerChange">
+      <view class="picker-preview">
+        <text class="picker-preview-text">{{ selectedLabel }}</text>
+      </view>
+    </picker>
   </view>
 </template>
 

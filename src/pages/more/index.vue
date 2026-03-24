@@ -1,9 +1,7 @@
 <template>
   <view class="page-container tab-page more-page">
     <view class="more-intro">
-      <text class="more-eyebrow">能力扩展</text>
-      <text class="more-title">更多工具</text>
-      <text class="more-lead">翻译、诗词、导出等能力，按需选用。</text>
+      <image class="more-hero" src="/static/images/tools.jpg" mode="widthFix" />
     </view>
 
     <view v-if="loading" class="more-loading">
@@ -85,29 +83,13 @@ onMounted(init)
   border-bottom: 1rpx solid var(--tab-line);
 }
 
-.more-eyebrow {
+.more-hero {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-lg);
   display: block;
-  font-size: 22rpx;
-  font-weight: 600;
-  color: var(--tab-brand);
-  letter-spacing: 2rpx;
-  margin-bottom: 10rpx;
-}
-
-.more-title {
-  display: block;
-  font-size: 36rpx;
-  font-weight: 700;
-  color: var(--tab-ink);
-  letter-spacing: 1rpx;
-  margin-bottom: 12rpx;
-}
-
-.more-lead {
-  display: block;
-  font-size: 26rpx;
-  color: var(--tab-muted);
-  line-height: 1.55;
+  margin: 0 auto 18rpx;
 }
 
 .more-loading {
