@@ -24,31 +24,59 @@
     },
     {
       "path": "pages/bank/index",
-      "style": { "navigationBarTitleText": "题库" }
+      "style": {
+        "navigationBarTitleText": "题库",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/children/index",
-      "style": { "navigationBarTitleText": "儿童" }
+      "style": {
+        "navigationBarTitleText": "儿童国学",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/confirm/index",
-      "style": { "navigationBarTitleText": "确认" }
+      "style": {
+        "navigationBarTitleText": "考前确认",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/detail/index",
-      "style": { "navigationBarTitleText": "详情" }
+      "style": {
+        "navigationBarTitleText": "详情",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/detail/child",
-      "style": { "navigationBarTitleText": "详情" }
+      "style": {
+        "navigationBarTitleText": "详情",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/exam/index",
-      "style": { "navigationBarTitleText": "考试" }
+      "style": {
+        "navigationBarTitleText": "试卷导出",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/exportq/index",
-      "style": { "navigationBarTitleText": "导出" }
+      "style": {
+        "navigationBarTitleText": "导出",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/favorite/index",
@@ -60,7 +88,11 @@
     },
     {
       "path": "pages/funny/index",
-      "style": { "navigationBarTitleText": "趣味" }
+      "style": {
+        "navigationBarTitleText": "趣味",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/help/index",
@@ -72,7 +104,11 @@
     },
     {
       "path": "pages/idiom/index",
-      "style": { "navigationBarTitleText": "成语" }
+      "style": {
+        "navigationBarTitleText": "成语词典",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/integral/index",
@@ -84,7 +120,11 @@
     },
     {
       "path": "pages/live/index",
-      "style": { "navigationBarTitleText": "直播" }
+      "style": {
+        "navigationBarTitleText": "直播",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/more/index",
@@ -104,7 +144,11 @@
     },
     {
       "path": "pages/ocr/index",
-      "style": { "navigationBarTitleText": "拍照识别" }
+      "style": {
+        "navigationBarTitleText": "拍照识别",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/other/index",
@@ -116,11 +160,19 @@
     },
     {
       "path": "pages/pdftools/index",
-      "style": { "navigationBarTitleText": "PDF工具" }
+      "style": {
+        "navigationBarTitleText": "PDF 工具",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/poetry/index",
-      "style": { "navigationBarTitleText": "诗词" }
+      "style": {
+        "navigationBarTitleText": "诗词",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/question/index",
@@ -140,7 +192,11 @@
     },
     {
       "path": "pages/result/index",
-      "style": { "navigationBarTitleText": "结果" }
+      "style": {
+        "navigationBarTitleText": "考试结果",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/search/index",
@@ -160,7 +216,11 @@
     },
     {
       "path": "pages/short/index",
-      "style": { "navigationBarTitleText": "短视频" }
+      "style": {
+        "navigationBarTitleText": "短链接",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/signin/index",
@@ -172,11 +232,19 @@
     },
     {
       "path": "pages/translate/index",
-      "style": { "navigationBarTitleText": "翻译" }
+      "style": {
+        "navigationBarTitleText": "中英词典",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/word/index",
-      "style": { "navigationBarTitleText": "单词" }
+      "style": {
+        "navigationBarTitleText": "汉语字典",
+        "navigationBarBackgroundColor": "#0c4a6e",
+        "navigationBarTextStyle": "white"
+      }
     },
     {
       "path": "pages/wrong/index",

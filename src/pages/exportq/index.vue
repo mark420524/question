@@ -1,25 +1,39 @@
 <template>
-  <view class="page-container page">
-    <view class="business-card-rpx card-main">
-      <view class="business-section-title">{{ showName }}</view>
-      <view class="info-row"><text class="label">题库：</text><text class="value">{{ selectCategory || '未选择' }}</text></view>
-      <view class="info-row"><text class="label">题库数量：</text><text class="value"><text class="highlight">{{ count }}</text> 题，需要消耗 <text class="highlight">{{ count }}</text> 积分</text></view>
-      <view class="tips">导出需要消耗积分：1 题消耗 1 积分</view>
-      <view class="tips">您目前所剩积分：<text class="highlight">{{ integral }}</text></view>
-      <view v-if="!enough" class="tips-wrap">
-        <text class="tips-text">您的积分不足，暂无法导出，邀请好友赠送积分，赶快去邀请吧。</text>
-        <view class="footer business-btn-rpx business-btn-primary-rpx" @click="inviteFriend">马上邀请</view>
+  <view class="page-container tab-page export-page">
+    <view class="sub-intro">
+      <text class="sub-eyebrow">导出</text>
+      <text class="sub-title">{{ showName }}</text>
+      <text class="sub-lead">按题量扣积分，PDF 将发送至您填写的邮箱。</text>
+    </view>
+
+    <view class="panel-card">
+      <view class="kv-row">
+        <text class="kv-label">题库</text>
+        <text class="kv-value kv-value--ellipsis">{{ selectCategory || '未选择' }}</text>
       </view>
-      <view v-else class="form-wrap">
-        <view class="form-tip">题库会以 PDF 格式发送附件到您的邮箱，请注意查收</view>
-        <view class="input-row">
-          <text class="label">邮箱</text>
-          <input v-model="email" class="input" placeholder="请输入导出邮箱" type="text" />
-        </view>
-        <view class="footer business-btn-rpx business-btn-primary-rpx" @click="exportQuestion">{{ showVal }}</view>
+      <view class="info-divider" />
+      <view class="kv-row">
+        <text class="kv-label">题量 / 积分</text>
+        <text class="kv-value">
+          <text class="accent">{{ count }}</text> 题，需 <text class="accent">{{ count }}</text> 积分
+        </text>
+      </view>
+      <text class="rule-tip">规则：1 题消耗 1 积分</text>
+      <text class="rule-tip">当前剩余：<text class="accent">{{ integral }}</text> 积分</text>
+
+      <view v-if="!enough" class="block-tips">
+        <text class="tips-text">积分不足，无法导出。邀请好友可获得积分。</text>
+        <view class="panel-btn" @click="inviteFriend">去邀请</view>
+      </view>
+      <view v-else class="form-block">
+        <text class="form-tip">将以 PDF 附件发至邮箱，请留意收件箱与垃圾箱。</text>
+        <text class="field-label">接收邮箱</text>
+        <input v-model="email" class="field-input" placeholder="请输入导出邮箱" type="text" />
+        <view class="panel-btn" @click="exportQuestion">{{ showVal }}</view>
       </view>
     </view>
-    <view v-if="showAd" class="ad-wrap">广告位</view>
+
+    <view v-if="showAd" class="ad-slot">广告位</view>
   </view>
 </template>
 
@@ -87,19 +101,166 @@ onLoad((options) => {
 </script>
 
 <style scoped>
-.page { padding: 24rpx; }
-.card-main { padding: 32rpx; }
-.info-row { display: flex; padding: 20rpx 0; border-bottom: 1rpx solid #e2e8f0; }
-.info-row .label { color: #64748b; font-size: 28rpx; width: 160rpx; flex-shrink: 0; }
-.info-row .value { flex: 1; font-size: 28rpx; color: #1e293b; }
-.highlight { color: #2563eb; font-weight: 600; }
-.tips { font-size: 26rpx; color: #64748b; margin: 16rpx 0; }
-.tips-wrap { margin-top: 24rpx; }
-.tips-text { font-size: 26rpx; color: #64748b; display: block; margin-bottom: 24rpx; }
-.form-wrap { margin-top: 24rpx; }
-.form-tip { font-size: 26rpx; color: #64748b; margin-bottom: 24rpx; }
-.input-row .label { font-size: 28rpx; color: #475569; margin-bottom: 8rpx; display: block; }
-.input { width: 100%; padding: 20rpx; border: 1rpx solid #e2e8f0; border-radius: 12rpx; font-size: 28rpx; background: #fff; }
-.footer { width: 100%; margin-top: 24rpx; }
-.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
+.export-page {
+  padding-bottom: 48rpx;
+}
+
+.sub-intro {
+  margin-bottom: 28rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid var(--tab-line);
+}
+
+.sub-eyebrow {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--tab-brand);
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.sub-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--tab-ink);
+  margin-bottom: 10rpx;
+}
+
+.sub-lead {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+}
+
+.panel-card {
+  padding: 28rpx 26rpx 32rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-lg);
+  border: 1rpx solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.kv-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20rpx;
+  padding: 18rpx 0;
+}
+
+.info-divider {
+  height: 1rpx;
+  background: rgba(18, 21, 28, 0.06);
+}
+
+.kv-label {
+  font-size: 28rpx;
+  color: var(--tab-muted);
+  flex-shrink: 0;
+  width: 160rpx;
+}
+
+.kv-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--tab-ink);
+  text-align: right;
+  line-height: 1.45;
+}
+
+.kv-value--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.accent {
+  color: var(--tab-brand);
+  font-weight: 700;
+}
+
+.rule-tip {
+  display: block;
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.5;
+}
+
+.block-tips {
+  margin-top: 28rpx;
+  padding-top: 28rpx;
+  border-top: 1rpx solid rgba(18, 21, 28, 0.06);
+}
+
+.tips-text {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+  margin-bottom: 24rpx;
+}
+
+.form-block {
+  margin-top: 28rpx;
+  padding-top: 28rpx;
+  border-top: 1rpx solid rgba(18, 21, 28, 0.06);
+}
+
+.form-tip {
+  display: block;
+  font-size: 26rpx;
+  color: var(--tab-muted);
+  line-height: 1.55;
+  margin-bottom: 24rpx;
+}
+
+.field-label {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--tab-ink-soft);
+  margin-bottom: 12rpx;
+}
+
+.field-input {
+  width: 100%;
+  padding: 22rpx 24rpx;
+  font-size: 28rpx;
+  color: var(--tab-ink);
+  background: #f8fafc;
+  border-radius: var(--tab-radius-md);
+  border: 1rpx solid var(--tab-line);
+  box-sizing: border-box;
+}
+
+.panel-btn {
+  margin-top: 24rpx;
+  padding: 26rpx 32rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--tab-brand);
+  border-radius: var(--tab-radius-md);
+}
+
+.panel-btn:active {
+  opacity: 0.92;
+}
+
+.ad-slot {
+  margin-top: 32rpx;
+  padding: 28rpx;
+  background: var(--tab-surface);
+  border-radius: var(--tab-radius-md);
+  border: 1rpx dashed var(--tab-line);
+  text-align: center;
+  font-size: 26rpx;
+  color: #94a3b8;
+}
 </style>
