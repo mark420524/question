@@ -55,7 +55,7 @@ const loading = ref(false)
 const filteredList = computed(() => poetryList.value.filter((r) => Array.isArray(r) && r.length))
 
 function loadMenu() {
-  api.poetryCategory().then((res) => {
+  return api.poetryCategory().then((res) => {
     categoryList.value = res || []
     if (categoryList.value.length) activeIndex.value = categoryList.value[0].id
   })
@@ -97,8 +97,9 @@ function goToPoetry(item) {
 }
 
 onMounted(() => {
-  loadMenu()
-  doSearch(0)
+  loadMenu().then(() => {
+    doSearch(0)
+  })
 })
 
 onReachBottom(() => {

@@ -75,8 +75,8 @@ function doSearch(page, emptyText) {
 }
 
 onMounted(() => {
-  const pages = getCurrentPages()
-  const cur = pages[pages.length - 1]
+  const currentPages = getCurrentPages()
+  const cur = currentPages[currentPages.length - 1]
   const options = (cur && cur.options) || {}
   const val = options.val
   if (val) {

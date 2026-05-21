@@ -1,4 +1,4 @@
-import { http } from './http'
+import { http, uploadFile } from './http'
 
 const url = {
   systemInit: 'init',
@@ -225,6 +225,10 @@ export function exportInfo(data) {
   })
 }
 
+export function getExportInfo(data) {
+  return exportInfo(data)
+}
+
 export function exportQuestions(data) {
   return http({
     url: url.exportQuestions,
@@ -299,6 +303,36 @@ export function encryptPdf(data) {
   return http({
     url: url.encryptPdf,
     data
+  })
+}
+
+export function encryptPdfFile(data) {
+  return uploadFile({
+    url: url.encryptPdf,
+    data: {
+      ...data,
+      filePath: data.filePath
+    }
+  })
+}
+
+export function decryptPdfFile(data) {
+  return uploadFile({
+    url: url.decryptPdf,
+    data: {
+      ...data,
+      filePath: data.filePath
+    }
+  })
+}
+
+export function addWatermarkFile(data) {
+  return uploadFile({
+    url: url.addWatermark,
+    data: {
+      ...data,
+      filePath: data.filePath
+    }
   })
 }
 

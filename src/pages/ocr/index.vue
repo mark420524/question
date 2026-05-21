@@ -54,7 +54,7 @@ function chooseImage(sourceType) {
       success: (res) => {
         const path = res.tempFilePaths[0]
         uni.uploadFile({
-          url: uni.getStorageSync('baseUrl') || '' + '/ocr',
+          url: (uni.getStorageSync('baseUrl') || '') + '/ocr',
           filePath: path,
           name: 'file',
           formData: { token },

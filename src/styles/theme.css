@@ -672,6 +672,219 @@ body {
   padding-bottom: var(--tabbar-height);
 }
 
+/* ========== 统一页面块样式 ========== */
+.page-body {
+  padding: var(--space-6);
+}
+
+/* ===== 旧页面向后兼容样式 ===== */
+.page {
+  padding: var(--space-6);
+}
+
+.business-card-rpx,
+.card-main,
+.card-base {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.business-card-rpx {
+  padding: var(--space-5);
+}
+
+.card-main {
+  padding: var(--space-5);
+}
+
+.business-btn-rpx {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72rpx;
+  padding: 0 32rpx;
+  border-radius: var(--radius-2xl);
+  transition: opacity var(--transition-fast);
+}
+
+.business-btn-primary-rpx {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.business-btn-secondary-rpx {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: var(--space-5);
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
+}
+
+.search-input,
+.input-field,
+.input {
+  flex: 1;
+  min-height: 72rpx;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-xl);
+  border: var(--border-width) solid var(--border);
+  background: var(--bg-secondary);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+.search-btn {
+  min-height: 72rpx;
+  padding: 0 32rpx;
+  border-radius: var(--radius-2xl);
+  font-size: var(--font-size-base);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  padding: 16rpx;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
+  margin-bottom: 24rpx;
+}
+
+.tab {
+  padding: 16rpx 24rpx;
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+
+.tab.active {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.list,
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.item {
+  padding: 24rpx;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
+}
+
+.ad-wrap,
+.empty-state {
+  margin-top: 32rpx;
+  padding: 24rpx;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.section-header {
+  margin-bottom: var(--space-5);
+}
+
+.section-eyebrow {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary);
+  letter-spacing: 1rpx;
+  margin-bottom: 10rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 10rpx;
+}
+
+.section-lead {
+  display: block;
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.card-base {
+  padding: var(--space-5);
+  background: var(--tab-surface);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--tab-line);
+  box-shadow: var(--tab-shadow-soft);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72rpx;
+  padding: 0 32rpx;
+  border-radius: var(--radius-2xl);
+  background: var(--primary);
+  color: var(--text-inverse);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72rpx;
+  padding: 0 32rpx;
+  border-radius: var(--radius-2xl);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.input-field,
+.picker-field {
+  width: 100%;
+  min-height: 72rpx;
+  padding: 24rpx;
+  border-radius: var(--radius-xl);
+  border: 1rpx solid var(--tab-line);
+  background: #f8fafc;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+.empty-state {
+  padding: 80rpx 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
 /* ========== 标题栏样式 ========== */
 .navbar {
   position: fixed;

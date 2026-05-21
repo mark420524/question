@@ -119,9 +119,33 @@
       }
     },
     {
+      "path": "pages/integral/invite",
+      "style": {
+        "navigationBarTitleText": "邀请记录",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/integral/wheel",
+      "style": {
+        "navigationBarTitleText": "积分抽奖",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
       "path": "pages/live/index",
       "style": {
         "navigationBarTitleText": "直播",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/live/detail",
+      "style": {
+        "navigationBarTitleText": "直播详情",
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTextStyle": "black"
       }
@@ -138,6 +162,14 @@
       "path": "pages/my/index",
       "style": {
         "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/my/profile",
+      "style": {
+        "navigationBarTitleText": "编辑资料",
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTextStyle": "black"
       }
@@ -162,6 +194,14 @@
       "path": "pages/pdftools/index",
       "style": {
         "navigationBarTitleText": "PDF 工具",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/pdftools/file",
+      "style": {
+        "navigationBarTitleText": "PDF 处理",
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTextStyle": "black"
       }
@@ -207,9 +247,25 @@
       }
     },
     {
+      "path": "pages/search/exam",
+      "style": {
+        "navigationBarTitleText": "试卷搜索",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
       "path": "pages/share/index",
       "style": {
         "navigationBarTitleText": "题目分享",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/share/invite",
+      "style": {
+        "navigationBarTitleText": "邀请好友",
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTextStyle": "black"
       }
