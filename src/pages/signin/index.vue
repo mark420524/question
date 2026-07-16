@@ -1,11 +1,5 @@
 <template>
   <view class="page-container tab-page signin-page">
-    <view class="sub-intro">
-      <text class="sub-eyebrow">习惯养成</text>
-      <text class="sub-title">每日签到</text>
-      <text class="sub-lead">坚持打卡积累积分，连续签到奖励更丰厚。</text>
-    </view>
-
     <view class="metrics-row">
       <view class="metric-card">
         <text class="metric-value">{{ totalSign }}</text>
