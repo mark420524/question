@@ -185,7 +185,7 @@ function showExamRank() {
 }
 
 .action-row:active {
-  background: #f8fafc;
+  background: var(--gray-100);
 }
 
 .action-divider {
@@ -214,6 +214,6 @@ function showExamRank() {
   border: 1rpx dashed var(--tab-line);
   text-align: center;
   font-size: 26rpx;
-  color: #94a3b8;
+  color: var(--gray-500);
 }
 </style>

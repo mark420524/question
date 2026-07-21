@@ -92,11 +92,11 @@ onMounted(initOcrInfo)
 .page { padding: 24rpx; }
 .card-main { padding: 32rpx; margin-bottom: 24rpx; }
 .tip { font-size: 26rpx; color: #475569; line-height: 1.8; margin-bottom: 8rpx; }
-.highlight { color: #2563eb; font-weight: 600; }
-.result-line { padding: 20rpx 0; border-bottom: 1rpx solid #e2e8f0; font-size: 28rpx; color: #1e293b; }
-.copy-tag { color: #2563eb; margin-left: 16rpx; }
+.highlight { color: var(--primary-dark); font-weight: 600; }
+.result-line { padding: 20rpx 0; border-bottom: 1rpx solid var(--border); font-size: 28rpx; color: var(--gray-900); }
+.copy-tag { color: var(--primary-dark); margin-left: 16rpx; }
 .all-copy { width: 100%; margin-top: 24rpx; }
 .actions { display: flex; gap: 24rpx; }
 .btn { flex: 1; }
-.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
+.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: var(--gray-500); font-size: 26rpx; }
 </style>

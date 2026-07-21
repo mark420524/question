@@ -166,13 +166,13 @@ onReachBottom(() => {
   padding: 22rpx 24rpx;
   font-size: 28rpx;
   color: var(--tab-ink);
-  background: #f8fafc;
+  background: var(--gray-100);
   border-radius: var(--tab-radius-md);
   border: 1rpx solid transparent;
 }
 
 .search-placeholder {
-  color: #94a3b8;
+  color: var(--gray-500);
 }
 
 .search-submit {
@@ -223,7 +223,7 @@ onReachBottom(() => {
   padding: 14rpx 26rpx;
   font-size: 26rpx;
   color: var(--tab-brand-deep);
-  background: #ccfbf1;
+  background: var(--gray-100);
   border-radius: 999rpx;
   border: 1rpx solid rgba(14, 116, 144, 0.15);
 }

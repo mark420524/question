@@ -120,7 +120,7 @@ onLoad((options) => init(options))
 <style scoped>
 .page { padding: 0; background: transparent; min-height: auto }
 .field-label { display: block; font-size: 26rpx; color: var(--text-secondary); margin-bottom: 14rpx }
-.field-value { min-height: 74rpx; padding: 24rpx 24rpx; font-size: 28rpx; color: var(--text-primary); background: #f8fafc; border-radius: 22rpx; border: 1rpx solid var(--tab-line) }
+.field-value { min-height: 74rpx; padding: 24rpx 24rpx; font-size: 28rpx; color: var(--text-primary); background: var(--gray-100); border-radius: 22rpx; border: 1rpx solid var(--tab-line) }
 .action-row { margin-top: 20rpx; text-align: center }
 .result-tip { margin-top: 24rpx; color: var(--text-secondary); font-size: 26rpx; text-align: center }
 </style>

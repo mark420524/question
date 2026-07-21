@@ -111,16 +111,16 @@ onReachBottom(() => {
 <style scoped>
 .page { padding: 24rpx; }
 .search-bar { padding: 20rpx; margin-bottom: 16rpx; display: flex; gap: 16rpx; align-items: center; }
-.search-input { flex: 1; padding: 20rpx; border: 1rpx solid #e2e8f0; border-radius: 12rpx; font-size: 28rpx; }
+.search-input { flex: 1; padding: 20rpx; border: 1rpx solid var(--border); border-radius: 12rpx; font-size: 28rpx; }
 .search-btn { padding: 20rpx 32rpx; }
 .tabs { padding: 16rpx; display: flex; flex-wrap: wrap; gap: 16rpx; margin-bottom: 24rpx; }
 .tab { padding: 16rpx 24rpx; font-size: 26rpx; color: #64748b; border-radius: 8rpx; }
-.tab.active { background: #2563eb; color: #fff; }
+.tab.active { background: var(--primary-dark); color: var(--text-inverse); }
 .list { display: flex; flex-direction: column; gap: 16rpx; }
 .row { display: flex; flex-direction: column; gap: 12rpx; }
 .item { padding: 24rpx; }
-.idx { font-size: 24rpx; color: #94a3b8; margin-bottom: 8rpx; }
-.title { font-size: 30rpx; font-weight: 600; color: #1e293b; }
+.idx { font-size: 24rpx; color: var(--gray-500); margin-bottom: 8rpx; }
+.title { font-size: 30rpx; font-weight: 600; color: var(--gray-900); }
 .author { font-size: 24rpx; color: #64748b; margin-top: 8rpx; }
-.loading { padding: 24rpx; text-align: center; color: #94a3b8; }
+.loading { padding: 24rpx; text-align: center; color: var(--gray-500); }
 </style>

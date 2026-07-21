@@ -204,7 +204,7 @@ function onShareAppMessage() { return { title: '亲爱的，来这里答题喽',
 </script>
 
 <style scoped>
-.page { padding: var(--space-6); background: var(--bg-primary); min-height: 100vh }
+.page { padding: var(--space-6); background: var(--bg-secondary); min-height: 100vh }
 .header {
   height: var(--header-height);
   display: flex;
@@ -217,7 +217,7 @@ function onShareAppMessage() { return { title: '亲爱的，来这里答题喽',
 .title { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--primary) }
 .header-actions { display:flex; align-items:center; gap: var(--space-4) }
 .theme-text { color: var(--text-secondary); font-size: var(--font-size-sm) }
-.hero { display:flex; align-items:center; justify-content:space-between; padding: var(--space-5); margin-top: var(--space-4); border-radius: var(--radius-lg) }
+.hero { display:flex; align-items:center; justify-content:space-between; padding: var(--space-5); margin-top: var(--space-4); border-radius: var(--radius-lg); background: var(--tab-surface); border: 1rpx solid var(--border); box-shadow: var(--shadow-sm); }
 .hero-left { display:flex; flex-direction:column }
 .hero-title { font-size: var(--font-size-lg); color: var(--text-primary); font-weight: var(--font-weight-semibold) }
 .hero-sub { color: var(--text-muted); margin-top: var(--space-1) }
@@ -249,13 +249,13 @@ function onShareAppMessage() { return { title: '亲爱的，来这里答题喽',
 .start-cta:focus { outline: none; box-shadow: 0 10rpx 24rpx rgba(59,130,246,0.12) }
 .hint { color: var(--text-secondary); font-size: var(--font-size-sm) }
 .quick-row { display:flex; justify-content:space-between; margin-top: var(--space-5) }
-.quick-item { flex:1; text-align:center; padding: var(--space-4) }
+.quick-item { flex:1; text-align:center; padding: var(--space-4); border-radius: var(--radius-lg); background: var(--tab-surface); box-shadow: var(--shadow-sm); }
 .quick-icon { font-size: var(--font-size-3xl) }
 .quick-label { display:block; margin-top: var(--space-2); color: var(--text-secondary) }
-.tools { margin-top: var(--space-6); padding: var(--space-4) }
+.tools { margin-top: var(--space-6); padding: var(--space-4); background: var(--tab-surface); border: 1rpx solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
 .tools-grid { display:grid; grid-template-columns: repeat(2,1fr); gap: var(--space-4) }
-.tool { display:flex; gap: var(--space-3); align-items:center; padding: var(--space-3); border-radius: var(--radius); background: var(--bg-primary) }
-.tool-ico { width:64rpx; height:64rpx; display:flex; align-items:center; justify-content:center; background: var(--bg-tertiary); border-radius: var(--radius) }
+.tool { display:flex; gap: var(--space-3); align-items:center; padding: var(--space-3); border-radius: var(--radius); background: var(--bg-primary); }
+.tool-ico { width:64rpx; height:64rpx; display:flex; align-items:center; justify-content:center; background: var(--gray-100); border-radius: var(--radius) }
 .tool-name { font-size: var(--font-size-base); color: var(--text-primary) }
 .tool-desc { font-size: var(--font-size-sm); color: var(--text-muted) }
 @media (min-width: 750rpx) {

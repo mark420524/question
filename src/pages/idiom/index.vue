@@ -93,15 +93,15 @@ onReachBottom(() => {
 <style scoped>
 .page { padding: 24rpx; }
 .search-bar { padding: 20rpx; margin-bottom: 16rpx; display: flex; gap: 16rpx; align-items: center; }
-.search-input { flex: 1; padding: 20rpx; border: 1rpx solid #e2e8f0; border-radius: 12rpx; font-size: 28rpx; }
+.search-input { flex: 1; padding: 20rpx; border: 1rpx solid var(--border); border-radius: 12rpx; font-size: 28rpx; }
 .search-btn { padding: 20rpx 32rpx; }
 .row { display: flex; flex-direction: column; gap: 16rpx; margin-bottom: 16rpx; }
 .item { padding: 24rpx; }
-.word { font-size: 32rpx; font-weight: 700; color: #2563eb; margin-bottom: 16rpx; }
+.word { font-size: 32rpx; font-weight: 700; color: var(--primary-dark); margin-bottom: 16rpx; }
 .info-row { font-size: 26rpx; margin-bottom: 8rpx; }
-.info-row .label { color: #64748b; }
-.info-row .val { color: #1e293b; }
-.derivation { font-size: 24rpx; color: #94a3b8; margin-top: 12rpx; }
-.loading { padding: 24rpx; text-align: center; color: #94a3b8; }
-.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
+.info-row .label { color: var(--text-secondary); }
+.info-row .val { color: var(--gray-900); }
+.derivation { font-size: 24rpx; color: var(--gray-500); margin-top: 12rpx; }
+.loading { padding: 24rpx; text-align: center; color: var(--gray-500); }
+.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: var(--gray-500); font-size: 26rpx; }
 </style>

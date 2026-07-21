@@ -69,15 +69,15 @@ function doSearch() {
 <style scoped>
 .page { padding: 24rpx; }
 .search-bar { padding: 20rpx; margin-bottom: 24rpx; display: flex; gap: 16rpx; align-items: center; }
-.search-input { flex: 1; padding: 20rpx; border: 1rpx solid #e2e8f0; border-radius: 12rpx; font-size: 28rpx; }
+.search-input { flex: 1; padding: 20rpx; border: 1rpx solid var(--border); border-radius: 12rpx; font-size: 28rpx; }
 .search-btn { padding: 20rpx 32rpx; }
 .card-main { padding: 32rpx; }
-.word-main { font-size: 48rpx; font-weight: 700; color: #2563eb; margin-bottom: 24rpx; }
-.info-row { display: flex; padding: 20rpx 0; border-bottom: 1rpx solid #e2e8f0; }
-.info-row .label { color: #64748b; font-size: 28rpx; width: 160rpx; flex-shrink: 0; }
-.info-row .value { flex: 1; font-size: 28rpx; color: #1e293b; }
+.word-main { font-size: 48rpx; font-weight: 700; color: var(--primary-dark); margin-bottom: 24rpx; }
+.info-row { display: flex; padding: 20rpx 0; border-bottom: 1rpx solid var(--border); }
+.info-row .label { color: var(--text-secondary); font-size: 28rpx; width: 160rpx; flex-shrink: 0; }
+.info-row .value { flex: 1; font-size: 28rpx; color: var(--gray-900); }
 .block { margin-top: 24rpx; padding-top: 24rpx; border-top: 1rpx solid #e2e8f0; }
 .block-title { font-size: 28rpx; color: #64748b; margin-bottom: 12rpx; }
-.block-content { font-size: 28rpx; color: #334155; line-height: 1.6; }
-.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
+.block-content { font-size: 28rpx; color: var(--gray-800); line-height: 1.6; }
+.ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: var(--gray-500); font-size: 26rpx; }
 </style>

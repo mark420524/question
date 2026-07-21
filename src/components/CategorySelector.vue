@@ -160,18 +160,18 @@ function onConfirm() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1rpx solid #f1f5f9;
+  border-bottom: 1rpx solid var(--gray-200);
 }
 
 .selector-action {
-  color: #2563eb;
+  color: var(--primary-dark);
   font-size: 28rpx;
 }
 
 .selector-title {
   font-size: 30rpx;
   font-weight: 700;
-  color: #111827;
+  color: var(--gray-950);
 }
 
 .selector-body {
@@ -198,18 +198,18 @@ function onConfirm() {
   justify-content: center;
   height: 50rpx;
   font-size: 28rpx;
-  color: #334155;
+  color: var(--gray-800);
   text-align: center;
 }
 
 .selector-footer {
   padding: 20rpx 24rpx 28rpx;
-  border-top: 1rpx solid #f1f5f9;
+  border-top: 1rpx solid var(--gray-200);
 }
 
 .selected-label {
   display: block;
-  color: #475569;
+  color: var(--gray-700);
   font-size: 26rpx;
 }
 </style>

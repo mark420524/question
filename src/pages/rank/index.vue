@@ -219,7 +219,7 @@ onMounted(init)
 }
 
 .rank-avatar--ph {
-  background: #e2e8f0;
+  background: var(--gray-300);
   color: var(--tab-muted);
   font-size: 26rpx;
   display: flex;

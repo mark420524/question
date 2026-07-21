@@ -672,6 +672,12 @@ body {
   padding-bottom: var(--tabbar-height);
 }
 
+.page {
+  min-height: 100vh;
+  padding: var(--space-6);
+  background: transparent;
+}
+
 /* ========== 统一页面块样式 ========== */
 .page-body {
   padding: var(--space-6);
@@ -834,6 +840,14 @@ body {
   box-shadow: var(--tab-shadow-soft);
 }
 
+.surface-card {
+  padding: var(--space-5);
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
 .card-list {
   display: flex;
   flex-direction: column;
@@ -851,6 +865,7 @@ body {
   color: var(--text-inverse);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
+  box-shadow: 0 8rpx 20rpx rgba(59, 130, 246, 0.15);
 }
 
 .button-secondary {
@@ -865,6 +880,7 @@ body {
   border: var(--border-width) solid var(--border);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
+  box-shadow: 0 4rpx 10rpx rgba(15, 23, 42, 0.05);
 }
 
 .input-field,
@@ -873,10 +889,20 @@ body {
   min-height: 72rpx;
   padding: 24rpx;
   border-radius: var(--radius-xl);
-  border: 1rpx solid var(--tab-line);
-  background: #f8fafc;
+  border: 1rpx solid var(--border);
+  background: var(--gray-100);
   font-size: var(--font-size-base);
   color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.surface-strong {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+  border: 1rpx solid var(--border);
 }
 
 .empty-state {

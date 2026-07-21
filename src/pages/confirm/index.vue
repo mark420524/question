@@ -152,7 +152,7 @@ onMounted(init)
 .panel-btn--ghost {
   margin-top: 16rpx;
   color: var(--tab-ink-soft);
-  background: #f1f5f9;
+  background: var(--gray-200);
   border: 1rpx solid var(--tab-line);
   font-weight: 600;
 }
@@ -169,6 +169,6 @@ onMounted(init)
   border: 1rpx dashed var(--tab-line);
   text-align: center;
   font-size: 26rpx;
-  color: #94a3b8;
+  color: var(--gray-500);
 }
 </style>

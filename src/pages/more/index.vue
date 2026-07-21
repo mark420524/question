@@ -189,6 +189,6 @@ onMounted(init)
   border: 1rpx dashed var(--tab-line);
   text-align: center;
   font-size: 26rpx;
-  color: #94a3b8;
+  color: var(--gray-500);
 }
 </style>

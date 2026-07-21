@@ -288,7 +288,7 @@ onMounted(() => {
 
 .user-chev {
   font-size: 34rpx;
-  color: #c4cad4;
+  color: var(--gray-400);
   flex-shrink: 0;
   margin-left: 12rpx;
   font-weight: 300;
@@ -320,7 +320,7 @@ onMounted(() => {
 }
 
 .my-row:active {
-  background: #f8fafc;
+  background: var(--gray-100);
 }
 
 .my-divider {
@@ -342,7 +342,7 @@ onMounted(() => {
 }
 
 .my-mark--teal {
-  background: #ccfbf1;
+  background: var(--gray-100);
   color: #0f766e;
 }
 
@@ -358,7 +358,7 @@ onMounted(() => {
 
 .my-mark--slate {
   background: #f1f5f9;
-  color: #475569;
+  color: var(--gray-700);
 }
 
 .my-mark--sky {

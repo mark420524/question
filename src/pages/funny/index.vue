@@ -14,17 +14,17 @@ function goWheel() { uni.navigateTo({ url: '/pages/integral/wheel' }) }
 <style scoped>
 .page {
   padding: 30rpx;
-  background: #f5f6fa;
+  background: var(--gray-100);
   min-height: 100vh;
 }
 .page-title {
   font-size: 34rpx;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 20rpx;
 }
 .page-desc {
   font-size: 26rpx;
-  color: #666666;
+  color: var(--gray-700);
 }
 </style>

@@ -26,7 +26,7 @@ function goFile(type) {
 .page { padding: 24rpx; }
 .card-main { padding: 32rpx; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24rpx; }
-.grid-item { padding: 32rpx; text-align: center; background: #f8fafc; border-radius: 12rpx; font-size: 28rpx; color: #1e293b; border: 1rpx solid #e2e8f0; }
+.grid-item { padding: 32rpx; text-align: center; background: var(--gray-100); border-radius: 12rpx; font-size: 28rpx; color: var(--gray-900); border: 1rpx solid var(--border); }
 .grid-item:active { opacity: 0.9; }
 .ad-wrap { margin-top: 32rpx; padding: 24rpx; background: #fff; border-radius: 12rpx; text-align: center; color: #94a3b8; font-size: 26rpx; }
 </style>

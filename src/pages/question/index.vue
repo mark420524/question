@@ -218,7 +218,7 @@ onMounted(() => {
   padding: 24rpx 22rpx;
   border-radius: var(--tab-radius-md);
   border: 1rpx solid var(--tab-line);
-  background: #f8fafc;
+  background: var(--gray-100);
 }
 
 .q-option--on {
@@ -227,7 +227,7 @@ onMounted(() => {
 }
 
 .q-option--ok {
-  border-color: #059669;
+  border-color: var(--secondary-dark);
   background: rgba(5, 150, 105, 0.1);
 }
 

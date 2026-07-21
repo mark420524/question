@@ -46,12 +46,12 @@ onMounted(load)
 
 <style scoped>
 .page { padding: 24rpx; }
-.loading { padding: 80rpx; text-align: center; color: #94a3b8; }
+.loading { padding: 80rpx; text-align: center; color: var(--gray-500); }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24rpx; }
 .item { padding: 0; overflow: hidden; }
-.cover { position: relative; height: 160rpx; background: #f1f5f9; }
+.cover { position: relative; height: 160rpx; background: var(--gray-200); }
 .bg-img { width: 100%; height: 100%; }
 .live-tag { position: absolute; top: 16rpx; left: 16rpx; padding: 8rpx 16rpx; background: rgba(37,99,235,0.9); color: #fff; font-size: 24rpx; border-radius: 8rpx; }
-.name { padding: 20rpx; font-size: 28rpx; font-weight: 600; color: #1e293b; }
-.tips { padding: 0 20rpx 20rpx; font-size: 24rpx; color: #64748b; }
+.name { padding: 20rpx; font-size: 28rpx; font-weight: 600; color: var(--gray-900); }
+.tips { padding: 0 20rpx 20rpx; font-size: 24rpx; color: var(--gray-600); }
 </style>

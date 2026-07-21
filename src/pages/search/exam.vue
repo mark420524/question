@@ -159,9 +159,9 @@ onReachBottom(() => {
 .filter-label { font-size: 26rpx; color: var(--text-secondary) }
 .filter-panel { padding: 24rpx; margin-bottom: 24rpx; }
 .filter-field { margin-bottom: 20rpx }
-.picker-value { padding: 18rpx 24rpx; background: #f8fafc; border-radius: 20rpx; border: 1rpx solid var(--tab-line); font-size: 28rpx; color: var(--text-primary) }
+.picker-value { padding: 18rpx 24rpx; background: var(--gray-100); border-radius: 20rpx; border: 1rpx solid var(--tab-line); font-size: 28rpx; color: var(--text-primary) }
 .filter-actions { display: flex; gap: 16rpx }
-.filter-button { flex: 1; padding: 22rpx 0; border-radius: 999rpx; text-align: center; background: #f1f5f9; color: var(--text-primary); font-size: 26rpx }
+.filter-button { flex: 1; padding: 22rpx 0; border-radius: 999rpx; text-align: center; background: var(--gray-200); color: var(--text-primary); font-size: 26rpx }
 .filter-button-primary { background: var(--primary); color: #fff }
 .result-list { display: flex; flex-direction: column; gap: 18rpx }
 .result-card { padding: 26rpx; border-radius: var(--radius-lg); }

@@ -232,7 +232,7 @@ onLoad((options) => {
   padding: 22rpx 24rpx;
   font-size: 28rpx;
   color: var(--tab-ink);
-  background: #f8fafc;
+  background: var(--gray-100);
   border-radius: var(--tab-radius-md);
   border: 1rpx solid var(--tab-line);
   box-sizing: border-box;
@@ -261,6 +261,6 @@ onLoad((options) => {
   border: 1rpx dashed var(--tab-line);
   text-align: center;
   font-size: 26rpx;
-  color: #94a3b8;
+  color: var(--gray-500);
 }
 </style>

@@ -133,7 +133,7 @@ onMounted(loadSignInfo)
   display: block;
   font-size: 22rpx;
   font-weight: 600;
-  color: var(--tab-brand);
+      color: var(--secondary-dark);
   letter-spacing: 2rpx;
   margin-bottom: 10rpx;
 }
@@ -149,7 +149,7 @@ onMounted(loadSignInfo)
 .sub-lead {
   display: block;
   font-size: 26rpx;
-  color: var(--tab-muted);
+      color: var(--gray-500);
   line-height: 1.55;
 }
 
@@ -160,7 +160,7 @@ onMounted(loadSignInfo)
   margin-bottom: 24rpx;
 }
 
-.metric-card {
+      color: var(--gray-500);
   flex: 1;
   padding: 28rpx 20rpx;
   background: var(--tab-surface);
